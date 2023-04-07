@@ -2,8 +2,8 @@ OVERVIEW
 --------
 This directory contains system pkgsrc collection.  This collection
 contains build scripts and files for the packages required for minimal
-Zeppe-Lin installation on real hardware.  It contains loaders,
-filesystems, servers, and so on.  Packages in this collection depends
+Zeppe-Lin installation on real hardware: loaders, filesystems,
+hw-monitors, servers, and so on.  Packages in this collection depends
 **only** on the core pkgsrc collection.
 
 This distribution was originally forked from CRUX ports as of version
