@@ -1,0 +1,16 @@
+#!/bin/sh -ex
+
+if ! /usr/bin/getent group dhcpcd; then
+	/usr/sbin/groupadd -r dhcpcd
+fi
+
+if ! /usr/bin/getent passwd dhcpcd; then
+       /usr/sbin/useradd -g dhcpcd -r -d /var/lib/dhcpcd \
+	       -s /bin/false dhcpcd
+fi
+
+/usr/bin/passwd -l dhcpcd
+
+/bin/chown -R dhcpcd:dhcpcd /var/lib/dhcpcd
+
+# End of file.

@@ -1,0 +1,20 @@
+# Description: Support library with a focus on asynchronous I/O
+# URL:         https://libuv.org/
+
+name=libuv
+version=1.44.2
+release=1
+source=https://dist.libuv.org/dist/v$version/$name-v$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	# FIXME: artificial bash dependency
+	bash ../$name-v$version/autogen.sh
+
+	../$name-v$version/configure  \
+		--prefix=/usr         \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

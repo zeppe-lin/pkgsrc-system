@@ -1,0 +1,41 @@
+# Description: Utilities for the ALSA
+# URL:         http://www.alsa-project.org
+# Depends on:  alsa-lib dialog
+
+name=alsa-utils
+version=1.2.8
+release=1
+source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
+	rc.alsa
+	0001-simplify-nocolors-menu.patch
+	f77a269370af917585df59d8c21c89bca07b5b73.patch"
+
+build() {
+	for _P in $SRC/*.patch; do
+		patch -d $name-$version -p1 -i $_P
+	done
+
+	# fix error when compiling alsatplg
+	CFLAGS="$CFLAGS -latopology"
+
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--disable-alsaconf   \
+		--disable-alsatest   \
+		--disable-bat        \
+		--disable-nls        \
+		--disable-rst2man    \
+		--disable-xmlto      \
+		--enable-static      \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -m 0755 -D $SRC/rc.alsa $PKG/etc/rc.d/alsa
+
+	# remove junk
+	rm $PKG/usr/sbin/alsa-info.sh
+	rmdir $PKG/usr/share/man/man7/
+}

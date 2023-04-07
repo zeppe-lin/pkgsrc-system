@@ -1,0 +1,40 @@
+# Description: Multiboot boot loader
+# URL:         https://www.gnu.org/software/grub/
+# Depends on:  freetype libdevmapper python3
+
+name=grub2
+version=2.06
+release=2
+source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+	http://jaeger.morpheus.net/linux/crux/files/unifont-9.0.06.pcf.gz
+	grub2-tweaks.patch"
+
+build() {
+	patch -p1 -d grub-$version -i $SRC/grub2-tweaks.patch
+
+	export CFLAGS="$CFLAGS -Wno-error"
+	export PYTHON=python3
+
+	mkdir build; cd build
+
+	../grub-$version/configure      \
+		--prefix=/usr           \
+		--sysconfdir=/etc       \
+		--enable-device-mapper  \
+		--disable-efiemu        \
+		--disable-grub-mount    \
+		--disable-nls           \
+
+	_BCD=/usr/share/bash-completion/completions
+	make V=1
+	make DESTDIR=$PKG bashcompletiondir=$_BCD install
+
+	# install unifont
+	install -d $PKG/usr/lib/grub/fonts
+	gzip -d $SRC/unifont-9.0.06.pcf.gz
+	./grub-mkfont -o $PKG/usr/lib/grub/fonts/unifont.pf2 \
+		$SRC/unifont-9.0.06.pcf
+
+	# remove junk
+	rm -r $PKG/usr/share/info/
+}

@@ -1,0 +1,31 @@
+# Description: Screen manager with VT100/ANSI terminal emulation 
+# URL:         https://www.gnu.org/software/screen/
+# Depends on:  ncurses
+
+name=screen
+version=4.9.0
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
+	pam.$name"
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -fi ../$name-$version
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--enable-color256    \
+		--enable-pam         \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# pam
+	install -m 0644 -D $SRC/pam.$name $PKG/etc/pam.d/$name
+
+	# fix perms
+	chmod -s $PKG/usr/bin/$name-$version
+
+	# remove junk
+	rm -r $PKG/usr/share/info
+}

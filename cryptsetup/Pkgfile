@@ -1,0 +1,28 @@
+# Description: User-friendly dm-crypt/LUKS interface
+# URL:         https://gitlab.com/cryptsetup/cryptsetup
+# Depends on:  json-c libdevmapper openssl popt
+
+name=cryptsetup
+version=2.6.1
+release=1
+source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
+
+build() {
+	# fix "undefined reference to `arc4random'"
+	export LDFLAGS="$LDFLAGS `pkg-config --libs libbsd`"
+
+	mkdir build; cd build
+
+	../$name-$version/configure         \
+		--prefix=/usr               \
+		--disable-nls               \
+		--disable-ssh-token         \
+		--enable-asciidoc           \
+		--enable-static-cryptsetup  \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -d $PKG/sbin
+	mv $PKG/usr/sbin/cryptsetup.static $PKG/sbin/cryptsetup.static
+}

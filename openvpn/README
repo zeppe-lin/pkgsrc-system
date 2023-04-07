@@ -1,0 +1,17 @@
+README openvpn
+
+KERNEL CONFIGURATION
+
+	Enable Universal TUN/TAP device driver support in your kernel:
+
+		CONFIG_TUN=(y|m)
+
+KERNEL MODULE
+
+	If you compiled device driver as a loadable kernel module
+	(CONFIG_TUN=m) then you may wish to add the following line to
+	/etc/rc.modules:
+
+		/sbin/modprobe tun
+
+End of file.

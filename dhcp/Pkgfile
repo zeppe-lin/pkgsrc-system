@@ -1,0 +1,41 @@
+# Description: DHCP server, client and relay agent
+# URL:         https://www.isc.org/downloads/dhcp
+
+name=dhcp
+version=4.4.3-P1
+release=1
+source="https://ftp.isc.org/isc/dhcp/$version/dhcp-$version.tar.gz
+	default-config.patch replace-hostname-with-uname-n.patch
+	rc.dhclient rc.dhcpd4 rc.dhcpd6"
+
+build() {
+	patch -d dhcp-$version -p1 -i $SRC/default-config.patch
+	patch -d dhcp-$version -p1 -i $SRC/replace-hostname-with-uname-n.patch
+
+	export CFLAGS="$CFLAGS -fcommon"
+
+	mkdir build; cd build
+
+	../dhcp-$version/configure    \
+		--prefix=/usr         \
+		--sysconfdir=/etc     \
+		--runstatedir=/run    \
+		--localstatedir=/var  \
+
+	# parallel build is broken
+	make -j1 V=1
+
+	make DESTDIR=$PKG install
+
+	install -m 0755 -D $SRC/rc.dhclient  $PKG/etc/rc.d/dhclient
+	install -m 0755 -D $SRC/rc.dhcpd4    $PKG/etc/rc.d/dhcpd4
+	install -m 0755 -D $SRC/rc.dhcpd6    $PKG/etc/rc.d/dhcpd6
+
+	install -m 0755 -d $PKG/var/state/dhcp
+	install -m 0755 -d $PKG/var/db
+
+	touch $PKG/var/state/dhcp/dhcpd.leases
+
+	mv $PKG/etc/dhclient.conf.example  $PKG/etc/dhclient.conf
+	mv $PKG/etc/dhcpd.conf.example     $PKG/etc/dhcpd.conf
+}

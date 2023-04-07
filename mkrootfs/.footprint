@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/mkrootfs/
+-rw-r--r--	root/root	etc/mkrootfs/config
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/mkrootfs
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/mkrootfs.config.5.gz
+drwxr-xr-x	root/root	usr/share/man/man7/
+-rw-r--r--	root/root	usr/share/man/man7/mkrootfs.release.7.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/mkrootfs.8.gz

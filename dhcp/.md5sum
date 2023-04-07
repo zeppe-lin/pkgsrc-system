@@ -1,0 +1,6 @@
+5db6a167bec8de6781cb31926e6b1da1  default-config.patch
+36c6ca77212373b0cff478ae9e5d32af  dhcp-4.4.3-P1.tar.gz
+f12ad1f22f2a6dc96f957b0057f8dfc5  rc.dhclient
+27d14daba664b70f8e4483f3b5e7a9ff  rc.dhcpd4
+d1f3240141364340c9c20e2c1ca1dfc0  rc.dhcpd6
+d0ae9a6e7d773169205b451384ca602e  replace-hostname-with-uname-n.patch

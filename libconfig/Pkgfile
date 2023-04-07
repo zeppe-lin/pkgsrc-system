@@ -1,0 +1,27 @@
+# Description: C/C++ configuration file library
+# URL:         https://github.com/hyperrealm/libconfig
+
+name=libconfig
+version=1.7.3
+release=1
+source=https://github.com/hyperrealm/$name/archive/v$version/$name-v$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -i ../$name-$version
+
+	# don't fail without makeinfo (must be after autoreconf)
+	sed -e 's|all: all-am|all:|1'              \
+	    -e 's|install: install-am|install:|1'  \
+	    -i ../$name-$version/doc/Makefile.in
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--disable-examples   \
+		--disable-doc        \
+		--disable-tests      \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

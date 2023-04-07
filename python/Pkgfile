@@ -1,0 +1,88 @@
+# Description: Python interpreter, version 2.7
+# URL:         https://www.python.org
+# Depends on:  bzip2 db expat gdbm libffi libnsl openssl sqlite3
+
+name=python
+version=2.7.18
+release=1
+source="https://www.python.org/ftp/$name/$version/Python-$version.tar.xz
+	pyconfig.h
+	CVE-2019-20907.patch
+	CVE-2020-26116.patch
+	CVE-2021-3177.patch"
+
+build() {
+	patch -p1 -d Python-$version -i $SRC/CVE-2019-20907.patch
+	patch -p1 -d Python-$version -i $SRC/CVE-2020-26116.patch
+	patch -p1 -d Python-$version -i $SRC/CVE-2021-3177.patch
+
+	# remove 2to3, we use the one from python3
+	rm -r Python-$version/Lib/lib2to3
+
+	# ensure that internal copies of expat, libffi and zlib are
+	# not used
+	rm -r Python-$version/Modules/expat           \
+	      Python-$version/Modules/_ctypes/libffi* \
+	      Python-$version/Modules/zlib            \
+
+	# remove tests
+	rm -r Python-$version/Lib/bsddb/test         \
+	      Python-$version/Lib/ctypes/test        \
+	      Python-$version/Lib/email/test         \
+	      Python-$version/Lib/lib-tk/test        \
+	      Python-$version/Lib/sqlite3/test       \
+	      Python-$version/Lib/unittest/test      \
+	      Python-$version/Lib/distutils/tests    \
+	      Python-$version/Lib/json/tests         \
+	      Python-$version/Lib/idlelib/idle_test  \
+	      Python-$version/Lib/test               \
+
+	# disable tk
+	export PYTHON_DISABLE_MODULES=" _tkinter"
+
+	mkdir build; cd build
+
+	../Python-$version/configure  \
+		--prefix=/usr         \
+		--enable-shared       \
+		--with-threads        \
+		--enable-ipv6         \
+		--with-system-expat   \
+		--with-system-ffi     \
+
+	make V=1
+	make -j1 DESTDIR=$PKG install
+
+	# remove tk files
+	rm -r $PKG/usr/bin/idle*             \
+	      $PKG/usr/lib/python2.7/idlelib \
+	      $PKG/usr/lib/python2.7/lib-tk  \
+	      $PKG/usr/lib/python2.7/lib-dynload/_tkinter.so
+
+	# fix issue with man-page symlink
+	ln -sf python2.7.1 $PKG/usr/share/man/man1/python.1
+
+	ln -s  pydoc      $PKG/usr/bin/pydoc2.7
+	ln -sf python2.7  $PKG/usr/bin/python
+	ln -s  python2.7  $PKG/usr/lib/python
+	ln -s  python2.7  $PKG/usr/include/python
+	ln -s  /usr/lib/libpython2.7.so \
+	   $PKG/usr/lib/python2.7/config/libpython2.7.so
+
+	mv $PKG/usr/include/python2.7/pyconfig.h  \
+	   $PKG/usr/include/python2.7/pyconfig-64.h
+	install -m 0644 $SRC/pyconfig.h $PKG/usr/include/python2.7/
+
+	# provided by python3
+	rm $PKG/usr/bin/2to3
+
+	# remove junk
+	find $PKG -type f \(            \
+		   -name README         \
+		-o -name README.txt     \
+		-o -name TODO.txt       \
+		-o -name NEWS.txt       \
+		-o -name ChangeLog      \
+		-o -name README.ctypes  \
+		\) -delete
+}

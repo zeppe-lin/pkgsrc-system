@@ -1,0 +1,29 @@
+# Description: Secure PinEntry Dialog
+# URL:         https://gnupg.org/related_software/pinentry
+# Depends on:  libassuan libcap
+
+name=pinentry
+version=1.2.1
+release=1
+source="https://gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
+	pinentry"
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure       \
+		--prefix=/usr             \
+		--disable-doc             \
+		--disable-pinentry-gtk2   \
+		--disable-pinentry-qt     \
+		--disable-pinentry-qt5    \
+		--enable-pinentry-curses  \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# pinentry is a symlink to the default PIN-Entry program
+	# (pinentry-curses).  Use our wrapper instead of this symlink.
+	unlink $PKG/usr/bin/pinentry
+	install -m 0755 $SRC/pinentry $PKG/usr/bin/pinentry
+}

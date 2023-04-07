@@ -1,0 +1,17 @@
+# Description: Complete rewrite of the NASM assembler under the new BSD License
+# URL:         http://www.tortall.net/projects/yasm/
+
+name=yasm
+version=1.3.0
+release=1
+source=http://www.tortall.net/projects/yasm/releases/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
+}

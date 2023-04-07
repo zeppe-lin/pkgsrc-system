@@ -1,0 +1,21 @@
+# Description: Library and tools which provides an interface to inotify(7)
+# URL:         https://inotify-tools.sourceforge.net/
+
+name=inotify-tools
+version=3.22.6.0
+release=1
+source=https://github.com/rvoicilas/$name/archive/$version/$name-$version.tar.gz
+
+build() {
+	# build in separate dir is broken
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--prefix=/usr        \
+		--disable-doxygen    \
+		--enable-fanotify    \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,20 @@
+# Description: JSON implementation in C
+# URL:         https://github.com/json-c/json-c/wiki
+# Depends on:  libbsd
+
+name=json-c
+version=0.16
+release=1
+source=https://s3.amazonaws.com/json-c_releases/releases/$name-$version.tar.gz
+
+build() {
+	cmake -S $name-$version -B build -G Ninja   \
+		-D CMAKE_INSTALL_PREFIX=/usr        \
+		-D CMAKE_INSTALL_LIBDIR=/usr/lib    \
+		-D CMAKE_BUILD_TYPE=Release         \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"  \
+		-D BUILD_TESTING=OFF                \
+
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
+}

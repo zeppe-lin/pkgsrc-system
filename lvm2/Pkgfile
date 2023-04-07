@@ -1,0 +1,47 @@
+# Description: Userspace toolset for logical volume management
+# URL:         https://sourceware.org/lvm2/
+# Depends on:  libaio libdevmapper
+
+##############################
+# Update libdevmapper first! #
+##############################
+
+name=lvm2
+version=2.03.20
+release=1
+source=https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
+
+build() {
+	export PYTHON=/usr/bin/python3
+
+	# build in separate dir is broken
+	cd LVM2.$version
+
+	CONFIG_SHELL=/bin/bash ./configure                 \
+		--prefix=/usr                              \
+		--exec-prefix=                             \
+		--datarootdir=/usr                         \
+		--mandir=/usr/share/man                    \
+		--disable-selinux                          \
+		--enable-cmdlib                            \
+		--enable-fsadm                             \
+		--enable-pkgconfig                         \
+		--enable-readline                          \
+		--enable-udev_rules                        \
+		--enable-udev_sync                         \
+		--with-default-dm-run-dir=/run             \
+		--with-default-locking-dir=/run/lock/lvm   \
+		--with-default-pid-dir=/run                \
+		--with-default-run-dir=/run/lvm            \
+		--with-group=root                          \
+		--with-udev-prefix=                        \
+		--with-user=root                           \
+
+	make V=1
+	make V=1 DESTDIR=$PKG install_lvm2
+
+	install -d -m 0700 $PKG/etc/lvm/archive $PKG/etc/lvm/backup \
+		$PKG/etc/lvm/cache
+	install -d -m 1777 $PKG/var/lock
+	install -d -m 0700 $PKG/var/lock/lvm
+}

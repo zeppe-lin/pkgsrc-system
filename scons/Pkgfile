@@ -1,0 +1,36 @@
+# Description: Software construction tool
+# URL:         https://www.scons.org
+# Depends on:  py3-setuptools
+
+name=scons
+version=4.5.2
+release=1
+source="https://github.com/SCons/scons/archive/$version/scons-$version.tar.gz
+	https://downloads.sourceforge.net/project/scons/scons/$version/SCons-$version.tar.gz"
+
+build() {
+	cd scons-$version
+
+	cp $SRC/SCons-$version/*.1 .
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install           \
+		--root=$PKG                         \
+		--install-data=/usr/share/man/man1/ \
+		--skip-build -O2
+
+	# remove junk
+	find $PKG  -type f \(        \
+		   -name AUTHORS     \
+		-o -name BUGS        \
+		-o -name COPYING     \
+		-o -name INSTALL     \
+		-o -name NEWS        \
+		-o -name README      \
+		-o -name README.txt  \
+		-o -name TODO        \
+		\) -delete ,         \
+		   -type d \(        \
+		   -name docbook     \
+		\) -exec rm -rf {} +
+}

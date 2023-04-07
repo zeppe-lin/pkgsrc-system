@@ -1,0 +1,24 @@
+# Description: Tools and library to manipulate EFI variables
+# URL:         https://github.com/rhinstaller/efivar
+# Depends on:  popt
+
+name=efivar
+version=38
+release=1
+source=https://github.com/rhinstaller/$name/releases/download/$version/$name-$version.tar.bz2
+
+build() {
+	cd $name-$version
+
+	# requires mandoc
+	sed -i 's/docs//' Makefile
+
+	# fix build with glibc-2.36+
+	sed -i '/sys\/mount\.h/d' src/util.h
+	sed -i '/unistd\.h/a#include <sys/mount.h>' src/gpt.c src/linux.c
+
+	# parallel build is broken
+	make -j1
+
+	make LIBDIR=/usr/lib DESTDIR=$PKG install
+}

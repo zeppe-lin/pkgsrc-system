@@ -1,0 +1,63 @@
+# Description: NFS utilities
+# URL:         https://nfs.sourceforge.net
+# Depends on:  keyutils libcap libdevmapper libevent rpcbind rpcsvc-proto sqlite3
+
+name=nfs-utils
+version=2.6.2
+release=1
+source="https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
+	exports
+	idmapd.conf
+	rc.nfsclient
+	rc.nfsdcld
+	rc.nfs
+	rc.nfsserver
+	rc.rpc.idmapd
+	rc.rpc.mountd
+	rc.rpc.nfsd
+	rc.rpc.statd"
+
+build() {
+	# build in separate dir is broken
+	cd $name-$version
+
+	sed -i '/ -pipe \\/d' configure.ac
+
+	autoreconf -fi
+	CONFIG_SHELL=/bin/bash ./configure          \
+		--prefix=/usr                       \
+		--sysconfdir=/etc                   \
+		--libexecdir=/usr/sbin              \
+		--with-statedir=/var/lib/nfs        \
+		--with-modprobedir=/etc/modprobe.d  \
+		--without-tcp-wrappers              \
+		--disable-gss                       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -d $PKG/etc/rc.d                 \
+	           $PKG/etc/exports.d            \
+	           $PKG/var/lib/nfs/rpc_pipefs   \
+	           $PKG/var/lib/nfs/v4recovery   \
+	           $PKG/var/lib/nfs/nfsdcltrack  \
+	           $PKG/var/lib/nfs/nfsdcld      \
+
+	for _RC in nfsclient nfsdcld nfs nfsserver rpc.idmapd \
+		rpc.mountd rpc.nfsd rpc.statd
+	do
+		install -m 0755 $SRC/rc.$_RC $PKG/etc/rc.d/$_RC
+	done
+
+	install -m 0644 $SRC/exports              $PKG/etc
+	install -m 0644 $SRC/idmapd.conf          $PKG/etc
+	install -m 0644 utils/mount/nfsmount.conf $PKG/etc/
+	install -m 0644 nfs.conf                  $PKG/etc/
+
+	# force rpc.statd to run as user nobody
+	chown nobody $PKG/var/lib/nfs
+
+	# fix path in udev rule
+	sed -i 's|/usr/libexec|/usr/sbin|' \
+		$PKG/usr/lib/udev/rules.d/99-nfs.rules
+}

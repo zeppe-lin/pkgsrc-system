@@ -1,0 +1,17 @@
+README nfs-utils
+
+KERNEL CONFIGURATION
+
+	Enable the following options in the kernel configuration (choose
+	client and/or server support as appropriate) and recompile the kernel
+	if necessary:
+
+	File systems  --->
+	  [*] Network File Systems  --->          [CONFIG_NETWORK_FILESYSTEMS]
+	    <*/M> NFS client support                           [CONFIG_NFS_FS]
+	    <*/M> NFS server support                             [CONFIG_NFSD]
+
+	Select the appropriate sub-options that appear when the above options
+	are selected.
+
+End of file.

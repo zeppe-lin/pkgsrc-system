@@ -1,0 +1,17 @@
+# Description: Text processing system
+# URL:         http://docutils.sourceforge.net/
+# Depends on:  py3-setuptools
+
+name=docutils
+version=0.19
+release=1
+source=https://files.pythonhosted.org/packages/source/d/$name/$name-$version.tar.gz
+
+build() {
+	cd $name-$version
+
+	/usr/bin/python3 setup.py install --root=$PKG -O1
+
+	# remove junk
+	find $PKG -type f -name README.txt -delete
+}

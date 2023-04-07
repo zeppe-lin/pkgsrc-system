@@ -1,0 +1,23 @@
+# Description: Tracks runtime library calls in dynamically linked programs
+# URL:         https://www.ltrace.org/
+# Depends on:  elfutils libunwind
+
+name=ltrace
+version=0.7.3
+release=1
+source=https://www.ltrace.org/ltrace_${version}.orig.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure    \
+		--prefix=/usr          \
+		--sysconfdir=/usr/etc  \
+		--disable-werror       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
+}

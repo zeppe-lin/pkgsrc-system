@@ -1,0 +1,42 @@
+# Description: Multiboot boot loader (EFI version)
+# URL:         https://www.gnu.org/software/grub/
+# Depends on:  grub2 efibootmgr
+
+name=grub2-efi
+version=2.06
+release=1
+source=https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+
+build() {
+	export CFLAGS="$CFLAGS -Wno-error"
+	export PYTHON=python3
+
+	MODLIST="
+	boot chain configfile fat ext2 linux normal ntfs part_gpt
+	part_msdos
+	"
+
+	for ARCH in i386 x86_64; do
+		mkdir build-$ARCH
+		cd build-$ARCH
+
+		../grub-$version/configure   \
+			--prefix=/usr        \
+			--with-platform=efi  \
+			--target=$ARCH       \
+			--program-prefix=""  \
+			--disable-nls        \
+
+		make V=1
+		make DESTDIR=$PKG install
+
+		cd grub-core
+		../grub-mkimage -O $ARCH-efi -d . -o grub2-$ARCH.efi \
+			-p "" $MODLIST
+		cp grub2-$ARCH.efi $PKG/usr/lib/grub/
+		cd ../..
+	done
+
+	# conflicts with grub2 package
+	rm -r $PKG/usr/bin $PKG/usr/etc $PKG/usr/sbin $PKG/usr/share
+}

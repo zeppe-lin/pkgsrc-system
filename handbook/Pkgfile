@@ -1,0 +1,13 @@
+# Description: Zeppe-Lin handbook
+# URL:         https://github.com/zeppe-lin/handbook
+
+name=handbook
+version=0.1-cd63527
+release=1
+source=https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
+
+build() {
+	cd $name-${version#*-}*
+
+	make DESTDIR=$PKG install-man
+}

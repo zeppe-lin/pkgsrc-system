@@ -1,0 +1,21 @@
+# Description: Generates automatic source code configuration scripts
+# URL:         https://www.gnu.org/software/autoconf
+
+name=autoconf-2.13
+version=2.13
+release=1
+source=ftp://ftp.gnu.org/gnu/autoconf/autoconf-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../autoconf-$version/configure  \
+		--prefix=/usr           \
+		--program-suffix=-2.13  \
+
+	make V=1
+	make prefix=$PKG/usr install
+
+	# remove junk
+	rm -r $PKG/usr/info
+}

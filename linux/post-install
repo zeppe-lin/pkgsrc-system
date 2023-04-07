@@ -1,0 +1,15 @@
+#!/bin/sh -ex
+
+# prepare initramfs if mkinitramfs is installed
+if pkgman isinst mkinitramfs; then
+	_kver=$(pkgman printf "%v" --filter=linux)
+	mkinitramfs -o /boot/initramfs-$_kver.img -k $_kver -f
+fi
+
+# update grub configuration file if installed
+if pkgman isinst grub2; then
+	[ -d /boot/grub ] || mkdir -p /boot/grub
+	grub-mkconfig -o /boot/grub/grub.cfg
+fi
+
+# End of file.

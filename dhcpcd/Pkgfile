@@ -1,0 +1,32 @@
+# Description: RFC2131-compliant DHCP client daemon
+# URL:         https://roy.marples.name/projects/dhcpcd
+# Depends on:  eudev
+
+name=dhcpcd
+version=9.4.0.105
+release=1
+#source="https://roy.marples.name/downloads/$name/$name-$version.tar.xz
+source="https://crux.nu/files/distfiles/$name-$version.tar.xz
+	rc.dhcpcd"
+
+build() {
+	# build in separate dir is broken
+	cd $name-$version
+
+	./configure                       \
+		--prefix=                 \
+		--sysconfdir=/etc/dhcpcd  \
+		--libexecdir=/lib/dhcpcd  \
+		--dbdir=/var/lib/dhcpcd   \
+		--rundir=/run/dhcpcd      \
+		--enable-privsep          \
+		--privsepuser=dhcpcd      \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	chmod -R 755 $PKG/var
+	install -m 0755 -D $SRC/rc.dhcpcd $PKG/etc/rc.d/dhcpcd
+
+	chmod -R u+w $PKG
+}

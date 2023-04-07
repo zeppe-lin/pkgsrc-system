@@ -1,0 +1,20 @@
+# Description: High-performance event loop/event model
+# URL:         http://software.schmorp.de/pkg/libev.html
+
+name=libev
+version=4.33
+release=1
+source=http://dist.schmorp.de/$name/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+
+	make V=1
+	make prefix=$PKG/usr install
+
+	# conflicts with libevent
+	rm $PKG/usr/include/event.h
+}

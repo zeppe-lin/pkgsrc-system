@@ -1,0 +1,16 @@
+# Description: Deliver and manage a complete PKI configuration
+# URL:         https://github.com/lfs-book/make-ca
+
+name=make-ca
+version=1.12
+release=1
+source=https://github.com/lfs-book/$name/archive/v$version/$name-$version.tar.gz
+
+build() {
+	cd $name-$version
+
+	sed -i 's|^\(LIBEXECDIR=\).*|\1/usr/lib/make-ca|' Makefile
+
+	make V=1
+	make DESTDIR=$PKG install
+}

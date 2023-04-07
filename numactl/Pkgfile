@@ -1,0 +1,22 @@
+# Description: Simple NUMA policy support
+# URL:         https://github.com/numactl/numactl
+# Depends on:  perl
+
+name=numactl
+version=2.0.16
+release=1
+source=https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -fiv ../$name-$version
+	../$name-$version/configure  \
+		--prefix=/usr        \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# provided by man-pages
+	rm $PKG/usr/share/man/man2/move_pages.2
+}

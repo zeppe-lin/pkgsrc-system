@@ -1,0 +1,52 @@
+#!/bin/sh -e
+#
+# /etc/rc.d/openvpn: start/stop openvpn(8) daemon
+#
+
+# Require a config name to be specified.
+if [ -z "$2" ]; then
+	echo "usage: $0 [start|stop|restart] <config-name>"
+	exit 1
+fi
+
+PID=/run/openvpn.$2.pid
+CONF=/etc/openvpn/$2.conf
+OPTS="--fast-io"
+
+# Check for the existence of the specified config.
+if [ ! -f "$CONF" ]; then
+	echo "Can't find config file $CONF! Exiting."
+	exit 2
+fi
+
+case $1 in
+start)
+	if [ -f "$PID" ]; then
+		echo "VPN '$2' appears to be running already."
+		echo "If not, remove the stale pid file '$PID'. Exiting."
+		exit 3
+	fi
+	echo "Starting VPN '$2'..."
+	/usr/sbin/openvpn --config "$CONF" --writepid "$PID" \
+		--daemon "ovpn-$2" $OPTS
+	;;
+stop)
+	if [ ! -f "$PID" ]; then
+		echo "VPN '$2' doesn't appear to be running. Exiting."
+		exit 4
+	fi
+	echo "Stopping VPN '$2'..."
+	kill "$(cat "$PID")"
+	rm -f "$PID"
+	;;
+restart)
+	$0 stop "$2"
+	sleep 2
+	$0 start "$2"
+	;;
+*)
+	echo "usage: $0 [start|stop|restart] <config-name>"
+	;;
+esac
+
+# End of file.

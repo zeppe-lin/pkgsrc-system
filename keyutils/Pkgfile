@@ -1,0 +1,21 @@
+# Description: Tools to control the Linux key management system
+# URL:         https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/
+
+name=keyutils
+version=1.6.3
+release=1
+source=https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/$name.git/snapshot/$name-$version.tar.gz
+
+build () {
+	cd $name-$version
+
+	sed -e "/^CFLAGS/s/-g/$CFLAGS/"  \
+	    -e "s/rpmspec/true/"         \
+	    -i Makefile
+
+	make V=1
+	make USRLIBDIR=/usr/lib LIBDIR=/lib DESTDIR=$PKG install
+
+	mv $PKG/lib/pkgconfig $PKG/usr/lib
+	chmod 0644 $PKG/usr/lib/pkgconfig/libkeyutils.pc
+}

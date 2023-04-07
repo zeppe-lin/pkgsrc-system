@@ -1,0 +1,21 @@
+# Description: Multiple device (RAID) admin tool
+# URL:         http://neil.brown.name/blog/mdadm
+# Depends on:  eudev
+
+name=mdadm
+version=4.2
+release=1
+source="http://www.kernel.org/pub/linux/utils/raid/$name/$name-$version.tar.xz
+	mdadm-4.2-in_initrd-collision.patch"
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/mdadm-4.2-in_initrd-collision.patch
+
+	make CXFLAGS="$CFLAGS" STRIP=
+	make DESTDIR=$PKG install
+
+	make CXFLAGS="$CFLAGS" STRIP= mdadm.static
+	install -m 0755 mdadm.static $PKG/sbin/
+}

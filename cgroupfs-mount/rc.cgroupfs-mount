@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# /etc/rc.d/cgroupfs-mount: start/stop cgroupfs mounts
+#
+
+case $1 in
+start)
+	/usr/sbin/cgroupfs-mount
+	;;
+stop)
+	/usr/sbin/cgroupfs-umount
+	;;
+restart)
+	if mountpoint -q /sys/fs/cgroup; then
+		$0 stop
+	fi
+	$0 start
+	;;
+status)
+	if mountpoint -q /sys/fs/cgroup; then
+		echo "cgroupfs hierarchy is mounted"
+	else
+		echo "cgroupfs hierarchy is not mounted"
+	fi
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac
+
+# End of file.

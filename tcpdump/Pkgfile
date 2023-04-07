@@ -1,0 +1,21 @@
+# Description: Network sniffer with command line interface
+# URL:         https://www.tcpdump.org
+# Depends on:  libcap-ng libpcap openssl
+
+name=tcpdump
+version=4.99.3
+release=1
+source=https://github.com/the-$name-group/$name/archive/refs/tags/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$name-$version/configure  \
+		--prefix=/usr              \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm $PKG/usr/bin/tcpdump.$version
+}

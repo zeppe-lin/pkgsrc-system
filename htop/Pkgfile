@@ -1,0 +1,23 @@
+# Description: Interactive process viewer
+# URL:         https://github.com/htop-dev/htop
+# Depends on:  libcap libnl libunwind
+# Optional:    lm-sensors lsof strace
+
+name=htop
+version=3.2.2
+release=1
+source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
+
+build() {
+	# fix build
+	touch htop-$version/INSTALL
+
+	mkdir build; cd build
+
+	autoreconf -fi ../htop-$version
+	../htop-$version/configure  \
+		--prefix=/usr       \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,12 @@
+9ed71a50670aa99e12245cb3f5199142  0001-only-x86-has-cpuid-instruction.patch
+4ccbd46b0b1563067d0c31fe510ff89d  0002-remove-proc-compile-option-and-interfaces.patch
+5dd9add84e63b213295e2e2a30fd3667  0003-aperf-fix-MSR-read-on-32-bit.patch
+139b340b964e2c942dbe426b061c6bc8  0005-sysfs-increase-MAX_LINE_LEN.patch
+2242f015ca6b8478d6c1a3bfbca5ea48  0006-aperf-fix-compilation-on-x86-32-with-fPIC.patch
+0b7d50274fa8286796c9df0b156e2962  0007-po-add-missing-word-in-DE.patch
+a99653aab0d334569496a402389f062f  0008-make-NLS-optional.patch
+35dc88b7dfa18276b094355467957022  0009-add-cpufreq-aperf-manpage.patch
+6e08e20d319d70770b90be548027503f  0010-build-static-lib.patch
+a837db201e0bb724ccf617757a575e26  0011-dont-touch-po-files.patch
+e0c9f333a9546f71d17fd5a0546db79e  cpufrequtils-008.tar.xz
+a7edcfbc8cdf44eb3328126a62b1f861  rc.cpufreq

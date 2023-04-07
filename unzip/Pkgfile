@@ -1,0 +1,38 @@
+# Description: Decompress utility for zipfiles
+# URL:         http://infozip.sourceforge.net/UnZip.html
+
+name=unzip
+version=6.0
+_version=$(echo $version | sed 's/\.//g')
+release=1
+source="https://downloads.sourceforge.net/sourceforge/infozip/unzip${_version}.tar.gz
+	alt-iconv-utf8-print.patch
+	attribs-overflow.patch
+	cve-2014-8139.patch
+	cve-2014-8140.patch
+	cve-2014-8141.patch
+	cve-2016-9844.patch
+	cve-2018-1000035.patch
+	heap-overflow-infloop.patch
+	overflow.patch"
+
+build() {
+	cd unzip${_version}
+
+	patch -p1 -i $SRC/overflow.patch
+	patch -p1 -i $SRC/attribs-overflow.patch
+	patch -p1 -i $SRC/heap-overflow-infloop.patch
+	patch -p1 -i $SRC/cve-2014-8139.patch
+	patch -p1 -i $SRC/cve-2014-8140.patch
+	patch -p1 -i $SRC/cve-2014-8141.patch
+	patch -p1 -i $SRC/cve-2016-9844.patch
+	patch -p1 -i $SRC/cve-2018-1000035.patch
+	patch -p1 -i $SRC/alt-iconv-utf8-print.patch
+
+	#sed -i 's/-O3//' unix/configure
+
+	make -f unix/Makefile LOCAL_UNZIP="$CFLAGS" generic
+	make -f unix/Makefile prefix=$PKG/usr MANDIR=$PKG/usr/share/man/man1 install
+
+	ln -sf unzip $PKG/usr/bin/zipinfo
+}

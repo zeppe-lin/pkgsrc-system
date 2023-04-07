@@ -1,0 +1,15 @@
+# Description: Top like program to display I/O load
+# URL:         https://github.com/Tomas-M/iotop
+# Depends on:  ncurses
+
+name=iotop
+version=1.23
+release=1
+source=https://github.com/Tomas-M/iotop/releases/download/v$version/iotop-$version.tar.xz
+
+build() {
+	cd iotop-$version
+
+	make V=1 STRIP=
+	make DESTDIR=$PKG install
+}

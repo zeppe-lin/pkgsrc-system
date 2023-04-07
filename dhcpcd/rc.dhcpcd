@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# /etc/rc.d/dhcpcd: start/stop dhcpcd(8) client daemon
+#
+
+DEV=eth0
+
+SSD=/sbin/start-stop-daemon
+PROG=/sbin/dhcpcd
+PID=/run/dhcpcd/$DEV.pid
+OPTS="-q -z $DEV"
+
+case $1 in
+start)
+	# shellcheck disable=2086
+	$SSD --start --pidfile $PID --exec $PROG -- $OPTS $DEV
+	;;
+stop)
+	$SSD --stop --pidfile $PID --retry 10
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --pidfile $PID
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac
+
+# End of file.

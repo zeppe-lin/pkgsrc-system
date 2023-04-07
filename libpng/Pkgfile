@@ -1,0 +1,22 @@
+# Description: Library of PNG support functions with APNG support
+# URL:         http://www.libpng.org
+# Depends on:  zlib
+
+name=libpng
+version=1.6.39
+release=1
+source="https://download.sourceforge.net/$name/$name-$version.tar.xz
+        $name-apng.patch"
+
+build() {
+	patch -Np1 -d $name-$version -i $SRC/$name-apng.patch
+
+	mkdir build; cd build
+
+	../$name-$version/configure              \
+		--prefix=/usr                    \
+		--enable-hardware-optimizations  \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

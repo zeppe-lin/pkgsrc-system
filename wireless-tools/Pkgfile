@@ -1,0 +1,27 @@
+# Description: Tools to configure and manipulate wlan devices
+# URL:         https://hewlettpackard.github.io/wireless-tools/Tools.html
+
+name=wireless-tools
+version=30.pre9
+release=1
+source=https://hewlettpackard.github.io/$name/wireless_tools.$version.tar.gz
+
+build() {
+	cd wireless_tools.${version%.*}
+
+	# 1. fix compiler flags
+	# 2. build shared library
+	# 3. don't run ldconfig
+	# 4. suckless patch (sbase' ls has no -n option)
+	sed -e "s/CFLAGS=-O./CFLAGS+=/g" \
+	    -e "/^BUILD_STATIC/d"        \
+	    -e "/ldconfig/d"             \
+	    -e "s/ln -sfn/ln -sf/g"      \
+	    -i Makefile
+
+	make
+	make PREFIX=$PKG/usr INSTALL_MAN=$PKG/usr/share/man install
+
+	# remove localized man pages
+	rm -r $PKG/usr/share/man/cs* $PKG/usr/share/man/fr*
+}

@@ -1,0 +1,25 @@
+# Description: Perl YAML Serialization using XS and libyaml
+# URL:         https://metacpan.org/dist/YAML-LibYAML
+# Depends on:  perl
+
+name=p5-yaml-libyaml
+version=0.86
+release=1
+source=https://cpan.metacpan.org/authors/id/I/IN/INGY/YAML-LibYAML-$version.tar.gz
+
+build() {
+	cd YAML-LibYAML-$version
+
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	# remove junk and empty dirs
+	find $PKG -depth \
+		-type f \( -name perllocal.pod  \
+			-o -name \*.bs          \
+			-o -name .packlist      \
+			\) -delete ,            \
+		-type d -empty -delete
+}

@@ -1,0 +1,23 @@
+# Description: Interface for userspace filesystems
+# URL:         https://github.com/libfuse/
+
+name=fuse2
+version=2.9.9
+release=1
+source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz
+	glibc24.patch"
+
+build() {
+	cd fuse-$version
+
+	patch -p0 -i $SRC/glibc24.patch
+
+	UDEV_RULES_PATH='/lib/udev/rules.d' \
+		./configure --prefix=/usr --disable-example
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/dev $PKG/etc
+}

@@ -1,0 +1,17 @@
+# Description: List information about SCSI devices
+# URL:         http://sg.danny.cz/scsi/lsscsi.html
+
+name=lsscsi
+version=0.32
+release=1
+source=https://sg.danny.cz/scsi/$name-$version.tgz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

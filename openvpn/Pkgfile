@@ -1,0 +1,29 @@
+# Description: VPN Client
+# URL:         http://www.openvpn.net
+# Depends on:  docutils libcap-ng lz4 lzo
+
+name=openvpn
+version=2.6.2
+release=1
+source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
+	rc.$name"
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -fi ../$name-$version
+	../$name-$version/configure        \
+		--prefix=/usr              \
+		--mandir=/usr/share/man    \
+		--enable-iproute2          \
+		--disable-plugin-auth-pam  \
+		--disable-unit-tests       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
+}

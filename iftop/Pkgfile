@@ -1,0 +1,18 @@
+# Description: Real-time bandwidth usage information on a network interface 
+# URL:         http://www.ex-parrot.com/~pdw/iftop/
+# Depends on:  libpcap ncurses
+
+name=iftop
+version=1.0pre4
+release=1
+source=https://www.ex-parrot.com/~pdw/iftop/download/iftop-$version.tar.gz
+
+build() {
+	# build in separate dir is broken
+	cd iftop-$version
+
+	./configure --prefix=/usr
+
+	make V=1 CFLAGS="$CFLAGS -fcommon" iftop
+	make DESTDIR=$PKG install
+}

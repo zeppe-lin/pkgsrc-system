@@ -1,0 +1,29 @@
+# Description: Debugging and profiling system
+# URL:         https://valgrind.org
+# Depends on:  glibc-32
+# Optional:    gdb
+
+name=valgrind
+version=3.20.0
+release=1
+source=https://sourceware.org/pub/$name/$name-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -fi ../$name-$version
+	../$name-$version/configure    \
+		--prefix=/usr          \
+		--libexecdir=/usr/lib  \
+		--enable-lto=yes       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# man pages
+	install -m 0644 -Dt $PKG/usr/share/man/man1/ \
+		../$name-$version/docs/*.1
+
+	# remove junk
+	rm -rf $PKG/usr/share/doc
+}

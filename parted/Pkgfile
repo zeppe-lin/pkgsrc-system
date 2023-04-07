@@ -1,0 +1,26 @@
+# Description: Library and frontend to manipulate partition tables
+# URL:         http://www.gnu.org/software/parted
+# Depends on:  libdevmapper
+
+name=parted
+version=3.5
+release=1
+source="http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
+	$name-sysmacros.patch"
+
+build() {
+	patch -d $name-$version -p1 -i $SRC/$name-sysmacros.patch
+
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--disable-nls        \
+		--with-readline      \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/info
+}

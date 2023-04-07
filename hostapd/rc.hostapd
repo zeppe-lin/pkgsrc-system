@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# /etc/rc.d/hostapd: start/stop hostapd(8) daemon
+#
+
+PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+NAME="hostapd"
+USER="root"
+RUNDIR="/run/$NAME"
+PID="/run/$NAME.pid"
+CONFIG="/etc/hostapd.conf"
+PROG="/usr/sbin/hostapd"
+OPTS="-B -P $PIDFILE $CONFIG"
+
+case $1 in
+start)
+	install -d -m 755 -o $USER $RUNDIR || exit 1
+	start-stop-daemon --start --pidfile $PID --exec $PROG -- $OPTS
+	;;
+stop)
+	start-stop-daemon --stop --remove-pidfile --pidfile $PID --retry 60
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --pidfile $PID
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac
+
+# End of file.

@@ -1,0 +1,21 @@
+# Description: Wrapper for cryptsetup which makes use of a crypttab file
+# URL:         https://github.com/zeppe-lin/cryptmount
+# Depends on:  cryptsetup util-linux
+
+name=cryptmount
+version=0.1.1-d0bffb8
+release=1
+source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
+	crypttab"
+
+build() {
+	cd $name-${version#*-}*
+
+	make CRYPTSETUP_BIN=cryptsetup.static  \
+	     PREFIX=/                          \
+	     MANPREFIX=/usr/share/man          \
+	     DESTDIR=$PKG                      \
+	     install
+
+	install -m 0644 -Dt $PKG/etc/ $SRC/crypttab
+}

@@ -1,0 +1,86 @@
+# Description: Linux kernel (+Wi-Fi pentest patches)
+# URL:         https://www.kernel.org
+
+# 5.4 LTS (Dec, 2025)
+# https://www.kernel.org/category/releases.html
+
+name=linux
+version=5.4.232
+release=1
+_lwppver=1ad040b # Wi-Fi Pentest Patches version
+source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+	https://github.com/sighook/lwpp/archive/$_lwppver/lwpp-$_lwppver.tar.gz
+	x86_64-dotconfig"
+
+build() {
+	unset __kver __karch __imageloc
+	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
+
+	case $version in
+	*.*.*)	__kver=$version   ;;
+	*.*)	__kver=$version.0 ;;
+	esac
+
+	case "$(uname -m)" in
+	x86_64)
+		__karch=x86_64
+		__imageloc=arch/x86/boot/bzImage
+		;;
+	i386)
+		__karch=i386
+		__imageloc=arch/x86/boot/bzImage
+		;;
+	arm64)
+		__karch=arm64
+		__imageloc=arch/arm64/boot/Image
+		;;
+	arm)
+		__karch=arm
+		__imageloc=arch/arm/boot/zImage
+		;;
+	*)
+		echo "Unsupported architecture $(uname -m)"
+		exit 1
+		;;
+	esac
+
+	cd $name-$version
+
+	# apply Wi-Fi Pentest Patches
+	for _P in $SRC/lwpp-${_lwppver}*/${version%.*}/*.patch; do
+		patch -p1 -i $_P
+	done
+
+	make mrproper V=1
+
+	if [ -f $SRC/$__karch-dotconfig ]; then
+		cp $SRC/$__karch-dotconfig .config
+		make -j ${JOBS:-1} olddefconfig ARCH=$__karch
+	else
+		make -j ${JOBS:-1} ${__karch}_defconfig ARCH=$__karch
+	fi
+
+	# XXX HOTFIX
+	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
+	./scripts/config --disable CONFIG_IKHEADERS
+
+	make -j ${JOBS:-1} all V=1
+
+	make -j 1 modules_install V=1 ARCH=$__karch \
+		INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1
+
+	depmod -a -b $PKG $__kver
+
+	case "$__karch" in
+	arm64|arm)
+		make -j1 dtbs_install \
+			ARCH=$__karch INSTALL_DTBS_PATH=$PKG/boot/tdbs
+		;;
+	esac
+
+	install -m 0644 -D $__imageloc $PKG/boot/vmlinuz-$version
+	install -m 0644 -D .config     $PKG/boot/config-$version
+
+	unlink $PKG/lib/modules/$__kver/build
+	unlink $PKG/lib/modules/$__kver/source
+}

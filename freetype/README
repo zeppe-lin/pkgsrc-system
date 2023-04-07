@@ -1,0 +1,8 @@
+README freetype
+
+SUBPIXEL HINTING MODE
+
+	Edit /etc/profile.d/freetype2.sh and "source" this file from
+	/etc/profile.  Logout then in to see the change.
+
+End of file.

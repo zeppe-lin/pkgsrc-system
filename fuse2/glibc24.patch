@@ -1,0 +1,20 @@
+--- util/ulockmgr_server.c	2022-01-22 04:23:14.725691990 +0200
++++ util/ulockmgr_server.c.patched	2022-01-22 04:23:04.391692026 +0200
+@@ -123,7 +123,7 @@
+ 	}
+ 	return res;
+ }
+-
++/*
+ static int closefrom(int minfd)
+ {
+ 	DIR *dir = opendir("/proc/self/fd");
+@@ -141,7 +141,7 @@
+ 	}
+ 	return 0;
+ }
+-
++*/
+ static void send_reply(int cfd, struct message *msg)
+ {
+ 	int res = send(cfd, msg, sizeof(struct message), MSG_NOSIGNAL);

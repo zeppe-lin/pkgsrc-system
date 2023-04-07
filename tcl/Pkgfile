@@ -1,0 +1,62 @@
+# Description: Tcl scripting language
+# URL:         https://www.tcl.tk/
+# Depends on:  zlib
+
+name=tcl
+version=8.6.13
+release=1
+source=https://downloads.sourceforge.net/project/$name/Tcl/$version/$name$version-src.tar.gz
+
+build() {
+	# httpold tests require network
+	rm tcl${version}/tests/httpold.test \
+	   tcl${version}/tests/http.test    \
+	   tcl${version}/tests/env.test     \
+
+	sed -i '/chmod/s:555:755:g'  tcl${version}/unix/Makefile.in
+	sed -i 's:-O[2s]\?::g'       tcl${version}/unix/tcl.m4
+
+	mv tcl${version}/unix/configure.in tcl${version}/unix/configure.ac
+
+	mkdir build; cd build
+
+	autoreconf -fi ../tcl${version}/unix
+	../tcl${version}/unix/configure  \
+		--prefix=/usr            \
+		--mandir=/usr/share/man  \
+		--enable-threads         \
+		--enable-64bit           \
+
+	make V=1
+	make INSTALL_ROOT=$PKG install install-private-headers
+
+	install -d $PKG/usr/include/tcl/generic  \
+	           $PKG/usr/include/tcl/unix     \
+		   $PKG/usr/include/tcl/compat   \
+
+	cp ../tcl${version}/generic/*.h  $PKG/usr/include/tcl/generic
+	cp ../tcl${version}/unix/*.h     $PKG/usr/include/tcl/unix
+	cp ../tcl${version}/compat/*.h   $PKG/usr/include/tcl/compat
+
+	ln -s tclsh${version%.*}         $PKG/usr/bin/tclsh
+	ln -s libtcl${version%.*}.so     $PKG/usr/lib/libtcl.so
+	ln -s libtclstub${version%.*}.a  $PKG/usr/lib/libtclstub.a
+
+	# remove $SRC traces
+	sed -i  -e "s|$SRC/tcl$version/unix|/usr/lib|g"  \
+		-e "s|$SRC/tcl$version|/usr/include|g"   \
+		$PKG/usr/lib/tclConfig.sh
+
+	_tdbcver=tdbc1.1.5
+	sed -i  -e "s|$SRC/tcl$version/unix/pkgs/$_tdbcver|/usr/lib/$_tdbcver|g"            \
+		-e "s|$SRC/tcl$version/pkgs/$_tdbcver/generic|/usr/include|g"               \
+		-e "s|$SRC/tcl$version/pkgs/$_tdbcver/library|/usr/lib/tcl${version%.*}|g"  \
+		-e "s|$SRC/tcl$version/pkgs/$_tdbcver|/usr/include|g"                       \
+		$PKG/usr/lib/$_tdbcver/tdbcConfig.sh
+
+	_itclver=itcl4.2.3
+	sed -i  -e "s|$SRC/tcl$version/unix/pkgs/$_itclver|/usr/lib/$_itclver|g"  \
+		-e "s|$SRC/tcl$version/pkgs/$_itclver/generic|/usr/include|g"     \
+		-e "s|$SRC/tcl$version/pkgs/$_itclver|/usr/include|g"             \
+		$PKG/usr/lib/$_itclver/itclConfig.sh
+}

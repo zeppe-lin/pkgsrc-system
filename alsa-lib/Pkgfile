@@ -1,0 +1,21 @@
+# Description: ALSA libraries
+# URL:         https://www.alsa-project.org/
+
+name=alsa-lib
+version=1.2.8
+release=1
+source=https://www.alsa-project.org/files/pub/lib/$name-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--disable-python     \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -f $PKG/usr/share/alsa/alsa.conf.d/README
+}

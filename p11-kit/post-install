@@ -1,0 +1,2 @@
+#!/bin/sh -ex
+/usr/bin/update-ca-trust

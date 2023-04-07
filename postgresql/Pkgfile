@@ -1,0 +1,40 @@
+# Description: PostgreSQL RDBMS
+# URL:         https://www.postgresql.org
+# Depends on:  linux-pam openssl readline zlib
+
+# 14.x LTS (November 12, 2026)
+# https://www.postgresql.org/support/versioning/
+
+name=postgresql
+version=14.7
+release=1
+source="https://ftp.$name.org/pub/source/v$version/$name-$version.tar.bz2
+	rc.$name pam.$name
+	postgresql-perl-rpath.patch
+	postgresql-run-socket.patch"
+
+build() {
+	patch -d $name-$version -p1 -i $SRC/postgresql-run-socket.patch
+	patch -d $name-$version -p1 -i $SRC/postgresql-perl-rpath.patch
+
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--with-openssl       \
+		--with-pam           \
+		--disable-nls        \
+		--disable-rpath      \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	cd doc/src/sgml
+	make DESTDIR=$PKG install-man
+
+	install -m 0755 -D $SRC/rc.$name   $PKG/etc/rc.d/$name
+	install -m 0755 -D $SRC/pam.$name  $PKG/etc/pam.d/$name
+
+	# remove junk
+	rm -rf $PKG/usr/share/doc
+}

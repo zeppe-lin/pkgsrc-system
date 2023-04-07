@@ -1,0 +1,32 @@
+# Description: Control and monitor S.M.A.R.T. hard drives
+# URL:         https://smartmontools.sourceforge.net
+# Depends on:  libcap-ng
+
+name=smartmontools
+version=7.3
+release=1
+source="https://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	rc.smartd"
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure             \
+		--prefix=/usr                   \
+		--sysconfdir=/etc               \
+		--localstatedir=/var            \
+		--runstatedir=/run              \
+		--with-attributelog             \
+		--with-initscriptdir=/etc/rc.d  \
+		--with-libsystemd=no            \
+		--with-savestates               \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -d $PKG/var/lib/smartmontools
+	install -m 0755 -D $SRC/rc.smartd $PKG/etc/rc.d/smartd
+
+	# remove junk
+	rm -r $PKG/usr/share/doc/
+}

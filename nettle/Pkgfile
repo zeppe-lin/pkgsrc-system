@@ -1,0 +1,22 @@
+# Description: Low-level cryptographic library
+# URL:         http://www.lysator.liu.se/~nisse/nettle/
+# Depends on:  libgmp
+
+name=nettle
+version=3.8.1
+release=1
+source=https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
+
+build() {
+	# remove debug flag
+	sed -i 's/$CFLAGS -ggdb3/$CFLAGS/' $name-$version/configure*
+
+	mkdir build; cd build
+
+	../$name-$version/configure      \
+		--prefix=/usr            \
+		--disable-documentation  \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

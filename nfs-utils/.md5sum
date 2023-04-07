@@ -1,0 +1,11 @@
+b73896dfa214f861bb6a88e231c711bd  exports
+a0fc816dac2b429b56ef89ab6292be9a  idmapd.conf
+0961dc4777363b88f10305fc4957449f  nfs-utils-2.6.2.tar.xz
+8069ffbb5b2ab84e26a28aafc17daa30  rc.nfs
+4a7ddcf26c2c995d8bdda453ca8ab968  rc.nfsclient
+736361bacf77a666c9be45624517f1f3  rc.nfsdcld
+ee5c7023eca69aaabe5f6f0fc0b765f7  rc.nfsserver
+2c7d57b7d04a3b36bc49dd2dac43c93d  rc.rpc.idmapd
+89c19205491c1b07f27dbfbe61000b6b  rc.rpc.mountd
+5581cbc042c2990498e530d65978910a  rc.rpc.nfsd
+a89596e72acb1db4650c943c673a2a3d  rc.rpc.statd

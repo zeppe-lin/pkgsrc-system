@@ -1,0 +1,36 @@
+# Description: Freely available NTFS driver with read and write support
+# URL:         https://www.tuxera.com/community/ntfs-3g-download/
+# Depends on:  fuse2 gnutls libgcrypt util-linux
+
+name=ntfs-3g
+version=2022.5.17
+release=1
+source=https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
+
+build() {
+	mkdir build; cd build
+
+	install -d $PKG/lib
+	../ntfs-3g_ntfsprogs-$version/configure  \
+		--prefix=/usr                    \
+		--exec-prefix=/usr               \
+		--enable-ldscript                \
+		--disable-ldconfig               \
+		--with-fuse=external             \
+		--enable-posix-acls              \
+		--enable-xattr-mappings          \
+		--enable-extras                  \
+		--enable-crypto                  \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	ln -s ../usr/bin/ntfs-3g $PKG/sbin/mount.ntfs
+	ln -s ../usr/bin/ntfsfix $PKG/sbin/fsck.ntfs
+
+	ln -s ntfs-3g.8 $PKG/usr/share/man/man8/mount.ntfs.8
+	ln -s ntfsfix.8 $PKG/usr/share/man/man8/fsck.ntfs.8
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
+}

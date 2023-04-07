@@ -1,0 +1,26 @@
+# Description: System-wide profiler for Linux
+# URL:         https://oprofile.sourceforge.net
+# Depends on:  popt zlib
+
+name=oprofile
+version=1.4.0
+release=1
+source="https://download.sourceforge.net/$name/$name-$version.tar.gz
+	gcc12.patch"
+
+build() {
+	# fix build with gcc 12
+	patch -Np1 -d $name-$version -i $SRC/gcc12.patch
+
+	mkdir build; cd build
+
+	../$name-$version/configure    \
+		--prefix=/usr          \
+		--with-kernel-support  \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
+}

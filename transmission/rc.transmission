@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# /etc/rc.d/transmissiond: start/stop transmission-daemon(8)
+#
+
+# Run as user.
+USER=username
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/bin/transmission-daemon
+PID=/run/transmission.pid
+LOG=/var/log/transmission.log
+OPTS="--foreground --port 9091 --logfile $LOG"
+
+case $1 in
+start)
+	[ ! -f $LOG ] && touch $LOG
+	$SSD --start --make-pidfile --pidfile $PID --chuid $USER \
+		--background --exec $PROG -O $LOG -- $OPTS
+	;;
+stop)
+	$SSD --stop --remove-pidfile --pidfile $PID --retry 60
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --pidfile $PID
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac	
+
+# End of file.

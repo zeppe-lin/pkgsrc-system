@@ -1,0 +1,18 @@
+# Description: Monitoring the progress of data through a pipeline
+# URL:         http://www.ivarch.com/programs/pv.shtml
+
+name=pv
+version=1.6.20
+release=1
+source=https://www.ivarch.com/programs/sources/pv-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../pv-$version/configure  \
+		--prefix=/usr     \
+		--disable-nls     \
+
+	make V=1
+	make DESTDIR=$PKG install
+}

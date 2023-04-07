@@ -1,0 +1,30 @@
+# Description: GNU privacy guard
+# URL:         https://www.gnupg.org
+# Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3
+
+name=gnupg
+version=2.4.0
+release=1
+source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	# --disable-tests is omitted for gpgscm utility
+	../$name-$version/configure    \
+		--prefix=/usr          \
+		--libexecdir=/usr/lib  \
+		--localstatedir=/var   \
+		--sysconfdir=/etc      \
+		--disable-ldap         \
+		--disable-nls          \
+		#--disable-tests       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/info                \
+	      $PKG/usr/share/doc                 \
+	      $PKG/usr/share/gnupg/help*
+}

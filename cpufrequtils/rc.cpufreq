@@ -1,0 +1,27 @@
+#!/bin/sh -e
+#
+# /etc/rc.d/cpufreq: start/stop cpufreq settings
+#
+# See ``apropos cpufreq'' to obtain more information.
+#
+
+affect_change() {
+	logger "Running cpufreq-set $*"
+	for c in $(cpufreq-info -o | awk '$1 == "CPU" { print $2 }'); do
+		cpufreq-set -c $c $*
+	done
+}
+
+case $1 in
+start)
+	affect_change --governor ondemand
+	;;
+stop)
+	affect_change --governor performance
+	;;
+*)
+	echo "usage: $0 [start|stop]"
+	;;
+esac
+
+# End of file.

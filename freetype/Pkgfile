@@ -1,0 +1,33 @@
+# Description: TrueType font rendering engine
+# URL:         https://www.freetype.org
+# Depends on:  bzip2 glib libpng
+
+name=freetype
+version=2.13.0
+release=1
+source="http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
+	freetype2.sh
+	0001-Enable-table-validation-modules.patch
+	0002-Enable-subpixel-rendering.patch
+	0003-Enable-infinality-subpixel-hinting.patch
+	0004-Enable-long-PCF-family-names.patch
+	0005-builds-meson-parse_modules_cfg.py-Handle-gxvalid-and.patch"
+
+build() {
+	for _p in $SRC/*.patch; do
+		patch -Np1 -d $name-$version -i $_p
+	done
+
+	meson build $name-$version         \
+		--prefix=/usr              \
+		--buildtype=plain          \
+		--wrap-mode=nodownload     \
+		-D b_lto=true              \
+		-D b_pie=true              \
+		-D default_library=shared  \
+
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
+
+	install -m 0644 -Dt $PKG/etc/profile.d/ freetype2.sh
+}

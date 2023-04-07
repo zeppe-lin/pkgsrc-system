@@ -1,0 +1,23 @@
+# Description: Software documentation system
+# URL:         http://www.gnu.org/software/texinfo/
+# Depends on:  ncurses
+
+name=texinfo
+version=7.0.3
+release=1
+source=ftp://ftp.gnu.org/gnu/texinfo/$name-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--disable-tp-tests   \
+		--disable-nls        \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/info
+}

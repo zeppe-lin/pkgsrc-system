@@ -1,0 +1,23 @@
+#!/bin/sh -e
+#
+# /etc/rc.d/alsa: store/restore ALSA mixer levels
+#
+
+case $1 in
+start)
+	/usr/sbin/alsactl restore
+	;;
+stop)
+	/usr/sbin/alsactl store
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file.

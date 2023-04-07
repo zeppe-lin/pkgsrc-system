@@ -1,0 +1,26 @@
+# Description: Interface for userspace filesystems
+# URL:         https://github.com/libfuse
+
+name=fuse
+version=3.14.1
+release=1
+source=https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz
+
+build() {
+	meson setup build fuse-$version  \
+		--prefix=/usr            \
+		--sysconfdir=/etc        \
+		--buildtype=plain        \
+		--wrap-mode=nodownload   \
+		-D b_lto=true            \
+		-D b_pie=true            \
+		-D tests=false           \
+		-D examples=false        \
+		-D initscriptdir=        \
+
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
+
+	# remove junk
+	rm -r $PKG/dev $PKG/etc $PKG/lib
+}

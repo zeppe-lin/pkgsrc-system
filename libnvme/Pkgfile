@@ -1,0 +1,28 @@
+# Description: C Library for NVM Express on Linux
+# URL:         https://github.com/linux-nvme/libnvme/
+# Depends on:  json-c openssl
+
+name=libnvme
+version=1.4
+release=1
+source=https://github.com/linux-nvme/$name/archive/v$version/$name-v$version.tar.gz
+
+build() {
+	# disable tests and examples
+	sed -e "/^subdir('test')/d"       \
+	    -e "/^subdir('examples')/d"   \
+	    -i $name-$version/meson.build
+
+	meson setup build $name-$version  \
+		--prefix=/usr             \
+		--buildtype=plain         \
+		--wrap-mode=nodownload    \
+		-D b_lto=true             \
+		-D b_pie=true             \
+		-D docs=man               \
+		-D python=disabled        \
+		-D libdbus=disabled       \
+
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
+}

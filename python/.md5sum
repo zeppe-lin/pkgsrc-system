@@ -1,0 +1,5 @@
+ebbe2c197d4cf6fbce10a17e09d2a609  CVE-2019-20907.patch
+59562d92ee153e7501f73be4ebd9e636  CVE-2020-26116.patch
+08323c8fe8a3c55d4609ebd6cd0b41ee  CVE-2021-3177.patch
+fd6cc8ec0a78c44036f825e739f36e5a  Python-2.7.18.tar.xz
+387d5f6d00d2be01ecb87216cac0f88c  pyconfig.h

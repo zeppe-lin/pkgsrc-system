@@ -1,0 +1,45 @@
+# Description: User space IEEE 802.1X/WPA supplicant (wireless client)
+# URL:         http://hostap.epitest.fi/wpa_supplicant
+# Depends on:  libnl openssl readline
+
+name=wpa-supplicant
+version=2.10
+release=1
+source="https://w1.fi/releases/wpa_supplicant-$version.tar.gz
+	wpa_supplicant.conf rc.wpa_supplicant"
+
+build() {
+	cd wpa_supplicant-$version/wpa_supplicant
+
+	# disable dbus
+	sed -i '/^CONFIG_CTRL_IFACE_DBUS=/d'       defconfig
+	sed -i '/^CONFIG_CTRL_IFACE_DBUS_INTRO=/d' defconfig
+	sed -i '/^CONFIG_CTRL_IFACE_DBUS_NEW=/d'   defconfig
+
+	cp defconfig .config
+	cat >> .config <<EOF
+CONFIG_READLINE=y
+CONFIG_LIBNL32=y
+CFLAGS+=-I/usr/include/libnl3
+EOF
+
+	make V=1 BINDIR=/usr/sbin LIBDIR=/usr/lib
+
+	install -m 0755 -Dt $PKG/usr/sbin/ \
+		wpa_cli wpa_passphrase wpa_supplicant
+
+	install -m 0644 -Dt $PKG/usr/share/man/man5/ \
+		doc/docbook/wpa_supplicant.conf.5
+
+	install -m 0644 -Dt $PKG/usr/share/man/man8/ \
+		doc/docbook/wpa_background.8  \
+		doc/docbook/wpa_cli.8         \
+		doc/docbook/wpa_passphrase.8  \
+		doc/docbook/wpa_supplicant.8  \
+
+	# config
+	install -m 0600 -Dt $PKG/etc/ $SRC/wpa_supplicant.conf
+
+	# rc script
+	install -m 0755 -D $SRC/rc.wpa_supplicant $PKG/etc/rc.d/wpa_supplicant
+}

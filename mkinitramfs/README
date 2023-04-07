@@ -1,0 +1,44 @@
+README mkinitramfs
+
+USAGE
+
+	To use mkinitramfs, read mkinitramfs.config(5) and setup
+	/etc/mkinitramfs/config file conform your needs.  Next, run the
+	following command:
+
+		sudo mkinitramfs -o "/boot/initramfs-$(uname -r).img"
+
+	Then update your bootloader config.  For example, if you're using grub
+	(default zeppe-lin bootloader):
+
+		sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+	Reboot.
+
+INITRAMFS WITH ENCRYPTED ROOT (requires cryptsetup)
+
+	In manual kernel setup is recommended to include the following
+	necessary features (statically or as modules):
+
+	General Setup --->
+	  [*] Initial RAM filesystem and RAM disk (iniramfs/initrd) support
+
+	Device Drivers --->
+	  Multiple devices driver support (RAID and LVM) --->
+	    [*] Device mapper support
+	    [*] Crypt target support
+
+	Cryptographic API --->
+	  <*> XTS support
+	  <*> SHA224 and SHA256 digest algorithm
+	  <*> AES cipher algorithms
+	  <*> AES cipher algorithms (x86_64)
+	  <*> User-space interface for hash algorithms
+	  <*> User-space interface for symmetric key cipher algorithms
+
+	Read the mkinitramfs' manual pages to see the various configuration
+	settings:
+
+		apropos mkinitramfs
+
+End of file.

@@ -1,0 +1,23 @@
+# Description: Small library defining error values for GnuPG components
+# URL:         https://www.gnupg.org
+
+name=libgpg-error
+version=1.46
+release=1
+source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure                \
+		--prefix=/usr                      \
+		--disable-doc                      \
+		--disable-languages                \
+		--disable-nls                      \
+		--disable-tests                    \
+		--enable-install-gpg-error-config  \
+		--enable-static                    \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
