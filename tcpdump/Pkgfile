@@ -3,15 +3,15 @@
 # Depends on:  libcap-ng libpcap openssl
 
 name=tcpdump
-version=4.99.3
+version=4.99.4
 release=1
 source=https://github.com/the-$name-group/$name/archive/refs/tags/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$name-$version/configure  \
-		--prefix=/usr              \
+	../$name-$version/configure  \
+		--prefix=/usr        \
 
 	make V=1
 	make DESTDIR=$PKG install
