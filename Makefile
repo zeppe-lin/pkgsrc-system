@@ -8,7 +8,7 @@ check-deps:
 	@pkgman --root= --no-std-config                              \
 		--config-append="pkgsrcdir ${CURDIR}"                \
 		--config-append="pkgsrcdir ${CURDIR}/../pkgsrc-core" \
-		list-orphans -v | grep '(required by .*)' ||:
+		list-orphans -v | grep '(required by .*)' >&2 ||:
 
 # vim: cc=72:tw=70
 # End of file.
