@@ -15,14 +15,14 @@ drwxr-xr-x	root/root	usr/include/parted/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libparted-fs-resize.a
 -rwxr-xr-x	root/root	usr/lib/libparted-fs-resize.la
-lrwxrwxrwx	root/root	usr/lib/libparted-fs-resize.so -> libparted-fs-resize.so.0.0.4
-lrwxrwxrwx	root/root	usr/lib/libparted-fs-resize.so.0 -> libparted-fs-resize.so.0.0.4
--rwxr-xr-x	root/root	usr/lib/libparted-fs-resize.so.0.0.4
+lrwxrwxrwx	root/root	usr/lib/libparted-fs-resize.so -> libparted-fs-resize.so.0.0.5
+lrwxrwxrwx	root/root	usr/lib/libparted-fs-resize.so.0 -> libparted-fs-resize.so.0.0.5
+-rwxr-xr-x	root/root	usr/lib/libparted-fs-resize.so.0.0.5
 -rw-r--r--	root/root	usr/lib/libparted.a
 -rwxr-xr-x	root/root	usr/lib/libparted.la
-lrwxrwxrwx	root/root	usr/lib/libparted.so -> libparted.so.2.0.4
-lrwxrwxrwx	root/root	usr/lib/libparted.so.2 -> libparted.so.2.0.4
--rwxr-xr-x	root/root	usr/lib/libparted.so.2.0.4
+lrwxrwxrwx	root/root	usr/lib/libparted.so -> libparted.so.2.0.5
+lrwxrwxrwx	root/root	usr/lib/libparted.so.2 -> libparted.so.2.0.5
+-rwxr-xr-x	root/root	usr/lib/libparted.so.2.0.5
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libparted-fs-resize.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libparted.pc

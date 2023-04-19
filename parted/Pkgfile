@@ -3,7 +3,7 @@
 # Depends on:  libdevmapper
 
 name=parted
-version=3.5
+version=3.6
 release=1
 source="http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 	$name-sysmacros.patch"
