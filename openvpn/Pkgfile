@@ -3,7 +3,7 @@
 # Depends on:  docutils libcap-ng lz4 lzo
 
 name=openvpn
-version=2.6.2
+version=2.6.3
 release=1
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	rc.$name"
