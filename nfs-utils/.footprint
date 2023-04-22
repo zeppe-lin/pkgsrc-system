@@ -2,8 +2,6 @@ drwxr-xr-x	root/root	etc/
 -rw-r--r--	root/root	etc/exports
 drwxr-xr-x	root/root	etc/exports.d/
 -rw-r--r--	root/root	etc/idmapd.conf
-drwxr-xr-x	root/root	etc/modprobe.d/
--rw-r--r--	root/root	etc/modprobe.d/50-nfs.conf
 -rw-r--r--	root/root	etc/nfs.conf
 -rw-r--r--	root/root	etc/nfsmount.conf
 drwxr-xr-x	root/root	etc/rc.d/
@@ -49,6 +47,7 @@ drwxr-xr-x	root/root	usr/lib/udev/rules.d/
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/blkmapd
 -rwxr-xr-x	root/root	usr/sbin/exportfs
+-rwxr-xr-x	root/root	usr/sbin/fsidd
 -rwxr-xr-x	root/root	usr/sbin/mountstats
 -rwxr-xr-x	root/root	usr/sbin/nfsconf
 -rwxr-xr-x	root/root	usr/sbin/nfsdcld
