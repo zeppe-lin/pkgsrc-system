@@ -3,14 +3,14 @@
 # Depends on:  eudev
 
 name=dhcpcd
-version=10.0.0
+version=10.0.1
 release=1
-source="https://github.com/NetworkConfiguration/$name/archive/refs/tags/$name-$version.tar.gz
+source="https://github.com/NetworkConfiguration/$name/releases/download/v$version/$name-$version.tar.xz
 	rc.$name"
 
 build() {
 	# build in separate dir is broken
-	cd $name-$name-$version
+	cd $name-$version
 
 	./configure                       \
 		--prefix=                 \
