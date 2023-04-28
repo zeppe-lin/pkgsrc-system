@@ -285,6 +285,8 @@ drwxr-xr-x	root/root	usr/lib/valgrind/
 -rw-r--r--	root/root	usr/lib/valgrind/s390x-linux64.xml
 -rw-r--r--	root/root	usr/lib/valgrind/s390x-vx-linux-valgrind.xml
 -rw-r--r--	root/root	usr/lib/valgrind/s390x-vx-linux.xml
+-rw-r--r--	root/root	usr/lib/valgrind/valgrind-monitor-def.py
+-rw-r--r--	root/root	usr/lib/valgrind/valgrind-monitor.py
 -rwxr-xr-x	root/root	usr/lib/valgrind/vgpreload_core-amd64-linux.so
 -rwxr-xr-x	root/root	usr/lib/valgrind/vgpreload_core-x86-linux.so
 -rwxr-xr-x	root/root	usr/lib/valgrind/vgpreload_dhat-amd64-linux.so
