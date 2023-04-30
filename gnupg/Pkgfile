@@ -3,7 +3,7 @@
 # Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3
 
 name=gnupg
-version=2.4.0
+version=2.4.1
 release=1
 source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
