@@ -4,7 +4,7 @@
 
 name=screen
 version=4.9.0
-release=1
+release=2
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
 	pam.$name"
 
@@ -16,6 +16,7 @@ build() {
 		--prefix=/usr        \
 		--enable-color256    \
 		--enable-pam         \
+		--runstatedir=/run   \
 
 	make V=1
 	make DESTDIR=$PKG install
