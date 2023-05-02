@@ -5,7 +5,7 @@
 # https://www.kernel.org/category/releases.html
 
 name=linux
-version=5.4.232
+version=5.4.238
 release=1
 _lwppver=1ad040b # Wi-Fi Pentest Patches version
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
