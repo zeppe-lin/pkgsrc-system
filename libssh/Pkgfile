@@ -1,9 +1,9 @@
 # Description: SSH library
-# URL:         https://libssh.org/
+# URL:         https://libssh.org
 # Depends on:  openssl zlib
 
 name=libssh
-version=0.10.4
+version=0.10.5
 release=1
 source=https://www.libssh.org/files/${version%.*}/$name-$version.tar.xz
 
