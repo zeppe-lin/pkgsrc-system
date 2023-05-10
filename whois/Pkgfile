@@ -3,9 +3,9 @@
 # Depends on:  libidn2
 
 name=whois
-version=5.5.16
+version=5.5.17
 release=1
-source="https://ftp.debian.org/debian/pool/main/w/$name/${name}_$version.tar.xz
+source="https://ftp.debian.org/debian/pool/main/w/$name/whois_$version.tar.xz
 	whois.conf"
 
 build() {
