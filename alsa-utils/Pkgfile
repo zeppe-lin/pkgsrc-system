@@ -3,7 +3,7 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.8
+version=1.2.9
 release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	rc.alsa
@@ -11,16 +11,16 @@ source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	f77a269370af917585df59d8c21c89bca07b5b73.patch"
 
 build() {
-	for _P in $SRC/*.patch; do
-		patch -d $name-$version -p1 -i $_P
-	done
+	# build in separate dir is broken
+	cd $name-$version
+
+	patch -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
+	patch -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
 
 	# fix error when compiling alsatplg
 	CFLAGS="$CFLAGS -latopology"
 
-	mkdir build; cd build
-
-	../$name-$version/configure  \
+	./configure                  \
 		--prefix=/usr        \
 		--disable-alsaconf   \
 		--disable-alsatest   \
