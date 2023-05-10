@@ -1,9 +1,9 @@
 # Description: Text processing system
-# URL:         http://docutils.sourceforge.net/
+# URL:         http://docutils.sourceforge.net
 # Depends on:  py3-setuptools
 
 name=docutils
-version=0.19
+version=0.20
 release=1
 source=https://files.pythonhosted.org/packages/source/d/$name/$name-$version.tar.gz
 
