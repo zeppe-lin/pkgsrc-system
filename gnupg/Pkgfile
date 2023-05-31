@@ -3,7 +3,7 @@
 # Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3
 
 name=gnupg
-version=2.4.1
+version=2.4.2
 release=1
 source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
@@ -11,7 +11,7 @@ build() {
 	mkdir build; cd build
 
 	# --disable-tests is omitted for gpgscm utility
-	../$name-$version/configure    \
+	../gnupg-$version/configure    \
 		--prefix=/usr          \
 		--libexecdir=/usr/lib  \
 		--localstatedir=/var   \
@@ -24,7 +24,7 @@ build() {
 	make DESTDIR=$PKG install
 
 	# remove junk
-	rm -r $PKG/usr/share/info                \
-	      $PKG/usr/share/doc                 \
+	rm -r $PKG/usr/share/doc       \
+	      $PKG/usr/share/info      \
 	      $PKG/usr/share/gnupg/help*
 }
