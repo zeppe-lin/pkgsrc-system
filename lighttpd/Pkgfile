@@ -3,7 +3,7 @@
 # Depends on:  libpcre2 openssl zlib
 
 name=lighttpd
-version=1.4.69
+version=1.4.71
 release=1
 source="https://github.com/$name/$name${version%.*}/archive/refs/tags/$name-$version.tar.gz
 	$name.conf rc.$name"
