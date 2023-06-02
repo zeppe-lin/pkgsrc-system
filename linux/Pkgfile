@@ -5,7 +5,7 @@
 # https://www.kernel.org/category/releases.html
 
 name=linux
-version=5.4.238
+version=5.4.244
 release=1
 _lwppver=1ad040b # Wi-Fi Pentest Patches version
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
@@ -46,7 +46,7 @@ build() {
 
 	cd $name-$version
 
-	# apply Wi-Fi Pentest Patches
+	# Apply Wi-Fi Pentest Patches.
 	for _P in $SRC/lwpp-${_lwppver}*/${version%.*}/*.patch; do
 		patch -p1 -i $_P
 	done
