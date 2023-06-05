@@ -4,17 +4,18 @@
 # Optional:    texlive
 
 name=libunwind
-version=1.6.2
+version=1.7.0
+_version=$(echo $version | sed 's/\.//2')
 release=1
-source=https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz
+source=https://github.com/$name/$name/releases/download/v$version/$name-$_version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure     \
+	../$name-$_version/configure    \
 		--prefix=/usr           \
-		--enable-documentation  \
 		--disable-tests         \
+		#--enable-documentation  \
 
 	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
