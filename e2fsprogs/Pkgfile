@@ -1,5 +1,5 @@
 # Description: Ext2/3/4 Filesystem Utilities
-# URL:         http://e2fsprogs.sourceforge.net/
+# URL:         https://e2fsprogs.sourceforge.net
 # Depends on:  util-linux
 
 name=e2fsprogs
