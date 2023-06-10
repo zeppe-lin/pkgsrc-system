@@ -1,11 +1,11 @@
 # Description: Compression and file packaging/archive utility
-# URL:         http://infozip.sourceforge.net/Zip.html
+# URL:         https://infozip.sourceforge.net/Zip.html
 # Depends on:  bzip2
 
 name=zip
 version=3.0
 release=1
-source=http://downloads.sourceforge.net/sourceforge/infozip/zip30.tar.gz
+source=https://downloads.sourceforge.net/sourceforge/infozip/zip30.tar.gz
 
 build() {
 	cd zip30
