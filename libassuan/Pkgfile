@@ -1,9 +1,9 @@
 # Description: IPC library for the GnuPG components
-# URL:         https://www.gnupg.org/
+# URL:         https://www.gnupg.org
 # Depends on:  libgpg-error
 
 name=libassuan
-version=2.5.5
+version=2.5.6
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
