@@ -1,7 +1,5 @@
 0692e174b9c5447b52687a65b423d9d4  0001-Enable-table-validation-modules.patch
 1690704de94997b08e079ccef035f540  0002-Enable-subpixel-rendering.patch
-7029d8c5ae646b2cf069115f8bd5c4b2  0003-Enable-infinality-subpixel-hinting.patch
 80b1e5901a9bd0a6083b3a0d703474e3  0004-Enable-long-PCF-family-names.patch
-ca9e43db75281e14a76123e53a849c48  0005-builds-meson-parse_modules_cfg.py-Handle-gxvalid-and.patch
-fe73327ebbf0b629f3ad24be656d59de  freetype-2.13.0.tar.xz
+e4c3f0d8453a2a7993ae784912d6f19a  freetype-2.13.1.tar.xz
 fef731289a0f86933ff2d0b3615c3de0  freetype2.sh
