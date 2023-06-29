@@ -2,7 +2,7 @@
 # URL:         https://github.com/ecki/net-tools
 
 name=net-tools
-version=2.10-4030929
+version=2.10-20a78e0
 release=1
 source=https://github.com/ecki/$name/archive/${version#*-}/$name-$version.tar.gz
 
