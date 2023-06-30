@@ -1,6 +1,6 @@
 # Description: C Library for NVM Express on Linux
 # URL:         https://github.com/linux-nvme/libnvme/
-# Depends on:  json-c openssl
+# Depends on:  json-c keyutils openssl
 
 name=libnvme
 version=1.5
