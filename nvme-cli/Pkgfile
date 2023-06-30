@@ -1,6 +1,6 @@
 # Description: NVMe management command line interface
 # URL:         https://github.com/linux-nvme/nvme-cli
-# Depends on:  libnvme zlib
+# Depends on:  libnvme
 
 name=nvme-cli
 version=2.5
