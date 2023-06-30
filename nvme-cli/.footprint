@@ -99,7 +99,11 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ns-descs.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ns-rescan.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-nvm-id-ctrl.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-nvme-mi-recv.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-nvme-mi-send.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ocp-clear-fw-activate-history.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-ocp-clear-pcie-correctable-error-counters.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-ocp-eol-plp-failure-mode.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ocp-latency-monitor-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-ocp-smart-add-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-persistent-event-log.1.gz
