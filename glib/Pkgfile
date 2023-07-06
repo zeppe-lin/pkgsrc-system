@@ -3,7 +3,7 @@
 # Depends on:  elfutils libffi libpcre util-linux
 
 name=glib
-version=2.76.3
+version=2.76.4
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -41,12 +41,13 @@ build() {
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
+	# disable hash randomization
 	export PYTHONHASHSEED=0
 
-	for _i in '' -O -OO; do /usr/bin/python3 $_i -m compileall \
-		-d  /usr/share/glib-2.0/codegen \
-		$PKG/usr/share/glib-2.0/codegen
-	done
+	_path=/usr/share/glib-2.0/codegen
+	/usr/bin/python3     -m compileall -d $_path $PKG/$_path
+	/usr/bin/python3 -O  -m compileall -d $_path $PKG/$_path
+	/usr/bin/python3 -OO -m compileall -d $_path $PKG/$_path
 
 	install -m 0644 $SRC/gschemas.compiled \
 		$PKG/usr/share/glib-2.0/schemas/gschemas.compiled
