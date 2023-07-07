@@ -4,13 +4,15 @@
 
 name=grub2
 version=2.06
-release=2
+release=3
 source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
 	http://jaeger.morpheus.net/linux/crux/files/unifont-9.0.06.pcf.gz
-	grub2-tweaks.patch"
+	grub2-tweaks.patch
+	csum_seed.patch"
 
 build() {
 	patch -p1 -d grub-$version -i $SRC/grub2-tweaks.patch
+	patch -p1 -d grub-$version -i $SRC/csum_seed.patch
 
 	export CFLAGS="$CFLAGS -Wno-error"
 	export PYTHON=python3
