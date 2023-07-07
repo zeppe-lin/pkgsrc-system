@@ -4,10 +4,13 @@
 
 name=grub2-efi
 version=2.06
-release=1
-source=https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+release=2
+source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+	../grub2/csum_seed.patch"
 
 build() {
+	patch -Np1 -d grub-$version -i $SRC/csum_seed.patch
+
 	export CFLAGS="$CFLAGS -Wno-error"
 	export PYTHON=python3
 
