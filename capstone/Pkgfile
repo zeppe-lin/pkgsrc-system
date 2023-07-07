@@ -3,19 +3,28 @@
 # Depends on:  py3-setuptools
 
 name=capstone
-version=4.0.2
+version=5.0.0-650e85d
 release=1
-source=https://github.com/aquynh/$name/archive/$version/$name-$version.tar.gz
+source=https://github.com/$name-engine/$name/archive/${version#*-}/$name-${version#*-}.tar.gz
 
 build() {
-	cd $name-$version
+	cd $name-${version#*-}*
 
+	sed -i 's/^#PKG_TAG = rc4/PKG_TAG = /' pkgconfig.mk
+
+	# library
+	export CAPSTONE_BUILD_CORE_ONLY=yes
 	make V=1
 	make DESTDIR=$PKG install
 
-	# build and install python3 bindings
+	# cstool
+	make V=1 -C cstool
+	install -m 0755 -Dt $PKG/usr/bin/ cstool/cstool
+
+	# Build and install python3 bindings.
 	cd bindings/python
-	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG -O1
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=2
 
 	# remove sdist metadata, as wheel metadata will be used with
 	# py3-pip
