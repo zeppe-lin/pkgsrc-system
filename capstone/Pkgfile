@@ -15,7 +15,8 @@ build() {
 
 	# build and install python3 bindings
 	cd bindings/python
-	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG -O1
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=2
 
 	# remove sdist metadata, as wheel metadata will be used with
 	# py3-pip
