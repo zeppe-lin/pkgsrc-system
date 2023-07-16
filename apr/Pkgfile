@@ -5,8 +5,10 @@
 name=apr
 version=1.7.0
 release=1
-source="https://www.apache.org/dist/apr/apr-$version.tar.bz2
-        https://www.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
+#source="https://www.apache.org/dist/apr/apr-$version.tar.bz2
+#        https://www.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
+source="https://archive.apache.org/dist/apr/apr-$version.tar.bz2
+	https://archive.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
 
 build(){
 	mkdir $SRC/build-1; cd $SRC/build-1
