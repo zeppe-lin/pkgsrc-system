@@ -3,9 +3,9 @@
 # Depends on:  libaio libtirpc ncurses openssl rpcsvc-proto zlib
 
 name=mysql
-version=5.7.39
+version=5.7.41
 release=1
-source="https://cdn.mysql.com/Downloads/MySQL-${version%.*}/$name-boost-$version.tar.gz
+source="https://distfiles.gentoo.org/distfiles/$name-boost-$version.tar.gz
 	my.cnf rc.mysqld"
 
 build() {
