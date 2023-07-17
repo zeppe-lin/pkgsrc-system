@@ -1,5 +1,5 @@
 # Description: XML library version 2
-# URL:         https://xmlsoft.org
+# URL:         https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
 # Depends on:  xz zlib
 
 name=libxml2

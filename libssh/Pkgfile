@@ -1,5 +1,5 @@
 # Description: SSH library
-# URL:         https://libssh.org
+# URL:         https://www.libssh.org/
 # Depends on:  openssl zlib
 
 name=libssh

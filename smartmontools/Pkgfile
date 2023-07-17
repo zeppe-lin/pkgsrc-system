@@ -1,5 +1,5 @@
 # Description: Control and monitor S.M.A.R.T. hard drives
-# URL:         https://smartmontools.sourceforge.net
+# URL:         https://www.smartmontools.org/
 # Depends on:  libcap-ng
 
 name=smartmontools
