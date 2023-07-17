@@ -2,7 +2,7 @@
 # URL:         https://github.com/zeppe-lin/handbook
 
 name=handbook
-version=1.2.2-9450b7a
+version=1.2.2-86ae568
 release=1
 source=https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 
