@@ -1,16 +1,11 @@
 #!/bin/sh -ex
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
 
-if ! /usr/bin/getent group dhcpcd; then
-	/usr/sbin/groupadd -r dhcpcd
-fi
+getent group  dhcpcd >/dev/null || groupadd -r dhcpcd
+getent passwd dhcpcd >/dev/null || useradd  -g dhcpcd -r \
+	-d /var/lib/dhcpcd -s /bin/false dhcpcd
 
-if ! /usr/bin/getent passwd dhcpcd; then
-       /usr/sbin/useradd -g dhcpcd -r -d /var/lib/dhcpcd \
-	       -s /bin/false dhcpcd
-fi
-
-/usr/bin/passwd -l dhcpcd
-
-/bin/chown -R dhcpcd:dhcpcd /var/lib/dhcpcd
+passwd -l dhcpcd
+chown -R dhcpcd:dhcpcd /var/lib/dhcpcd
 
 # End of file.
