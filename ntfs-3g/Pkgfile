@@ -3,33 +3,46 @@
 # Depends on:  fuse2 gnutls libgcrypt util-linux
 
 name=ntfs-3g
-version=2022.5.17
+version=2022.10.3
 release=1
-source=https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
+source="https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
+	fsck.ntfs fsck.ntfs.8.pod"
 
 build() {
 	mkdir build; cd build
 
+	# $DESTDIR/lib must exist during install; the Makefile honors
+	# EPREFIX by moving to the desired location afterward.
 	install -d $PKG/lib
+
 	../ntfs-3g_ntfsprogs-$version/configure  \
 		--prefix=/usr                    \
 		--exec-prefix=/usr               \
-		--enable-ldscript                \
+		--bindir=/usr/bin                \
+		--sbindir=/usr/sbin              \
+		--libexecdir=/usr/lib            \
 		--disable-ldconfig               \
-		--with-fuse=external             \
+		--enable-crypto                  \
+		--enable-extras                  \
+		--enable-ldscript                \
 		--enable-posix-acls              \
 		--enable-xattr-mappings          \
-		--enable-extras                  \
-		--enable-crypto                  \
+		--with-fuse=external             \
 
 	make V=1
 	make DESTDIR=$PKG install
 
 	ln -s ../usr/bin/ntfs-3g $PKG/sbin/mount.ntfs
-	ln -s ../usr/bin/ntfsfix $PKG/sbin/fsck.ntfs
+	#ln -s ../usr/bin/ntfsfix $PKG/sbin/fsck.ntfs
 
 	ln -s ntfs-3g.8 $PKG/usr/share/man/man8/mount.ntfs.8
-	ln -s ntfsfix.8 $PKG/usr/share/man/man8/fsck.ntfs.8
+	#ln -s ntfsfix.8 $PKG/usr/share/man/man8/fsck.ntfs.8
+
+	# fsck.ntfs wrapper
+	pod2man -r "$name $version" -c ' ' -n fsck.ntfs -s 8 \
+		$SRC/fsck.ntfs.8.pod > fsck.ntfs.8
+	install -m 0644 -Dt $PKG/usr/share/man/man8/ fsck.ntfs.8
+	install -m 0755 -Dt $PKG/sbin/          $SRC/fsck.ntfs
 
 	# remove junk
 	rm -r $PKG/usr/share/doc
