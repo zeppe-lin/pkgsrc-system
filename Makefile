@@ -5,7 +5,7 @@ include ${CURDIR}/../pkgsrc-core/Makefile
 # collections that this collection depends on or are completely
 # missing.
 check-deps:
-	@pkgman --root= --no-std-config                              \
+	@${PKGMAN} --root= --no-std-config                           \
 		--config-append="pkgsrcdir ${CURDIR}"                \
 		--config-append="pkgsrcdir ${CURDIR}/../pkgsrc-core" \
 		list-orphans -v | grep '(required by .*)' >&2 ||:
