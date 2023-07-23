@@ -1,23 +1,23 @@
 # Description: Modern whois client
-# URL:         http://www.linux.it/~md/software/
+# URL:         https://github.com/rfc1036/whois
 # Depends on:  libidn2
 
 name=whois
-version=5.5.17
+version=5.5.18
 release=1
-source="https://ftp.debian.org/debian/pool/main/w/$name/whois_$version.tar.xz
+source="https://ftp.debian.org/debian/pool/main/w/whois/whois_$version.tar.xz
 	whois.conf"
 
 build() {
-	cd $name-$version
+	cd whois-$version
 
-	sed -i "/^CFLAGS/s/=.*$/=$CFLAGS/" Makefile
+	make CONFIG_FILE=/etc/whois.conf DESTDIR=$PKG whois install-whois
+	make BASHCOMPDIR=$PKG/usr/share/bash-completion/completions \
+		install-bashcomp
 
-	make CONFIG_FILE=/etc/whois.conf whois
+	#install -m 0644 -Dt $PKG/etc/ whois.conf
+	install -m 0644 -Dt $PKG/etc/  $SRC/whois.conf
 
-	install -m 0755 -Dt $PKG/usr/bin/             $name
-	install -m 0644 -Dt $PKG/usr/share/man/man1/  $name.1
-	install -m 0644 -Dt $PKG/usr/share/man/man5/  $name.conf.5
-	#install -m 0644 -Dt $PKG/etc/                $name.conf
-	install -m 0644 -Dt $PKG/etc/                 $SRC/$name.conf
+	# conflicts with expect package
+	rm $PKG/usr/share/bash-completion/completions/mkpasswd
 }
