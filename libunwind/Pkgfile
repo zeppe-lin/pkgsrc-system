@@ -1,21 +1,21 @@
 # Description: API to determine the call-chain of a program
-# URL:         https://savannah.nongnu.org/projects/libunwind
+# URL:         https://www.nongnu.org/libunwind/
 # Depends on:  xz
 # Optional:    texlive
 
 name=libunwind
-version=1.7.0
-_version=$(echo $version | sed 's/\.//2')
+version=1.7.1
 release=1
-source=https://github.com/$name/$name/releases/download/v$version/$name-$_version.tar.gz
+source=https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$_version/configure    \
-		--prefix=/usr           \
-		--disable-tests         \
-		#--enable-documentation  \
+	# --disable-documentation: man pages requires texlive
+	../$name-$version/configure      \
+		--prefix=/usr            \
+		--disable-tests          \
+		--disable-documentation  \
 
 	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
