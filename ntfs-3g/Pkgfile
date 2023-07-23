@@ -1,10 +1,10 @@
 # Description: Freely available NTFS driver with read and write support
-# URL:         https://www.tuxera.com/community/ntfs-3g-download/
+# URL:         https://github.com/tuxera/ntfs-3g
 # Depends on:  fuse2 gnutls libgcrypt util-linux
 
 name=ntfs-3g
 version=2022.10.3
-release=1
+release=2
 source="https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
 	fsck.ntfs fsck.ntfs.8.pod"
 
@@ -43,6 +43,9 @@ build() {
 		$SRC/fsck.ntfs.8.pod > fsck.ntfs.8
 	install -m 0644 -Dt $PKG/usr/share/man/man8/ fsck.ntfs.8
 	install -m 0755 -Dt $PKG/sbin/          $SRC/fsck.ntfs
+
+	# remove obsolete (uninstalled binary)
+	rm $PKG/usr/share/man/man8/ntfsfallocate.8
 
 	# remove junk
 	rm -r $PKG/usr/share/doc

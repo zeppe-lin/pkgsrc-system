@@ -96,7 +96,6 @@ lrwxrwxrwx	root/root	usr/share/man/man8/mount.ntfs.8.gz -> ntfs-3g.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfscmp.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfscp.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfsdecrypt.8.gz
--rw-r--r--	root/root	usr/share/man/man8/ntfsfallocate.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfsfix.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfsinfo.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/ntfslabel.8.gz
