@@ -21,11 +21,13 @@ source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar
 build() {
 	cd $name-$version
 
-	for p in $SRC/*.patch; do patch -p1 -i $p; done
+	local _PATCH
+	for _PATCH in $SRC/*.patch; do patch -p1 -i $_PATCH; done
 
 	make NLS=false PROC=false V=true OPTIMIZATION=
 	make NLS=false V=true CP="cp -fR" INSTALL=install \
 		mandir=/usr/share/man DESTDIR=$PKG install
 
+	# service
 	install -m 0700 -D $SRC/rc.cpufreq $PKG/etc/rc.d/cpufreq
 }
