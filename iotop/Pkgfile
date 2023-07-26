@@ -8,8 +8,6 @@ release=1
 source=https://github.com/Tomas-M/iotop/releases/download/v$version/iotop-$version.tar.xz
 
 build() {
-	cd iotop-$version
-
-	make V=1 STRIP=
-	make DESTDIR=$PKG install
+	make -C iotop-$version V=1 STRIP=
+	make -C iotop-$version DESTDIR=$PKG install
 }
