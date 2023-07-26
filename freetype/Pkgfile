@@ -12,8 +12,9 @@ source="http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
 	0004-Enable-long-PCF-family-names.patch"
 
 build() {
-	for _P in $SRC/*.patch; do
-		patch -Np1 -d $name-$version -i $_P
+	local _PATCH
+	for _PATCH in $SRC/*.patch; do
+		patch -Np1 -d $name-$version -i $_PATCH
 	done
 
 	meson build $name-$version         \
