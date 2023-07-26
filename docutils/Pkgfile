@@ -1,5 +1,5 @@
 # Description: Text processing system
-# URL:         http://docutils.sourceforge.net
+# URL:         https://docutils.sourceforge.io/
 # Depends on:  py3-setuptools
 
 name=docutils
@@ -8,9 +8,12 @@ release=1
 source=https://files.pythonhosted.org/packages/source/d/$name/$name-$version.tar.gz
 
 build() {
+	export TMPDIR="$PKGMK_WORK_DIR"
+
 	cd $name-$version
 
-	/usr/bin/python3 setup.py install --root=$PKG -O2
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=2
 
 	# remove junk
 	find $PKG -type f -name README.txt -delete
