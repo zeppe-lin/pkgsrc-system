@@ -8,8 +8,6 @@ release=1
 source=https://www.kernel.org/pub/software/network/iw/iw-$version.tar.xz
 
 build() {
-	cd iw-$version
-
-	make V=1
-	make DESTDIR=$PKG install
+	make -C iw-$version V=1
+	make -C iw-$version DESTDIR=$PKG install
 }
