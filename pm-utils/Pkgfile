@@ -22,8 +22,10 @@ build() {
 		$PKG/usr/share/man/man1
 	install -m 0644 ../$name-$version/man/*.8 \
 		$PKG/usr/share/man/man8
-	for _M in pm-hibernate pm-suspend-hybrid pm-suspend; do
-		ln -s pm-action.8.gz $PKG/usr/share/man/man8/$_M.8.gz
+
+	local _LINK
+	for _LINK in pm-hibernate pm-suspend-hybrid pm-suspend; do
+		ln -s pm-action.8.gz $PKG/usr/share/man/man8/$_LINK.8.gz
 	done
 
 	# install video quirks
