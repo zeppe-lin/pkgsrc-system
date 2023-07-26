@@ -4,12 +4,15 @@
 
 name=py3-six
 version=1.16.0
-release=1
+release=2
 source=https://files.pythonhosted.org/packages/source/s/${name#*-}/${name#*-}-$version.tar.gz
 
 build() {
+	export TMPDIR="$PKGMK_WORK_DIR"
+
 	cd ${name#*-}-$version
 
 	/usr/bin/python3 setup.py build
-	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG -O1
+	/usr/bin/python3 setup.py install \
+		--skip-build --prefix=/usr --root=$PKG --optimize=2
 }
