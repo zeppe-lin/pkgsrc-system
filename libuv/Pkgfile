@@ -1,16 +1,16 @@
 # Description: Support library with a focus on asynchronous I/O
-# URL:         https://libuv.org
+# URL:         https://libuv.org/
 
 name=libuv
 version=1.46.0
 release=1
-source=https://dist.libuv.org/dist/v$version/$name-v$version.tar.gz
+source=https://dist.libuv.org/dist/v$version/libuv-v$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-v$version/autogen.sh
-	../$name-v$version/configure  \
+	../libuv-v$version/autogen.sh
+	../libuv-v$version/configure  \
 		--prefix=/usr         \
 
 	make V=1
