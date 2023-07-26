@@ -11,15 +11,16 @@ source=https://downloads.sourceforge.net/project/$name/Expect/$version/$name$ver
 build() {
 	mkdir build; cd build
 
-	../${name}${version}/configure          \
-		--prefix=/usr                   \
-		--enable-shared                 \
-		--mandir=/usr/share/man         \
-		--with-tcl=/usr/lib             \
-		--with-tclinclude=/usr/include  \
+	../$name$version/configure                              \
+		--prefix=/usr                                   \
+		--enable-shared                                 \
+		--mandir=/usr/share/man                         \
+		--with-tcl=/usr/lib                             \
+		--with-tclinclude=/usr/include                  \
 		$(if pkgman isinst tk >/dev/null 2>&1; then
-		echo --with-tk=/usr/lib --with-tkinclude=/usr/include
-		fi)                             \
+			echo --with-tk=/usr/lib                 \
+			     --with-tkinclude=/usr/include
+		  fi)                                           \
 
 	make V=1
 	make DESTDIR=$PKG install
