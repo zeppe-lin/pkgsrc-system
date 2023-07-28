@@ -2,7 +2,7 @@
 # URL:         http://www.ivarch.com/programs/pv.shtml
 
 name=pv
-version=1.7.0
+version=1.7.17
 release=1
 source=https://www.ivarch.com/programs/sources/pv-$version.tar.bz2
 
