@@ -1,10 +1,9 @@
 # Description: API to determine the call-chain of a program
 # URL:         https://www.nongnu.org/libunwind/
 # Depends on:  xz
-# Optional:    texlive
 
 name=libunwind
-version=1.7.1
+version=1.7.2
 release=1
 source=https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz
 
@@ -17,6 +16,7 @@ build() {
 		--disable-tests          \
 		--disable-documentation  \
 
+	# fix overlinking
 	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
