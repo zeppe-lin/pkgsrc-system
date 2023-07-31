@@ -1,42 +1,45 @@
 # Description: Linux kernel (+Wi-Fi pentest patches)
-# URL:         https://www.kernel.org
+# URL:         https://www.kernel.org/
 
 # 5.4 LTS (Dec, 2025)
 # https://www.kernel.org/category/releases.html
 
+# TODO: Add kernel_gcc_patch for cpu optimization support?
+#       https://github.com/graysky2/kernel_compiler_support
+
 name=linux
-version=5.4.249
+version=5.4.251
 release=1
-_lwppver=1ad040b # Wi-Fi Pentest Patches version
+_lwppver=1ad040b # Wi-Fi pentest patches version
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/$_lwppver/lwpp-$_lwppver.tar.gz
 	x86_64-dotconfig"
 
 build() {
-	unset __kver __karch __imageloc
 	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
+	local _kver _karch _imageloc _patch
 
 	case $version in
-	*.*.*)	__kver=$version   ;;
-	*.*)	__kver=$version.0 ;;
+	*.*.*) _kver=$version   ;;
+	*.*)   _kver=$version.0 ;;
 	esac
 
 	case "$(uname -m)" in
 	x86_64)
-		__karch=x86_64
-		__imageloc=arch/x86/boot/bzImage
+		_karch=x86_64
+		_imageloc=arch/x86/boot/bzImage
 		;;
 	i386)
-		__karch=i386
-		__imageloc=arch/x86/boot/bzImage
+		_karch=i386
+		_imageloc=arch/x86/boot/bzImage
 		;;
 	arm64)
-		__karch=arm64
-		__imageloc=arch/arm64/boot/Image
+		_karch=arm64
+		_imageloc=arch/arm64/boot/Image
 		;;
 	arm)
-		__karch=arm
-		__imageloc=arch/arm/boot/zImage
+		_karch=arm
+		_imageloc=arch/arm/boot/zImage
 		;;
 	*)
 		echo "Unsupported architecture $(uname -m)"
@@ -46,18 +49,18 @@ build() {
 
 	cd $name-$version
 
-	# Apply Wi-Fi Pentest Patches.
-	for _P in $SRC/lwpp-${_lwppver}*/${version%.*}/*.patch; do
-		patch -p1 -i $_P
+	# apply Wi-Fi pentest patches
+	for _patch in $SRC/lwpp-${_lwppver}*/${version%.*}/*.patch; do
+		patch -p1 -i $_patch
 	done
 
 	make mrproper V=1
 
-	if [ -f $SRC/$__karch-dotconfig ]; then
-		cp $SRC/$__karch-dotconfig .config
-		make -j ${JOBS:-1} olddefconfig ARCH=$__karch
+	if [ -f $SRC/$_karch-dotconfig ]; then
+		cp $SRC/$_karch-dotconfig .config
+		make -j ${JOBS:-1} olddefconfig ARCH=$_karch
 	else
-		make -j ${JOBS:-1} ${__karch}_defconfig ARCH=$__karch
+		make -j ${JOBS:-1} ${_karch}_defconfig ARCH=$_karch
 	fi
 
 	# XXX HOTFIX
@@ -66,21 +69,21 @@ build() {
 
 	make -j ${JOBS:-1} all V=1
 
-	make -j 1 modules_install V=1 ARCH=$__karch \
+	make -j 1 modules_install V=1 ARCH=$_karch \
 		INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1
 
-	depmod -a -b $PKG $__kver
+	depmod -a -b $PKG $_kver
 
-	case "$__karch" in
-	arm64|arm)
-		make -j1 dtbs_install \
-			ARCH=$__karch INSTALL_DTBS_PATH=$PKG/boot/tdbs
+	case "$_karch" in
+	arm64 | arm)
+		make -j 1 dtbs_install \
+			ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/tdbs
 		;;
 	esac
 
-	install -m 0644 -D $__imageloc $PKG/boot/vmlinuz-$version
+	install -m 0644 -D $_imageloc  $PKG/boot/vmlinuz-$version
 	install -m 0644 -D .config     $PKG/boot/config-$version
 
-	unlink $PKG/lib/modules/$__kver/build
-	unlink $PKG/lib/modules/$__kver/source
+	unlink $PKG/lib/modules/$_kver/build
+	unlink $PKG/lib/modules/$_kver/source
 }
