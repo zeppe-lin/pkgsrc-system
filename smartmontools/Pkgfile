@@ -1,9 +1,9 @@
-# Description: Control and monitor S.M.A.R.T. hard drives
+# Description: Control and monitor S.M.A.R.T. hard disks and solid-state drives
 # URL:         https://www.smartmontools.org/
 # Depends on:  libcap-ng
 
 name=smartmontools
-version=7.3
+version=7.4
 release=1
 source="https://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
 	rc.smartd"
