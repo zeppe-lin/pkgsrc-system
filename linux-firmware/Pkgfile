@@ -1,8 +1,8 @@
 # Description: Firmware blobs for use with the Linux kernel
-# URL:         https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary
+# URL:         https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
 name=linux-firmware
-version=20230625
+version=20230804
 release=1
 source=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
 
