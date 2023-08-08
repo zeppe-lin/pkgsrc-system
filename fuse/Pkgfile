@@ -2,9 +2,9 @@
 # URL:         https://github.com/libfuse
 
 name=fuse
-version=3.15.0
+version=3.16.1
 release=1
-source=https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz
+source=https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz
 
 build() {
 	meson setup build fuse-$version  \
