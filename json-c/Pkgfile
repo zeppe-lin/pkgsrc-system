@@ -3,7 +3,7 @@
 # Depends on:  libbsd
 
 name=json-c
-version=0.16
+version=0.17
 release=1
 source=https://s3.amazonaws.com/json-c_releases/releases/$name-$version.tar.gz
 
