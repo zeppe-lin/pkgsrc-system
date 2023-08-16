@@ -1,6 +1,6 @@
 # Description: VPN Client
 # URL:         https://openvpn.net/
-# Depends on:  docutils libcap-ng libnsl lz4 lzo openssl
+# Depends on:  docutils libcap-ng libnsl libtirpc lz4 lzo openssl
 
 name=openvpn
 version=2.6.6
