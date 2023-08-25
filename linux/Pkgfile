@@ -1,4 +1,4 @@
-# Description: Linux kernel (+Wi-Fi pentest patches)
+# Description: Linux kernel + Wi-Fi pentest patches
 # URL:         https://www.kernel.org/
 
 # 5.4 LTS (Dec, 2025)
@@ -8,20 +8,19 @@
 #       https://github.com/graysky2/kernel_compiler_support
 
 name=linux
-version=5.4.251
+version=5.4.254
 release=1
-_lwppver=1ad040b # Wi-Fi pentest patches version
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
-	https://github.com/sighook/lwpp/archive/$_lwppver/lwpp-$_lwppver.tar.gz
+	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
 	x86_64-dotconfig"
 
 build() {
 	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
-	local _kver _karch _imageloc _patch
+	local _kver _karch _imageloc f
 
 	case $version in
 	*.*.*) _kver=$version   ;;
-	*.*)   _kver=$version.0 ;;
+	  *.*) _kver=$version.0 ;;
 	esac
 
 	case "$(uname -m)" in
@@ -50,40 +49,46 @@ build() {
 	cd $name-$version
 
 	# apply Wi-Fi pentest patches
-	for _patch in $SRC/lwpp-${_lwppver}*/${version%.*}/*.patch; do
-		patch -p1 -i $_patch
+	for f in $SRC/lwpp-*/${version%.*}/*.patch; do
+		patch -p1 -i $f
 	done
 
-	make mrproper V=1
+	# clean up
+	make V=1 mrproper
 
+	# prepare configs
 	if [ -f $SRC/$_karch-dotconfig ]; then
 		cp $SRC/$_karch-dotconfig .config
-		make -j ${JOBS:-1} olddefconfig ARCH=$_karch
+		make -j ${JOBS:-1} ARCH=$_karch olddefconfig
 	else
-		make -j ${JOBS:-1} ${_karch}_defconfig ARCH=$_karch
+		make -j ${JOBS:-1} ARCH=$_karch ${_karch}_defconfig
 	fi
 
 	# XXX HOTFIX
 	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
 	./scripts/config --disable CONFIG_IKHEADERS
 
-	make -j ${JOBS:-1} all V=1
+	# build and install modules
+	make -j ${JOBS:-1} V=1 all
+	make -j 1 V=1 ARCH=$_karch INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1 \
+		modules_install
 
-	make -j 1 modules_install V=1 ARCH=$_karch \
-		INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1
-
+	# create module dependency list
 	depmod -a -b $PKG $_kver
 
+	# copy all of the dtbs (device tree blobs) if needed
 	case "$_karch" in
 	arm64 | arm)
-		make -j 1 dtbs_install \
-			ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/tdbs
+		make -j 1 ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/dtbs \
+			dtbs_install
 		;;
 	esac
 
+	# copy the kernel and its config
 	install -m 0644 -D $_imageloc  $PKG/boot/vmlinuz-$version
 	install -m 0644 -D .config     $PKG/boot/config-$version
 
+	# remove junk
 	unlink $PKG/lib/modules/$_kver/build
 	unlink $PKG/lib/modules/$_kver/source
 }
