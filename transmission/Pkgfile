@@ -1,5 +1,5 @@
 # Description: BitTorrent client/daemon with command-line and web user interface
-# URL:         https://transmissionbt.com
+# URL:         https://transmissionbt.com/
 # Depends on:  curl libevent
 
 name=transmission
@@ -12,23 +12,24 @@ build() {
 	cmake -S $name-$version -B build -G Ninja \
 		-D CMAKE_BUILD_TYPE=Release       \
 		-D CMAKE_INSTALL_PREFIX=/usr      \
-		-D RUN_CLANG_TIDY=OFF             \
-		-D ENABLE_TESTS=OFF               \
-		-D ENABLE_NLS=OFF                 \
-		-D INSTALL_DOC=ON                 \
-		-D INSTALL_LIB=OFF                \
-		-D ENABLE_WEB=ON                  \
 		-D ENABLE_GTK=OFF                 \
+		-D ENABLE_NLS=OFF                 \
 		-D ENABLE_QT=OFF                  \
+		-D ENABLE_TESTS=OFF               \
+		-D INSTALL_LIB=OFF                \
+		-D RUN_CLANG_TIDY=OFF             \
 		-D ENABLE_CLI=ON                  \
 		-D ENABLE_DAEMON=ON               \
+		-D ENABLE_WEB=ON                  \
+		-D INSTALL_DOC=ON                 \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
+	# service
+	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
+
 	# remove junk
 	rm -r $PKG/usr/share/doc
 	find $PKG -name '*LICENSE*' -delete
-
-	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
 }
