@@ -2,7 +2,25 @@ README freetype
 
 SUBPIXEL HINTING MODE
 
-	Edit /etc/profile.d/freetype2.sh and "source" this file from
-	/etc/profile.  Logout then in to see the change.
+	Subpixel hinting mode can be chosen by setting the right TrueType
+	interpreter version.  The available settings are:
+
+		Classic mode (default in 2.6)
+			truetype:interpreter-version=35
+
+		Infinality mode
+			truetype:interpreter-version=38
+
+		Minimal mode (default in 2.7)
+			truetype:interpreter-version=40
+
+	There are more properties that can be set, separated by whitespace.
+	Please refer to the FreeType documentation for details.
+
+	To enable your settings edit /etc/profile and add something like that:
+
+		export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+
+	Logout then in to see the change.
 
 End of file.
