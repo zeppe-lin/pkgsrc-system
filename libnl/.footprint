@@ -75,6 +75,7 @@ drwxr-xr-x	root/root	usr/include/libnl3/netlink/route/link/
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/api.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/bonding.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/bridge.h
+-rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/bridge_info.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/can.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/geneve.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/link/inet.h
@@ -104,6 +105,7 @@ drwxr-xr-x	root/root	usr/include/libnl3/netlink/route/link/
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/neightbl.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/netconf.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/nexthop.h
+-rw-r--r--	root/root	usr/include/libnl3/netlink/route/nh.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/pktloc.h
 -rw-r--r--	root/root	usr/include/libnl3/netlink/route/qdisc.h
 drwxr-xr-x	root/root	usr/include/libnl3/netlink/route/qdisc/

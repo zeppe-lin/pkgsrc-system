@@ -2,10 +2,10 @@
 # URL:         http://www.infradead.org/~tgr/libnl/
 
 name=libnl
-version=3.7.0
-_version=$(echo $version | tr . _)
+version=3.8.0
 release=1
-source=https://github.com/thom311/libnl/releases/download/libnl$_version/libnl-$version.tar.gz
+source=https://github.com/thom311/libnl/releases/download/libnl$(
+	echo $version | tr . _)/libnl-$version.tar.gz
 
 build() {
 	mkdir build; cd build
