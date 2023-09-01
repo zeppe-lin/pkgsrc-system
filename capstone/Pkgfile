@@ -3,7 +3,7 @@
 # Depends on:  py3-setuptools
 
 name=capstone
-version=4.0.2
+version=5.0.1
 release=1
 source=https://github.com/aquynh/$name/archive/$version/$name-$version.tar.gz
 
@@ -15,6 +15,7 @@ build() {
 
 	# build and install python3 bindings
 	cd bindings/python
+	export TMPDIR="$PKGMK_WORK_DIR"
 	/usr/bin/python3 setup.py install \
 		--prefix=/usr --root=$PKG --optimize=2
 
