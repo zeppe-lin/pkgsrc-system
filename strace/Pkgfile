@@ -1,9 +1,9 @@
 # Description: SysTem call tracing utility (like trace, truss, etc)
-# URL:         https://strace.io
+# URL:         https://strace.io/
 # Depends on:  elfutils
 
 name=strace
-version=6.4
+version=6.5
 release=1
 source=https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.xz
 
