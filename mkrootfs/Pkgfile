@@ -3,13 +3,13 @@
 # Depends on:  gnupg pkgman pkgmk revdep tar
 
 name=mkrootfs
-version=1.2-27f3b40
+version=1.2-4af8a0a
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
 
 build() {
-	make -C $name-* PREFIX=/usr DESTDIR=$PKG install
+	make -C $name-* PREFIX=/usr DESTDIR=$PKG install install_bashcomp
 
 	# config
 	install -m 0644 -Dt $PKG/etc/mkrootfs/ $SRC/config
