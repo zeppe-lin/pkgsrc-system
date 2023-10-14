@@ -1,0 +1,13 @@
+# Description: ALSA Use Case Manager configuration
+# URL:         https://alsa-project.org/
+
+name=alsa-ucm-conf
+version=1.2.10
+release=1
+source="https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
+	splitpcm.patch"
+
+build() {
+	mkdir -p $PKG/usr/share/alsa
+	cp -r $name-$version/ucm2 $PKG/usr/share/alsa
+}
