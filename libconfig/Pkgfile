@@ -1,5 +1,6 @@
 # Description: C/C++ configuration file library
 # URL:         https://github.com/hyperrealm/libconfig
+# Depends on:  libtool
 
 name=libconfig
 version=1.7.3
