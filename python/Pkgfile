@@ -54,10 +54,10 @@ build() {
 	make -j1 DESTDIR=$PKG install
 
 	# remove tk files
-	rm -r $PKG/usr/bin/idle*             \
-	      $PKG/usr/lib/python2.7/idlelib \
-	      $PKG/usr/lib/python2.7/lib-tk  \
-	      $PKG/usr/lib/python2.7/lib-dynload/_tkinter.so
+	rm -rf $PKG/usr/bin/idle*             \
+	       $PKG/usr/lib/python2.7/idlelib \
+	       $PKG/usr/lib/python2.7/lib-tk  \
+	       $PKG/usr/lib/python2.7/lib-dynload/_tkinter.so
 
 	# fix issue with man-page symlink
 	ln -sf python2.7.1 $PKG/usr/share/man/man1/python.1
