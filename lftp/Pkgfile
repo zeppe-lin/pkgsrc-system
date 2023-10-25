@@ -5,7 +5,7 @@
 name=lftp
 version=4.9.2
 release=1
-source=https://distfiles.gentoo.org/distfiles/lftp-$version.tar.xz
+source=https://lftp.yar.ru/ftp/lftp-$version.tar.xz
 
 build() {
 	mkdir build; cd build
