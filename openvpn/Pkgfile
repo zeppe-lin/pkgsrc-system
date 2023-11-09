@@ -3,7 +3,7 @@
 # Depends on:  docutils libcap-ng libnsl libtirpc lz4 lzo openssl
 
 name=openvpn
-version=2.6.6
+version=2.6.7
 release=1
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	rc.$name"
@@ -22,6 +22,7 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
+	# service
 	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
 
 	# remove junk
