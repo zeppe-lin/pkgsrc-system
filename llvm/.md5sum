@@ -1,6 +1,6 @@
-b7830bb90e376c90a43c2c190a0a5ffa  cmake-16.0.6.src.tar.xz
+38ae9cc0950f277c8f88e570c4d18010  cmake-17.0.4.src.tar.xz
 7fc6870fe0887ee43a2f0b720e4cdd4f  install-prefix.patch
-7d986cda69719a35bd5ecb266fcf1f65  llvm-16.0.6.src.tar.xz
+c6839c2bde72d67204294ba139502cc3  llvm-17.0.4.src.tar.xz
 fcd6954a7fbd05687990e59e87131c3e  llvm-config.h
 b7a931c1bdd849882d3b1da696e2d14a  rust-feature-tables.patch
-93f5eae2f0012c7b5abdddda216d6ac0  third-party-16.0.6.src.tar.xz
+cfaf2bfd65a04ef28ddff944dab5132d  third-party-17.0.4.src.tar.xz
