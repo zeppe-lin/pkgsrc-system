@@ -1,6 +1,5 @@
 # Description: JSON implementation in C
 # URL:         https://github.com/json-c/json-c/wiki
-# Depends on:  libbsd
 
 name=json-c
 version=0.17-20230812
