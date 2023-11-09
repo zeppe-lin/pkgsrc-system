@@ -1,6 +1,6 @@
 # Description: Software documentation system
 # URL:         http://www.gnu.org/software/texinfo/
-# Depends on:  ncurses
+# Depends on:  libunistring ncurses
 
 name=texinfo
 version=7.1
