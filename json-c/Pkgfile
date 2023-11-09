@@ -3,12 +3,12 @@
 # Depends on:  libbsd
 
 name=json-c
-version=0.17
+version=0.17-20230812
 release=1
-source=https://s3.amazonaws.com/json-c_releases/releases/$name-$version.tar.gz
+source=https://github.com/json-c/json-c/archive/refs/tags/json-c-$version.tar.gz
 
 build() {
-	cmake -S $name-$version -B build -G Ninja   \
+	cmake -S *$name-$version -B build -G Ninja  \
 		-D CMAKE_INSTALL_PREFIX=/usr        \
 		-D CMAKE_INSTALL_LIBDIR=/usr/lib    \
 		-D CMAKE_BUILD_TYPE=Release         \
