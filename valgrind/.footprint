@@ -12,6 +12,7 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/vgdb
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/valgrind/
+-rw-r--r--	root/root	usr/include/valgrind/cachegrind.h
 -rw-r--r--	root/root	usr/include/valgrind/callgrind.h
 -rw-r--r--	root/root	usr/include/valgrind/config.h
 -rw-r--r--	root/root	usr/include/valgrind/dhat.h
