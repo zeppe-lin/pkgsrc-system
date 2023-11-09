@@ -3,12 +3,14 @@
 # Depends on:  elfutils libffi libpcre util-linux
 
 name=glib
-version=2.76.5
+version=2.78.1
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
 
 build() {
+	local path
+
 	# skip build the following stuff
 	sed -e "/subdir('po')/d"              \
 	    -e "/subdir('tests')/d"           \
@@ -44,10 +46,10 @@ build() {
 	# disable hash randomization
 	export PYTHONHASHSEED=0
 
-	_path=/usr/share/glib-2.0/codegen
-	/usr/bin/python3     -m compileall -d $_path $PKG/$_path
-	/usr/bin/python3 -O  -m compileall -d $_path $PKG/$_path
-	/usr/bin/python3 -OO -m compileall -d $_path $PKG/$_path
+	path=/usr/share/glib-2.0/codegen
+	/usr/bin/python3     -m compileall -d $path $PKG/$path
+	/usr/bin/python3 -O  -m compileall -d $path $PKG/$path
+	/usr/bin/python3 -OO -m compileall -d $path $PKG/$path
 
 	install -m 0644 $SRC/gschemas.compiled \
 		$PKG/usr/share/glib-2.0/schemas/gschemas.compiled
