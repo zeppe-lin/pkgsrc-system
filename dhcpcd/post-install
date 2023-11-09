@@ -1,9 +1,13 @@
 #!/bin/sh -ex
 export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
 
-getent group  dhcpcd >/dev/null || groupadd -r dhcpcd
-getent passwd dhcpcd >/dev/null || useradd  -g dhcpcd -r \
-	-d /var/lib/dhcpcd -s /bin/false dhcpcd
+if ! getent group  dhcpcd >/dev/null; then
+	groupadd -r dhcpcd
+fi
+
+if ! getent passwd dhcpcd >/dev/null; then
+	useradd  -g dhcpcd -r -d /var/lib/dhcpcd -s /bin/false dhcpcd
+fi
 
 passwd -l dhcpcd
 chown -R dhcpcd:dhcpcd /var/lib/dhcpcd
