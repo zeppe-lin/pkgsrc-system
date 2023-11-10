@@ -3,13 +3,13 @@
 # Depends on:  libidn2 libunistring
 
 name=whois
-version=5.5.19
+version=5.5.20
 release=1
-source="https://ftp.debian.org/debian/pool/main/w/whois/whois_$version.tar.xz
+source="whois-$version.tar.gz::https://github.com/rfc1036/whois/archive/refs/tags/v$version.tar.gz
 	whois.conf"
 
 build() {
-	cd whois
+	cd whois-$version
 
 	make CONFIG_FILE=/etc/whois.conf DESTDIR=$PKG whois install-whois
 	make BASHCOMPDIR=$PKG/usr/share/bash-completion/completions \
