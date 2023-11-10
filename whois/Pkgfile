@@ -1,6 +1,6 @@
 # Description: Modern whois client
 # URL:         https://github.com/rfc1036/whois
-# Depends on:  libidn2 libunistring
+# Depends on:  libidn2
 
 name=whois
 version=5.5.20
