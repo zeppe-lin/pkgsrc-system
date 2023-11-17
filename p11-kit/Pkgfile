@@ -3,22 +3,13 @@
 # Depends on:  libffi libtasn1 make-ca
 
 name=p11-kit
-version=0.25.2
+version=0.25.3
 release=1
-source=https://github.com/p11-glue/$name/releases/download/$version/$name-$version.tar.xz
+source="https://github.com/p11-glue/$name/releases/download/$version/$name-$version.tar.xz
+	update-ca-trust
+	update-ca-trust.1"
 
 build() {
-	sed '20,$ d' -i $name-$version/trust/trust-extract-compat
-	cat >> $name-$version/trust/trust-extract-compat << "EOF"
-# Copy existing anchor modifications to /etc/ssl/local.
-/usr/lib/make-ca/copy-trust-modifications
-
-# Generate a new trust store.
-/usr/sbin/make-ca -f -g
-
-# End of file.
-EOF
-
 	mkdir build; cd build
 
 	../$name-$version/configure                  \
@@ -38,6 +29,10 @@ EOF
 	make V=1
 	make DESTDIR=$PKG install
 
+	# replace p11-kit's trust-extract-compat script
+	cp -f $SRC/update-ca-trust $PKG/usr/lib/p11-kit/trust-extract-compat
+	chmod 0755 $PKG/usr/lib/p11-kit/trust-extract-compat
 	ln -s ../lib/p11-kit/trust-extract-compat \
 		$PKG/usr/bin/update-ca-trust
+	install -m 0644 -Dt $PKG/usr/share/man/man1/ $SRC/update-ca-trust
 }
