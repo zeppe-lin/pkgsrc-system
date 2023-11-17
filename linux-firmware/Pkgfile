@@ -1,15 +1,14 @@
 # Description: Firmware blobs for use with the Linux kernel
 # URL:         https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+# Depends on:  rdfind
 
 name=linux-firmware
-version=20231030
+version=20231111
 release=1
 source=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
 
 build() {
-	cd $name-$version
-
-	make FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
+	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
 
 	# remove junk
 	find $PKG -depth -type f \( -name ChangeLog -o -name README \) -delete
