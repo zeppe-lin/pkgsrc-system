@@ -6,9 +6,9 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libksba.a
 -rwxr-xr-x	root/root	usr/lib/libksba.la
-lrwxrwxrwx	root/root	usr/lib/libksba.so -> libksba.so.8.14.4
-lrwxrwxrwx	root/root	usr/lib/libksba.so.8 -> libksba.so.8.14.4
--rwxr-xr-x	root/root	usr/lib/libksba.so.8.14.4
+lrwxrwxrwx	root/root	usr/lib/libksba.so -> libksba.so.8.14.5
+lrwxrwxrwx	root/root	usr/lib/libksba.so.8 -> libksba.so.8.14.5
+-rwxr-xr-x	root/root	usr/lib/libksba.so.8.14.5
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/ksba.pc
 drwxr-xr-x	root/root	usr/share/
