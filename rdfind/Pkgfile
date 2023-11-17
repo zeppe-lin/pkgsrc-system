@@ -1,0 +1,18 @@
+# Description: Redundant data find
+# URL:         https://rdfind.pauldreik.se/
+# Depends on:  nettle
+
+name=rdfind
+version=1.6.0
+release=1
+source=https://rdfind.pauldreik.se/$name-$version.tar.gz
+
+build() {
+	cd $name-$version
+
+	./bootstrap.sh
+	./configure --prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
+}
