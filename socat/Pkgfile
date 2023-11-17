@@ -3,16 +3,17 @@
 # Depends on:  libbsd ncurses openssl
 
 name=socat
-version=1.7.4.4
+version=1.8.0.0
 release=1
 source=http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
 build() {
-	mkdir build; cd build
+	# build in separate dir is broken
+	cd socat-$version
 
-	../socat-$version/configure  \
-		--prefix=/usr        \
-		--disable-libwrap    \
+	./configure                \
+		--prefix=/usr      \
+		--disable-libwrap  \
 
 	make V=1
 	make DESTDIR=$PKG install
