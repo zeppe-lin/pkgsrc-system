@@ -1,6 +1,6 @@
 # Description: SOcket CAT - netcat-like utility with many enhancements
 # URL:         http://www.dest-unreach.org/socat
-# Depends on:  libbsd ncurses openssl
+# Depends on:  libbsd openssl readline
 
 name=socat
 version=1.8.0.0
