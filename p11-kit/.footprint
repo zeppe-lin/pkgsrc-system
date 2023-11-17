@@ -41,7 +41,7 @@ drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/trust
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
--rw-r--r--	root/root	usr/share/man/man1/update-ca-trust.gz
+-rw-r--r--	root/root	usr/share/man/man1/update-ca-trust.1.gz
 drwxr-xr-x	root/root	usr/share/p11-kit/
 drwxr-xr-x	root/root	usr/share/p11-kit/modules/
 -rw-r--r--	root/root	usr/share/p11-kit/modules/p11-kit-trust.module

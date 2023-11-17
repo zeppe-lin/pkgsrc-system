@@ -34,5 +34,5 @@ build() {
 	chmod 0755 $PKG/usr/lib/p11-kit/trust-extract-compat
 	ln -s ../lib/p11-kit/trust-extract-compat \
 		$PKG/usr/bin/update-ca-trust
-	install -m 0644 -Dt $PKG/usr/share/man/man1/ $SRC/update-ca-trust
+	install -m 0644 -Dt $PKG/usr/share/man/man1/ $SRC/update-ca-trust.1
 }
