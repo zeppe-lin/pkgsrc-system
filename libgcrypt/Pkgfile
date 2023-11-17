@@ -1,9 +1,9 @@
 # Description: General purpose cryptographic library based on GnuPG
-# URL:         https://www.gnupg.org
+# URL:         https://www.gnupg.org/software/libgcrypt/index.html
 # Depends on:  libgpg-error
 
 name=libgcrypt
-version=1.10.2
+version=1.10.3
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
