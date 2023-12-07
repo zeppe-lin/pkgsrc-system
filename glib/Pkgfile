@@ -1,6 +1,6 @@
 # Description: Common C routines used by Gtk+ and other libs
 # URL:         https://gitlab.gnome.org/GNOME/glib
-# Depends on:  elfutils libffi libpcre util-linux
+# Depends on:  elfutils libffi libpcre2 util-linux
 
 name=glib
 version=2.78.3
