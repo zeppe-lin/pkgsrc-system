@@ -3,7 +3,7 @@
 # Depends on:  elfutils libffi libpcre util-linux
 
 name=glib
-version=2.78.1
+version=2.78.3
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -11,7 +11,7 @@ source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.
 build() {
 	local path
 
-	# skip build the following stuff
+	# skip building the following stuff
 	sed -e "/subdir('po')/d"              \
 	    -e "/subdir('tests')/d"           \
 	    -e "/subdir('fuzzing')/d"         \
@@ -25,6 +25,8 @@ build() {
 	# fix building error
 	export CFLAGS="$CFLAGS -Wno-error=missing-include-dirs"
 
+	# -D man=false: otherwise requires crappy deps, like
+	#               docbook-xsl*, docbook-xml*, etc, wtf
 	meson build glib-$version           \
 		--prefix=/usr               \
 		--libexecdir=/usr/lib/glib  \
@@ -38,7 +40,9 @@ build() {
 		-D nls=disabled             \
 		-D selinux=disabled         \
 		-D tests=false              \
-		#-D man=false               \
+		-D oss_fuzz=disabled        \
+		-D libmount=enabled         \
+		-D man=false                \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
