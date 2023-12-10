@@ -1,9 +1,9 @@
 # Description: NFS utilities
-# URL:         https://nfs.sourceforge.net
+# URL:         https://nfs.sourceforge.net/
 # Depends on:  keyutils libcap libdevmapper libevent rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
-version=2.6.3
+version=2.6.4
 release=1
 source="https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
 	exports
@@ -43,10 +43,10 @@ build() {
 	           $PKG/var/lib/nfs/nfsdcltrack  \
 	           $PKG/var/lib/nfs/nfsdcld      \
 
-	for _RC in nfsclient nfsdcld nfs nfsserver rpc.idmapd \
+	for rc in nfsclient nfsdcld nfs nfsserver rpc.idmapd \
 		rpc.mountd rpc.nfsd rpc.statd
 	do
-		install -m 0755 $SRC/rc.$_RC $PKG/etc/rc.d/$_RC
+		install -m 0755 $SRC/rc.$rc $PKG/etc/rc.d/$rc
 	done
 
 	install -m 0644 $SRC/exports              $PKG/etc
