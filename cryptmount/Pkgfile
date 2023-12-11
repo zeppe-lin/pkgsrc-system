@@ -3,7 +3,7 @@
 # Depends on:  cryptsetup util-linux
 
 name=cryptmount
-version=0.2-3cc81be
+version=0.3-1d48810
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	crypttab"
@@ -11,7 +11,9 @@ source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.
 build() {
 	cd $name-${version#*-}*
 
-	sed -i "s| cryptsetup | /sbin/cryptsetup.static |g" cryptmount
+	# Use /sbin/cryptsetup.static for cryptsetup(8) invocations.
+	# The cryptsetup package need to be built with static support.
+	sed -i 's| cryptsetup | /sbin/cryptsetup.static |g' cryptmount
 
 	make PREFIX=/ MANPREFIX=/usr/share/man DESTDIR=$PKG install
 
