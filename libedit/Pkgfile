@@ -1,5 +1,6 @@
 # Description: NetBSD command line editor library
 # URL:         https://thrysoee.dk/editline/
+# Depends on:  ncurses
 
 name=libedit
 version=20230828-3.1
