@@ -1,0 +1,22 @@
+# Description: NetBSD command line editor library
+# URL:         https://thrysoee.dk/editline/
+
+name=libedit
+version=20230828-3.1
+release=1
+source=https://thrysoee.dk/editline/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# conflicts with readline
+	rm $PKG/usr/share/man/man3/history.3
+
+	ln -s editline.3 $PKG/usr/share/man/man3/el.3
+}
