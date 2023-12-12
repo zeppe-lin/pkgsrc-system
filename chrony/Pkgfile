@@ -1,0 +1,27 @@
+# Description: Network time protocol client/server
+# URL:         https://chrony-project.org/
+# Depends on:  libcap libedit ncurses
+# Optional:    gnutls nettle nss
+
+name=chrony
+version=4.5
+release=1
+source="https://chrony-project.org/releases/$name-$version.tar.gz
+	rc.chronyd"
+
+build() {
+	# build in separate dir is broken
+	cd $name-$version
+
+	./configure                                     \
+		--prefix=/usr                           \
+		--chronyrundir=/run/chrony              \
+		--with-pidfile=/run/chrony/chronyd.pid  \
+		--with-user=chrony                      \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -D -m 0755 $SRC/rc.chronyd $PKG/etc/rc.d/chronyd
+	install examples/chrony.conf.example1 $PKG/etc/chrony.conf
+}

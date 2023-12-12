@@ -1,0 +1,20 @@
+#!/bin/sh -ex
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+if ! getent group chrony; then
+	groupadd -g 55 chrony
+fi
+
+if ! getent passwd chrony; then
+	useradd -g chrony -u 55 -d /var/lib/chrony \
+		-s /bin/false chrony
+fi
+
+passwd -l chrony
+
+install -d -o chrony -g chrony -m 0750 \
+	/var/lib/chrony /var/log/chrony
+
+chown -R chrony:chrony /var/lib/chrony /var/log/chrony
+
+# End of file.
