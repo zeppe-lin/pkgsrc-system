@@ -19,7 +19,6 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/tknewsbiff
 -rwxr-xr-x	root/root	usr/bin/tkpasswd
 -rwxr-xr-x	root/root	usr/bin/unbuffer
--rwxr-xr-x	root/root	usr/bin/weather
 -rwxr-xr-x	root/root	usr/bin/xkibitz
 -rwxr-xr-x	root/root	usr/bin/xpstat
 drwxr-xr-x	root/root	usr/include/
