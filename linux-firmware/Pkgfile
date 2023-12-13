@@ -3,7 +3,7 @@
 # Depends on:  rdfind
 
 name=linux-firmware
-version=20231111
+version=20231211
 release=1
 source=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
 
