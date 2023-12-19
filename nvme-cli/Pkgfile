@@ -3,7 +3,7 @@
 # Depends on:  libnvme
 
 name=nvme-cli
-version=2.6
+version=2.7
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-$version.tar.gz
 
