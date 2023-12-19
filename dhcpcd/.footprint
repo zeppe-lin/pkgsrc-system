@@ -11,6 +11,7 @@ drwxr-xr-x	root/root	lib/dhcpcd/dhcpcd-hooks/
 -rw-r--r--	root/root	lib/dhcpcd/dhcpcd-hooks/01-test
 -rw-r--r--	root/root	lib/dhcpcd/dhcpcd-hooks/20-resolv.conf
 -rw-r--r--	root/root	lib/dhcpcd/dhcpcd-hooks/30-hostname
+-rw-r--r--	root/root	lib/dhcpcd/dhcpcd-hooks/50-ntp.conf
 -rwxr-xr-x	root/root	lib/dhcpcd/dhcpcd-run-hooks
 drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/dhcpcd
