@@ -16,11 +16,11 @@ drwxr-xr-x	root/root	usr/include/nvme/
 -rw-r--r--	root/root	usr/include/nvme/util.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so -> libnvme-mi.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.6.0
--rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.6.0
+lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.7.0
+-rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.7.0
 lrwxrwxrwx	root/root	usr/lib/libnvme.so -> libnvme.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.6.0
--rwxr-xr-x	root/root	usr/lib/libnvme.so.1.6.0
+lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.7.0
+-rwxr-xr-x	root/root	usr/lib/libnvme.so.1.7.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme-mi.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme.pc
@@ -92,6 +92,9 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_copy.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range_f1.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range_f2.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range_f3.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range_sopt.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_create_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_create_root.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_csi.2.gz
@@ -235,6 +238,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fw_download.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fw_download_seq.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_gen_dhchap_key.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_generate_tls_key_identity.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_ana_log_len.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_attr.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_ctrl_attr.2.gz
@@ -423,11 +427,14 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_identify_uuid.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range_f1.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range_f2.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range_f3.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_ctrl_list.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_dsm_range.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_logging.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_insert_tls_key.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_insert_tls_key_versioned.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_io.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_io_control_flags.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_io_dsm_flags.2.gz
