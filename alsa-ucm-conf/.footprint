@@ -15,7 +15,6 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/PinePhone.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/VoiceCall.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/DEBUG.md
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/HDA/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/HDA/DualCodecs/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/DualCodecs/DualCodecs.conf
@@ -186,7 +185,6 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sm8250/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8250/HDMI.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8250/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8250/Qualcomm-RB5-WSA8815-Speakers-DMIC0.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/README.md
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Rockchip/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Rockchip/es8316/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Rockchip/es8316/HiFi.conf
