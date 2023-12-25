@@ -5,7 +5,7 @@
 
 name=htop
 version=3.2.2
-release=1
+release=2
 source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
 
 build() {
@@ -20,4 +20,7 @@ build() {
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	# remove i18n entries
+        sed -ri '/\[.+\]=/d' $PKG/usr/share/applications/htop.desktop
 }
