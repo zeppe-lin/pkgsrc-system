@@ -3,7 +3,7 @@
 # Depends on:  libnl
 
 name=iw
-version=5.19
+version=6.7
 release=1
 source=https://www.kernel.org/pub/software/network/iw/iw-$version.tar.xz
 
