@@ -15,8 +15,11 @@ restart)
 	sleep 2
 	$0 start
 	;;
+status)
+	echo "status unavailable"
+	;;
 *)
-	echo "usage: $0 [start|stop|restart]"
+	echo "usage: $0 [start|stop|restart|status]"
 	;;
 esac
 
