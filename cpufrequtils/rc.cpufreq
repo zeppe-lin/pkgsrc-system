@@ -28,7 +28,7 @@ status)
 	echo "status unavailable"
 	;;
 *)
-	echo "usage: $0 [start|stop]"
+	echo "usage: $0 [start|stop|restart|status]"
 	;;
 esac
 
