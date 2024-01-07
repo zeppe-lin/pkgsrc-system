@@ -9,6 +9,11 @@ start)
 	;;
 stop)
 	/usr/sbin/cgroupfs-umount
+	# XXX: cgroupfs-umount(8) umounts all /sys/fs/cgroup/<group> and not
+	# /sys/fs/cgroup itself.
+	if /bin/mountpoint -q /sys/fs/cgroup; then
+		umount /sys/fs/cgroup
+	fi
 	;;
 restart)
 	if /bin/mountpoint -q /sys/fs/cgroup; then
