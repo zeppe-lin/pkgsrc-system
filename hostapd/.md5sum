@@ -7,4 +7,4 @@ a19510a630e870a100ccb56627df38b9  0002-Prevent-reinstallation-of-an-already-in-u
 2dda6fa8a71fcd25d1f658eb44d7c3f0  0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch
 0be43e9e09ab94a7ebf82de0d1c57761  hostapd-2.10.tar.gz
 f40f2652f2cd22d4bf1cfd76e02b9225  hostapd-2.3-noscan.patch
-0c6047be6b81514f4bbfae1b0403b7bc  rc.hostapd
+0bf7d1477069cbad95c92c4957b7bcf5  rc.hostapd

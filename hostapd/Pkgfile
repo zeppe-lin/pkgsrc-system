@@ -4,7 +4,7 @@
 
 name=hostapd
 version=2.10
-release=1
+release=2
 source="https://w1.fi/releases/$name-$version.tar.gz
 	rc.hostapd
 	0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.patch

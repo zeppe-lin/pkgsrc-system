@@ -5,6 +5,7 @@
 
 PATH="/sbin:/usr/sbin:/bin:/usr/bin"
 
+SSD=/sbin/start-stop-daemon
 NAME="hostapd"
 USER="root"
 RUNDIR="/run/$NAME"
@@ -15,11 +16,11 @@ OPTS="-B -P $PIDFILE $CONFIG"
 
 case $1 in
 start)
-	install -d -m 755 -o $USER $RUNDIR || exit 1
-	start-stop-daemon --start --pidfile $PID --exec $PROG -- $OPTS
+	install -d -m 0755 -o $USER $RUNDIR || exit 1
+	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
-	start-stop-daemon --stop --remove-pidfile --pidfile $PID --retry 60
+	$SSD --stop --remove-pidfile --pidfile $PID --retry 60
 	;;
 restart)
 	$0 stop
