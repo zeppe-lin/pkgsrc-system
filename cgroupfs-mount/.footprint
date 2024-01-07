@@ -2,9 +2,9 @@ drwxr-xr-x	root/root	etc/
 drwxr-xr-x	root/root	etc/rc.d/
 -rwxr-xr-x	root/root	etc/rc.d/cgroupfs-mount
 drwxr-xr-x	root/root	usr/
-drwxr-xr-x	root/root	usr/bin/
--rwxr-xr-x	root/root	usr/bin/cgroupfs-mount
--rwxr-xr-x	root/root	usr/bin/cgroupfs-umount
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/cgroupfs-mount
+-rwxr-xr-x	root/root	usr/sbin/cgroupfs-umount
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man8/
