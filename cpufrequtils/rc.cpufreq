@@ -19,6 +19,14 @@ start)
 stop)
 	affect_change --governor performance
 	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+status)
+	echo "status unavailable"
+	;;
 *)
 	echo "usage: $0 [start|stop]"
 	;;
