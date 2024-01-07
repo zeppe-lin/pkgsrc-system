@@ -2,7 +2,7 @@ b73896dfa214f861bb6a88e231c711bd  exports
 a0fc816dac2b429b56ef89ab6292be9a  idmapd.conf
 907f95977ccf7a522ee32af1534f0e4c  nfs-utils-2.6.4.tar.xz
 8069ffbb5b2ab84e26a28aafc17daa30  rc.nfs
-4a7ddcf26c2c995d8bdda453ca8ab968  rc.nfsclient
+01265668a5bb3d381b5952cdd15e8763  rc.nfsclient
 736361bacf77a666c9be45624517f1f3  rc.nfsdcld
 ee5c7023eca69aaabe5f6f0fc0b765f7  rc.nfsserver
 2c7d57b7d04a3b36bc49dd2dac43c93d  rc.rpc.idmapd

@@ -15,7 +15,11 @@ restart)
 	$0 start
 	;;
 status)
-	/bin/findmnt -t nfs,nfs4
+	if [ -n "$(/bin/findmnt -t nfs,nfs4)" ]; then
+		echo "nfs(4) is mounted"
+	else
+		echo "nfs(4) is unmounted"
+	fi
 	;;
 *)
 	echo "usage: $0 [start|stop|restart|status]"
