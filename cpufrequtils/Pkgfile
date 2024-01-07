@@ -1,10 +1,10 @@
-# Description: Clock scaling userspace tools
+# Description: Get and set CPU frequency
 # URL:         https://mirrors.edge.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq-info.html
 # Depends on:  sysfsutils
 
 name=cpufrequtils
 version=008
-release=1
+release=2
 source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar.xz
 	rc.cpufreq
 	0001-only-x86-has-cpuid-instruction.patch
@@ -21,13 +21,12 @@ source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar
 build() {
 	cd $name-$version
 
-	local _PATCH
-	for _PATCH in $SRC/*.patch; do patch -p1 -i $_PATCH; done
+	for p in $SRC/*.patch; do patch -p1 -i $p; done
 
 	make NLS=false PROC=false V=true OPTIMIZATION=
 	make NLS=false V=true CP="cp -fR" INSTALL=install \
 		mandir=/usr/share/man DESTDIR=$PKG install
 
 	# service
-	install -m 0700 -D $SRC/rc.cpufreq $PKG/etc/rc.d/cpufreq
+	install -m 0755 -D $SRC/rc.cpufreq $PKG/etc/rc.d/cpufreq
 }
