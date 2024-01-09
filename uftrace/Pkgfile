@@ -3,25 +3,19 @@
 # Depends on:  capstone elfutils
 
 name=uftrace
-version=0.14
+version=0.15
 release=1
 source=https://github.com/namhyung/$name/archive/v$version/$name-$version.tar.gz
 
 build() {
-	cd $name-$version
-
 	# skip ldconfig(8) execution, pkgadd(8) will do it
-	sed -i '/ldconfig/d' Makefile
+	sed -i '/ldconfig/d' $name-$version/Makefile
 
-	./configure \
-		--prefix=/usr
+	mkdir build; cd build
+
+	../$name-$version/configure --prefix=/usr
 
 	make V=1
-	make DESTDIR=$PKG install
-
-	# install bash-completion manually to /usr/share
-	install -m 0644 -D misc/bash-completion.sh \
-		$PKG/usr/share/bash-completion/completions/$name
-	rm -r $PKG/etc/bash_completion.d
-	rmdir $PKG/etc
+	make completiondir=/usr/share/bash-completion/completions \
+		DESTDIR=$PKG install
 }
