@@ -1,6 +1,6 @@
 # Description: Apache Portable Runtime library
 # URL:         http://apr.apache.org/
-# Depends on:  db e2fsprogs expat gdbm postgresql
+# Depends on:  util-linux
 
 name=apr
 version=1.7.4
