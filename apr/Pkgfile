@@ -3,41 +3,21 @@
 # Depends on:  db e2fsprogs expat gdbm postgresql
 
 name=apr
-version=1.7.0
+version=1.7.4
 release=1
-#source="https://www.apache.org/dist/apr/apr-$version.tar.bz2
-#        https://www.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
-source="https://archive.apache.org/dist/apr/apr-$version.tar.bz2
-	https://archive.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
+source=https://archive.apache.org/dist/apr/apr-$version.tar.bz2
 
 build(){
-	mkdir $SRC/build-1; cd $SRC/build-1
+	mkdir build; cd build
 
-	../apr-$version/configure  \
-		--prefix=/usr      \
-		--with-installbuilddir=/usr/share/apr-1 \
-
-	make V=1
-	make -j1 DESTDIR=$PKG install
-
-	mkdir $SRC/build-2; cd $SRC/build-2
-
-	../apr-util-1.6.1/configure      \
-		--prefix=/usr            \
-		--with-apr=$SRC/build-1  \
-		--with-expat=/usr        \
-		--with-berkeley-db=/usr  \
-		--with-gdbm=/usr         \
-		--without-sqlite3        \
-		--disable-util-dso       \
+	../apr-$version/configure                        \
+		--prefix=/usr                            \
+		--with-installbuilddir=/usr/share/apr-1  \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	sed -r "/^APR_(SOURCE|BUILD)/s|=.*|=|" \
-	    -i $PKG/usr/bin/apr-1-config
-	sed -r "/^APU_(SOURCE|BUILD)/s|=.*|=|" \
-	    -i $PKG/usr/bin/apu-1-config
+	sed -ri "/^APR_(SOURCE|BUILD)/s|=.*|=|" $PKG/usr/bin/apr-1-config
 
 	# remove junk
 	rm -r $PKG/usr/lib/*.exp
