@@ -1,0 +1,31 @@
+# Description: Apache Portable Runtime library
+# URL:         http://apr.apache.org/
+# Depends on:  apr db expat gdbm sqlite3
+
+name=apr-util
+version=1.6.3
+release=1
+source=https://archive.apache.org/dist/apr/$name-$version.tar.bz2
+
+build(){
+	mkdir build; cd build
+
+	../$name-$version/configure      \
+		--prefix=/usr            \
+		--with-apr=/usr          \
+		--with-expat=/usr        \
+		--with-berkeley-db=/usr  \
+		--with-gdbm=/usr         \
+		--with-sqlite3=/usr      \
+		--without-pgsql          \
+		--without-mysql          \
+		--disable-util-dso       \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	sed -ri "/^APU_(SOURCE|BUILD)/s|=.*|=|" $PKG/usr/bin/apu-1-config
+
+	# remove junk
+	rm -r $PKG/usr/lib/*.exp
+}
