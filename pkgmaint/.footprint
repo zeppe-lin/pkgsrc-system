@@ -10,6 +10,15 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/pkgdiff
 -rwxr-xr-x	root/root	usr/bin/pkglint
 drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/bash-completion/
+drwxr-xr-x	root/root	usr/share/bash-completion/completions/
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/finddeps-distmeta -> pkglint
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/finddeps-linked -> pkglint
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/finddisappeared -> pkglint
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/finddisowned -> pkglint
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/findredundantdeps -> pkglint
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/pkgdiff -> pkglint
+-rw-r--r--	root/root	usr/share/bash-completion/completions/pkglint
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/finddeps-distmeta.1.gz
