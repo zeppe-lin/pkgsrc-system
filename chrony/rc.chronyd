@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/chronyd: start/stop chrony time server
+# /etc/rc.d/chronyd: start/stop chronyd(8) time server
 #
 
 SSD=/sbin/start-stop-daemon
