@@ -3,7 +3,7 @@
 # Depends on:  capstone elfutils
 
 name=uftrace
-version=0.15
+version=0.15.1
 release=1
 source=https://github.com/namhyung/$name/archive/v$version/$name-$version.tar.gz
 
