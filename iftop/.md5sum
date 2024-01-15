@@ -1,1 +1,5 @@
+b26801ba2ced75d19cfbb1c5d9885aff  bug-debian-962695-ipv6-dns-resolution.patch
 7e6decb4958e8a4890cccac335239f24  iftop-1.0pre4.tar.gz
+37136701f5b3d41186fd6c75c1f3ca6f  iftop-cleanup.patch
+712cde72c2194a7b006d0f8d6d8e8b45  mac-address-format.patch
+6578d690bfb026034a6882d35e1ee5c5  support-multi-gigabit-interfaces.patch

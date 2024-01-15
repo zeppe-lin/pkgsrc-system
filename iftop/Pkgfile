@@ -4,10 +4,19 @@
 
 name=iftop
 version=1.0pre4
-release=1
-source=https://www.ex-parrot.com/~pdw/iftop/download/iftop-$version.tar.gz
+release=2
+source="https://www.ex-parrot.com/~pdw/iftop/download/iftop-$version.tar.gz
+	bug-debian-962695-ipv6-dns-resolution.patch
+	iftop-cleanup.patch
+	mac-address-format.patch
+	support-multi-gigabit-interfaces.patch"
 
 build() {
+	patch -d iftop-$version -p1 -i $SRC/mac-address-format.patch
+	patch -d iftop-$version -p1 -i $SRC/iftop-cleanup.patch
+	patch -d iftop-$version -p1 -i $SRC/support-multi-gigabit-interfaces.patch
+	patch -d iftop-$version -p1 -i $SRC/bug-debian-962695-ipv6-dns-resolution.patch
+
 	# build in separate dir is broken
 	cd iftop-$version
 
