@@ -8,15 +8,15 @@
 #       https://github.com/graysky2/kernel_compiler_support
 
 name=linux
-version=5.4.265
+version=5.4.266
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
 	x86_64-dotconfig"
 
 build() {
-	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
 	local _kver _karch _imageloc f
+	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
 
 	case $version in
 	*.*.*) _kver=$version   ;;
