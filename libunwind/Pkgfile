@@ -3,14 +3,14 @@
 # Depends on:  xz
 
 name=libunwind
-version=1.7.2
+version=1.8.0
 release=1
 source=https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	# --disable-documentation: man pages requires texlive
+	# --disable-documentation: building man pages requires texlive
 	../$name-$version/configure      \
 		--prefix=/usr            \
 		--disable-tests          \
