@@ -3,7 +3,7 @@
 # Depends on:  libcap libidn2
 
 name=iputils
-version=20231222
+version=20240117
 release=1
 source="https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 	https://archive.archlinux.org/packages/i/$name/$name-$version-1-x86_64.pkg.tar.zst"
@@ -20,10 +20,10 @@ build() {
 	ninja -C build -j ${JOBS:-1} -v
 	#DESTDIR=$PKG ninja -C build install
 
-	install -m 755 -D build/ping/ping     $PKG/bin/ping
-	install -m 755 -D build/arping        $PKG/sbin/arping
-	install -m 755 -D build/tracepath     $PKG/usr/sbin/tracepath
-	install -m 755 -D build/clockdiff     $PKG/usr/sbin/clockdiff
+	install -m 755 -D build/ping/ping  $PKG/bin/ping
+	install -m 755 -D build/arping     $PKG/sbin/arping
+	install -m 755 -D build/tracepath  $PKG/usr/sbin/tracepath
+	install -m 755 -D build/clockdiff  $PKG/usr/sbin/clockdiff
 
 	install -m 644 -Dt $PKG/usr/share/man/man8/ \
 		$SRC/usr/share/man/man8/*
