@@ -3,7 +3,7 @@
 # Depends on:  capstone elfutils
 
 name=uftrace
-version=0.15.1
+version=0.15.2
 release=1
 source=https://github.com/namhyung/$name/archive/v$version/$name-$version.tar.gz
 
@@ -13,7 +13,8 @@ build() {
 
 	mkdir build; cd build
 
-	../$name-$version/configure --prefix=/usr
+	../$name-$version/configure  \
+		--prefix=/usr        \
 
 	make V=1
 	make completiondir=/usr/share/bash-completion/completions \
