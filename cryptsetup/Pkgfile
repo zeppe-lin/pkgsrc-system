@@ -1,6 +1,6 @@
 # Description: User-friendly dm-crypt/LUKS interface
 # URL:         https://gitlab.com/cryptsetup/cryptsetup
-# Depends on:  json-c libdevmapper openssl popt
+# Depends on:  json-c libbsd libdevmapper openssl popt
 
 name=cryptsetup
 version=2.7.0
