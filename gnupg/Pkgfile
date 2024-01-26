@@ -1,16 +1,13 @@
 # Description: GNU privacy guard
-# URL:         https://www.gnupg.org
+# URL:         https://www.gnupg.org/
 # Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3
 
 name=gnupg
-version=2.4.3
+version=2.4.4
 release=1
-source="https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
-	gnupg-$version-no-ldap.patch"
+source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
 build() {
-	patch -Np1 -d gnupg-$version -i $SRC/gnupg-$version-no-ldap.patch
-
 	mkdir build; cd build
 
 	# --disable-tests is omitted for gpgscm utility
