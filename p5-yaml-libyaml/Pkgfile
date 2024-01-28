@@ -3,9 +3,9 @@
 # Depends on:  perl
 
 name=p5-yaml-libyaml
-version=0.88
+version=0.89
 release=1
-source=https://cpan.metacpan.org/authors/id/I/IN/INGY/YAML-LibYAML-$version.tar.gz
+source=https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-$version.tar.gz
 
 build() {
 	cd YAML-LibYAML-$version
