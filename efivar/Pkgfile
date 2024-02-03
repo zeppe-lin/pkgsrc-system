@@ -1,11 +1,11 @@
 # Description: Tools and library to manipulate EFI variables
-# URL:         https://github.com/rhinstaller/efivar
+# URL:         https://github.com/rhboot/efivar
 # Depends on:  popt
 
 name=efivar
-version=38
+version=39
 release=1
-source=https://github.com/rhinstaller/$name/releases/download/$version/$name-$version.tar.bz2
+source=$name-$version.tar.gz::https://github.com/rhboot/$name/archive/refs/tags/$version.tar.gz
 
 build() {
 	cd $name-$version
