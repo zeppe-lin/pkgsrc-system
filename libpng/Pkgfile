@@ -1,9 +1,9 @@
 # Description: Library of PNG support functions with APNG support
-# URL:         http://www.libpng.org
+# URL:         http://www.libpng.org/
 # Depends on:  zlib
 
 name=libpng
-version=1.6.40
+version=1.6.42
 release=1
 source="https://download.sourceforge.net/$name/$name-$version.tar.xz
         $name-apng.patch"
