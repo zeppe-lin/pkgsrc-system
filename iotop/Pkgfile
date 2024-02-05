@@ -3,7 +3,7 @@
 # Depends on:  ncurses
 
 name=iotop
-version=1.25
+version=1.26
 release=1
 source=https://github.com/Tomas-M/iotop/releases/download/v$version/iotop-$version.tar.xz
 
