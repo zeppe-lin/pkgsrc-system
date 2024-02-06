@@ -4,11 +4,16 @@
 # 5.4 LTS (Dec, 2025)
 # https://www.kernel.org/category/releases.html
 
+# IMPORTANT:
+#	Don't forget to update glibc{-32} packages after bumping this
+#	package version.  That's need because glibc{-32} packages
+#	are relying on linux for kernel headers.
+
 # TODO: Add kernel_gcc_patch for cpu optimization support?
 #       https://github.com/graysky2/kernel_compiler_support
 
 name=linux
-version=5.4.266
+version=5.4.268
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
