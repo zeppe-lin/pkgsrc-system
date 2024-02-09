@@ -1,5 +1,19 @@
 README mysql
 
+PRECAUTION
+
+	With the default configuration networking support for mysql is
+	disabled, meaning the mysql daemon is accessable from localhost only.
+	To add networking support comment out the 'skip-networking' line in
+	/etc/my.cnf.
+
+UPGRADE
+
+	If you upgrade from mysql 5.6.x you must recompile the other packages
+	on your system that are linked against the mysql client libraries
+	(libmysqlclient).  To obtain such a list of packages for your system,
+	you may use the command 'pkgman rdep mysql' or use revdep(1).
+
 POST-INSTALL
 
 	1. Build the system database in /var/lib/mysql:
@@ -14,18 +28,5 @@ POST-INSTALL
 	3. Set a password for the mysql root user:
 
 		mysqladmin -u root password <mysql_root_password>
-
-PRECAUTION
-
-	1. With the default configuration networking support for mysql is
-	disabled, meaning the mysql daemon is accessable from localhost only.
-	To add networking support comment out the 'skip-networking' line in
-	/etc/my.cnf.
-
-	2. If you upgrade from mysql 5.6.x you must recompile the other
-	packages on your system that are linked against the mysql client
-	libraries (libmysqlclient).  To obtain such a list of packages for
-	your system, you may use the command 'pkgman rdep mysql' or use
-	revdep(1).
 
 End of file.
