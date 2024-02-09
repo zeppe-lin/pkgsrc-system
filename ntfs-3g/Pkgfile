@@ -16,6 +16,8 @@ build() {
 	# EPREFIX by moving to the desired location afterward.
 	install -d $PKG/lib
 
+	# --with-fuse=internal:
+	# see 124b7fca4745b3dd7d977e73ccf8cc46c1260927
 	../ntfs-3g_ntfsprogs-$version/configure  \
 		--prefix=/usr                    \
 		--disable-ldconfig               \
