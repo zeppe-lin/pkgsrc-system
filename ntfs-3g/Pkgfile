@@ -1,12 +1,13 @@
 # Description: Freely available NTFS driver with read and write support
 # URL:         https://github.com/tuxera/ntfs-3g
-# Depends on:  fuse2 gnutls libgcrypt util-linux
+# Depends on:  gnutls libgcrypt util-linux
 
 name=ntfs-3g
 version=2022.10.3
-release=2
+release=3
 source="https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
-	fsck.ntfs fsck.ntfs.8.pod"
+	fsck.ntfs
+	fsck.ntfs.8"
 
 build() {
 	mkdir build; cd build
@@ -17,32 +18,31 @@ build() {
 
 	../ntfs-3g_ntfsprogs-$version/configure  \
 		--prefix=/usr                    \
-		--exec-prefix=/usr               \
-		--bindir=/usr/bin                \
-		--sbindir=/usr/sbin              \
-		--libexecdir=/usr/lib            \
 		--disable-ldconfig               \
 		--enable-crypto                  \
 		--enable-extras                  \
 		--enable-ldscript                \
 		--enable-posix-acls              \
 		--enable-xattr-mappings          \
-		--with-fuse=external             \
+		--with-fuse=internal             \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	ln -s ../usr/bin/ntfs-3g $PKG/sbin/mount.ntfs
-	#ln -s ../usr/bin/ntfsfix $PKG/sbin/fsck.ntfs
-
+	ln -s /bin/ntfs-3g $PKG/sbin/mount.ntfs
 	ln -s ntfs-3g.8 $PKG/usr/share/man/man8/mount.ntfs.8
-	#ln -s ntfsfix.8 $PKG/usr/share/man/man8/fsck.ntfs.8
 
-	# fsck.ntfs wrapper
-	pod2man -r "$name $version" -c ' ' -n fsck.ntfs -s 8 \
-		$SRC/fsck.ntfs.8.pod > fsck.ntfs.8
-	install -m 0644 -Dt $PKG/usr/share/man/man8/ fsck.ntfs.8
-	install -m 0755 -Dt $PKG/sbin/          $SRC/fsck.ntfs
+	# ntfsfix is needed for our fsck.ntfs wrapper
+	mv $PKG/usr/bin/ntfsfix $PKG/sbin/
+
+	# there is no man1 utilities
+	mv $PKG/usr/bin/* $PKG/usr/sbin/
+
+	install -m 0755 -D $SRC/fsck.ntfs   $PKG/sbin/fsck.ntfs
+	install -m 0644 -D $SRC/fsck.ntfs.8 $PKG/usr/share/man/man8/fsck.ntfs.8
+
+	ln -sf ../../lib/$(readlink $PKG/lib/libntfs-3g.so) \
+                $PKG/usr/lib/libntfs-3g.so
 
 	# remove obsolete (uninstalled binary)
 	rm $PKG/usr/share/man/man8/ntfsfallocate.8

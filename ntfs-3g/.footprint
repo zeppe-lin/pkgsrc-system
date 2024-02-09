@@ -1,26 +1,18 @@
+drwxr-xr-x	root/root	bin/
+-rwxr-xr-x	root/root	bin/lowntfs-3g
+-rwxr-xr-x	root/root	bin/ntfs-3g
 drwxr-xr-x	root/root	lib/
+lrwxrwxrwx	root/root	lib/libntfs-3g.so -> libntfs-3g.so.89.0.0
+lrwxrwxrwx	root/root	lib/libntfs-3g.so.89 -> libntfs-3g.so.89.0.0
+-rwxr-xr-x	root/root	lib/libntfs-3g.so.89.0.0
 drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/fsck.ntfs
-lrwxrwxrwx	root/root	sbin/mount.lowntfs-3g -> /usr/bin/lowntfs-3g
-lrwxrwxrwx	root/root	sbin/mount.ntfs -> ../usr/bin/ntfs-3g
-lrwxrwxrwx	root/root	sbin/mount.ntfs-3g -> /usr/bin/ntfs-3g
+lrwxrwxrwx	root/root	sbin/mount.lowntfs-3g -> /bin/lowntfs-3g
+lrwxrwxrwx	root/root	sbin/mount.ntfs -> /bin/ntfs-3g
+lrwxrwxrwx	root/root	sbin/mount.ntfs-3g -> /bin/ntfs-3g
+-rwxr-xr-x	root/root	sbin/ntfsfix
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
--rwxr-xr-x	root/root	usr/bin/lowntfs-3g
--rwxr-xr-x	root/root	usr/bin/ntfs-3g
--rwxr-xr-x	root/root	usr/bin/ntfs-3g.probe
--rwxr-xr-x	root/root	usr/bin/ntfscat
--rwxr-xr-x	root/root	usr/bin/ntfscluster
--rwxr-xr-x	root/root	usr/bin/ntfscmp
--rwxr-xr-x	root/root	usr/bin/ntfsdecrypt
--rwxr-xr-x	root/root	usr/bin/ntfsfix
--rwxr-xr-x	root/root	usr/bin/ntfsinfo
--rwxr-xr-x	root/root	usr/bin/ntfsls
--rwxr-xr-x	root/root	usr/bin/ntfsrecover
--rwxr-xr-x	root/root	usr/bin/ntfssecaudit
--rwxr-xr-x	root/root	usr/bin/ntfstruncate
--rwxr-xr-x	root/root	usr/bin/ntfsusermap
--rwxr-xr-x	root/root	usr/bin/ntfswipe
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/ntfs-3g/
 -rw-r--r--	root/root	usr/include/ntfs-3g/acls.h
@@ -65,20 +57,30 @@ drwxr-xr-x	root/root	usr/include/ntfs-3g/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libntfs-3g.a
 -rwxr-xr-x	root/root	usr/lib/libntfs-3g.la
-lrwxrwxrwx	root/root	usr/lib/libntfs-3g.so -> libntfs-3g.so.89.0.0
-lrwxrwxrwx	root/root	usr/lib/libntfs-3g.so.89 -> libntfs-3g.so.89.0.0
--rwxr-xr-x	root/root	usr/lib/libntfs-3g.so.89.0.0
+lrwxrwxrwx	root/root	usr/lib/libntfs-3g.so -> ../../lib/libntfs-3g.so.89.0.0
 drwxr-xr-x	root/root	usr/lib/ntfs-3g/
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libntfs-3g.pc
 drwxr-xr-x	root/root	usr/sbin/
 lrwxrwxrwx	root/root	usr/sbin/mkfs.ntfs -> /usr/sbin/mkntfs
 -rwxr-xr-x	root/root	usr/sbin/mkntfs
+-rwxr-xr-x	root/root	usr/sbin/ntfs-3g.probe
+-rwxr-xr-x	root/root	usr/sbin/ntfscat
 -rwxr-xr-x	root/root	usr/sbin/ntfsclone
+-rwxr-xr-x	root/root	usr/sbin/ntfscluster
+-rwxr-xr-x	root/root	usr/sbin/ntfscmp
 -rwxr-xr-x	root/root	usr/sbin/ntfscp
+-rwxr-xr-x	root/root	usr/sbin/ntfsdecrypt
+-rwxr-xr-x	root/root	usr/sbin/ntfsinfo
 -rwxr-xr-x	root/root	usr/sbin/ntfslabel
+-rwxr-xr-x	root/root	usr/sbin/ntfsls
+-rwxr-xr-x	root/root	usr/sbin/ntfsrecover
 -rwxr-xr-x	root/root	usr/sbin/ntfsresize
+-rwxr-xr-x	root/root	usr/sbin/ntfssecaudit
+-rwxr-xr-x	root/root	usr/sbin/ntfstruncate
 -rwxr-xr-x	root/root	usr/sbin/ntfsundelete
+-rwxr-xr-x	root/root	usr/sbin/ntfsusermap
+-rwxr-xr-x	root/root	usr/sbin/ntfswipe
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man8/

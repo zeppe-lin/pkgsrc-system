@@ -1,0 +1,27 @@
+.\" fsck.ntfs(8) manual page
+.Dd October 28, 2023
+.Dt FSCK.NTFS 8
+.Os
+.Sh NAME
+.Nm fsck.ntfs
+.Nd check and repair NTFS filesystems
+.Sh SYNOPSIS
+.Nm fsck.ntfs
+.Op OPTIONS
+.Ar DEVICE
+.Sh DESCRIPTION
+.Nm
+is a wrapper script around
+.Xr ntfsfix 8
+that silently discards any unsupported flags from
+.Pa /etc/rc Ns 's
+.Xr fsck 8 .
+.Sh AVAILABILITY
+.Nm
+is
+.Em not
+part of upstream
+.Sy ntfs-3g
+package.
+.Sh SEE ALSO
+.Xr ntfsfix 8

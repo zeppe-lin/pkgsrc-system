@@ -1,11 +1,2 @@
 #!/bin/sh
-# A wrapper script that discards any unsupported flags from /etc/rc.
-# Thanks to John McQuah, jmcquah at disroot dot org.
-
-ARGS=$(echo "$* " | sed 's/-a /-d /g; s/-p /-d /g; s/-f //g;')
-
-# Intentional.
-# shellcheck disable=2086
-exec /usr/bin/ntfsfix $ARGS
-
-# End of file.
+exec /bin/ntfsfix $(echo "$* " | sed 's/-a /-d /g;s/-p /-d /g;s/-f //g;')
