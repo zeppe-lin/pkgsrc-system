@@ -3,15 +3,15 @@
 # Depends on:  eudev
 
 name=mdadm
-version=4.2
+version=4.3
 release=1
-source="http://www.kernel.org/pub/linux/utils/raid/$name/$name-$version.tar.xz
-	mdadm-4.2-in_initrd-collision.patch"
+source="https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git/snapshot/mdadm-$version.tar.gz
+	mdadm-4.3-in_initrd-collision.patch"
 
 build() {
-	cd $name-$version
+	cd mdadm-$version
 
-	patch -p1 -i $SRC/mdadm-4.2-in_initrd-collision.patch
+	patch -p1 -i $SRC/mdadm-4.3-in_initrd-collision.patch
 
 	make CXFLAGS="$CFLAGS" STRIP=
 	make DESTDIR=$PKG install
