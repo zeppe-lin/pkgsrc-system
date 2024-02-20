@@ -1,11 +1,18 @@
 # Description: SQL database server
-# URL:         https://www.mysql.com
+# URL:         https://www.mysql.com/
 # Depends on:  libaio libtirpc ncurses openssl rpcsvc-proto zlib
 
+# MySQL 5.7.44 is the final release of MySQL 5.7 series.
+# https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-44.html
+#
+# MySQL 5.7 users are encouraged by Oracle to upgrade to the latest
+# MySQL 8.0 or MySQL Innovation release.  We should reconsider upgrading
+# to new release or switching to MariaDB.  But we should take into account
+# the reverse dependencies of this package, i.e. thc-hydra.
+
 name=mysql
-version=5.7.43
+version=5.7.44
 release=1
-#source="https://distfiles.gentoo.org/distfiles/$name-boost-$version.tar.gz
 source="https://dev.mysql.com/get/Downloads/MySQL-5.7/$name-boost-$version.tar.gz
 	my.cnf rc.mysqld"
 

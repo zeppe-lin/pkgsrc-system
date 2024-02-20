@@ -159,8 +159,8 @@ drwxr-xr-x	root/root	usr/include/mysql/mysql/psi/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libmysqlclient.a
 lrwxrwxrwx	root/root	usr/lib/libmysqlclient.so -> libmysqlclient.so.20
-lrwxrwxrwx	root/root	usr/lib/libmysqlclient.so.20 -> libmysqlclient.so.20.3.30
--rwxr-xr-x	root/root	usr/lib/libmysqlclient.so.20.3.30
+lrwxrwxrwx	root/root	usr/lib/libmysqlclient.so.20 -> libmysqlclient.so.20.3.31
+-rwxr-xr-x	root/root	usr/lib/libmysqlclient.so.20.3.31
 -rw-r--r--	root/root	usr/lib/libmysqld.a
 -rw-r--r--	root/root	usr/lib/libmysqlservices.a
 drwxr-xr-x	root/root	usr/lib/mysql/
