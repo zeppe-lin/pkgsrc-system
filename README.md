@@ -1,10 +1,12 @@
 OVERVIEW
 --------
-This directory contains **system** pkgsrc collection.  This collection
-contains build scripts and files for the packages required for minimal
-Zeppe-Lin installation on real hardware: boot loader, filesystem
-utilities, hw-monitors, servers, and so on.  Packages in this
-collection depends **only** on the **core** pkgsrc collection.
+This directory contains **system** pkgsrc collection: build scripts
+and files for the packages required for minimal installation on real
+hardware (e.g. boot loader, filesystem utilities, hw-monitors, etc)
+and/or packages required for servers.
+
+Packages in _this_ collection must depend **only** on **core** pkgsrc
+collection.
 
 This distribution was originally forked from CRUX ports as of version
 3.6 and rewritten in POSIX sh(1p).
