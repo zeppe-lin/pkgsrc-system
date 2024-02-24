@@ -2,8 +2,8 @@ README mkinitramfs
 
 KERNEL CONFIGURATION
 
-	In manual kernel setup is recommended to include the following
-	necessary features (statically or as modules):
+	In a manual kernel setup is needed to include the following necessary
+	features (statically or as modules):
 
 	General setup --->
 	  [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
