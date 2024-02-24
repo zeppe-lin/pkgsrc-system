@@ -3,13 +3,13 @@
 # Depends on:  zlib
 
 name=libpng
-version=1.6.42
+version=1.6.43
 release=1
 source="https://download.sourceforge.net/$name/$name-$version.tar.xz
-        $name-apng.patch"
+        libpng-apng.patch"
 
 build() {
-	patch -Np1 -d $name-$version -i $SRC/$name-apng.patch
+	patch -Np1 -d $name-$version -i $SRC/libpng-apng.patch
 
 	mkdir build; cd build
 
