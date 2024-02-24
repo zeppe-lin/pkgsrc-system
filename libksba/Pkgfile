@@ -1,9 +1,9 @@
 # Description: X.509 and CMS support library
-# URL:         https://www.gnupg.org/
+# URL:         https://gnupg.org/software/libksba/index.html
 # Depends on:  libgpg-error
 
 name=libksba
-version=1.6.5
+version=1.6.6
 release=1
 source=https://gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
