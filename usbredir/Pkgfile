@@ -3,7 +3,7 @@
 # Depends on:  glib libusb
 
 name=usbredir
-version=0.13.0
+version=0.14.0
 release=1
 source=https://spice-space.org/download/$name/$name-$version.tar.xz
 
