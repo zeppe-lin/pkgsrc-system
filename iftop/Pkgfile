@@ -5,7 +5,7 @@
 name=iftop
 version=1.0pre4
 release=2
-source="https://www.ex-parrot.com/~pdw/iftop/download/iftop-$version.tar.gz
+source="https://pdw.ex-parrot.com/iftop/download/iftop-$version.tar.gz
 	bug-debian-962695-ipv6-dns-resolution.patch
 	iftop-cleanup.patch
 	mac-address-format.patch
