@@ -4,7 +4,7 @@
 # Optional:    lld
 
 name=llvm
-version=17.0.6
+version=18.1.1
 release=1
 source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
 	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/cmake-$version.src.tar.xz
@@ -16,9 +16,7 @@ source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/
 build() {
 	if pkgman isinst ccache; then
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_CCACHE_BUILD=ON"
-		export PATH="$(echo $PATH \
-			| awk -v RS=: -v ORS=: '/ccache/{next}{print}' \
-			| sed 's/:*$//')"
+		export PATH="$(echo $PATH | awk -v RS=: -v ORS=: '/ccache/{next}{print}' | sed 's/:*$//')"
 	fi
 	if pkgman isinst lld; then
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_ENABLE_LLD=ON"
@@ -26,16 +24,16 @@ build() {
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_ENABLE_LLD=OFF"
 	fi
 
-	cp -r $SRC/cmake-$version.src/Modules/* $name-$version.src/cmake/modules/.
+	cp -r $SRC/cmake-$version.src/Modules/* llvm-$version.src/cmake/modules/.
 	mv $SRC/cmake-$version.src/ $SRC/cmake
 	mv $SRC/third-party-$version.src/ $SRC/third-party
 
 	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
 
-	patch -Np2 -d $name-$version.src -i $SRC/rust-feature-tables.patch
-	patch -Np2 -d $name-$version.src -i $SRC/install-prefix.patch
+	patch -Np2 -d llvm-$version.src -i $SRC/rust-feature-tables.patch
+	patch -Np2 -d llvm-$version.src -i $SRC/install-prefix.patch
 
-	cmake -S $name-$version.src -B build -G Ninja $PKGMK_LLVM  \
+	cmake -S llvm-$version.src -B build -G Ninja $PKGMK_LLVM   \
 		-D CMAKE_INSTALL_PREFIX=/usr                       \
 		-D CMAKE_BUILD_TYPE=Release                        \
 		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"                 \
@@ -71,11 +69,10 @@ build() {
 	ln -s ../LLVMgold.so  $PKG/usr/lib/bfd-plugins/
 	ln -s ../libLTO.so    $PKG/usr/lib/bfd-plugins/
 
-	/usr/bin/python3 $name-$version.src/utils/lit/setup.py build
-	/usr/bin/python3 $name-$version.src/utils/lit/setup.py install \
+	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py build
+	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py install \
 		--prefix=/usr --skip-build --root=$PKG
-
-	for _O in '' -O -OO; do /usr/bin/python3 $_O \
-		-m compileall -d $name-$version.src/utils/lit $PKG
-	done
+	/usr/bin/python3     -m compileall -d llvm-$version.src/utils/lit $PKG
+	/usr/bin/python3 -O  -m compileall -d llvm-$version.src/utils/lit $PKG
+	/usr/bin/python3 -OO -m compileall -d llvm-$version.src/utils/lit $PKG
 }
