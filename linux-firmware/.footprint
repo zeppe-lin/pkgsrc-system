@@ -547,7 +547,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/vangogh_mec2.bin -> vangogh_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vangogh_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_3_1_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_0.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_3.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_acg_smc.bin
@@ -964,6 +964,7 @@ lrwxrwxrwx	root/root	lib/firmware/brcm/brcmfmac43012-sdio.clm_blob -> ../cypress
 -rw-r--r--	root/root	lib/firmware/brcm/brcmfmac4330-sdio.bin
 -rw-r--r--	root/root	lib/firmware/brcm/brcmfmac4334-sdio.bin
 -rw-r--r--	root/root	lib/firmware/brcm/brcmfmac43340-sdio.ASUSTeK COMPUTER INC.-TF103CE.txt
+-rw-r--r--	root/root	lib/firmware/brcm/brcmfmac43340-sdio.Insyde-VESPA2.txt
 lrwxrwxrwx	root/root	lib/firmware/brcm/brcmfmac43340-sdio.bin -> ../cypress/cyfmac43340-sdio.bin
 -rw-r--r--	root/root	lib/firmware/brcm/brcmfmac43340-sdio.meegopad-t08.txt
 -rw-r--r--	root/root	lib/firmware/brcm/brcmfmac43340-sdio.pov-tab-p1006w-data.txt
@@ -1635,6 +1636,16 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa3847.wmfw -> 
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa3855.wmfw -> cs35l41/v6.47.0/halo_cspl_RAM_revB2_29.49.0.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa386f.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa386f.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38a9-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38a9-spkid0-r0.bin -> cs35l41-dsp1-spk-cali-17aa38a9-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38a9-spkid1-l0.bin -> cs35l41-dsp1-spk-cali-17aa38a9-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38a9-spkid1-r0.bin -> cs35l41-dsp1-spk-cali-17aa38a9-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38a9.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38ab-spkid0-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38ab-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38ab-spkid1-l0.bin -> cs35l41-dsp1-spk-cali-17aa38ab-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38ab-spkid1-r0.bin -> cs35l41-dsp1-spk-cali-17aa38ab-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38ab.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38b4-spkid0-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38b4-spkid0-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-cali-17aa38b4-spkid1-l0.bin -> cs35l41-dsp1-spk-cali-17aa38b4-spkid0-l0.bin
@@ -2239,6 +2250,16 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa3855.wmfw -> 
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa386f-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa386f-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa386f.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38a9-spkid0-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38a9-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38a9-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-17aa38a9-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38a9-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-17aa38a9-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38a9.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38ab-spkid0-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38ab-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38ab-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-17aa38ab-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38ab-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-17aa38ab-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38ab.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b4-spkid0-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b4-spkid0-r0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b4-spkid1-l0.bin
@@ -2565,6 +2586,7 @@ lrwxrwxrwx	root/root	lib/firmware/i915/skl_guc_ver6.bin -> skl_guc_ver6_1.bin
 -rw-r--r--	root/root	lib/firmware/i915/tgl_huc_7.0.3.bin
 -rw-r--r--	root/root	lib/firmware/i915/tgl_huc_7.5.0.bin
 lrwxrwxrwx	root/root	lib/firmware/i915/tgl_huc_7.9.3.bin -> tgl_huc.bin
+-rw-r--r--	root/root	lib/firmware/i915/xe2lpd_dmc.bin
 drwxr-xr-x	root/root	lib/firmware/imx/
 drwxr-xr-x	root/root	lib/firmware/imx/sdma/
 -rw-r--r--	root/root	lib/firmware/imx/sdma/sdma-imx6q.bin
@@ -2714,6 +2736,8 @@ drwxr-xr-x	root/root	lib/firmware/intel/ipu/
 -rw-r--r--	root/root	lib/firmware/intel/ipu/ipu6epmtl_fw.bin
 -rw-r--r--	root/root	lib/firmware/intel/ipu/ipu6se_fw.bin
 -rw-r--r--	root/root	lib/firmware/intel/ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
+-rw-r--r--	root/root	lib/firmware/intel/ipu/shisp_2400b0_v21.bin
+-rw-r--r--	root/root	lib/firmware/intel/ipu/shisp_2401a0_v21.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ipu3-fw.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
 drwxr-xr-x	root/root	lib/firmware/intel/vsc/
