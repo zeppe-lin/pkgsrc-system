@@ -3,16 +3,19 @@
 # Depends on:  grub2 efibootmgr
 
 name=grub2-efi
-version=2.06
-release=2
+version=2.12
+release=1
 source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+	../grub2/extra_deps.lst
 	../grub2/csum_seed.patch"
 
 build() {
-	patch -Np1 -d grub-$version -i $SRC/csum_seed.patch
+	#patch -Np1 -d grub-$version -i $SRC/csum_seed.patch
 
 	export CFLAGS="$CFLAGS -Wno-error"
 	export PYTHON=python3
+
+	cp $SRC/extra_deps.lst grub-$version/grub-core/
 
 	MODLIST="
 	boot chain configfile fat ext2 linux normal ntfs part_gpt
@@ -41,5 +44,5 @@ build() {
 	done
 
 	# conflicts with grub2 package
-	rm -r $PKG/usr/bin $PKG/usr/etc $PKG/usr/sbin $PKG/usr/share
+	cd $PKG/usr; rm -r bin etc sbin share
 }
