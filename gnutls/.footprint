@@ -29,9 +29,9 @@ drwxr-xr-x	root/root	usr/include/gnutls/
 -rw-r--r--	root/root	usr/include/gnutls/x509.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libgnutls.la
-lrwxrwxrwx	root/root	usr/lib/libgnutls.so -> libgnutls.so.30.37.1
-lrwxrwxrwx	root/root	usr/lib/libgnutls.so.30 -> libgnutls.so.30.37.1
--rwxr-xr-x	root/root	usr/lib/libgnutls.so.30.37.1
+lrwxrwxrwx	root/root	usr/lib/libgnutls.so -> libgnutls.so.30.38.0
+lrwxrwxrwx	root/root	usr/lib/libgnutls.so.30 -> libgnutls.so.30.38.0
+-rwxr-xr-x	root/root	usr/lib/libgnutls.so.30.38.0
 -rwxr-xr-x	root/root	usr/lib/libgnutlsxx.la
 lrwxrwxrwx	root/root	usr/lib/libgnutlsxx.so -> libgnutlsxx.so.30.0.0
 lrwxrwxrwx	root/root	usr/lib/libgnutlsxx.so.30 -> libgnutlsxx.so.30.0.0
@@ -1212,8 +1212,10 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_rdn_get_by_oid.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_rdn_get_oid.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_deinit.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_get_rsa_oaep_params.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_get_rsa_pss_params.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_init.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_set_rsa_oaep_params.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_spki_set_rsa_pss_params.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_tlsfeatures_add.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_tlsfeatures_check_crt.3.gz
