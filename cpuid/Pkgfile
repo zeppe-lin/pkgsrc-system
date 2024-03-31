@@ -2,13 +2,11 @@
 # URL:         https://www.etallen.com/cpuid.html
 
 name=cpuid
-version=20230614
+version=20240324
 release=1
 source=https://www.etallen.com/cpuid/cpuid-$version.src.tar.gz
 
 build() {
-	cd cpuid-$version
-
-	make -e CFLAGS="$CFLAGS"
-	make BUILDROOT=$PKG install
+	make -C cpuid-$version -e CFLAGS="$CFLAGS"
+	make -C cpuid-$version BUILDROOT=$PKG install
 }
