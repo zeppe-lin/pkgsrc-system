@@ -3,7 +3,7 @@
 # Depends on:  acl openssl popt zstd
 
 name=rsync
-version=3.2.7
+version=3.3.0
 release=1
 source="https://download.samba.org/pub/rsync/$name-$version.tar.gz
 	rsyncd.conf rc.rsyncd"
