@@ -2,49 +2,32 @@
 # URL:         https://serf.apache.org/
 # Depends on:  apr-util scons
 
+# XXX: switch to CMake build?
+
 name=serf
-version=1.3.9
-release=3
-source="https://archive.apache.org/dist/$name/$name-$version.tar.bz2
-	scons-py3.patch
-	serf-1.3.8-openssl.patch
-	serf-1.3.8-static-lib.patch
-	serf-1.3.9-libressl.patch
-	serf-1.3.9-openssl-3-bio-ctrl.patch
-	serf-1.3.9-openssl-3-errgetfunc.patch
-	serf-1.3.9-python3_byte.patch
-	serf-1.3.9-python3-check.patch
-	serf-1.3.9-python3.patch"
+version=1.3.10
+release=1
+source="https://archive.apache.org/dist/serf/serf-$version.tar.bz2
+	openssl3-ERR_GET_FUNC.patch"
 
 build() {
-	cd $name-$version
+	cd serf-$version
 
-	#patch -Np1 -i $SRC/scons-py3.patch
-	#ln -s /usr/bin/python3 python
-	#export PATH=$SRC/$name-$version:$PATH
-
-	patch -p1 -i $SRC/serf-1.3.8-openssl.patch
-	patch -p1 -i $SRC/serf-1.3.8-static-lib.patch
-	patch -p1 -i $SRC/serf-1.3.9-libressl.patch
-	patch -p1 -i $SRC/serf-1.3.9-openssl-3-bio-ctrl.patch
-	patch -p1 -i $SRC/serf-1.3.9-openssl-3-errgetfunc.patch
-	patch -p1 -i $SRC/serf-1.3.9-python3_byte.patch
-	patch -p1 -i $SRC/serf-1.3.9-python3-check.patch
-	patch -p1 -i $SRC/serf-1.3.9-python3.patch
+	patch -p1 -i $SRC/openssl3-ERR_GET_FUNC.patch
 
 	# https://code.google.com/p/serf/issues/detail?id=133
-	sed -e "/env.Append(CCFLAGS=\['-O2'\])/d" -i SConstruct
+	sed -i "/env.Append(CCFLAGS=\['-O2'\])/d" SConstruct
 
 	# removes runtime path from shared library
-	sed -i -e '/Append/ s/RPATH=libdir,//'  SConstruct
+	sed -i '/Append/ s/RPATH=libdir,//'       SConstruct
 
 	# disable building and installing of the static library
-	#sed -i -e '/Default/ s/lib_static,//'   SConstruct
-	#sed -i -e '/Alias/ s/install_static,//' SConstruct
+	#sed -i '/Default/ s/lib_static,//'       SConstruct
+	#sed -i '/Alias/ s/install_static,//'     SConstruct
 
 	scons BUILD_STATIC=yes CFLAGS="$CFLAGS" PREFIX=/usr LIBDIR=/usr/lib
 	scons install --install-sandbox=$PKG
 
-	# serf-1.3.9 does not install world writable files
+	# fix perms
 	chmod -R go-w $PKG/usr/include/serf-1
 }
