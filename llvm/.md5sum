@@ -1,6 +1,6 @@
-054f1c9cfb2c4782934bf14d5cd0387d  cmake-18.1.3.src.tar.xz
+a481712ab4c7314b6f94ad72219ec16c  cmake-18.1.4.src.tar.xz
 7fc6870fe0887ee43a2f0b720e4cdd4f  install-prefix.patch
-8776bfffa10c3e3c9cfdf5c80aca39f0  llvm-18.1.3.src.tar.xz
+2a3a9d406594112d367b0bcceecb5ea9  llvm-18.1.4.src.tar.xz
 fcd6954a7fbd05687990e59e87131c3e  llvm-config.h
 b7a931c1bdd849882d3b1da696e2d14a  rust-feature-tables.patch
-2c1c7a296711eba1b956e5637079a4ed  third-party-18.1.3.src.tar.xz
+2d9f2e63f4ac11418d7e48e7a1186ce7  third-party-18.1.4.src.tar.xz
