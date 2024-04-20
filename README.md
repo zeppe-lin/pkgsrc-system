@@ -5,7 +5,7 @@ and files for the packages required for minimal installation on real
 hardware (e.g. boot loader, filesystem utilities, hw-monitors, etc)
 and/or packages required for servers.
 
-Packages in _this_ collection must depend **only** on **core** pkgsrc
+Packages in this collection must depend **only** on **core** pkgsrc
 collection.
 
 This distribution was originally forked from CRUX ports as of version
