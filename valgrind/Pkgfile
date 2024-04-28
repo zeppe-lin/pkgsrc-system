@@ -1,10 +1,10 @@
 # Description: Debugging and profiling system
-# URL:         https://valgrind.org
+# URL:         https://valgrind.org/
 # Depends on:  glibc-32
 # Optional:    gdb
 
 name=valgrind
-version=3.22.0
+version=3.23.0
 release=1
 source=https://sourceware.org/pub/$name/$name-$version.tar.bz2
 

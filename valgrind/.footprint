@@ -84,6 +84,7 @@ drwxr-xr-x	root/root	usr/include/valgrind/vki/
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-amd64-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-amd64-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-arm-linux.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-arm64-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-arm64-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-darwin.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-freebsd.h
@@ -91,6 +92,7 @@ drwxr-xr-x	root/root	usr/include/valgrind/vki/
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux-io_uring.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-machine-types-amd64-freebsd.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-machine-types-arm64-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-machine-types-x86-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-mips32-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-mips64-linux.h
