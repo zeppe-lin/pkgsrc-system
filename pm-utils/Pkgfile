@@ -18,14 +18,13 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
+	# man pages and symlinks
 	install -m 0644 ../$name-$version/man/*.1 \
 		$PKG/usr/share/man/man1
 	install -m 0644 ../$name-$version/man/*.8 \
 		$PKG/usr/share/man/man8
-
-	local _LINK
-	for _LINK in pm-hibernate pm-suspend-hybrid pm-suspend; do
-		ln -s pm-action.8.gz $PKG/usr/share/man/man8/$_LINK.8.gz
+	for f in pm-hibernate pm-suspend-hybrid pm-suspend; do
+		ln -s pm-action.8.gz $PKG/usr/share/man/man8/$f.8.gz
 	done
 
 	# install video quirks
