@@ -4,7 +4,6 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/migratepages
 -rwxr-xr-x	root/root	usr/bin/migspeed
 -rwxr-xr-x	root/root	usr/bin/numactl
--rwxr-xr-x	root/root	usr/bin/numademo
 -rwxr-xr-x	root/root	usr/bin/numastat
 drwxr-xr-x	root/root	usr/include/
 -rw-r--r--	root/root	usr/include/numa.h
