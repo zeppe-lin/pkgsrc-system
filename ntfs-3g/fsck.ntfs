@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /bin/ntfsfix $(echo "$* " | sed 's/-a /-d /g;s/-p /-d /g;s/-f //g;')
+exec /sbin/ntfsfix $(echo "$* " | sed 's/-a /-d /g;s/-p /-d /g;s/-f //g;')

@@ -4,7 +4,7 @@
 
 name=ntfs-3g
 version=2022.10.3
-release=3
+release=4
 source="https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
 	fsck.ntfs
 	fsck.ntfs.8"
