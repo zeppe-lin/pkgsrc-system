@@ -16,11 +16,11 @@ drwxr-xr-x	root/root	usr/include/nvme/
 -rw-r--r--	root/root	usr/include/nvme/util.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so -> libnvme-mi.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.8.0
--rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.8.0
+lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.9.0
+-rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.9.0
 lrwxrwxrwx	root/root	usr/lib/libnvme.so -> libnvme.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.8.0
--rwxr-xr-x	root/root	usr/lib/libnvme.so.1.8.0
+lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.9.0
+-rwxr-xr-x	root/root	usr/lib/libnvme.so.1.9.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme-mi.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme.pc
@@ -58,6 +58,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nbft_ssns_flags.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nbft_ssns_trflags.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nbft_trtype.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_acq.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_admin_opcode.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_admin_passthru.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_admin_passthru64.2.gz
@@ -72,12 +73,26 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ana_log.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ana_state.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_apst_entry.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_aqa.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_asq.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_boot_partition.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_boot_partition_info.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_bpinfo.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_bpmbl.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_bprsel.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cap.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_capacity_config_desc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_capacity_mgmt.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_change_ns_event.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_channel_config_desc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmb_size.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbebs.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbloc.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbmsc.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbsts.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbswtp.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmbsz.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_effects.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_effects_log.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_format_mset.2.gz
@@ -86,6 +101,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_format_ses.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_get_log_lid.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_cmd_get_log_telemetry_host_lsp.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_cmic.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_compare.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_connect_err.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_constants.2.gz
@@ -97,7 +113,9 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_copy_range_sopt.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_create_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_create_root.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_crto.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_csi.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_csts.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ctrl_config_match.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ctrl_find.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ctrl_first_ns.2.gz
@@ -179,8 +197,10 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_endurance_group_log.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_eom_lane_desc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_eom_optional_data.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_eom_optional_data_present.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_errno_to_string.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_error_log_page.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_export_tls_key.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fabrics_config.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fctype.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fdp_config_desc.2.gz
@@ -219,6 +239,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_firmware_slot.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_first_host.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_first_subsystem.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_flbas.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_flush.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_for_each_host.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_for_each_host_safe.2.gz
@@ -323,6 +344,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_log_telemetry_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_log_telemetry_host.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_log_zns_changed_zones.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_get_logging_level.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_logical_block_size.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_new_host_telemetry.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_ns_attr.2.gz
@@ -425,6 +447,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_identify_primary_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_identify_secondary_ctrl_list.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_identify_uuid.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_import_tls_key.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range_f1.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_init_copy_range_f2.2.gz
@@ -619,6 +642,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt_create.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt_delete.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt_delete_timeout.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt_host_sw_specified.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_mgmt_sel.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_ns_read.2.gz
@@ -646,6 +670,10 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_path_get_ns.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_path_get_sysfs_dir.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_paths_filter.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pel_ehai.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pel_ehai_pit.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pel_rci.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pel_rci_rcpit.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_persistent_event_entry.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_persistent_event_log.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_persistent_event_types.2.gz
@@ -655,6 +683,12 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_plm_config.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_pmr_size.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_pmr_throughput.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrcap.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrctl.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrebs.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrmsc.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrsts.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_pmrswtp.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_power_on_reset_info_list.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_primary_ctrl_cap.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_psd_flags.2.gz
@@ -663,6 +697,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_psd_workload.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_read.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_read_config.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_read_key.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_refresh_topology.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_register_offsets.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_registered_ctrl.2.gz
@@ -694,12 +729,14 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_scan_namespace.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_scan_subsystem_namespaces.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_scan_subsystems.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_scan_tls_keys.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_scan_topology.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_secondary_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_secondary_ctrl_list.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_security_receive.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_security_send.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_self_test_log.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_set_feat_event_layout.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_feature_event.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_arbitration.2.gz
@@ -788,14 +825,17 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_thermal_exc_event.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_time_stamp_change_event.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_timestamp.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_unit.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_unlink_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_update_config.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_update_key.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_uring_cmd.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_verify.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_version.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_virt_mgmt_act.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_virt_mgmt_rt.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_virtual_mgmt.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_vs.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_write.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_write_uncorrectable.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_write_zeros.2.gz
