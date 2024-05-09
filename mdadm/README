@@ -2,9 +2,10 @@ README mdadm
 
 
 KERNEL CONFIGURATION
+====================
 
-	Enable the following options in the kernel configuration and recompile
-	the kernel, if necessary.  Only the RAID types desired are required.
+Enable the following options in the kernel configuration and recompile the
+kernel, if necessary.  Only the RAID types desired are required.
 
 	Device Drivers --->
 	  [*] Multiple devices driver support (RAID and LVM) --->  [CONFIG_MD]
@@ -19,9 +20,10 @@ KERNEL CONFIGURATION
 
 
 ONLINE DOCUMENTATION
+====================
 
-	A guide to mdadm:
-	https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm
+A guide to mdadm:
+https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm
 
 
 End of file.
