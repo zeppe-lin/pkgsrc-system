@@ -5,10 +5,11 @@
 
 PG_DATA=/var/pgsql/data
 
-[ ! -e /run/postgresql ] && install -d -o postgres -g postgres /run/postgresql
-
 case "$1" in
 start|stop|status|restart|reload)
+	if [ ! -e /run/postgresql ]; then
+		install -o postgres -g postgres -d /run/postgresql
+	fi
 	sudo -u postgres pg_ctl -D "$PG_DATA" -l /var/log/postgresql "$1"
 	;;
 *)
