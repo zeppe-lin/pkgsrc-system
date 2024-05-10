@@ -4,11 +4,16 @@
 
 name=wpa-supplicant
 version=2.10
-release=1
+release=2
 source="https://w1.fi/releases/wpa_supplicant-$version.tar.gz
-	wpa_supplicant.conf rc.wpa_supplicant"
+	wpa_supplicant.conf rc.wpa_supplicant
+	wpa_supplicant-2.10-security_fix-1.patch"
 
 build() {
+	# CVE-2023-52160
+	patch -d wpa_supplicant-$version -p1 \
+		-i $SRC/wpa_supplicant-2.10-security_fix-1.patch
+
 	cd wpa_supplicant-$version/wpa_supplicant
 
 	# disable dbus
