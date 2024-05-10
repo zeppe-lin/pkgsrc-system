@@ -1,0 +1,19 @@
+Description: In suspend log, put empty line after running the hook, not in between.
+Author: Dominique Brazziel <dbrazziel@snet.net>
+Bug-Debian: http://bugs.debian.org/661168
+
+Index: pm-utils/pm/pm-functions.in
+===================================================================
+--- pm-utils.orig/pm/pm-functions.in	2013-10-09 07:45:17.395995047 +0200
++++ pm-utils/pm/pm-functions.in	2013-10-09 07:45:38.483994430 +0200
+@@ -199,9 +199,9 @@
+ 	hook_ok "$1" && "$@"
+ 	# log() changes the return value, so save it for later
+ 	local status=$?
+-	log ""
+ 	log -n "$*: " 
+ 	hook_exit_status $status && LAST_HOOK="${1##*/}" || inhibit
++	log ""
+ }
+ 
+ if profiling; then

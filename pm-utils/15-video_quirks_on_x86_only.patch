@@ -1,0 +1,38 @@
+Description: Only run the video quirk handlers on x86 and x86_64, as they are quite expensive.
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+
+Index: pm-utils/pm/sleep.d/98video-quirk-db-handler
+===================================================================
+--- pm-utils.orig/pm/sleep.d/98video-quirk-db-handler	2013-07-01 07:23:57.242961692 +0200
++++ pm-utils/pm/sleep.d/98video-quirk-db-handler	2013-07-01 07:23:57.238961692 +0200
+@@ -1,6 +1,12 @@
+ #!/bin/bash
+ # Prototype video quirk database handler that does not rely on HAL.
+ 
++# only needed on x86, quickly exit on other architectures as this is rather
++# expensive
++ARCH=`uname -m`
++if [ "$ARCH" = "${ARCH%86}" -a "$ARCH" = "${ARCH#x86}" ]; then
++    exit 0;
++fi
+ shopt -s extglob
+ 
+ . "${PM_FUNCTIONS}"
+Index: pm-utils/pm/sleep.d/99video
+===================================================================
+--- pm-utils.orig/pm/sleep.d/99video	2013-07-01 07:23:57.242961692 +0200
++++ pm-utils/pm/sleep.d/99video	2013-07-01 07:24:04.590962048 +0200
+@@ -12,6 +12,13 @@
+ # If it weren't for video card quirks, suspend/resume on Linux would be 
+ # a whole lot more stable.
+ 
++# only needed on x86, quickly exit on other architectures as this is rather
++# expensive
++ARCH=`uname -m`
++if [ "$ARCH" = "${ARCH%86}" -a "$ARCH" = "${ARCH#x86}" ]; then
++    exit 0;
++fi
++
+ . "${PM_FUNCTIONS}"
+ 
+ for opt in $PM_CMDLINE; do

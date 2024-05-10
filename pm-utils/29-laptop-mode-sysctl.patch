@@ -1,0 +1,19 @@
+Author: Osamu Aoki <osamu@debian.org>
+Description: Respect sysctl.conf by laptop-mode
+ Since laptop-mode can be executed after or before sysctl.conf depending on
+ the system on AC or Battery, it is not good idea to overwite /proc/sys/vm/*
+ with the fixed default kernel values.
+Bug: https://bugs.freedesktop.org/show_bug.cgi?id=45889
+Bug-Debian: https://bugs.debian.org/659260
+
+--- a/pm/power.d/laptop-mode
++++ b/pm/power.d/laptop-mode
+@@ -65,8 +65,6 @@
+     # disable laptop mode, set vm parameters back to sane defaults
+     if state_exists laptop_mode_default; then
+ 	write_values $(restorestate laptop_mode_default)
+-    else
+-	write_values 0 10 5 500
+     fi	
+     echo "Laptop mode disabled."
+ }

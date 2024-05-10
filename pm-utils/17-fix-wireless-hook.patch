@@ -1,0 +1,15 @@
+Description: Check "enabled" wireless state file too. This apparently depends on the particular wireless driver. Also assume that a missing file means "enabled".
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Bug-Ubuntu: https://launchpad.net/bugs/1299975
+
+--- a/pm/power.d/wireless
++++ b/pm/power.d/wireless
+@@ -20,7 +20,7 @@
+     # Skip if not a wireless card.
+     [ -d "/sys/class/net/$1/wireless" ] || return 1
+     # Also don't do anything if the device is disabled
+-    [ "$(cat /sys/class/net/$1/device/enable)" = "1" ] || return 1
++    [ "$(cat /sys/class/net/$1/device/enable* 2>/dev/null)" != "0" ] || return 1
+     driver="$(readlink "/sys/class/net/$1/device/driver")"
+     driver=${driver##*/}
+     case $driver in

@@ -1,0 +1,21 @@
+Description: Check HIBERNATE_MODE in uswsusp module
+Author: Vadim Solomin <vadic052@gmail.com>
+Bug-Debian: http://bugs.debian.org/589553
+
+Index: pm-utils/pm/module.d/uswsusp
+===================================================================
+--- pm-utils.orig/pm/module.d/uswsusp	2013-07-02 06:33:16.000000000 +0200
++++ pm-utils/pm/module.d/uswsusp	2013-10-09 07:36:53.558725201 +0200
+@@ -87,7 +87,11 @@
+ 	HIBERNATE_MODULE="uswsusp"
+ 	do_hibernate()
+ 	{
+-		s2disk
++		if [ -n "$HIBERNATE_MODE" ]; then
++			s2disk -P "shutdown method=$HIBERNATE_MODE"
++		else
++			s2disk
++		fi
+ 	}
+ fi
+ 

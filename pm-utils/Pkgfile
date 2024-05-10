@@ -3,11 +3,17 @@
 
 name=pm-utils
 version=1.4.1
-release=1
+release=2
 source="https://pm-utils.freedesktop.org/releases/$name-$version.tar.gz
-	https://pm-utils.freedesktop.org/releases/pm-quirks-20100619.tar.gz"
+	https://pm-utils.freedesktop.org/releases/pm-quirks-20100619.tar.gz
+	*.patch"
 
 build() {
+	# apply debian patches
+	for f in $SRC/*.patch; do
+		patch -d $name-$version -p1 -i "$f"
+	done
+
 	mkdir build; cd build
 
 	../$name-$version/configure  \
