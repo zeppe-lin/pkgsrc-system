@@ -13,7 +13,7 @@
 #       https://github.com/graysky2/kernel_compiler_support
 
 name=linux
-version=5.4.274
+version=5.4.275
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
