@@ -7,7 +7,7 @@
 ##############################
 
 name=lvm2
-version=2.03.23
+version=2.03.24
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
@@ -44,8 +44,8 @@ build() {
 	make V=1
 	make V=1 DESTDIR=$PKG install_lvm2
 
-	install -d -m 0700 $PKG/etc/lvm/archive $PKG/etc/lvm/backup \
+	install -m 0700 -d $PKG/etc/lvm/archive $PKG/etc/lvm/backup \
 		$PKG/etc/lvm/cache
-	install -d -m 1777 $PKG/var/lock
-	install -d -m 0700 $PKG/var/lock/lvm
+	install -m 1777 -d $PKG/var/lock
+	install -m 0700 -d $PKG/var/lock/lvm
 }
