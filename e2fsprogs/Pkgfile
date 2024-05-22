@@ -3,7 +3,7 @@
 # Depends on:  util-linux
 
 name=e2fsprogs
-version=1.47.0
+version=1.47.1
 release=1
 source=https://www.kernel.org/pub/linux/kernel/people/tytso/$name/v$version/$name-$version.tar.xz
 
@@ -17,6 +17,7 @@ build() {
 	# --disable-fsck: provided by util-linux
 	../$name-$version/configure        \
 		--prefix=/usr              \
+		--libexecdir=/usr/lib      \
 		--with-root-prefix=        \
 		--disable-e2initrd-helper  \
 		--disable-fuse2fs          \
