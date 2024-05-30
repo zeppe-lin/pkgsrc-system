@@ -1,0 +1,26 @@
+# Description: Hard disk temperature tool
+# URL:         https://github.com/vitlav/hddtemp
+
+name=hddtemp
+version=0.4.3-6740688
+release=1
+source="https://github.com/vitlav/$name/archive/${version#*-}/$name-$version.tar.gz
+	rc.$name"
+
+build() {
+	mkdir build; cd build
+
+	autoreconf -fi ../$name-*
+	../$name-*/configure                       \
+		--prefix=/usr                      \
+		--disable-nls                      \
+		--with-db-path=/var/db/hddtemp.db  \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -m 0644 -D ../$name-*/data/hddtemp.db \
+		$PKG/var/db/hddtemp.db
+
+	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
+}
