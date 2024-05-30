@@ -6,7 +6,7 @@
 SSD=/sbin/start-stop-daemon
 PROG=/usr/sbin/hddtemp
 PID=/run/hddtemp.pid
-OPTS="-dF -l 127.0.0.1"
+OPTS="-dF -l 127.0.0.1 -p 7634"
 
 case $1 in
 start)
