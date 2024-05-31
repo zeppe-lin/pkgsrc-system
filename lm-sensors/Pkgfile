@@ -1,4 +1,4 @@
-# Description: Monitoring system health (temperatures, voltages, fan speed, etc)
+# Description: Monitor system health (temperatures, voltages, fan speed, etc)
 # URL:         https://github.com/groeck/lm-sensors
 
 name=lm-sensors
