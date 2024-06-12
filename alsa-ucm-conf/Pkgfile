@@ -2,17 +2,14 @@
 # URL:         https://alsa-project.org/
 
 name=alsa-ucm-conf
-version=1.2.10
-release=2
-source="https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
-	splitpcm.patch"
+version=1.2.12
+release=1
+source=https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
 
 build() {
-	patch -d $name-$version -p1 -i $SRC/splitpcm.patch
-
-	# remove junk
-	rm $name-$version/ucm2/README.md $name-$version/ucm2/DEBUG.md
-
 	mkdir -p $PKG/usr/share/alsa
 	cp -r $name-$version/ucm2 $PKG/usr/share/alsa
+
+	# remove junk
+	find $PKG -type f \( -name README.md -or -name DEBUG.md \) -delete
 }
