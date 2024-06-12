@@ -3,8 +3,8 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.10
-release=2
+version=1.2.12
+release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	rc.alsa
 	0001-simplify-nocolors-menu.patch
