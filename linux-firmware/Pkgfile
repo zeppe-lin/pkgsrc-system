@@ -3,7 +3,7 @@
 # Depends on:  rdfind
 
 name=linux-firmware
-version=20240513
+version=20240610
 release=1
 source=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
 
@@ -11,5 +11,5 @@ build() {
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
 
 	# remove junk
-	find $PKG -depth -type f \( -name ChangeLog -o -name README \) -delete
+	find $PKG -type f \( -name ChangeLog -o -name README \) -delete
 }

@@ -131,6 +131,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/cyan_skillfish2_mec2.bin -> cyan_skillf
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_1_6_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_2_0_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_2_1_dmcub.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_5_1_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_5_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_dmcub.bin -> beige_goby_dmcub.bin
@@ -142,7 +143,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_mec2.bin -> dimgrey_ca
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_sdma.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_sos.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ta.bin -> beige_goby_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_vcn.bin -> beige_goby_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/fiji_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/fiji_mc.bin
@@ -215,6 +216,13 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/gc_11_0_4_mes.bin -> gc_11_0_1_mes.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_0_mes_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_0_pfp.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_0_rlc.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_imu.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_me.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_mec.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_mes1.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_mes_2.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_pfp.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_1_rlc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_9_4_3_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_9_4_3_rlc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/green_sardine_asd.bin
@@ -247,6 +255,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/hawaii_sdma1.bin -> bonaire_sdma1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/hawaii_smc.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/hawaii_uvd.bin -> bonaire_uvd.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/hawaii_vce.bin -> bonaire_vce.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/isp_4_1_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/kabini_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/kabini_me.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/kabini_mec.bin
@@ -303,7 +312,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_mec2.bin -> navi12_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_sos.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_ta.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/navi12_vcn.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_vcn.bin -> navi10_vcn.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_asd.bin -> navi12_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_ce_wks.bin
@@ -321,7 +330,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_mec_wks.bin -> navi14_mec2_wks.b
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_sdma1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_sos.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_ta.bin -> navi12_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_ta.bin -> navi10_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_vcn.bin -> navi10_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navy_flounder_dmcub.bin -> beige_goby_dmcub.bin
@@ -431,7 +440,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/polaris12_vce.bin -> polaris10_vce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_10_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_11_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_11_toc.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_4_ta.bin -> psp_13_0_11_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_4_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_4_toc.bin -> psp_13_0_11_toc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_5_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_5_ta.bin
@@ -441,10 +450,12 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_4_toc.bin -> psp_13_0_11_toc.b
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_7_sos.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_7_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_asd.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_8_ta.bin -> psp_13_0_7_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_toc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_0_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_0_toc.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_14_0_1_ta.bin -> psp_13_0_4_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_1_toc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_gpu_info.bin
@@ -454,9 +465,9 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven2_mec2.bin -> raven2_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_pfp.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_rlc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_sdma.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven2_ta.bin -> navi10_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/raven2_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven2_vcn.bin -> picasso_vcn.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/raven_asd.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_asd.bin -> picasso_asd.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_ce.bin -> picasso_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven_dmcu.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_gpu_info.bin -> picasso_gpu_info.bin
@@ -480,7 +491,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_mec2.bin -> green_sardine_mec.bi
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_rlc.bin -> green_sardine_rlc.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_sdma.bin -> green_sardine_sdma.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/renoir_ta.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_vcn.bin -> green_sardine_vcn.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/renoir_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_4_4_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_5_2_6.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_5_2_7.bin
@@ -489,6 +500,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_vcn.bin -> green_sardine_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_0_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_0_3.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_0.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/si58_mc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sienna_cichlid_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/sienna_cichlid_dmcub.bin -> beige_goby_dmcub.bin
@@ -560,10 +572,12 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/vangogh_mec2.bin -> vangogh_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vangogh_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_3_1_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_0.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin -> vcn_4_0_0.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_3.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin -> vcn_4_0_0.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_5.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_acg_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_ce.bin
@@ -627,6 +641,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/verde_ce.bin -> hainan_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/verde_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/verde_uvd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vpe_6_1_0.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vpe_6_1_1.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/yellow_carp_asd.bin -> psp_13_0_8_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_dmcub.bin
@@ -636,9 +651,9 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/yellow_carp_mec2.bin -> yellow_carp_mec
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_pfp.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_rlc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_sdma.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/yellow_carp_ta.bin -> psp_13_0_8_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/yellow_carp_ta.bin -> psp_13_0_7_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_toc.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/yellow_carp_vcn.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/yellow_carp_vcn.bin -> vcn_3_1_2.bin
 drwxr-xr-x	root/root	lib/firmware/amdtee/
 -rw-r--r--	root/root	lib/firmware/amdtee/773bd96f-b83f-4d52-b12dc529b13d8543.bin
 lrwxrwxrwx	root/root	lib/firmware/amdtee/amd_pmf_v3.bin -> 773bd96f-b83f-4d52-b12dc529b13d8543.bin
@@ -1767,6 +1782,22 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b7-spkid0-r
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b7-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-17aa38b4-spkid1-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b7-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-17aa38b4-spkid1-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38b7.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c7-spkid0-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c7-spkid0-l1.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c7-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-17aa38c7-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c7-spkid0-r1.bin -> cs35l41-dsp1-spk-prot-17aa38c7-spkid0-l1.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c7.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c8-spkid1-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c8-spkid1-l1.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c8-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-17aa38c8-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c8-spkid1-r1.bin -> cs35l41-dsp1-spk-prot-17aa38c8-spkid1-l1.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38c8.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38f9-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-17aa38ab-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38f9-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-17aa38ab-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38f9.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38fa-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-17aa38a9-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38fa-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-17aa38a9-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-17aa38fa.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot.wmfw
 drwxr-xr-x	root/root	lib/firmware/cirrus/cs35l41/
@@ -4095,6 +4126,7 @@ drwxr-xr-x	root/root	lib/firmware/rtw88/
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8703b_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8703b_wow_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8723d_fw.bin
+-rw-r--r--	root/root	lib/firmware/rtw88/rtw8821a_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8821c_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8822b_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw88/rtw8822c_fw.bin
