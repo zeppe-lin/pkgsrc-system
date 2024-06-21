@@ -2,7 +2,7 @@
 # URL:         https://gnupg.org/software/libgpg-error/index.html
 
 name=libgpg-error
-version=1.49
+version=1.50
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
