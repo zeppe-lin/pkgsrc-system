@@ -6,9 +6,9 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libassuan.a
 -rwxr-xr-x	root/root	usr/lib/libassuan.la
-lrwxrwxrwx	root/root	usr/lib/libassuan.so -> libassuan.so.0.8.7
-lrwxrwxrwx	root/root	usr/lib/libassuan.so.0 -> libassuan.so.0.8.7
--rwxr-xr-x	root/root	usr/lib/libassuan.so.0.8.7
+lrwxrwxrwx	root/root	usr/lib/libassuan.so -> libassuan.so.9.0.0
+lrwxrwxrwx	root/root	usr/lib/libassuan.so.9 -> libassuan.so.9.0.0
+-rwxr-xr-x	root/root	usr/lib/libassuan.so.9.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libassuan.pc
 drwxr-xr-x	root/root	usr/share/
