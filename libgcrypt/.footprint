@@ -9,9 +9,9 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libgcrypt.a
 -rwxr-xr-x	root/root	usr/lib/libgcrypt.la
-lrwxrwxrwx	root/root	usr/lib/libgcrypt.so -> libgcrypt.so.20.4.3
-lrwxrwxrwx	root/root	usr/lib/libgcrypt.so.20 -> libgcrypt.so.20.4.3
--rwxr-xr-x	root/root	usr/lib/libgcrypt.so.20.4.3
+lrwxrwxrwx	root/root	usr/lib/libgcrypt.so -> libgcrypt.so.20.5.0
+lrwxrwxrwx	root/root	usr/lib/libgcrypt.so.20 -> libgcrypt.so.20.5.0
+-rwxr-xr-x	root/root	usr/lib/libgcrypt.so.20.5.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libgcrypt.pc
 drwxr-xr-x	root/root	usr/share/

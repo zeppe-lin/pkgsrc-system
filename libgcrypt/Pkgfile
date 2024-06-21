@@ -3,7 +3,7 @@
 # Depends on:  libgpg-error
 
 name=libgcrypt
-version=1.10.3
+version=1.11.0
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
@@ -12,9 +12,9 @@ build() {
 
 	../$name-$version/configure        \
 		--prefix=/usr              \
+		--disable-doc              \
 		--disable-padlock-support  \
 		--enable-static=yes        \
-		--disable-doc              \
 
 	make V=1
 	make DESTDIR=$PKG install
