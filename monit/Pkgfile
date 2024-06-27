@@ -3,7 +3,7 @@
 # Depends on:  libnsl linux-pam openssl zlib
 
 name=monit
-version=5.33.0
+version=5.34.0
 release=1
 source="https://mmonit.com/$name/dist/$name-$version.tar.gz
 	rc.monitd"
