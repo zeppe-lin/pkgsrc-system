@@ -3,7 +3,7 @@
 # Depends on:  libgpg-error
 
 name=libassuan
-version=2.5.7
+version=3.0.1
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
@@ -12,8 +12,8 @@ build() {
 
 	../$name-$version/configure  \
 		--prefix=/usr        \
-		--enable-static      \
 		--disable-doc        \
+		--enable-static      \
 
 	make V=1
 	make DESTDIR=$PKG install
