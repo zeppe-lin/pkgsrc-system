@@ -29,9 +29,9 @@ drwxr-xr-x	root/root	usr/include/gnutls/
 -rw-r--r--	root/root	usr/include/gnutls/x509.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libgnutls.la
-lrwxrwxrwx	root/root	usr/lib/libgnutls.so -> libgnutls.so.30.39.0
-lrwxrwxrwx	root/root	usr/lib/libgnutls.so.30 -> libgnutls.so.30.39.0
--rwxr-xr-x	root/root	usr/lib/libgnutls.so.30.39.0
+lrwxrwxrwx	root/root	usr/lib/libgnutls.so -> libgnutls.so.30.40.0
+lrwxrwxrwx	root/root	usr/lib/libgnutls.so.30 -> libgnutls.so.30.40.0
+-rwxr-xr-x	root/root	usr/lib/libgnutls.so.30.40.0
 -rwxr-xr-x	root/root	usr/lib/libgnutlsxx.la
 lrwxrwxrwx	root/root	usr/lib/libgnutlsxx.so -> libgnutlsxx.so.30.0.0
 lrwxrwxrwx	root/root	usr/lib/libgnutlsxx.so.30 -> libgnutlsxx.so.30.0.0
@@ -323,6 +323,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_get_len.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_init.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_output.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_squeeze.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_allowed.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_enable.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_get_timeout.3.gz
@@ -519,6 +520,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_export2.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_generate_mac.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_generate_mac2.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_generate_mac3.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_get_bag.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_import.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_pkcs12_init.3.gz
