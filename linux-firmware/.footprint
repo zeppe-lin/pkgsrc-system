@@ -658,9 +658,9 @@ drwxr-xr-x	root/root	lib/firmware/amdtee/
 -rw-r--r--	root/root	lib/firmware/amdtee/773bd96f-b83f-4d52-b12dc529b13d8543.bin
 lrwxrwxrwx	root/root	lib/firmware/amdtee/amd_pmf_v3.bin -> 773bd96f-b83f-4d52-b12dc529b13d8543.bin
 drwxr-xr-x	root/root	lib/firmware/amlogic/
-drwxr-xr-x	root/root	lib/firmware/amlogic/bluetooth/
--rw-r--r--	root/root	lib/firmware/amlogic/bluetooth/w1u_bt_fw_uart.bin
--rw-r--r--	root/root	lib/firmware/amlogic/bluetooth/w2_bt_fw_uart.bin
+-rw-r--r--	root/root	lib/firmware/amlogic/aml_w155s2_bt_uart.bin
+-rw-r--r--	root/root	lib/firmware/amlogic/aml_w265s1_bt_uart.bin
+-rw-r--r--	root/root	lib/firmware/amlogic/aml_w265s2_bt_uart.bin
 drwxr-xr-x	root/root	lib/firmware/amphion/
 drwxr-xr-x	root/root	lib/firmware/amphion/vpu/
 -rw-r--r--	root/root	lib/firmware/amphion/vpu/vpu_fw_imx8_dec.bin
@@ -2234,7 +2234,7 @@ lrwxrwxrwx	root/root	lib/firmware/intel/dsp_fw_release_v3402.bin -> dsp_fw_kbl_v
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-1020.ddc -> ibt-0040-0041.ddc
 -rw-r--r--	root/root	lib/firmware/intel/ibt-0040-1020.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-1050.ddc -> ibt-0040-0041.ddc
-lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-1050.sfi -> ibt-0040-0041.sfi
+-rw-r--r--	root/root	lib/firmware/intel/ibt-0040-1050.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-2120.ddc -> ibt-0040-0041.ddc
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-2120.sfi -> ibt-0040-1020.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0040-4150.ddc -> ibt-0040-0041.ddc
@@ -2335,6 +2335,8 @@ drwxr-xr-x	root/root	lib/firmware/intel/ipu/
 -rw-r--r--	root/root	lib/firmware/intel/ipu/shisp_2401a0_v21.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ipu3-fw.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
+drwxr-xr-x	root/root	lib/firmware/intel/ish/
+-rw-r--r--	root/root	lib/firmware/intel/ish/ish_lnlm.bin
 drwxr-xr-x	root/root	lib/firmware/intel/vsc/
 -rw-r--r--	root/root	lib/firmware/intel/vsc/ivsc_fw.bin
 -rw-r--r--	root/root	lib/firmware/intel/vsc/ivsc_pkg_hi556_0.bin
@@ -2462,6 +2464,7 @@ drwxr-xr-x	root/root	lib/firmware/isci/
 -rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-gf4-a0.pnvm
 -rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-hr-b0-83.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-hr-b0-86.ucode
+-rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-hr-b0-89.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-so-a0-gf-a0-72.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-so-a0-gf-a0-73.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-so-a0-gf-a0-74.ucode
@@ -3596,6 +3599,13 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/a530_zap.mdt -> apq8096/a530_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/a660_gmu.bin
 -rw-r--r--	root/root	lib/firmware/qcom/a660_sqe.fw
 -rw-r--r--	root/root	lib/firmware/qcom/a702_sqe.fw
+drwxr-xr-x	root/root	lib/firmware/qcom/aic100/
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/fw1.bin
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/fw10.bin
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/fw2.bin
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/fw5.bin
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/fw9.bin
+-rw-r--r--	root/root	lib/firmware/qcom/aic100/sbl.bin
 drwxr-xr-x	root/root	lib/firmware/qcom/apq8016/
 -rw-r--r--	root/root	lib/firmware/qcom/apq8016/WCNSS_qcom_wlan_nv_sbc.bin
 -rw-r--r--	root/root	lib/firmware/qcom/apq8016/mba.mbn
@@ -4176,6 +4186,9 @@ drwxr-xr-x	root/root	lib/firmware/ti-connectivity/
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/TIInit_6.2.31.bts
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/TIInit_6.6.15.bts
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/TIInit_7.2.31.bts
+-rw-r--r--	root/root	lib/firmware/ti-connectivity/cc33xx-conf.bin
+-rw-r--r--	root/root	lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin
+-rw-r--r--	root/root	lib/firmware/ti-connectivity/cc33xx_fw.bin
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/wl1251-fw.bin
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/wl1251-nvs.bin
 -rw-r--r--	root/root	lib/firmware/ti-connectivity/wl1271-fw-2.bin
