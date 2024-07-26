@@ -4,7 +4,7 @@
 
 name=lftp
 version=4.9.2
-release=1
+release=2
 source=https://lftp.yar.ru/ftp/lftp-$version.tar.xz
 
 build() {
@@ -18,4 +18,7 @@ build() {
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	sed -i 's/^Categories=Network;/&FileTransfer;/' \
+		$PKG/usr/share/applications/lftp.desktop
 }
