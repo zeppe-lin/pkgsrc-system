@@ -3,11 +3,14 @@
 # Depends on:  libnvme
 
 name=nvme-cli
-version=2.9.1
+version=2.10
 release=1
-source=https://github.com/linux-nvme/$name/archive/v$version/$name-$version.tar.gz
+source="https://github.com/linux-nvme/$name/archive/v$version/$name-$version.tar.gz
+	4c1e89f14474efc01e41e9c45d2bfa8467b9c1e5.patch"
 
 build() {
+	patch -d $name-$version -p1 -i $SRC/4c1e89f14474efc01e41e9c45d2bfa8467b9c1e5.patch
+
 	meson setup build $name-$version           \
 		--prefix=/usr                      \
 		--libexecdir=lib                   \
