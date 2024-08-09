@@ -3,7 +3,7 @@
 # Depends on:  openssl zlib
 
 name=libssh
-version=0.10.6
+version=0.11.0
 release=1
 source=https://www.libssh.org/files/${version%.*}/$name-$version.tar.xz
 
@@ -15,6 +15,7 @@ build() {
 		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"  \
 		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"      \
 		-D PYTHON_EXECUTABLE=/usr/bin/python3   \
+		-D UNIT_TESTING=OFF                     \
 		-Wno-dev                                \
 
 	ninja -C build -j ${JOBS:-1} -v
