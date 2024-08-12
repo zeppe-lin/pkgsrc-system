@@ -143,7 +143,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_mec2.bin -> dimgrey_ca
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_sdma.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_sos.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ta.bin -> beige_goby_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_vcn.bin -> beige_goby_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/fiji_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/fiji_mc.bin
@@ -298,7 +298,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi10_mec2.bin -> navi10_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi10_sos.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi10_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi10_vcn.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/navi12_asd.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_asd.bin -> navi10_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_dmcu.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_gpu_info.bin
@@ -311,9 +311,9 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_mec2.bin -> navi12_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_sdma1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi12_sos.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/navi12_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_ta.bin -> navi10_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi12_vcn.bin -> navi10_vcn.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_asd.bin -> navi12_asd.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_asd.bin -> navi10_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_ce_wks.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_gpu_info.bin
@@ -330,7 +330,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_mec_wks.bin -> navi14_mec2_wks.b
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_sdma1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navi14_sos.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_ta.bin -> navi10_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/navi14_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navi14_vcn.bin -> navi10_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navy_flounder_dmcub.bin -> beige_goby_dmcub.bin
@@ -342,7 +342,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/navy_flounder_mec2.bin -> navy_flounder
 -rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_sdma.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_sos.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/navy_flounder_ta.bin -> beige_goby_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/navy_flounder_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/navy_flounder_vcn.bin -> beige_goby_vcn.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/oland_ce.bin -> hainan_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/oland_k_smc.bin
@@ -450,9 +450,9 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_4_toc.bin -> psp_13_0_11_toc.b
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_7_sos.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_7_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_asd.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_13_0_8_ta.bin -> psp_13_0_7_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_13_0_8_toc.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_0_ta.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_14_0_0_ta.bin -> psp_13_0_4_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_0_toc.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_14_0_1_ta.bin -> psp_13_0_4_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_1_toc.bin
@@ -480,7 +480,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_pfp.bin -> picasso_pfp.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_sdma.bin -> picasso_sdma.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven_ta.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/raven_vcn.bin -> picasso_vcn.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_asd.bin -> green_sardine_asd.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/renoir_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/renoir_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_dmcub.bin -> green_sardine_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/renoir_gpu_info.bin
@@ -572,11 +572,11 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/vangogh_mec2.bin -> vangogh_mec.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vangogh_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_3_1_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_0.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_3.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_5.bin
--rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6.bin
+lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_6.bin -> vcn_4_0_5.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_acg_smc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vega10_asd.bin
@@ -2197,9 +2197,26 @@ drwxr-xr-x	root/root	lib/firmware/intel/avs/apl/
 -rw-r--r--	root/root	lib/firmware/intel/avs/apl/dsp_basefw.bin
 drwxr-xr-x	root/root	lib/firmware/intel/avs/cnl/
 -rw-r--r--	root/root	lib/firmware/intel/avs/cnl/dsp_basefw.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/da7219-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/dmic-tplg.bin
+lrwxrwxrwx	root/root	lib/firmware/intel/avs/hda-8086-generic-tplg.bin -> hda-808628xx-3ep-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/hda-808628xx-3ep-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/hda-generic-1ep-tplg.bin
+lrwxrwxrwx	root/root	lib/firmware/intel/avs/hda-generic-tplg.bin -> hda-generic-1ep-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/max98357a-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/max98373-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/max98927-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/nau8825-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt274-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt286-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt298-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt5514-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt5640-tplg.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/rt5663-tplg.bin
 drwxr-xr-x	root/root	lib/firmware/intel/avs/skl/
 -rw-r--r--	root/root	lib/firmware/intel/avs/skl/dsp_basefw.bin
 -rw-r--r--	root/root	lib/firmware/intel/avs/skl/dsp_mod_7CAD0808-AB10-CD23-EF45-12AB34CD56EF.bin
+-rw-r--r--	root/root	lib/firmware/intel/avs/ssm4567-tplg.bin
 drwxr-xr-x	root/root	lib/firmware/intel/catpt/
 drwxr-xr-x	root/root	lib/firmware/intel/catpt/bdw/
 -rw-r--r--	root/root	lib/firmware/intel/catpt/bdw/dsp_basefw.bin
@@ -2453,6 +2470,7 @@ drwxr-xr-x	root/root	lib/firmware/isci/
 -rw-r--r--	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-83.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-86.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-90.ucode
+-rw-r--r--	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-92.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 -rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-gf-a0-83.ucode
 -rw-r--r--	root/root	lib/firmware/iwlwifi-ma-b0-gf-a0-86.ucode
@@ -2658,7 +2676,6 @@ drwxr-xr-x	root/root	lib/firmware/mediatek/mt8195/
 -rw-r--r--	root/root	lib/firmware/mediatek/mt8195/scp.img
 drwxr-xr-x	root/root	lib/firmware/mediatek/sof-tplg/
 -rw-r--r--	root/root	lib/firmware/mediatek/sof-tplg/sof-mt8186.tplg
--rw-r--r--	root/root	lib/firmware/mediatek/sof-tplg/sof-mt8195-mt6359-rt1019-rt5682-dts.tplg
 -rw-r--r--	root/root	lib/firmware/mediatek/sof-tplg/sof-mt8195-mt6359-rt1019-rt5682.tplg
 drwxr-xr-x	root/root	lib/firmware/mediatek/sof/
 -rw-r--r--	root/root	lib/firmware/mediatek/sof/sof-mt8186.ldc
@@ -3508,6 +3525,8 @@ drwxr-xr-x	root/root	lib/firmware/ositech/
 -rw-r--r--	root/root	lib/firmware/phanfw.bin
 drwxr-xr-x	root/root	lib/firmware/powervr/
 -rw-r--r--	root/root	lib/firmware/powervr/rogue_33.15.11.3_v1.fw
+-rw-r--r--	root/root	lib/firmware/qat_402xx.bin
+-rw-r--r--	root/root	lib/firmware/qat_402xx_mmp.bin
 -rw-r--r--	root/root	lib/firmware/qat_4xxx.bin
 -rw-r--r--	root/root	lib/firmware/qat_4xxx_mmp.bin
 -rw-r--r--	root/root	lib/firmware/qat_895xcc.bin
@@ -3619,6 +3638,8 @@ drwxr-xr-x	root/root	lib/firmware/qcom/apq8096/
 -rw-r--r--	root/root	lib/firmware/qcom/apq8096/mba.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/apq8096/modem.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/apq8096/modemr.jsn
+-rw-r--r--	root/root	lib/firmware/qcom/gen70500_gmu.bin
+-rw-r--r--	root/root	lib/firmware/qcom/gen70500_sqe.fw
 -rw-r--r--	root/root	lib/firmware/qcom/leia_pfp_470.fw
 -rw-r--r--	root/root	lib/firmware/qcom/leia_pm4_470.fw
 drwxr-xr-x	root/root	lib/firmware/qcom/qcm2290/
@@ -3706,10 +3727,15 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/venus-5.4/venus.mdt -> venus.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/venus-6.0/
 -rw-r--r--	root/root	lib/firmware/qcom/venus-6.0/venus.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/vpu-1.0/
--rw-r--r--	root/root	lib/firmware/qcom/vpu-1.0/venus.mbn
-lrwxrwxrwx	root/root	lib/firmware/qcom/vpu-1.0/venus.mdt -> venus.mbn
+lrwxrwxrwx	root/root	lib/firmware/qcom/vpu-1.0/venus.mbn -> ../vpu/vpu20_p4.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/vpu-2.0/
--rw-r--r--	root/root	lib/firmware/qcom/vpu-2.0/venus.mbn
+lrwxrwxrwx	root/root	lib/firmware/qcom/vpu-2.0/venus.mbn -> ../vpu/vpu20_p1.mbn
+drwxr-xr-x	root/root	lib/firmware/qcom/vpu/
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu20_p1.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu20_p4.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4.mbn
+drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/
+-rw-r--r--	root/root	lib/firmware/qcom/x1e80100/gen70500_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/yamato_pfp.fw
 -rw-r--r--	root/root	lib/firmware/qcom/yamato_pm4.fw
 drwxr-xr-x	root/root	lib/firmware/qed/
@@ -4146,6 +4172,8 @@ drwxr-xr-x	root/root	lib/firmware/rtw89/
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852a_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852b_fw-1.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852b_fw.bin
+-rw-r--r--	root/root	lib/firmware/rtw89/rtw8852bt_fw.bin
+-rw-r--r--	root/root	lib/firmware/rtw89/rtw8852c_fw-1.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852c_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw.bin
 lrwxrwxrwx	root/root	lib/firmware/s2250.fw -> go7007/s2250-2.fw
@@ -4321,7 +4349,11 @@ lrwxrwxrwx	root/root	lib/firmware/wfx/brd8023a.pds -> brd4001a.pds
 -rw-r--r--	root/root	lib/firmware/wil6210.fw
 -rw-r--r--	root/root	lib/firmware/wsm_22.bin
 drwxr-xr-x	root/root	lib/firmware/xe/
+-rw-r--r--	root/root	lib/firmware/xe/bmg_guc_70.bin
+-rw-r--r--	root/root	lib/firmware/xe/bmg_huc.bin
+-rw-r--r--	root/root	lib/firmware/xe/lnl_gsc_1.bin
 -rw-r--r--	root/root	lib/firmware/xe/lnl_guc_70.bin
+-rw-r--r--	root/root	lib/firmware/xe/lnl_huc.bin
 drwxr-xr-x	root/root	lib/firmware/yam/
 -rw-r--r--	root/root	lib/firmware/yam/1200.bin
 -rw-r--r--	root/root	lib/firmware/yam/9600.bin
