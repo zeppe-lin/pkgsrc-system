@@ -3,7 +3,7 @@
 # Depends on:  py3-setuptools
 
 name=capstone
-version=5.0.1
+version=5.0.2
 release=1
 source=https://github.com/aquynh/$name/archive/$version/$name-$version.tar.gz
 
