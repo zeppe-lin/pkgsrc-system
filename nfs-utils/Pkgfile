@@ -1,6 +1,6 @@
 # Description: NFS utilities
 # URL:         https://nfs.sourceforge.net/
-# Depends on:  keyutils libcap libdevmapper libevent rpcbind rpcsvc-proto sqlite3
+# Depends on:  keyutils libcap libdevmapper libevent libxml2 rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
 version=2.7.1
