@@ -3,8 +3,8 @@
 # Depends on:  keyutils libcap libdevmapper libevent rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
-version=2.6.4
-release=2
+version=2.7.1
+release=1
 source="https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
 	exports
 	idmapd.conf
