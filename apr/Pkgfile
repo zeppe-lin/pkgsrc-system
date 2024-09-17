@@ -3,7 +3,7 @@
 # Depends on:  util-linux
 
 name=apr
-version=1.7.4
+version=1.7.5
 release=1
 source=https://archive.apache.org/dist/apr/apr-$version.tar.bz2
 
