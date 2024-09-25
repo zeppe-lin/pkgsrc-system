@@ -2,7 +2,7 @@
 # URL:         https://libuv.org/
 
 name=libuv
-version=1.48.0
+version=1.49.0
 release=1
 source=https://dist.libuv.org/dist/v$version/libuv-v$version.tar.gz
 
