@@ -1,6 +1,6 @@
 # Description: Common C routines used by Gtk+ and other libs
 # URL:         https://gitlab.gnome.org/GNOME/glib
-# Depends on:  elfutils libffi libpcre2 util-linux py3-packaging
+# Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
 name=glib
 version=2.82.1
@@ -23,8 +23,7 @@ build() {
 	# fix building error
 	export CFLAGS="$CFLAGS -Wno-error=missing-include-dirs"
 
-	# -D man=false: otherwise requires crappy deps, like
-	#               docbook-xsl*, docbook-xml*, and so, and so...
+	# -D man-pages=enabled: requires docutils
 	meson build glib-$version           \
 		--prefix=/usr               \
 		--libexecdir=/usr/lib/glib  \
@@ -32,12 +31,12 @@ build() {
 		--wrap-mode=nodownload      \
 		-D b_lto=true               \
 		-D b_pie=true               \
+		-D documentation=false      \
 		-D glib_debug=disabled      \
-		-D gtk_doc=false            \
 		-D installed_tests=false    \
 		-D introspection=disabled   \
 		-D libmount=enabled         \
-		-D man=false                \
+		-D man-pages=enabled        \
 		-D nls=disabled             \
 		-D oss_fuzz=disabled        \
 		-D selinux=disabled         \
