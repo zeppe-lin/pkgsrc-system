@@ -2,12 +2,10 @@
 # URL:         https://sourceware.org/lvm2/
 # Depends on:  libaio libdevmapper
 
-##############################
-# Update libdevmapper first! #
-##############################
+# XXX Update libdevmapper first!
 
 name=lvm2
-version=2.03.26
+version=2.03.27
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
