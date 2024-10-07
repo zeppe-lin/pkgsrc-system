@@ -1,10 +1,10 @@
 # Description: Python interpreter, version 2.7
 # URL:         https://www.python.org/
-# Depends on:  bzip2 db expat gdbm libffi libnsl openssl sqlite3
+# Depends on:  bzip2 db expat gdbm libffi libnsl libxcrypt openssl sqlite3
 
 name=python
 version=2.7.18 # EOL 2020-01-01
-release=1
+release=2
 source="https://www.python.org/ftp/$name/$version/Python-$version.tar.xz
 	pyconfig.h
 	CVE-2019-20907.patch
