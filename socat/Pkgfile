@@ -4,7 +4,7 @@
 
 name=socat
 version=1.8.0.1
-release=1
+release=2
 source=http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
 build() {
