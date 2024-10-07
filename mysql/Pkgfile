@@ -12,7 +12,7 @@
 
 name=mysql
 version=5.7.44
-release=1
+release=2
 source="https://dev.mysql.com/get/Downloads/MySQL-5.7/$name-boost-$version.tar.gz
 	my.cnf rc.mysqld"
 
