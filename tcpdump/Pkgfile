@@ -4,7 +4,7 @@
 
 name=tcpdump
 version=4.99.5
-release=1
+release=2
 source=https://github.com/the-$name-group/$name/archive/refs/tags/$name-$version.tar.gz
 
 build() {
