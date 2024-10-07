@@ -4,7 +4,7 @@
 
 name=openvpn
 version=2.6.12
-release=1
+release=2
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	rc.$name"
 
