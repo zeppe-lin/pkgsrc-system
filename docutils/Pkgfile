@@ -4,7 +4,7 @@
 
 name=docutils
 version=0.20.1
-release=1
+release=2
 source=https://files.pythonhosted.org/packages/source/d/$name/$name-$version.tar.gz
 
 build() {
