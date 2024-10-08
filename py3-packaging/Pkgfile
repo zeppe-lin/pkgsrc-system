@@ -1,6 +1,6 @@
 # Description: Core utilities for Python packages
 # URL:         https://pypi.python.org/pypi/packaging/
-# Depends on:  py3-flit-core
+# Depends on:  py3-flit-core py3-gpep517
 
 name=py3-packaging
 version=24.1
@@ -10,10 +10,7 @@ source=https://pypi.org/packages/source/p/packaging/packaging-$version.tar.gz
 build() {
 	cd packaging-$version
 
-	PIP_CONFIG_FILE=/dev/null   \
-	/usr/bin/pip3 install       \
-		--isolated          \
-		--root=$PKG         \
-		--ignore-installed  \
-		--no-deps .
+	gpep517 build-wheel --wheel-dir .dist --output-fd 3 3>&1 >&2
+
+	/usr/bin/python3 -m installer -d $PKG .dist/*.whl
 }
