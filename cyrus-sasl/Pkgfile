@@ -4,11 +4,14 @@
 
 name=cyrus-sasl
 version=2.1.28
-release=1
+release=2
 source="https://github.com/cyrusimap/$name/releases/download/$name-$version/$name-$version.tar.gz
 	rc.saslauthd"
 
 build() {
+	# fix build with gcc 14
+	export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+
 	# fix compilation issues with software that use cyrus-sasl
 	sed -i -r -e 's|^(#include.*)|#include <sys/types.h>\n\1|' \
 		$name-$version/include/sasl.h
