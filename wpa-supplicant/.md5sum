@@ -1,4 +1,11 @@
+dd1e3b36274ab1b5e6c15b9fa3758ba6  0001-Enable-TLSv1.0-by-default.patch
+103bf2e572e93f63c3830851f14169f7  0002-Disable-Werror-for-eapol_test.patch
+64307b2fe8d8d81d7484c5c5cc524bd0  0003-Allow-legacy-renegotiation-to-fix-PEAP-issues-with-s.patch
+22b237f7395d6392ed1261d4ce6a1706  0004-Tweak-D-Bus-systemd-service-activation-configuration.patch
+1f96d4e47e1f11b78ddc053d0da0da1e  0005-Add-IgnoreOnIsolate-yes-to-keep-wpa-supplicant-runni.patch
+cb9e74382b311deb54816e7e5b48093b  0006-Add-reload-support-to-the-systemd-unit-files.patch
+5d892fffe74b1b7a3d7ec253364d190e  0007-nl80211-add-extra-ies-only-if-allowed-by-driver.patch
+d5a41855fbaac0b9e50c17c0d9b95e0e  809d9d8172db8e2a08ff639875f838b5b86d2641.patch
 d48ec3f39534bac17c7841897fe04880  rc.wpa_supplicant
-53679fdaebc200596390c0c1671098cc  wpa_supplicant-2.10-security_fix-1.patch
-d26797fcb002898d4ee989179346e1cc  wpa_supplicant-2.10.tar.gz
+72a4a00eddb7a499a58113c3361ab094  wpa_supplicant-2.11.tar.gz
 62b47c09029dc56071deca7cbd558d59  wpa_supplicant.conf
