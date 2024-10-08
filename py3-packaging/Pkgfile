@@ -4,7 +4,7 @@
 
 name=py3-packaging
 version=24.1
-release=1
+release=2
 source=https://pypi.org/packages/source/p/packaging/packaging-$version.tar.gz
 
 build() {
@@ -13,4 +13,8 @@ build() {
 	gpep517 build-wheel --wheel-dir .dist --output-fd 3 3>&1 >&2
 
 	/usr/bin/python3 -m installer -d $PKG .dist/*.whl
+
+	/usr/bin/python3     -m compileall $PKG
+	/usr/bin/python3 -O  -m compileall $PKG
+	/usr/bin/python3 -OO -m compileall $PKG
 }
