@@ -4,7 +4,7 @@
 
 name=py3-six
 version=1.16.0
-release=2
+release=3
 source=https://files.pythonhosted.org/packages/source/s/${name#*-}/${name#*-}-$version.tar.gz
 
 build() {
