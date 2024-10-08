@@ -4,12 +4,15 @@
 
 name=screen
 version=4.5.0
-release=1
+release=2
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
 	pam.$name"
 
 build() {
 	mkdir build; cd build
+
+	# fix build with gcc 14
+	CFLAGS="$CFLAGS -Wno-implicit-int -Wno-implicit-function-declaration"
 
 	autoreconf -fi ../$name-$version
 	../$name-$version/configure  \
