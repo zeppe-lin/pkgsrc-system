@@ -1,1 +1,8 @@
+dd97abd563379eb438a09d654a92845c  zip-3.0-currdir.patch
+929f39071a6e4491a7b1858b8fd25a9d  zip-3.0-exec-shield.patch
+e0418c610312fb6e417398f1a29b7d07  zip-3.0-format-security.patch
+38b740fb0f0fc1a138888917325ed850  zip-3.0-no-crypt.patch
+d14185a7ebabd7ae0727167c037ef03c  zip-3.0-pic.patch
+1976ce3759050e947e2b5cc02bb7fa76  zip-gnu89-build.patch
 7b74551e63f8ee6aab6fbc86676c0d37  zip30.tar.gz
+8d60750c2f922cebbefd9de596518403  zipnote.patch

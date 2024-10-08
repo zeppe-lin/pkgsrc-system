@@ -4,13 +4,23 @@
 
 name=zip
 version=3.0
-release=1
-source=https://downloads.sourceforge.net/sourceforge/infozip/zip30.tar.gz
+release=2
+source="https://downloads.sourceforge.net/sourceforge/infozip/zip30.tar.gz
+	zip-3.0-currdir.patch
+	zip-3.0-exec-shield.patch
+	zip-3.0-format-security.patch
+	zip-3.0-no-crypt.patch
+	zip-3.0-pic.patch
+	zip-gnu89-build.patch
+	zipnote.patch"
 
 build() {
-	cd zip30
+	for f in $SRC/*.patch; do
+		patch -d zip30 -Np1 -i $f
+	done
 
-	make -f unix/Makefile LOCAL_ZIP="$CFLAGS" prefix=/usr generic
-	make -f unix/Makefile INSTALL=install prefix=$PKG/usr \
+	make -C zip30 -f unix/Makefile LOCAL_ZIP="$CFLAGS" prefix=/usr \
+		generic_gcc
+	make -C zip30 -f unix/Makefile INSTALL=install prefix=$PKG/usr \
 		MANDIR=$PKG/usr/share/man/man1 install
 }
