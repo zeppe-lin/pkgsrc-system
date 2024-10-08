@@ -9,11 +9,14 @@ source=https://github.com/aquynh/capstone/archive/$version/capstone-$version.tar
 
 build() {
 	export TMPDIR="$PKGMK_WORK_DIR"
+	export LIBCAPSTONE_PATH= # Prevent bundled libcapstone from being built.
 
 	cd capstone-$version/bindings/python
-	/usr/bin/python3 setup.py install \
-		--prefix=/usr --root=$PKG --optimize=2
 
-	# remove sdist metadata, as wheel metadata will be used with py3-pip
-	rm -r $PKG/usr/lib/python*/site-packages/capstone-*-py*.egg-info
+	gpep517 build-wheel --wheel-dir .dist --output-fd 3 3>&1 >&2
+	/usr/bin/python3 -m installer -d $PKG .dist/*.whl
+
+	/usr/bin/python3     -m compileall $PKG
+	/usr/bin/python3 -O  -m compileall $PKG
+	/usr/bin/python3 -OO -m compileall $PKG
 }
