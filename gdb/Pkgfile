@@ -3,7 +3,7 @@
 # Depends on:  libmpfr readline xz zlib expat py3-six
 
 name=gdb
-version=12.1
+version=15.2
 release=1
 source=https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 
