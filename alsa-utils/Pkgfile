@@ -4,7 +4,7 @@
 
 name=alsa-utils
 version=1.2.12
-release=1
+release=2
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	rc.alsa
 	0001-simplify-nocolors-menu.patch
@@ -20,6 +20,7 @@ build() {
 	# fix error when compiling alsatplg
 	CFLAGS="$CFLAGS -latopology"
 
+	autoreconf -fi
 	./configure                  \
 		--prefix=/usr        \
 		--disable-alsaconf   \
