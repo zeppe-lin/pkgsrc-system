@@ -1,0 +1,19 @@
+# Description: Python bindings for Capstone disassembly framework
+# URL:         https://www.capstone-engine.org/index.html
+# Depends on:  py3-setuptools
+
+name=py3-capstone
+version=5.0.3
+release=1
+source=https://github.com/aquynh/capstone/archive/$version/capstone-$version.tar.gz
+
+build() {
+	export TMPDIR="$PKGMK_WORK_DIR"
+
+	cd capstone-$version/bindings/python
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=2
+
+	# remove sdist metadata, as wheel metadata will be used with py3-pip
+	rm -r $PKG/usr/lib/python*/site-packages/capstone-*-py*.egg-info
+}
