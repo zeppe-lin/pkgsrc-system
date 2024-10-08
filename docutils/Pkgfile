@@ -1,19 +1,22 @@
 # Description: Text processing system
 # URL:         https://docutils.sourceforge.io/
-# Depends on:  py3-setuptools
+# Depends on:  py3-flit-core py3-gpep517
 
 name=docutils
-version=0.20.1
-release=2
+version=0.21.2
+release=1
 source=https://files.pythonhosted.org/packages/source/d/$name/$name-$version.tar.gz
 
 build() {
-	export TMPDIR="$PKGMK_WORK_DIR"
-
 	cd $name-$version
 
-	/usr/bin/python3 setup.py install \
-		--prefix=/usr --root=$PKG --optimize=2
+	gpep517 build-wheel --wheel-dir .dist --output-fd 3 3>&1 >&2
+
+	/usr/bin/python3 -m installer -d $PKG .dist/*.whl
+
+	/usr/bin/python3     -m compileall $PKG
+	/usr/bin/python3 -O  -m compileall $PKG
+	/usr/bin/python3 -OO -m compileall $PKG
 
 	# remove junk
 	find $PKG -type f -name README.txt -delete
