@@ -1,6 +1,6 @@
 # Description: Simplified packaging of Python modules
 # URL:         https://github.com/takluyver/flit
-# Depends on:  py3-pip
+# Depends on:  py3-installer
 
 name=py3-flit-core
 version=3.9.0
@@ -13,11 +13,8 @@ build() {
 	cd flit-$version/flit_core
 
 	/usr/bin/python3 build_dists.py
-	PIP_CONFIG_FILE=/dev/null /usr/bin/pip3 install  \
-		--isolated                               \
-		--root=$PKG                              \
-		--ignore-installed                       \
-		--no-deps dist/*.whl
+	/usr/bin/python3 -m installer -d $PKG \
+		dist/flit_core-$version-py3-none-any.whl
 
 	# remove junk
 	rm -r $PKG/usr/lib/python*/site-packages/flit_core/tests/  \
