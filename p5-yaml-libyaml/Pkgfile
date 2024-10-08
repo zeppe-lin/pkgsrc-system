@@ -4,7 +4,7 @@
 
 name=p5-yaml-libyaml
 version=0.902.0
-release=1
+release=2
 source=https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v$version.tar.gz
 
 build() {
