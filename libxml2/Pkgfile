@@ -4,17 +4,18 @@
 
 name=libxml2
 version=2.13.4
-release=2
+release=3
 source=https://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	export PYTHON=/usr/bin/python3
+	#export PYTHON=/usr/bin/python3
 
 	../$name-$version/configure  \
 		--prefix=/usr        \
 		--without-debug      \
+		--without-python     \
 
 	make V=1
 	make DESTDIR=$PKG install
