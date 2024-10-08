@@ -5,11 +5,14 @@
 
 name=expect
 version=5.45.4
-release=2
+release=3
 source=https://downloads.sourceforge.net/project/$name/Expect/$version/$name$version.tar.gz
 
 build() {
 	mkdir build; cd build
+
+	# https://core.tcl-lang.org/expect/tktview/ab6c7a502777ba361f21b87d33cb4892c584f96b
+	CFLAGS="$CFLAGS -fpermissive"
 
 	../$name$version/configure                              \
 		--prefix=/usr                                   \
