@@ -1,0 +1,19 @@
+# Description: Userspace RCU (read-copy-update) library
+# URL:         https://liburcu.org/
+
+name=liburcu
+version=0.14.1
+release=1
+source=https://lttng.org/files/urcu/userspace-rcu-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../userspace-rcu-$version/configure --prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/doc; rmdir $PKG/usr/share
+}
