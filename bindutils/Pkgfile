@@ -3,8 +3,8 @@
 # Depends on:  json-c libuv openssl zlib
 
 name=bindutils
-version=9.18.28
-release=2
+version=9.20.2
+release=1
 source="https://ftp.isc.org/isc/bind9/$version/bind-$version.tar.xz
 	utils.patch"
 
@@ -18,7 +18,7 @@ build() {
 		--disable-doh                    \
 		--with-libxml2=no                \
 		--with-gssapi=no                 \
-		--with-readline=no               \
+		--with-readline=yes              \
 
 	make -C lib      V=1
 	make bind.keys.h
@@ -29,6 +29,9 @@ build() {
 	make DESTDIR=$PKG -C bin/dig  install
 	make DESTDIR=$PKG -C bin/delv install
 
-	install -m 0644 -Dt $PKG/usr/share/man/man1/  \
-	  doc/man/delv.1 doc/man/dig.1 doc/man/host.1 doc/man/nslookup.1
+	for f in delv.1 dig.1 host.1 nslookup.1; do
+		install -m 0644 -Dt $PKG/usr/share/man/man1/ doc/man/$f
+	done
+	#nstall -m 0644 -Dt $PKG/usr/share/man/man1/  \
+	 #doc/man/delv.1 doc/man/dig.1 doc/man/host.1 doc/man/nslookup.1
 }
