@@ -4,7 +4,7 @@
 # Optional:    gnutls nettle nss
 
 name=chrony
-version=4.6
+version=4.6.1
 release=1
 source="https://chrony-project.org/releases/$name-$version.tar.gz
 	rc.chronyd"
