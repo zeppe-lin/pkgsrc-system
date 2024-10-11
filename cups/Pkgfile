@@ -1,0 +1,61 @@
+# Description: Common UNIX Printing System
+# URL:         https://openprinting.github.io/cups/
+# Depends on:  acl libusb zlib linux-pam
+# Optional:    dbus gnutls openssl
+
+name=cups
+version=2.4.10
+release=1
+source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
+	rc.cups
+	pam.cups"
+
+build() {
+	if pkgman isinst gnutls >/dev/null 2>&1; then
+		PKGMK_CUPS=" --with-tls=gnutls"
+	else
+		PKGMK_CUPS=" --with-tls=openssl"
+	fi
+
+	# build in separate dir is broken
+	cd cups-$version
+
+	CC=cc CXX=c++                              \
+	./configure                                \
+		--prefix=/usr                      \
+		--sysconfdir=/etc                  \
+		--libdir=/usr/lib                  \
+		--localstatedir=/var               \
+		--enable-acl                       \
+		--with-cups-group=lp               \
+		--with-cups-user=daemon            \
+		--with-docdir=/usr/share/cups/doc  \
+		--with-languages=""                \
+		--with-logdir=/var/log/cups        \
+		--with-optim="$CFLAGS"             \
+		--with-rundir=/run/cups            \
+		--without-rcdir                    \
+		--without-systemd                  \
+		$PKGMK_CUPS
+
+	make
+	make BUILDROOT=$PKG install
+
+	# conflict with cups-filter
+	rm -r $PKG/usr/share/cups/banners $PKG/usr/share/cups/data
+
+	# cleanup
+	rm -r $PKG/usr/share/applications $PKG/usr/share/icons $PKG/run
+
+	# fix perms
+	chmod 0755 $PKG/var/cache $PKG/var/spool
+	chmod -R +w $PKG
+
+	# rc script and pam module
+	install -m 0755 -D $SRC/rc.cups   $PKG/etc/rc.d/cups
+	install -m 0644 -D $SRC/pam.cups  $PKG/etc/pam.d/cups
+
+	# blacklist usblp kernel module
+	mkdir -p $PKG/etc/modprobe.d
+	echo 'blacklist usblp' > $PKG/etc/modprobe.d/cups.conf
+}
