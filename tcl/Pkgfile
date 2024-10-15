@@ -3,7 +3,7 @@
 # Depends on:  zlib
 
 name=tcl
-version=8.6.14
+version=8.6.15
 release=1
 source=https://downloads.sourceforge.net/project/tcl/Tcl/$version/tcl$version-src.tar.gz
 
@@ -47,14 +47,14 @@ build() {
 		-e "s|$SRC/tcl$version|/usr/include|g"   \
 		$PKG/usr/lib/tclConfig.sh
 
-	_tdbcver=tdbc1.1.7
+	_tdbcver=tdbc1.1.9
 	sed -i  -e "s|$SRC/tcl$version/unix/pkgs/$_tdbcver|/usr/lib/$_tdbcver|g"            \
 		-e "s|$SRC/tcl$version/pkgs/$_tdbcver/generic|/usr/include|g"               \
 		-e "s|$SRC/tcl$version/pkgs/$_tdbcver/library|/usr/lib/tcl${version%.*}|g"  \
 		-e "s|$SRC/tcl$version/pkgs/$_tdbcver|/usr/include|g"                       \
 		$PKG/usr/lib/$_tdbcver/tdbcConfig.sh
 
-	_itclver=itcl4.2.4
+	_itclver=itcl4.3.0
 	sed -i  -e "s|$SRC/tcl$version/unix/pkgs/$_itclver|/usr/lib/$_itclver|g"  \
 		-e "s|$SRC/tcl$version/pkgs/$_itclver/generic|/usr/include|g"     \
 		-e "s|$SRC/tcl$version/pkgs/$_itclver|/usr/include|g"             \
