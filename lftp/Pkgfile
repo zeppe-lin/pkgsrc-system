@@ -4,16 +4,20 @@
 
 name=lftp
 version=4.9.2
-release=2
+release=3
 source=https://lftp.yar.ru/ftp/lftp-$version.tar.xz
 
 build() {
+	# fix build with gcc 14
+	export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+
 	mkdir build; cd build
 
 	../lftp-$version/configure     \
 		--prefix=/usr          \
 		--sysconfdir=/usr/etc  \
 		--with-openssl=/usr    \
+		--with-modules         \
 		--disable-nls          \
 
 	make V=1

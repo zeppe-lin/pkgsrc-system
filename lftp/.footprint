@@ -5,10 +5,26 @@ drwxr-xr-x	root/root	usr/bin/
 drwxr-xr-x	root/root	usr/etc/
 -rw-r--r--	root/root	usr/etc/lftp.conf
 drwxr-xr-x	root/root	usr/lib/
--rw-r--r--	root/root	usr/lib/liblftp-jobs.a
+drwxr-xr-x	root/root	usr/lib/lftp/
+drwxr-xr-x	root/root	usr/lib/lftp/4.9.2/
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/cmd-mirror.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/cmd-sleep.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/cmd-torrent.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/liblftp-network.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/liblftp-pty.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/proto-file.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/proto-fish.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/proto-ftp.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/proto-http.so
+-rwxr-xr-x	root/root	usr/lib/lftp/4.9.2/proto-sftp.so
 -rwxr-xr-x	root/root	usr/lib/liblftp-jobs.la
--rw-r--r--	root/root	usr/lib/liblftp-tasks.a
+lrwxrwxrwx	root/root	usr/lib/liblftp-jobs.so -> liblftp-jobs.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/liblftp-jobs.so.0 -> liblftp-jobs.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/liblftp-jobs.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/liblftp-tasks.la
+lrwxrwxrwx	root/root	usr/lib/liblftp-tasks.so -> liblftp-tasks.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/liblftp-tasks.so.0 -> liblftp-tasks.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/liblftp-tasks.so.0.0.0
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/applications/
 -rw-r--r--	root/root	usr/share/applications/lftp.desktop
