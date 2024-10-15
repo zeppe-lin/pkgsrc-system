@@ -3,15 +3,17 @@
 # Depends on:  libmnl
 
 name=ethtool
-version=6.10
+version=6.11
 release=1
 source=https://www.kernel.org/pub/software/network/$name/$name-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
+	../$name-$version/configure   \
+		--prefix=/usr         \
+		--enable-pretty-dump  \
+		--enable-netlink      \
 
 	make V=1
 	make DESTDIR=$PKG install
