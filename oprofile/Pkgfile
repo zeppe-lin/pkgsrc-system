@@ -1,16 +1,19 @@
 # Description: System-wide profiler for Linux
-# URL:         https://oprofile.sourceforge.net
+# URL:         https://oprofile.sourceforge.io/news/
 # Depends on:  popt zlib
 
 name=oprofile
 version=1.4.0
-release=1
+release=2
 source="https://download.sourceforge.net/$name/$name-$version.tar.gz
 	gcc12.patch"
 
 build() {
 	# fix build with gcc 12
 	patch -Np1 -d $name-$version -i $SRC/gcc12.patch
+
+	# fix build with gcc 14
+	export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
 
 	mkdir build; cd build
 
