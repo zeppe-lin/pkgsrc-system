@@ -1,5 +1,7 @@
 README mkinitramfs
 
+---
+
 
 KERNEL CONFIGURATION
 ====================
@@ -7,51 +9,53 @@ KERNEL CONFIGURATION
 In a manual kernel setup is needed to include the following necessary features
 (statically or as modules):
 
-	General setup --->
-	  [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
+    General setup --->
+      [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
               CONFIG_BLK_DEV_INITRD=y
 
-	Device Drivers --->
-	  Generic Driver Options --->
-	    [*] Maintain a devtmpfs filesystem to mount at /dev
-	        CONFIG_DEVTMPFS=y
+    Device Drivers --->
+      Generic Driver Options --->
+        [*] Maintain a devtmpfs filesystem to mount at /dev
+            CONFIG_DEVTMPFS=y
 
 To use mkinitramfs with encrypted root is needed to include the following
 features too:
 
-	Device Drivers --->
-	  Multiple devices driver support (RAID and LVM) --->
-	    [*] Device mapper support
-	    [*] Crypt target support
+    Device Drivers --->
+      Multiple devices driver support (RAID and LVM) --->
+        [*] Device mapper support
+        [*] Crypt target support
 
-	Cryptographic API --->
-	  <*> XTS support
-	  <*> SHA224 and SHA256 digest algorithm
-	  <*> AES cipher algorithms
-	  <*> AES cipher algorithms (x86_64)
-	  <*> User-space interface for hash algorithms
-	  <*> User-space interface for symmetric key cipher algorithms
+    Cryptographic API --->
+      <*> XTS support
+      <*> SHA224 and SHA256 digest algorithm
+      <*> AES cipher algorithms
+      <*> AES cipher algorithms (x86_64)
+      <*> User-space interface for hash algorithms
+      <*> User-space interface for symmetric key cipher algorithms
 
 
 USAGE
 =====
 
-1) Edit /etc/mkinitramfs/config file conform your needs.  See
-mkinitramfs.config(5) for more information.  Next, run the following command
+Edit `/etc/mkinitramfs/config` file conform your needs.  See
+`mkinitramfs.config(5)` for more information.  Next, run the following command
 to generate the initramfs image:
 
-	mkinitramfs -o "/boot/initramfs-$(uname -r).img"
+    mkinitramfs -o "/boot/initramfs-$(uname -r).img"
 
-2) Update your bootloader configuration file, and specify the previously
-created initramfs image as initrd option argument:
+Update your bootloader configuration file, and specify the previously created
+initramfs image as initrd option argument:
 
-	initrd /initramfs-${version}.img
+    initrd /initramfs-${version}.img
 
-In case of GRUB, grub-mkconfig will automatically make it by running:
+In case of GRUB, `grub-mkconfig` will automatically make it by running:
 
-	grub-mkconfig -o /boot/grub/grub.cfg
+    grub-mkconfig -o /boot/grub/grub.cfg
 
-3) Reboot.
+Reboot.
 
+
+---
 
 End of file.
