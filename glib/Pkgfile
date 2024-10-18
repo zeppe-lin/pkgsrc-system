@@ -3,7 +3,7 @@
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
 name=glib
-version=2.82.1
+version=2.82.2
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -19,9 +19,6 @@ build() {
 	# replace default rundir location
 	sed 's|/var/run/dbus|/run/dbus|' \
 		-i glib-$version/gio/gdbusaddress.c
-
-	# fix building error
-	export CFLAGS="$CFLAGS -Wno-error=missing-include-dirs"
 
 	# -D man-pages=enabled: requires docutils
 	meson build glib-$version           \
