@@ -1,6 +1,6 @@
 # Description: Network File System utilities
 # URL:         https://nfs.sourceforge.net/
-# Depends on:  keyutils libcap libdevmapper libevent libxml2 rpcbind rpcsvc-proto sqlite3
+# Depends on:  keyutils libcap libdevmapper libevent libnl libxml2 rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
 version=2.8.1
