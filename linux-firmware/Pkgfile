@@ -3,12 +3,20 @@
 # Depends on:  rdfind
 
 name=linux-firmware
-version=20240909
+version=20241017
 release=1
-source=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
+source="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
+	dedup.patch
+	fsr.patch
+	no-whence-check.patch"
 
 build() {
+	patch -d $name-$version -Np1 -i $SRC/dedup.patch
+	patch -d $name-$version -Np1 -i $SRC/fsr.patch
+	patch -d $name-$version -Np1 -i $SRC/no-whence-check.patch
+
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
+	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
 
 	# remove junk
 	find $PKG -type f \( -name ChangeLog -o -name README \) -delete
