@@ -3,7 +3,7 @@
 # Depends on:  libnvme
 
 name=nvme-cli
-version=2.10.2
+version=2.11
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-$version.tar.gz
 
@@ -25,7 +25,7 @@ build() {
 	DESTDIR=$PKG ninja -C build install
 
 	# remove junk & zsh completion
-	rm -r $PKG/usr/lib/dracut/ $PKG/usr/lib/systemd/ $PKG/usr/share/zsh/
+	cd $PKG/usr; rm -r lib/dracut lib/systemd share/zsh
 
 	# remove empty dirs
 	find $PKG -type d -empty -delete
