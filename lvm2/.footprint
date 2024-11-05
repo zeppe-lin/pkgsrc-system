@@ -75,8 +75,6 @@ drwxr-xr-x	root/root	usr/include/
 -r--r--r--	root/root	usr/include/lvm2cmd.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/liblvm2cmd.so -> ../../lib/liblvm2cmd.so.2.03
-drwxr-xr-x	root/root	usr/lib/lvm2/
--r-xr-xr-x	root/root	usr/lib/lvm2/lvresize_fs_helper
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man5/
