@@ -2,7 +2,7 @@
 # URL:         https://alsa-project.org/
 
 name=alsa-ucm-conf
-version=1.2.12
+version=1.2.13
 release=1
 source=https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
 
