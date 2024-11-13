@@ -3,25 +3,24 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.12
-release=2
+version=1.2.13
+release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
-	rc.alsa
 	0001-simplify-nocolors-menu.patch
-	f77a269370af917585df59d8c21c89bca07b5b73.patch"
+	f77a269370af917585df59d8c21c89bca07b5b73.patch
+	rc.alsa"
 
 build() {
-	# build in separate dir is broken
-	cd $name-$version
+	patch -d $name-$version -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
+	patch -d $name-$version -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
 
-	patch -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
-	patch -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
+	mkdir build; cd build
 
 	# fix error when compiling alsatplg
 	CFLAGS="$CFLAGS -latopology"
 
-	autoreconf -fi
-	./configure                  \
+	autoreconf -fi ../$name-$version
+	../$name-$version/configure  \
 		--prefix=/usr        \
 		--disable-alsaconf   \
 		--disable-alsatest   \
@@ -38,5 +37,5 @@ build() {
 
 	# remove junk
 	rm $PKG/usr/sbin/alsa-info.sh
-	rmdir $PKG/usr/share/man/man7/
+	rmdir $PKG/usr/share/man/man7
 }
