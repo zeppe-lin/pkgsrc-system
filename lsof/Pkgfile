@@ -3,18 +3,17 @@
 # Depends on:  libtirpc
 
 name=lsof
-version=4.99.3
+version=4.99.4
 release=1
 source=https://github.com/lsof-org/lsof/archive/$version/lsof-$version.tar.gz
 
 build() {
-	# build in separate dir is broken
-	cd lsof-$version
+	mkdir build; cd build
 
-	./Configure -n linux
-	make V=1 CC="${CC:-cc} $CFLAGS"
+	autoreconf -fi ../lsof-$version
+	../lsof-$version/configure  \
+		--prefix=/usr       \
 
-	mkdir -p $PKG/usr/sbin $PKG/usr/share/man/man8
-	install -m 0755 lsof $PKG/usr/sbin/
-	soelim Lsof.8 > $PKG/usr/share/man/man8/lsof.8
+	make V=1
+	make DESTDIR=$PKG install
 }
