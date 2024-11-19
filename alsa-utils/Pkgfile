@@ -4,7 +4,7 @@
 
 name=alsa-utils
 version=1.2.13
-release=1
+release=2
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
 	f77a269370af917585df59d8c21c89bca07b5b73.patch
@@ -34,6 +34,9 @@ build() {
 	make DESTDIR=$PKG install
 
 	install -m 0755 -D $SRC/rc.alsa $PKG/etc/rc.d/alsa
+
+	# use /etc/rc.d/alsa for saving/restoring settings
+	rm $PKG/lib/udev/rules.d/90-alsa-restore.rules
 
 	# remove junk
 	rm $PKG/usr/sbin/alsa-info.sh
