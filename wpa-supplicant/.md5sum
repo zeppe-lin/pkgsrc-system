@@ -6,7 +6,7 @@ dd1e3b36274ab1b5e6c15b9fa3758ba6  0001-Enable-TLSv1.0-by-default.patch
 cb9e74382b311deb54816e7e5b48093b  0006-Add-reload-support-to-the-systemd-unit-files.patch
 5d892fffe74b1b7a3d7ec253364d190e  0007-nl80211-add-extra-ies-only-if-allowed-by-driver.patch
 d5a41855fbaac0b9e50c17c0d9b95e0e  809d9d8172db8e2a08ff639875f838b5b86d2641.patch
-260df3fa765edc20eaf148093b7ec473  manpages-fixes.patch
+c5397a0b6338096dcf170b20168f9ebc  manpages-fixes.patch
 d48ec3f39534bac17c7841897fe04880  rc.wpa_supplicant
 72a4a00eddb7a499a58113c3361ab094  wpa_supplicant-2.11.tar.gz
 62b47c09029dc56071deca7cbd558d59  wpa_supplicant.conf

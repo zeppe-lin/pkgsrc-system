@@ -24,7 +24,27 @@ diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wp
  .PP
 diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.8 wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.8
 --- wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.8	2024-11-27 14:09:07.571479542 +0200
-+++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.8	2024-11-27 14:11:10.771674308 +0200
++++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.8	2024-11-27 14:17:57.924317964 +0200
+@@ -521,8 +521,8 @@ action handler in \fI/etc/pcmcia/wireles
+ .RS
+ 
+ .nf
+-if [ "$WPA" = "y" -a -x /usr/local/bin/wpa_supplicant ]; then
+-    /usr/local/bin/wpa_supplicant -B -c/etc/wpa_supplicant.conf -i$DEVICE
++if [ "$WPA" = "y" -a -x /usr/sbin/wpa_supplicant ]; then
++    /usr/sbin/wpa_supplicant -B -c/etc/wpa_supplicant.conf -i$DEVICE
+ fi
+     
+ .fi
+@@ -535,7 +535,7 @@ action handler (may need to be separated
+ .RS
+ 
+ .nf
+-if [ "$WPA" = "y" -a -x /usr/local/bin/wpa_supplicant ]; then
++if [ "$WPA" = "y" -a -x /usr/sbin/wpa_supplicant ]; then
+     killall wpa_supplicant
+ fi
+     
 @@ -547,9 +547,9 @@ This will make \fBcardmgr\fR start
  in.
  .SH "SEE ALSO"
