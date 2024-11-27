@@ -1,0 +1,50 @@
+diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_gui.8 wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_gui.8
+--- wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_gui.8	2024-11-27 14:09:07.571479542 +0200
++++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_gui.8	2024-11-27 14:10:07.358574060 +0200
+@@ -47,7 +47,7 @@ Run program in the quiet mode - do not d
+ icon pop-up messages.
+ .SH "SEE ALSO"
+ .PP
+-\fBwpa_cli\fR(8)
++\fBwpa_cli\fR(8),
+ \fBwpa_supplicant\fR(8)
+ .SH "LEGAL"
+ .PP
+diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_passphrase.8 wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_passphrase.8
+--- wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_passphrase.8	2024-11-27 14:09:07.571479542 +0200
++++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_passphrase.8	2024-11-27 14:10:38.306622982 +0200
+@@ -27,7 +27,7 @@ The passphrase to use. If not included o
+ passphrase will be read from standard input.
+ .SH "SEE ALSO"
+ .PP
+-\fBwpa_supplicant.conf\fR(5)
++\fBwpa_supplicant.conf\fR(5),
+ \fBwpa_supplicant\fR(8)
+ .SH "LEGAL"
+ .PP
+diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.8 wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.8
+--- wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.8	2024-11-27 14:09:07.571479542 +0200
++++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.8	2024-11-27 14:11:10.771674308 +0200
+@@ -547,9 +547,9 @@ This will make \fBcardmgr\fR start
+ in.
+ .SH "SEE ALSO"
+ .PP
+-\fBwpa_background\fR(8)
+-\fBwpa_supplicant.conf\fR(5)
+-\fBwpa_cli\fR(8)
++\fBwpa_background\fR(8),
++\fBwpa_supplicant.conf\fR(5),
++\fBwpa_cli\fR(8),
+ \fBwpa_passphrase\fR(8)
+ .SH "LEGAL"
+ .PP
+diff '--color=auto' -pruN wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.conf.5 wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.conf.5
+--- wpa_supplicant-2.11.orig/wpa_supplicant/doc/docbook/wpa_supplicant.conf.5	2024-11-27 14:09:07.571479542 +0200
++++ wpa_supplicant-2.11/wpa_supplicant/doc/docbook/wpa_supplicant.conf.5	2024-11-27 14:11:22.696693161 +0200
+@@ -221,5 +221,5 @@ openssl pkcs12 -in example.pfx -out ca.p
+ .RE
+ .SH "SEE ALSO"
+ .PP
+-\fBwpa_supplicant\fR(8)
++\fBwpa_supplicant\fR(8),
+ \fBopenssl\fR(1)
