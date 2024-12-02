@@ -1,6 +1,6 @@
 # Description: Version control system (CVS replacement)
 # URL:         http://subversion.apache.org
-# Depends on:  cyrus-sasl file lz4 serf utf8proc
+# Depends on:  apr-util cyrus-sasl utf8proc
 
 name=subversion
 version=1.14.4
