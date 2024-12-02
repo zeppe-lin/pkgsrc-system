@@ -3,8 +3,8 @@
 # Depends on:  cyrus-sasl file lz4 serf utf8proc
 
 name=subversion
-version=1.14.3
-release=2
+version=1.14.4
+release=1
 source=https://archive.apache.org/dist/$name/$name-$version.tar.bz2
 
 build() {
@@ -21,6 +21,5 @@ build() {
 	make -j1 DESTDIR=$PKG install
 
 	# remove junk
-	# infos seem to get generated when makeinfo is available, remove anyway
 	rm -rf $PKG/usr/info
 }
