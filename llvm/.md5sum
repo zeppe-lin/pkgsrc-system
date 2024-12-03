@@ -1,5 +1,5 @@
-b124418883942323b4c5c64be3308185  cmake-19.1.4.src.tar.xz
+12bae9030aa870e6155329487c9bc650  cmake-19.1.5.src.tar.xz
 7fc6870fe0887ee43a2f0b720e4cdd4f  install-prefix.patch
-8cd913fe77f10647daa95ab63ad769d8  llvm-19.1.4.src.tar.xz
+774c750bf2a1de4468af87921643bc3c  llvm-19.1.5.src.tar.xz
 fcd6954a7fbd05687990e59e87131c3e  llvm-config.h
-7e15a3e041bd1bcdf3964625091ec4a1  third-party-19.1.4.src.tar.xz
+6b73f8e2e29bbfd9f95cbd6665e8cd64  third-party-19.1.5.src.tar.xz
