@@ -6,7 +6,7 @@ README dhcpcd
 Troubleshooting: Carrier Lost
 =============================
 
-In case you get on the system start the dhcpcd[ERROR] and /var/log/messages
+In case you get on the system start the `dhcpcd[ERROR]` and `/var/log/messages`
 contains something like:
 
 ```
@@ -39,9 +39,9 @@ Troubleshooting: Client ID
 ==========================
 
 If you are on a network with DHCPv4 that filters Client IDs based on MAC
-addresses, you may need to change the following line:
+addresses, you may need to edit `/etc/dhcpcd/dhcpcd.conf` and change the
+following line:
 
-/etc/dhcpcd/dhcpcd.conf:
 ```
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per
 # RFC4361.
@@ -50,7 +50,6 @@ duid
 
 To:
 
-/etc/dhcpcd/dhcpcd.conf:
 ```
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
