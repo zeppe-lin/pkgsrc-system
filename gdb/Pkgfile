@@ -1,10 +1,10 @@
 # Description: GNU Debugger (GDB)
 # URL:         https://www.gnu.org/software/gdb
-# Depends on:  libmpfr readline xz zlib expat py3-six
+# Depends on:  libmpfr readline xz zlib expat py3-six texinfo
 
 name=gdb
 version=15.2
-release=1
+release=2
 source=https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 
 build() {
@@ -12,11 +12,12 @@ build() {
 	sed -i '/return/s/rl.*characters/(char *) &/' \
 		$name-$version/gdb/completer.c
 
+	sed '/^SUBDIRS/s/doc//' -i $name-$version/gdb/Makefile.in
+
 	mkdir build; cd build
 
-	sed '/^SUBDIRS/s/doc//' -i ../$name-$version/gdb/Makefile.in
-
-	CONFIG_SHELL=/bin/bash ../$name-$version/configure \
+	CONFIG_SHELL=/bin/bash                  \
+	../$name-$version/configure             \
 		--prefix=/usr                   \
 		--with-system-readline          \
 		--with-system-zlib              \
@@ -30,11 +31,12 @@ build() {
 	make DESTDIR=$PKG install
 
 	export PYTHONHASHSEED=0
-	PYOPTS="-m compileall -d /usr/share/gdb/python \
-		$PKG/usr/share/gdb/python"
-	/usr/bin/python3     $PYOPTS
-	/usr/bin/python3 -O  $PYOPTS
-	/usr/bin/python3 -OO $PYOPTS
+	/usr/bin/python3     -m compileall -d /usr/share/gdb/python \
+		$PKG/usr/share/gdb/python
+	/usr/bin/python3 -O  -m compileall -d /usr/share/gdb/python \
+		$PKG/usr/share/gdb/python
+	/usr/bin/python3 -OO -m compileall -d /usr/share/gdb/python \
+		$PKG/usr/share/gdb/python
 
 	install -m 0644 -Dt $PKG/usr/share/man/man1/ \
 		../$name-$version/gdb/doc/*.1
