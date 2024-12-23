@@ -14,9 +14,8 @@ drwxr-xr-x	root/root	etc/rc.d/
 -rwxr-xr-x	root/root	etc/rc.d/rpc.nfsd
 -rwxr-xr-x	root/root	etc/rc.d/rpc.statd
 drwxr-xr-x	root/root	sbin/
--r-s--x--x	root/root	sbin/mount.nfs
+-rws--x--x	root/root	sbin/mount.nfs
 lrwxrwxrwx	root/root	sbin/mount.nfs4 -> mount.nfs
--rwxr-xr-x	root/root	sbin/nfsdcltrack
 lrwxrwxrwx	root/root	sbin/umount.nfs -> mount.nfs
 lrwxrwxrwx	root/root	sbin/umount.nfs4 -> mount.nfs
 drwxr-xr-x	root/root	usr/
@@ -94,7 +93,6 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/nfsdcld.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/nfsdclddb.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/nfsdclnts.8.gz
--rw-r--r--	root/root	usr/share/man/man8/nfsdcltrack.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/nfsdctl.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/nfsidmap.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/nfsiostat.8.gz
