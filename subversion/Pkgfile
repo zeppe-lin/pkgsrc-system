@@ -3,7 +3,7 @@
 # Depends on:  apr-util cyrus-sasl utf8proc
 
 name=subversion
-version=1.14.4
+version=1.14.5
 release=1
 source=https://archive.apache.org/dist/$name/$name-$version.tar.bz2
 
@@ -15,7 +15,9 @@ build() {
 		--disable-nls             \
 		--disable-mod-activation  \
 		--without-apxs            \
-		--without-swig            \
+		--without-swig-perl       \
+		--without-swig-python     \
+		--without-swig-ruby       \
 
 	make V=1
 	make -j1 DESTDIR=$PKG install
