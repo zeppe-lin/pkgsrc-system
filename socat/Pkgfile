@@ -3,8 +3,8 @@
 # Depends on:  libbsd openssl readline
 
 name=socat
-version=1.8.0.1
-release=2
+version=1.8.0.2
+release=1
 source=http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
 build() {
