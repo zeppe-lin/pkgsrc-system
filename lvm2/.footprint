@@ -75,6 +75,8 @@ drwxr-xr-x	root/root	usr/include/
 -r--r--r--	root/root	usr/include/lvm2cmd.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/liblvm2cmd.so -> ../../lib/liblvm2cmd.so.2.03
+drwxr-xr-x	root/root	usr/lib/lvm2/
+-r-xr-xr-x	root/root	usr/lib/lvm2/lvresize_fs_helper
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man5/
@@ -101,13 +103,9 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -r--r--r--	root/root	usr/share/man/man8/lvm.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvm_import_vdo.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmconfig.8.gz
--r--r--r--	root/root	usr/share/man/man8/lvmdbusd.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmdevices.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmdiskscan.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmdump.8.gz
--r--r--r--	root/root	usr/share/man/man8/lvmlockctl.8.gz
--r--r--r--	root/root	usr/share/man/man8/lvmlockd.8.gz
--r--r--r--	root/root	usr/share/man/man8/lvmpolld.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmsadc.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvmsar.8.gz
 -r--r--r--	root/root	usr/share/man/man8/lvreduce.8.gz
