@@ -1,2 +1,3 @@
-2c1ad2e8b44d1c48c905c4dff575f59c  monit-5.34.0.tar.gz
+d23ca0b163c78550f9c639e6a036ebb6  manpage.patch
+234263c398a1272ac3340d91c4ce7bed  monit-5.34.3.tar.gz
 f3b48150424ff1a2665ffa8b5deeb616  rc.monitd

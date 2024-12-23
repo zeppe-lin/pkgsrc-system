@@ -1,0 +1,13 @@
+diff '--color=auto' -pruN monit-5.34.3.orig/monit.1 monit-5.34.3/monit.1
+--- monit-5.34.3.orig/monit.1	2024-12-23 07:31:36.444588069 +0200
++++ monit-5.34.3/monit.1	2024-12-23 07:33:06.450067116 +0200
+@@ -5024,5 +5024,7 @@ but \s-1WITHOUT\s0 any warranty; without
+ \&\s-1MERCHANTABILITY\s0 or \s-1FITNESS\s0 for a particular purpose.
+ .SH "SEE ALSO"
+ .IX Header "SEE ALSO"
+-\&\s-1GNU\s0 text utilities; \fBmd5sum\fR\|(1); \fBsha1sum\fR\|(1); \fBopenssl\fR\|(1); \fBglob\fR\|(7);
+-\&\fBregex\fR\|(7); \fIhttps://mmonit.com\fR
++\fBmd5sum\fR\|(1), \fBsha1sum\fR\|(1), \fBopenssl\fR\|(1), \fBglob\fR\|(7),
++\&\fBregex\fR\|(7)
++.TP
++\fIhttps://mmonit.com\fR
