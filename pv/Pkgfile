@@ -1,5 +1,6 @@
 # Description: Monitoring the progress of data through a pipeline
 # URL:         http://www.ivarch.com/programs/pv.shtml
+# Depends on:  ncurses
 
 name=pv
 version=1.9.25
