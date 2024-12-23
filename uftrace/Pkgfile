@@ -1,6 +1,6 @@
 # Description: Trace and analyze execution of a program written in C/C++
 # URL:         https://github.com/namhyung/uftrace
-# Depends on:  capstone elfutils
+# Depends on:  capstone elfutils python3
 
 name=uftrace
 version=0.17
