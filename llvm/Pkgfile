@@ -4,7 +4,7 @@
 # Optional:    lld
 
 name=llvm
-version=19.1.5
+version=19.1.6
 release=1
 source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
 	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/cmake-$version.src.tar.xz
@@ -15,7 +15,8 @@ source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/
 build() {
 	if pkgman isinst ccache; then
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_CCACHE_BUILD=ON"
-		export PATH="$(echo $PATH | awk -v RS=: -v ORS=: '/ccache/{next}{print}' | sed 's/:*$//')"
+		export PATH="$(echo $PATH | awk -v RS=: -v ORS=: \
+			'/ccache/{next}{print}' | sed 's/:*$//')"
 	fi
 
 	if pkgman isinst lld; then
@@ -32,34 +33,35 @@ build() {
 
 	patch -Np2 -d llvm-$version.src -i $SRC/install-prefix.patch
 
-	cmake -S llvm-$version.src -B build -G Ninja $PKGMK_LLVM   \
-		-D CMAKE_INSTALL_PREFIX=/usr                       \
-		-D CMAKE_BUILD_TYPE=Release                        \
-		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"                 \
-		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"             \
-		-D FFI_INCLUDE_DIR=/usr/include                    \
-		-D LLVM_APPEND_VC_REV=OFF                          \
-		-D LLVM_BINUTILS_INCDIR=/usr/include               \
-		-D LLVM_BUILD_EXTERNAL_COMPILER_RT=ON              \
-		-D LLVM_BUILD_LLVM_DYLIB=ON                        \
-		-D LLVM_BUILD_RUNTIME=ON                           \
-		-D LLVM_BUILD_TOOLS=ON                             \
-		-D LLVM_ENABLE_FFI=ON                              \
-		-D LLVM_ENABLE_LIBCXX=OFF                          \
-		-D LLVM_ENABLE_OCAMLDOC=OFF                        \
-		-D LLVM_ENABLE_PIC=ON                              \
-		-D LLVM_ENABLE_RTTI=ON                             \
-		-D LLVM_ENABLE_ZLIB=ON                             \
-		-D LLVM_ENABLE_ZSTD=ON                             \
-		-D LLVM_INCLUDE_BENCHMARKS=OFF                     \
-		-D LLVM_INCLUDE_EXAMPLES=OFF                       \
-		-D LLVM_INCLUDE_TESTS=OFF                          \
-		-D LLVM_INSTALL_UTILS=ON                           \
-		-D LLVM_LINK_LLVM_DYLIB=ON                         \
-		-D LLVM_OPTIMIZED_TABLEGEN=ON                      \
-		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}"         \
-		-D LLVM_UTILS_INSTALL_DIR=/usr/bin                 \
-		-Wno-dev                                           \
+	cmake -S llvm-$version.src -B build -G Ninja        \
+		-D CMAKE_INSTALL_PREFIX=/usr                \
+		-D CMAKE_BUILD_TYPE=Release                 \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"          \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"      \
+		-D FFI_INCLUDE_DIR=/usr/include             \
+		-D LLVM_APPEND_VC_REV=OFF                   \
+		-D LLVM_BINUTILS_INCDIR=/usr/include        \
+		-D LLVM_BUILD_EXTERNAL_COMPILER_RT=ON       \
+		-D LLVM_BUILD_LLVM_DYLIB=ON                 \
+		-D LLVM_BUILD_RUNTIME=ON                    \
+		-D LLVM_BUILD_TOOLS=ON                      \
+		-D LLVM_ENABLE_FFI=ON                       \
+		-D LLVM_ENABLE_LIBCXX=OFF                   \
+		-D LLVM_ENABLE_OCAMLDOC=OFF                 \
+		-D LLVM_ENABLE_PIC=ON                       \
+		-D LLVM_ENABLE_RTTI=ON                      \
+		-D LLVM_ENABLE_ZLIB=ON                      \
+		-D LLVM_ENABLE_ZSTD=ON                      \
+		-D LLVM_INCLUDE_BENCHMARKS=OFF              \
+		-D LLVM_INCLUDE_EXAMPLES=OFF                \
+		-D LLVM_INCLUDE_TESTS=OFF                   \
+		-D LLVM_INSTALL_UTILS=ON                    \
+		-D LLVM_LINK_LLVM_DYLIB=ON                  \
+		-D LLVM_OPTIMIZED_TABLEGEN=ON               \
+		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}"  \
+		-D LLVM_UTILS_INSTALL_DIR=/usr/bin          \
+		-Wno-dev                                    \
+		$PKGMK_LLVM
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
@@ -70,8 +72,8 @@ build() {
 	install -m 0644 $SRC/llvm-config.h $PKG/usr/include/llvm/Config/
 
 	mkdir -p $PKG/usr/lib/bfd-plugins
-	ln -s ../LLVMgold.so  $PKG/usr/lib/bfd-plugins/
-	ln -s ../libLTO.so    $PKG/usr/lib/bfd-plugins/
+	ln -s ../LLVMgold.so $PKG/usr/lib/bfd-plugins/
+	ln -s ../libLTO.so   $PKG/usr/lib/bfd-plugins/
 
 	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py build
 	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py install \
