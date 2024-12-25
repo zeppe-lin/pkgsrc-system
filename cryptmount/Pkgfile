@@ -3,7 +3,7 @@
 # Depends on:  cryptsetup util-linux
 
 name=cryptmount
-version=0.3-785eea0
+version=0.3-04a3f5b
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	crypttab"
