@@ -16,7 +16,7 @@ If you're going to install apache later on, you'll need to recompile this
 package (solutions to this are already planned).
 
 If you want Python Bindings, install SWIG and comment out the few lines in the
-build() function
+`build()` function
 
 
 PRE-INSTALL (SERVER)

@@ -20,7 +20,6 @@ are located at the following:
 
 ```
 Device Drivers -> Network Device Support -> Wireless LAN (non-hamradio)
-
 ```
 
 There are also external drivers available for some very common cards.  For more

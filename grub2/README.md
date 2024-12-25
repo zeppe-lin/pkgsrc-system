@@ -46,7 +46,9 @@ For `grub-mkconfig` to work properly the following conditions should be met:
 
 1) The kernel is expected to be named one of these ways:
 
-    /boot/vmlinuz-*  /vmlinuz-*  /boot/kernel-*
+  - `/boot/vmlinuz-*`
+  - `/vmlinuz-*`
+  - `/boot/kernel-*`
 
 If the kernel is located somewhere else grub-mkconfig will NOT find it!  For
 example, `/boot/vmlinuz-3.10.28` is good and `/boot/linux-3.10.28` would not

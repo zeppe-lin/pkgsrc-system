@@ -12,8 +12,7 @@ kernel if necessary:
     File Systems --->
       <*/M> FUSE (Filesystem in Userspace) support        [CONFIG_FUSE_FS]
 
-    Character devices in user space should be enabled too if running the
-    tests:
+Character devices in user space should be enabled too if running the tests:
 
     File Systems --->
       <*/M> FUSE (Filesystem in Userspace) support        [CONFIG_FUSE_FS]

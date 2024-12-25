@@ -25,7 +25,7 @@ REQUIREMENTS
 Most common printers should be supported by the above configuration, if *NOT*
 you must generate a PPD file (Postscript Printer Description) for your printer:
 
-1. Select your printer from [Open Printing][https://openprinting.org/printers].
+1. Select your printer from [Open Printing](https://openprinting.org/printers).
 2. Select a driver, be shure the driver is available within `ghostscript`.
    You can see all drivers included in ghostscript with a `gs -h` command.
 3. Download the PPD file for your printer.
@@ -37,7 +37,7 @@ POST-INSTALL
 ============
 
 1. Remove the `usblp` kernel module before starting cups.
-2. Configure your printer with the [web-interface][http://localhost:631].
+2. Configure your printer with the [web-interface](http://localhost:631).
 
 
 ---

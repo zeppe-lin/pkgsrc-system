@@ -21,7 +21,7 @@ KERNEL MODULE
 If you compiled device driver as a loadable kernel module, add the following
 lines to `/etc/rc.modules` to autoload module needed by openvpn:
 
-    # Universal TUN/TAP device driver
+    # Universal TUN/TAP device driver.
     /sbin/modprobe tun
 
 

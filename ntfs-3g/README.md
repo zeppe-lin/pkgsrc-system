@@ -25,12 +25,12 @@ configuration and recompile the kernel if necessary:
       <*/M> NTFS Read-Write file system support          [CONFIG_NTFS3_FS]
 
 To ensure the mount command uses NTFS3 for ntfs partitions, create a wrapper
-script:
+script, named `/usr/sbin/mount.ntfs`:
 
-    /usr/sbin/mount.ntfs:
     #!/bin/sh
     exec mount -t ntfs3 "$@"
-    # End of file.
+
+Make it executable:
 
     sudo chmod 0755 /usr/sbin/mount.ntfs
 
@@ -44,7 +44,8 @@ USER MOUNT
 If you want ordinary users to be able to mount NTFS partitions you'll need to
 set `mount.ntfs` with the root user ID.
 
-Note: it is probably unsafe to do this on a computer that needs to be secure !
+**NOTE**:
+It is probably unsafe to do this on a computer that needs to be secure !
 
     sudo chmod -v 4755 /sbin/mount.ntfs
 
