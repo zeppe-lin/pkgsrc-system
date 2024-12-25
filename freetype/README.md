@@ -14,13 +14,17 @@ version.  The available settings are:
 * `truetype:interpreter-version=40`: Minimal mode (default in 2.7).
 
 There are more properties that can be set, separated by whitespace.  Please
-refer to the FreeType documentation for details.
+refer to the [FreeType documentation][1] for details.
 
 To enable your settings edit `/etc/profile` and add something like that:
 
-    export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+```sh
+export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+```
 
 Logout then in to see the change.
+
+[1]: https://freetype.org/freetype2/docs/documentation.html
 
 
 ---

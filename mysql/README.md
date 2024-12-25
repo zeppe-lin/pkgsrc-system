@@ -25,16 +25,22 @@ POST-INSTALL
 
 Build the system database in `/var/lib/mysql`:
 
-    mysql_install_db
+```sh
+mysql_install_db
+```
 
 Add new privileges and features to the MySQL privilege tables if you have
 databases created with older versions of mysql:
 
-    mysql_upgrade
+```sh
+mysql_upgrade
+```
 
 Set a password for the mysql root user:
 
-    mysqladmin -u root password <mysql_root_password>
+```sh
+mysqladmin -u root password <mysql_root_password>
+```
 
 
 ---

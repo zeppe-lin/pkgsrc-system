@@ -9,38 +9,51 @@ POST-INSTALL
 Once the grub2 package is installed, the boot loader itself can be installed
 like so:
 
-    sudo grub-install /dev/<device>
+```sh
+sudo grub-install /dev/<device>
+```
 
 For example, to install grub2 into the master boot record of the first SCSI or
 SATA drive:
 
-    sudo grub-install /dev/sda
+```sh
+sudo grub-install /dev/sda
+```
 
 To install to the second partition of the first SCSI or SATA drive instead of
 the MBR:
 
-    sudo grub-install /dev/sda2
+```sh
+sudo grub-install /dev/sda2
+```
 
 For EFI setup, you need to install `grub2-efi` package and specify the
 `--target` and the `--efi-directory` option arguments:
 
-    sudo grub-install --target=x86_64-efi --efi-directory=/boot /dev/sda
+```sh
+sudo grub-install --target=x86_64-efi --efi-directory=/boot /dev/sda
+```
 
 The configuration menu file is required for grub2 to do more than display a
 command line.  It can be created automatically using the `grub-mkconfig`
 command like so:
 
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
+```sh
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 The file `/etc/default/grub` controls the operation of `grub-mkconfig` utility.
 The typical usage is:
 
-    GRUB_TIMEOUT=3
-    GRUB_DISTRIBUTOR=Zeppe-Lin
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=/dev/mapper/swap"
+```sh
+GRUB_TIMEOUT=3
+GRUB_DISTRIBUTOR=Zeppe-Lin
+GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=/dev/mapper/swap"
+```
 
-See the following URL for more information:
-https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
+See the [GRUB Manual][1] for more information.
+
+[1]: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
 
 For `grub-mkconfig` to work properly the following conditions should be met:
 
@@ -61,7 +74,9 @@ installed.
 The configuration file can also be created manually.  A sample `grub.cfg` is
 included in the package source:
 
-    pkgman cat grub2 grub.cfg.sample
+```sh
+pkgman cat grub2 grub.cfg.sample
+```
 
 
 ---

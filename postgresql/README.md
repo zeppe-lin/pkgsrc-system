@@ -13,17 +13,19 @@ restore them later.
 Example: (for your convenience, there could be better ways to achieve
 this)
 
-    sudo pg_dumpall -U postgres > pg.dump
-    sudo /etc/rc.d/postgresql stop
+```sh
+sudo pg_dumpall -U postgres > pg.dump
+sudo /etc/rc.d/postgresql stop
 
-    sudo mv /var/pgsql/data /var/pgsql/data-backup
-    sudo mkdir /var/pgsql/data
-    sudo chown postgres /var/pgsql/data
+sudo mv /var/pgsql/data /var/pgsql/data-backup
+sudo mkdir /var/pgsql/data
+sudo chown postgres /var/pgsql/data
 
-    sudo -u postgres initdb -D /var/pgsql/data
+sudo -u postgres initdb -D /var/pgsql/data
 
-    sudo /etc/rc.d/postgresql start
-    sudo psql -U postgres -f pg.dump postgres
+sudo /etc/rc.d/postgresql start
+sudo psql -U postgres -f pg.dump postgres
+```
 
 Do not forget to update/copy old config files to `/var/pgsql/data`.
 
@@ -34,18 +36,20 @@ NEW INSTALL
 To complete the installation and create a test database you need to do
 some additional steps or use the included post-install script.
 
-    sudo useradd -m -d /home/postgres -s /bin/false postgres
-    sudo passwd -l postgres
+```sh
+sudo useradd -m -d /home/postgres -s /bin/false postgres
+sudo passwd -l postgres
 
-    sudo mkdir -p /var/pgsql/data
-    sudo touch /var/log/postgresql
-    sudo chown postgres /var/pgsql/data /var/log/postgresql
+sudo mkdir -p /var/pgsql/data
+sudo touch /var/log/postgresql
+sudo chown postgres /var/pgsql/data /var/log/postgresql
 
-    sudo sudo -u postgres initdb -D /var/pgsql/data
+sudo sudo -u postgres initdb -D /var/pgsql/data
 
-    sudo /etc/rc.d/postgresql start
-    sudo -u postgres createdb test
-    sudo psql -U postgres test
+sudo /etc/rc.d/postgresql start
+sudo -u postgres createdb test
+sudo psql -U postgres test
+```
 
 Edit `/etc/cron/weekly/syslog` as root and add the line
 `/usr/sbin/rotatelog postgresql`.

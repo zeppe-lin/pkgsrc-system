@@ -3,8 +3,11 @@ README dhcpcd
 ---
 
 
-Troubleshooting: Carrier Lost
-=============================
+TROUBLESHOOTING
+===============
+
+Carrier Lost
+------------
 
 In case you get on the system start the `dhcpcd[ERROR]` and `/var/log/messages`
 contains something like:
@@ -35,14 +38,14 @@ Try adding to `/etc/dhcpcd/dhcpcd.conf` the following options:
 - `noipv6`  Don’t solicit or accept IPv6 Router Advertisements and DHCPv6.
 
 
-Troubleshooting: Client ID
-==========================
+Client ID
+---------
 
 If you are on a network with DHCPv4 that filters Client IDs based on MAC
 addresses, you may need to edit `/etc/dhcpcd/dhcpcd.conf` and change the
 following line:
 
-```
+```sh
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per
 # RFC4361.
 duid
@@ -50,7 +53,7 @@ duid
 
 To:
 
-```
+```sh
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
 ```
@@ -62,8 +65,8 @@ Otherwise, you may not obtain a lease since the DHCP server may not read your
 [2]: https://tools.ietf.org/html/rfc4361
 
 
-Troubleshooting: Problems with noncompliant routers
-===================================================
+Problems with noncompliant routers
+----------------------------------
 
 For some (noncompliant) routers, you will not be able to connect properly
 unless you comment the line:

@@ -7,10 +7,13 @@ KERNEL MODULE
 =============
 
 Add the following lines to `/etc/rc.modules` to autoload modules needed by
-cpufrequtils:
+`cpufrequtils`:
 
-    /sbin/modprobe cpufreq_powersave
-    /sbin/modprobe cpufreq_userspace
+```sh
+# CPUfreq policy governors.
+/sbin/modprobe cpufreq_powersave
+/sbin/modprobe cpufreq_userspace
+```
 
 
 ---

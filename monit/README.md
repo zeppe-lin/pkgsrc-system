@@ -6,7 +6,9 @@ README monit
 ONLINE DOCUMENTATION
 ====================
 
-Wiki: https://mmonit.com/wiki/
+* [Wiki][1]
+
+[1]: https://mmonit.com/wiki/
 
 
 ---
