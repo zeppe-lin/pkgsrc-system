@@ -2,12 +2,12 @@
 # URL:         https://github.com/zeppe-lin/mkinitramfs
 
 name=mkinitramfs
-version=0.4.1-0434757
+version=0.4.1-ffaa073
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
 
 build() {
-	make -C $name-* PREFIX=/usr DESTDIR=$PKG install install_bashcomp
+	make -C $name-* PREFIX=/usr DESTDIR=$PKG install
 	install -m 0644 -Dt $PKG/etc/mkinitramfs $SRC/config
 }
