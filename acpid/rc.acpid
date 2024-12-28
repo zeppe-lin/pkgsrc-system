@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# /etc/rc.d/acpid: start/stop acpid(8) daemon
+#
+
+RUNDIR=/var/run
+CONFDIR=/etc/acpi/events
+PID=$RUNDIR/acpid.pid
+LOCK=$RUNDIR/acpid.lock
+SOCK=$RUNDIR/acpid.socket
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/sbin/acpid
+OPTS="-c $CONFDIR -L $LOCK -p $PID -s $SOCK"
+
+case $1 in
+start)
+	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
+	;;
+stop)
+	$SSD --stop --retry 10 --pidfile $PID --remove-pidfile --exec $PROG
+	;;
+reload)
+	$SSD --status --pidfile $PID --exec $PROG &&
+	kill -HUP $(cat $PID)
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --pidfile $PID --exec $PROG
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|reload|restart|status]"
+	;;
+esac
+
+# End of file.

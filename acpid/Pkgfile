@@ -1,0 +1,28 @@
+# Description: ACPI event management daemon with netlink support
+# URL:         http://sourceforge.net/projects/acpid2/
+
+name=acpid
+version=2.0.34
+release=1
+source="https://sourceforge.net/projects/acpid2/files/acpid-$version.tar.xz
+	acpi_handler.sh
+	default
+	rc.acpid"
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure  \
+		--prefix=/usr        \
+		--sysconfdir=/etc    \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -m 0755 -D $SRC/acpi_handler.sh $PKG/etc/acpi/acpi_handler.sh
+	install -m 0644 -D $SRC/default         $PKG/etc/acpi/events/default
+	install -m 0755 -D $SRC/rc.acpid        $PKG/etc/rc.d/acpid
+
+	# remove junk
+	rm -rf $PKG/usr/share/doc
+}
