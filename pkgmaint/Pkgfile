@@ -3,12 +3,12 @@
 # Depends on:  p5-yaml-libyaml
 
 name=pkgmaint
-version=0.5-c5d38a5
+version=0.5-f0aa7d4
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	finddisowned.conf"
 
 build() {
-	make -C $name-* PREFIX=/usr DESTDIR=$PKG install install_bashcomp
+	make -C $name-* PREFIX=/usr DESTDIR=$PKG install
 	install -m 0644 -Dt $PKG/etc $SRC/finddisowned.conf
 }
