@@ -14,7 +14,7 @@
 #       https://github.com/graysky2/kernel_compiler_support
 
 name=linux
-version=5.4.286
+version=5.4.288
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
@@ -91,8 +91,8 @@ build() {
 	esac
 
 	# copy the kernel and its config
-	install -m 0644 -D $_imageloc  $PKG/boot/vmlinuz-$version
-	install -m 0644 -D .config     $PKG/boot/config-$version
+	install -m 0644 -D $_imageloc $PKG/boot/vmlinuz-$version
+	install -m 0644 -D .config    $PKG/boot/config-$version
 
 	# remove junk
 	unlink $PKG/lib/modules/$_kver/build
