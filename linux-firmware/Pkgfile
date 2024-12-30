@@ -3,14 +3,12 @@
 # Depends on:  rdfind
 
 name=linux-firmware
-version=20241110
+version=20241210
 release=1
 source="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
-	dedup.patch
 	fsr.patch"
 
 build() {
-	patch -d $name-$version -Np1 -i $SRC/dedup.patch
 	patch -d $name-$version -Np1 -i $SRC/fsr.patch
 
 	make  -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
