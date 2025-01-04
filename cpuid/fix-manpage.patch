@@ -1,0 +1,132 @@
+diff '--color=auto' -pruN cpuid-20241023.orig/cpuinfo2cpuid cpuid-20241023/cpuinfo2cpuid
+--- cpuid-20241023.orig/cpuinfo2cpuid	2025-01-04 15:09:29.669125870 +0200
++++ cpuid-20241023/cpuinfo2cpuid	2025-01-04 15:27:21.438896834 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use autodie;
+ use strict;
+@@ -32,8 +32,8 @@ if ( $vendor ne '' or $family ne '' or $
+       print STDERR "When specifying input manually all input values \"vendor, family, model and stepping\" has to be specified\n";
+       pod2usage(q(-verbose) => 1);
+   }
+-} else { 
+-   # Read cpuinfo from STDIN
++} else {
++   # Read cpuinfo from STDIN.
+    while (<STDIN>) {
+       if (/^vendor_id\s*: (.*)$/) {
+          $vendor = $1
+@@ -48,7 +48,7 @@ if ( $vendor ne '' or $family ne '' or $
+          $stepping = $1
+       }
+    }
+-}  
++}
+ 
+ my $xfamily = int($family / 16);
+ $family  = $family % 16;
+@@ -79,55 +79,44 @@ __END__
+ 
+ =head1 NAME
+ 
+-cpuinfo2cpuid
++cpuinfo2cpuid - convert /proc/cpuinfo data to cpuid-like HEX data structure
+ 
+ =head1 SYNOPSIS
+ 
+-cpuinfo2cpuid
+-
+-  or
+-    
+-cpuinfo2cpuid -help
+-
+-  or
+-
+-cpuinfo2cpuid -vendor=<GenuineIntel|AuthenticAMD> -family=<num> -model=<num> -stepping=<num>
++B<cpuinfo2cpuid> [-help] [-vendor=<GenuineIntel|AuthenticAMD>]
++              [-family=<num>] [-model=<num>] [-stepping=<num>]
+ 
+ =head1 DESCRIPTION
+ 
+-Expects /proc/cpuinfo data on stdin and converts it to cpuid-like HEX data structure suitable as the input for cpuid -f <file> utility.
+-Alternatively, user can specify CPU vendor, family, model and stepping on the command line. 
++B<cpuinfo2cpuid> expects F</proc/cpuinfo> data on stdin and converts it to
++cpuid-like HEX data structure suitable as the input for B<< cpuid -f <file> >>
++utility.  Alternatively, user can specify CPU vendor, family, model and
++stepping on the command line.
+ 
+ =head1 OPTIONS
+ 
+ =over 4
+ 
+-=item -help
++=item B<-help>
+ 
+ Displays a brief help message.
+-  
+-=item -vendor
++
++=item B<-vendor>=<GenuineIntel|AuthenticAMD>
+ 
+ CPU vendor. Can be either GenuineIntel or AuthenticAMD.
+ 
+-=item -family
++=item B<-family>=<num>
+ 
+ CPU family in decimal notation.
+ 
+-=item -model
++=item B<-model>=<num>
+ 
+ CPU model in decimal notation.
+ 
+-=item -stepping
++=item B<-stepping>=<num>
+ 
+ CPU stepping in decimal notation.
+ 
+-
+-=item -help
+-
+-Displays a brief help message.
+-  
+-
+ =back
+ 
+ =head1 LIMITATIONS
+@@ -136,14 +125,28 @@ Only Intel & AMD cpuinfo data are suppor
+ 
+ =head1 EXAMPLES
+ 
+-cpuinfo2cpuid < /proc/cpuinfo | cpuid -f - | grep '(synth)'
++=over 2
++
++=item *
+ 
+-Specifying CPU vendor, family, model and stepping on command line
++B<< cpuinfo2cpuid < /proc/cpuinfo | cpuid -f - | grep '(synth)' >>
+ 
+-cpuinfo2cpuid.pl -vendor=GenuineIntel -family=6 -model=58 -stepping=9 | cpuid -f - | grep '(synth)'
++=item *
++
++Specifying CPU vendor, family, model and stepping on command line:
++
++B<< cpuinfo2cpuid -vendor=GenuineIntel -family=6 -model=58 -stepping=9 | cpuid -f - | grep '(synth)' >>
++
++=back
+ 
+ =head1 AUTHOR
+-  
+-Todd Allen <cpuid@etallen.com>, Jirka Hladky <jhladky@gmail.com>
++
++=over
++
++=item Todd Allen <L<cpuid@etallen.com>>
++
++=item Jirka Hladky <L<jhladky@gmail.com>>
++
++=back
+ 
+ =cut

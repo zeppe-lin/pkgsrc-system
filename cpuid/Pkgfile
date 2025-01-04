@@ -3,10 +3,13 @@
 
 name=cpuid
 version=20241023
-release=1
-source=https://www.etallen.com/cpuid/cpuid-$version.src.tar.gz
+release=2
+source="https://www.etallen.com/cpuid/cpuid-$version.src.tar.gz
+	fix-manpage.patch"
 
 build() {
+	patch -d cpuid-$version -Np1 -i $SRC/fix-manpage.patch
+
 	make -C cpuid-$version -e CFLAGS="$CFLAGS"
 	make -C cpuid-$version BUILDROOT=$PKG install
 }
