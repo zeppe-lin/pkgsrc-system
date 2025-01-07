@@ -1,25 +1,23 @@
 # Description: Screen manager with VT100/ANSI terminal emulation 
 # URL:         https://www.gnu.org/software/screen/
-# Depends on:  ncurses
+# Depends on:  libxcrypt linux-pam ncurses
 
 name=screen
-version=4.5.0
-release=2
+version=5.0.0
+release=1
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
 	pam.$name"
 
 build() {
-	mkdir build; cd build
+	# build in separate dir is broken
+	cd $name-$version
 
-	# fix build with gcc 14
-	CFLAGS="$CFLAGS -Wno-implicit-int -Wno-implicit-function-declaration"
-
-	autoreconf -fi ../$name-$version
-	../$name-$version/configure  \
+	./configure                  \
 		--prefix=/usr        \
 		--enable-colors256   \
 		--enable-rxvt_osc    \
 		--enable-pam         \
+		--enable-utmp        \
 		--runstatedir=/run   \
 
 	make V=1
