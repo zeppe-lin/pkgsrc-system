@@ -1,5 +1,5 @@
 drwxr-xr-x	root/root	bin/
--rwsr-xr-x	root/root	bin/ping
+-rwxr-xr-x	root/root	bin/ping
 drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/arping
 drwxr-xr-x	root/root	usr/

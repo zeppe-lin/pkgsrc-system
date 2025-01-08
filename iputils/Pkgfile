@@ -4,7 +4,7 @@
 
 name=iputils
 version=20240905
-release=1
+release=2
 source="https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 	https://archive.archlinux.org/packages/i/$name/$name-$version-1-x86_64.pkg.tar.zst"
 
@@ -16,17 +16,20 @@ build() {
 		-D b_pie=true             \
 		-D BUILD_MANS=false       \
 		-D USE_GETTEXT=false      \
+		-D USE_CAP=true           \
 
 	ninja -C build -j ${JOBS:-1} -v
 	#DESTDIR=$PKG ninja -C build install
 
-	install -m 755 -D build/ping/ping  $PKG/bin/ping
-	install -m 755 -D build/arping     $PKG/sbin/arping
-	install -m 755 -D build/tracepath  $PKG/usr/sbin/tracepath
-	install -m 755 -D build/clockdiff  $PKG/usr/sbin/clockdiff
+	install -m 0755 -D build/ping/ping  $PKG/bin/ping
+	install -m 0755 -D build/arping     $PKG/sbin/arping
+	install -m 0755 -D build/tracepath  $PKG/usr/sbin/tracepath
+	install -m 0755 -D build/clockdiff  $PKG/usr/sbin/clockdiff
 
-	install -m 644 -Dt $PKG/usr/share/man/man8/ \
+	install -m 0644 -Dt $PKG/usr/share/man/man8/ \
 		$SRC/usr/share/man/man8/*
 
-	chmod u+s $PKG/bin/ping
+	# cap_net_admin is needed for ping -m even on ICMP datagram socket
+	# (or cap_net_raw since Linux kernel 5.17).
+	setcap cap_net_admin,cap_net_raw+p $PKG/bin/ping
 }
