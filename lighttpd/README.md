@@ -18,7 +18,7 @@ sudo chown lighttpd:lighttpd /var/www/logs/*
 ```
 
 If you wish to enable SSL support, uncomment the relevant lines in
-/etc/lighttpd.conf and generate a self-signed certificate:
+`/etc/lighttpd.conf` and generate a self-signed certificate:
 
 ```sh
 sudo openssl req -new -x509              \

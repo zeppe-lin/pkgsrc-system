@@ -3,8 +3,8 @@
 # Depends on:  libpcre2 openssl zlib
 
 name=lighttpd
-version=1.4.76
-release=2
+version=1.4.77
+release=1
 source="https://github.com/$name/$name${version%.*}/archive/refs/tags/$name-$version.tar.gz
 	$name.conf rc.$name"
 
@@ -29,12 +29,12 @@ build() {
 	install -m 0644 -D $SRC/$name.conf $PKG/etc/$name.conf
 	install -m 0755 -D $SRC/rc.$name   $PKG/etc/rc.d/$name
 
-	install -d $PKG/var/www/lighttpd
+	mkdir -p $PKG/var/www/lighttpd
 	for dir in dev htdocs logs tmp; do
 		install -o www -g www -d $PKG/var/www/lighttpd/$dir
 	done
 
-	install -d $PKG/etc/ssl/certs
+	mkdir -p   $PKG/etc/ssl/certs
 	touch      $PKG/etc/ssl/certs/lighttpd.pem
 	chmod 0600 $PKG/etc/ssl/certs/lighttpd.pem
 }
