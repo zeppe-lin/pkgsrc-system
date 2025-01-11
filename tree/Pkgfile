@@ -2,7 +2,7 @@
 # URL:         https://gitlab.com/OldManProgrammer/unix-tree
 
 name=tree
-version=2.1.3
+version=2.2.1
 release=1
 source=https://gitlab.com/OldManProgrammer/unix-tree/-/archive/$version/unix-tree-$version.tar.gz
 
@@ -10,7 +10,6 @@ build() {
 	cd unix-tree-$version
 
 	make
-
-	install -m 0755 -Dt $PKG/usr/bin/             tree
-	install -m 0644 -Dt $PKG/usr/share/man/man1/  doc/tree.1
+	install -m 0755 -Dt $PKG/usr/bin             tree
+	install -m 0644 -Dt $PKG/usr/share/man/man1  doc/tree.1
 }
