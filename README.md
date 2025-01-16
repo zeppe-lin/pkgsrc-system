@@ -1,10 +1,10 @@
 OVERVIEW
 ========
 
-This directory contains **system** pkgsrc collection: build scripts and
-files for the packages required for minimal installation on real
+This repository contains **system** pkgsrc collection: build scripts
+and files for the packages required for minimal installation on real
 hardware (e.g. boot loader, filesystem utilities, hw-monitors, etc)
-and/or packages required for servers.
+and/or packages needed for servers.
 
 Packages in this collection must depend **only** on **core** pkgsrc
 collection.
