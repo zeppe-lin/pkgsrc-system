@@ -3,13 +3,14 @@
 # Depends on:  zlib
 
 name=libpng
-version=1.6.44
+version=1.6.45
 release=1
-source="https://download.sourceforge.net/$name/$name-$version.tar.xz
-        libpng-apng.patch"
+source="$name-$version.tar.gz::https://github.com/pnggroup/$name/archive/refs/tags/v$version.tar.gz
+	$name-$version-apng.patch"
 
 build() {
-	patch -Np1 -d $name-$version -i $SRC/libpng-apng.patch
+	# https://src.openmamba.org/rpms/libpng/raw/branch/main/libpng-1.6.45-apng.patch
+	patch -d $name-$version -Np1 -i $SRC/$name-$version-apng.patch
 
 	mkdir build; cd build
 
