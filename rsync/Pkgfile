@@ -3,15 +3,16 @@
 # Depends on:  acl openssl popt zstd
 
 name=rsync
-version=3.3.0
-release=2
-source="https://download.samba.org/pub/rsync/$name-$version.tar.gz
-	rsyncd.conf rc.rsyncd"
+version=3.4.1
+release=1
+source="https://download.samba.org/pub/rsync/rsync-$version.tar.gz
+	rsyncd.conf
+	rc.rsyncd"
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure      \
+	../rsync-$version/configure      \
 		--prefix=/usr            \
 		--with-rsh=ssh           \
 		--with-included-zlib=no  \
@@ -25,6 +26,6 @@ build() {
 	install -m 0755 -D $SRC/rc.rsyncd    $PKG/etc/rc.d/rsyncd
 	install -m 0644 -D $SRC/rsyncd.conf  $PKG/etc/rsyncd.conf
 
-	install -d $PKG/var/log
+	mkdir -p $PKG/var/log
 	touch $PKG/var/log/rsyncd.log
 }
