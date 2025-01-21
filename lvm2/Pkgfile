@@ -5,7 +5,7 @@
 # Note: update libdevmapper first.
 
 name=lvm2
-version=2.03.29
+version=2.03.30
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
