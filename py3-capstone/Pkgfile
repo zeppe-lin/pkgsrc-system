@@ -3,13 +3,15 @@
 # Depends on:  py3-setuptools
 
 name=py3-capstone
-version=5.0.3
+version=5.0.5
 release=1
 source=https://github.com/aquynh/capstone/archive/$version/capstone-$version.tar.gz
 
 build() {
 	export TMPDIR="$PKGMK_WORK_DIR"
-	export LIBCAPSTONE_PATH= # Prevent bundled libcapstone from being built.
+
+	# skip building libcapstone (see capstone package)
+	export LIBCAPSTONE_PATH=
 
 	cd capstone-$version/bindings/python
 
