@@ -31,33 +31,19 @@ Open the submenu and select the options that support your hardware: `lspci`
 from `pciutils` package can be used to view your hardware configuration.
 
 
-POST-INSTALL
-============
+NETWORK CONFIGURATION
+=====================
 
-Create a network setup for `wpa_supplicant`:
+The `handbook` package has a brief documentation that describes a wireless
+network configuration for Zeppe-Lin.
 
-```sh
-wpa_passphrase <ssid> <your_secret> | sudo tee /etc/wpa_supplicant.conf
-```
-
-See the sample configuration file `wpa_supplicant.conf` in the sources for
-a complete description of the available options for wpa_supplicant.
-
-Change your wlan rc script to use `wpa_supplicant`.
-
-Following an example for the centrino ipw2100 driver, no need to do
-anything with iwconfig:
+It can be viewed [online][1] or locally by the following command:
 
 ```sh
-sudo modprobe ipw2100
-sudo ifconfig eth1 xxx.xxx.xxx.xxx netmask 255.255.255.xxx
-sudo route add default gw xxx.xxx.xxx.xxx
-sudo wpa_supplicant -B -Dnl80211 -ieth1 -c/etc/wpa.conf
+LESS='-p Wireless network' man handbook
 ```
 
-**NOTE!** The above configuration makes use of the generic nl80211
-wpa_supplicant driver, which is the preferred nowadays and supersedes the
-wext (wireless extensions) driver.
+[1]: https://zeppe-lin.github.io/handbook.7.html#Wireless-network
 
 
 ---
