@@ -4,11 +4,12 @@
 
 name=wpa-supplicant
 version=2.11
-release=2
+release=3
 source="https://w1.fi/releases/wpa_supplicant-$version.tar.gz
 
 	manpages-fixes.patch
 	809d9d8172db8e2a08ff639875f838b5b86d2641.patch
+	015f6a5a0cd1c8b0d40441b9fd9e4c8658bc9493.patch
 	0001-Enable-TLSv1.0-by-default.patch
 	0002-Disable-Werror-for-eapol_test.patch
 	0003-Allow-legacy-renegotiation-to-fix-PEAP-issues-with-s.patch

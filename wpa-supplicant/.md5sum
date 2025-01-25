@@ -5,6 +5,7 @@ dd1e3b36274ab1b5e6c15b9fa3758ba6  0001-Enable-TLSv1.0-by-default.patch
 1f96d4e47e1f11b78ddc053d0da0da1e  0005-Add-IgnoreOnIsolate-yes-to-keep-wpa-supplicant-runni.patch
 cb9e74382b311deb54816e7e5b48093b  0006-Add-reload-support-to-the-systemd-unit-files.patch
 5d892fffe74b1b7a3d7ec253364d190e  0007-nl80211-add-extra-ies-only-if-allowed-by-driver.patch
+64e8e3e653ddd3b7e77f26ac41e3ea80  015f6a5a0cd1c8b0d40441b9fd9e4c8658bc9493.patch
 d5a41855fbaac0b9e50c17c0d9b95e0e  809d9d8172db8e2a08ff639875f838b5b86d2641.patch
 c5397a0b6338096dcf170b20168f9ebc  manpages-fixes.patch
 d48ec3f39534bac17c7841897fe04880  rc.wpa_supplicant
