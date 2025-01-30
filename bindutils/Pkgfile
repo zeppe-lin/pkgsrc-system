@@ -3,7 +3,7 @@
 # Depends on:  json-c libedit liburcu libuv openssl zlib
 
 name=bindutils
-version=9.20.4
+version=9.20.5
 release=1
 source="https://ftp.isc.org/isc/bind9/$version/bind-$version.tar.xz
 	utils.patch"
@@ -29,7 +29,7 @@ build() {
 	make DESTDIR=$PKG -C bin/dig  install
 	make DESTDIR=$PKG -C bin/delv install
 
-	for f in delv.1 dig.1 host.1 nslookup.1; do
-		install -m 0644 -Dt $PKG/usr/share/man/man1/ doc/man/$f
+	for f in delv dig host nslookup; do
+		install -m 0644 -Dt $PKG/usr/share/man/man1 doc/man/$f.1
 	done
 }
