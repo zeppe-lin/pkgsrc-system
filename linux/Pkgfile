@@ -10,11 +10,8 @@
 # relying on linux for kernel headers.
 # ============================================================================
 
-# TODO: Add kernel_gcc_patch for cpu optimization support?
-#       https://github.com/graysky2/kernel_compiler_support
-
 name=linux
-version=5.4.288
+version=5.4.290
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
@@ -70,7 +67,7 @@ build() {
 		make -j ${JOBS:-1} ARCH=$_karch ${_karch}_defconfig
 	fi
 
-	# XXX HOTFIX
+	# XXX hotfix for:
 	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
 	./scripts/config --disable CONFIG_IKHEADERS
 
