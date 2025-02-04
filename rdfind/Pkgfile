@@ -1,6 +1,7 @@
 # Description: Redundant data find
 # URL:         https://rdfind.pauldreik.se/
 # Depends on:  nettle
+# Optional:    xxhash
 
 name=rdfind
 version=1.7.0
