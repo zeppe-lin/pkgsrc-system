@@ -3,7 +3,7 @@
 # Depends on:  nettle
 
 name=rdfind
-version=1.6.0
+version=1.7.0
 release=1
 source=https://rdfind.pauldreik.se/$name-$version.tar.gz
 
