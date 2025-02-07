@@ -1,0 +1,93 @@
+# Description: Linux kernel and modules (6.1 series)
+# URL:         https://www.kernel.org/
+
+# 6.1 LTS (Dec, 2027)
+# https://www.kernel.org/category/releases.html
+
+name=linux-6.1
+version=6.1.128
+release=1
+source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
+	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
+	x86_64-dotconfig"
+
+build() {
+	local _kver _karch _imageloc f
+	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
+
+	case $version in
+	*.*.*) _kver=${version} ;;
+	  *.*) _kver=$version.0 ;;
+	esac
+
+	case "$(uname -m)" in
+	x86_64)
+		_karch=x86_64
+		_imageloc=arch/x86/boot/bzImage
+		;;
+	i386)
+		_karch=i386
+		_imageloc=arch/x86/boot/bzImage
+		;;
+	arm64)
+		_karch=arm64
+		_imageloc=arch/arm64/boot/Image
+		;;
+	arm)
+		_karch=arm
+		_imageloc=arch/arm/boot/zImage
+		;;
+	*)
+		echo "Unsupported architecture $(uname -m)"
+		exit 1
+		;;
+	esac
+
+	cd linux-${version%.*}
+
+	xzcat $SRC/patch-$version.xz | patch -sNp1 -F0
+
+	# clean up
+	make V=1 mrproper
+
+	# prepare configs
+	if [ -f $SRC/$_karch-dotconfig ]; then
+		cp $SRC/$_karch-dotconfig .config
+		make -j ${JOBS:-1} ARCH=$_karch olddefconfig
+	else
+		make -j ${JOBS:-1} ARCH=$_karch ${_karch}_defconfig
+	fi
+
+	# XXX hotfix for:
+	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
+	./scripts/config --disable CONFIG_IKHEADERS
+
+	# XXX hotfix for:
+	# *** Failed to generate BTF for vmlinux: pahole is not available
+	# otherwise requires pahole
+	./scripts/config --disable CONFIG_DEBUG_INFO_BTF
+
+	# build and install modules
+	make -j ${JOBS:-1} V=1 all
+	make -j 1 V=1 ARCH=$_karch INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1 \
+		modules_install
+
+	# create module dependency list
+	depmod -a -b $PKG $_kver
+
+	# copy all of the dtbs (device tree blobs) if needed
+	case "$_karch" in
+	arm64 | arm)
+		make -j 1 ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/dtbs \
+			dtbs_install
+		;;
+	esac
+
+	# copy the kernel and its config
+	install -m 0644 -D $_imageloc $PKG/boot/vmlinuz-$version
+	install -m 0644 -D .config    $PKG/boot/config-$version
+
+	# remove junk
+	unlink $PKG/lib/modules/$_kver/build
+	unlink $PKG/lib/modules/$_kver/source
+}

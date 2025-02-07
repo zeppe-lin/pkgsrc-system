@@ -1,0 +1,12 @@
+#!/bin/sh -ex
+
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+# Remove old initramfs if mkinitramfs and linux-6.1 are already installed.
+# The ``post-install'' script will generate the new one.
+if pkgman isinst mkinitramfs linux-6.1; then
+	_KVER=$(pkgman current linux-6.1 | cut -d- -f1)
+	rm -fv /boot/initramfs-$_KVER.img
+fi
+
+# End of file.

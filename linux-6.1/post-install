@@ -1,0 +1,17 @@
+#!/bin/sh -ex
+
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+# prepare initramfs if mkinitramfs is installed
+if pkgman isinst mkinitramfs; then
+	_KVER=$(pkgman printf %v --filter=linux-6.1)
+	mkinitramfs -o /boot/initramfs-$_KVER.img -k $_KVER -f
+fi
+
+# update grub configuration file if grub2 is installed
+if pkgman isinst grub2; then
+	mkdir -p /boot/grub
+	grub-mkconfig -o /boot/grub/grub.cfg
+fi
+
+# End of file.
