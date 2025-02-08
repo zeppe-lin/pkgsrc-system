@@ -3,7 +3,7 @@
 # Depends on:  libidn2 nettle p11-kit zstd
 
 name=gnutls
-version=3.8.8
+version=3.8.9
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/v${version%.*}/$name-$version.tar.xz
 
@@ -29,5 +29,5 @@ build() {
 	make DESTDIR=$PKG install
 
 	# remove junk
-	rm -r $PKG/usr/share/info $PKG/usr/share/doc
+	cd $PKG/usr/share; rm -r info doc
 }
