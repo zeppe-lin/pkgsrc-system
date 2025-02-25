@@ -3,7 +3,7 @@
 # Depends on:  libbsd openssl readline zlib
 
 name=socat
-version=1.8.0.2
+version=1.8.0.3
 release=1
 source=http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
