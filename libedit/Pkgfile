@@ -3,7 +3,7 @@
 # Depends on:  ncurses
 
 name=libedit
-version=20240808-3.1
+version=20250104-3.1
 release=1
 source=https://thrysoee.dk/editline/$name-$version.tar.gz
 
@@ -16,5 +16,7 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	ln -s editline.3 $PKG/usr/share/man/man3/el.3
+	if [ ! -e $PKG/usr/share/man/man3/el.3 ]; then
+		echo ".so man3/editline.3" > $PKG/usr/share/man/man3/el.3
+	fi
 }
