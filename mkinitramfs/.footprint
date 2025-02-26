@@ -23,9 +23,12 @@ drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/eudev/
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/eudev/eudev
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/eudev/eudev.init
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/eudev/eudev.init.late
-drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/keymap/
--rw-r--r--	root/root	usr/share/mkinitramfs/hooks/keymap/keymap
--rw-r--r--	root/root	usr/share/mkinitramfs/hooks/keymap/keymap.init
+drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/loadkeys/
+-rw-r--r--	root/root	usr/share/mkinitramfs/hooks/loadkeys/loadkeys
+-rw-r--r--	root/root	usr/share/mkinitramfs/hooks/loadkeys/loadkeys.init
+drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/loadkmap/
+-rw-r--r--	root/root	usr/share/mkinitramfs/hooks/loadkmap/loadkmap
+-rw-r--r--	root/root	usr/share/mkinitramfs/hooks/loadkmap/loadkmap.init
 drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/luks/
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/luks/luks
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/luks/luks.init
