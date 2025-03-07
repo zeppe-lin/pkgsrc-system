@@ -3,7 +3,7 @@
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
 name=glib
-version=2.83.5
+version=2.84.0
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -21,7 +21,7 @@ build() {
 		-i glib-$version/gio/gdbusaddress.c
 
 	# -D man-pages=enabled: requires docutils
-	meson build glib-$version           \
+	meson setup build glib-$version     \
 		--prefix=/usr               \
 		--libexecdir=/usr/lib/glib  \
 		--buildtype=plain           \
