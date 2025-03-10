@@ -4,14 +4,11 @@
 # Optional:    lm-sensors lsof strace
 
 name=htop
-version=3.3.0
+version=3.4.0
 release=1
 source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
 
 build() {
-	# fix build
-	touch htop-$version/INSTALL
-
 	mkdir build; cd build
 
 	autoreconf -fi ../htop-$version
