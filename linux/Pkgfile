@@ -11,7 +11,7 @@
 # ============================================================================
 
 name=linux
-version=5.4.290
+version=5.4.291
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
