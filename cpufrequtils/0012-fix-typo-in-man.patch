@@ -1,0 +1,25 @@
+Fix typos in man files.
+--- a/man/cpufreq-aperf.1
++++ b/man/cpufreq-aperf.1
+@@ -7,8 +7,8 @@
+ cpufreq\-aperf [\fIoptions\fP]
+ .SH "DESCRIPTION"
+ .LP
+-On latest processors exist two MSR registers refered to as:
+-  - MPERF increasing with maxium (P0) frequency in C0
++On latest processors exist two MSR registers referred to as:
++  - MPERF increasing with maximum (P0) frequency in C0
+   - APERF increasing with current/actual frequency in C0
+ 
+ From this information the average frequency over a time period can be
+--- a/man/cpufreq-set.1
++++ b/man/cpufreq-set.1
+@@ -1,7 +1,7 @@
+ .TH "cpufreq-set" "1" "0.1" "Mattia Dongili" ""
+ .SH "NAME"
+ .LP 
+-cpufreq\-set \- A small tool which allows to modify cpufreq settings.
++cpufreq\-set \- A small tool which allows a user to modify cpufreq settings.
+ .SH "SYNTAX"
+ .LP 
+ cpufreq\-set [\fIoptions\fP]

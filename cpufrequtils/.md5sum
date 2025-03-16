@@ -8,5 +8,6 @@ a99653aab0d334569496a402389f062f  0008-make-NLS-optional.patch
 35dc88b7dfa18276b094355467957022  0009-add-cpufreq-aperf-manpage.patch
 6e08e20d319d70770b90be548027503f  0010-build-static-lib.patch
 a837db201e0bb724ccf617757a575e26  0011-dont-touch-po-files.patch
+a124a1342525ce02d0ce3d37ac3ff2cf  0012-fix-typo-in-man.patch
 e0c9f333a9546f71d17fd5a0546db79e  cpufrequtils-008.tar.xz
 b94e003fc603b0af0a10892290f6ab83  rc.cpufreq

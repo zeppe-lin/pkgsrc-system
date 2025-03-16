@@ -4,9 +4,8 @@
 
 name=cpufrequtils
 version=008
-release=2
+release=3
 source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar.xz
-	rc.cpufreq
 	0001-only-x86-has-cpuid-instruction.patch
 	0002-remove-proc-compile-option-and-interfaces.patch
 	0003-aperf-fix-MSR-read-on-32-bit.patch
@@ -16,12 +15,15 @@ source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar
 	0008-make-NLS-optional.patch
 	0009-add-cpufreq-aperf-manpage.patch
 	0010-build-static-lib.patch
-	0011-dont-touch-po-files.patch"
+	0011-dont-touch-po-files.patch
+	0012-fix-typo-in-man.patch
+	rc.cpufreq"
 
 build() {
 	cd $name-$version
 
-	for p in $SRC/*.patch; do patch -p1 -i $p; done
+	# Huge thanks to debian project!
+	for p in $SRC/*.patch; do patch -Np1 -i $p; done
 
 	make NLS=false PROC=false V=true OPTIMIZATION=
 	make NLS=false V=true CP="cp -fR" INSTALL=install \
