@@ -1,0 +1,17 @@
+# Description: Kernel and mesa firmware for nouveau
+# URL:         https://nouveau.freedesktop.org/
+
+name=nouveau-firmware
+version=340.32
+release=1
+source="nouveau-firmware-extract.py::https://raw.githubusercontent.com/envytools/firmware/master/extract_firmware.py
+	http://us.download.nvidia.com/XFree86/Linux-x86/$version/NVIDIA-Linux-x86-$version.run"
+
+build() {
+	sh NVIDIA-Linux-x86-$version.run --extract-only
+
+	/usr/bin/python3 nouveau-firmware-extract.py
+
+	mkdir -p $PKG/lib/firmware/nouveau
+	cp -Pr nv* vuc-* $PKG/lib/firmware/nouveau
+}
