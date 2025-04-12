@@ -3,7 +3,7 @@
 # Depends on:  libmnl
 
 name=ethtool
-version=6.11
+version=6.14
 release=1
 source=https://www.kernel.org/pub/software/network/$name/$name-$version.tar.xz
 
@@ -17,4 +17,7 @@ build() {
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	# remove junk
+	rm -r $PKG/usr/share/metainfo
 }
