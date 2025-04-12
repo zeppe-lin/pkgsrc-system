@@ -3,7 +3,7 @@
 # Depends on:  json-c keyutils openssl
 
 name=libnvme
-version=1.12
+version=1.13
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-v$version.tar.gz
 
