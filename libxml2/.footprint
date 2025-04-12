@@ -57,14 +57,12 @@ drwxr-xr-x	root/root	usr/lib/cmake/
 drwxr-xr-x	root/root	usr/lib/cmake/libxml2/
 -rw-r--r--	root/root	usr/lib/cmake/libxml2/libxml2-config.cmake
 -rwxr-xr-x	root/root	usr/lib/libxml2.la
-lrwxrwxrwx	root/root	usr/lib/libxml2.so -> libxml2.so.2.13.7
-lrwxrwxrwx	root/root	usr/lib/libxml2.so.2 -> libxml2.so.2.13.7
--rwxr-xr-x	root/root	usr/lib/libxml2.so.2.13.7
+lrwxrwxrwx	root/root	usr/lib/libxml2.so -> libxml2.so.16.0.1
+lrwxrwxrwx	root/root	usr/lib/libxml2.so.16 -> libxml2.so.16.0.1
+-rwxr-xr-x	root/root	usr/lib/libxml2.so.16.0.1
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libxml-2.0.pc
 drwxr-xr-x	root/root	usr/share/
-drwxr-xr-x	root/root	usr/share/aclocal/
--rw-r--r--	root/root	usr/share/aclocal/libxml.m4
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/xml2-config.1.gz
