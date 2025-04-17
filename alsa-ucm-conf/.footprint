@@ -3,24 +3,29 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/alsa/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp-da7219-rt5682-max98357/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp-da7219-rt5682-max98357/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp-da7219-rt5682-max98357/acp-da7219-rt5682-max98357.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-alc1015/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-alc1015/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-alc1015/acp3x-alc5682-alc1015.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-max98357/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-max98357/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-alc5682-max98357/acp3x-alc5682-max98357.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp3x-es83xx/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-es83xx/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3x-es83xx/acp3x-es83xx.conf
-drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp3xalc5682m98/
--rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3xalc5682m98/HiFi.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp3xalc5682m98/acp3xalc5682m98.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acp5x/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp5x/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acp5x/acp5x.conf
-drwxr-xr-x	root/root	usr/share/alsa/ucm2/AMD/acpd7219m98357/
--rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acpd7219m98357/HiFi.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/AMD/acpd7219m98357/acpd7219m98357.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Allwinner/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Allwinner/A64/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/PinePhone.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/A64/PinePhone/VoiceCall.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Allwinner/sun4i-h616/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Allwinner/sun4i-h616/HiFi.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Amlogic/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Amlogic/p241/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Amlogic/p241/p241-HiFi.conf
@@ -29,13 +34,23 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/HDA/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/HDA/DualCodecs/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/DualCodecs/DualCodecs.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/DualCodecs/HiFi.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HDA-Capture-value.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HDA.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/Hdmi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HiFi-acp.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HiFi-analog.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HiFi-mic.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/HDA/init.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/IO-Boards/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/apalis/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/apalis/eval-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/apalis/eval.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/verdin/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/verdin/dahlia-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/verdin/dahlia.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/verdin/dev-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/IO-Boards/Toradex/verdin/dev.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Intel/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Intel/SOF/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/SOF/HiFi.conf
@@ -157,8 +172,16 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/Hdmi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/HiFi-sof.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/dsp.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Intel/sof-hda-dsp/sof-hda-dsp.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_da7219_rt1015p/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_da7219_rt1015p/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_da7219_rt1015p/mt8183_da7219_rt1015p.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_mt6358_ts3a227_max98357/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_mt6358_ts3a227_max98357/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8183/mt8183_mt6358_ts3a227_max98357/mt8183_mt6358_ts3a227_max98357.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8192/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8192/mt6359-rt1015p-rt5682/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8192/mt6359-rt1015p-rt5682/HiFi.conf
@@ -181,7 +204,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8370-evk/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8370-evk/mt8370-evk.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/init.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/mt8390-evk.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/sof/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8390-evk/sof/sof-mt8390-evk.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mt8395-evk/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8395-evk/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mt8395-evk/mt8395-evk.conf
@@ -191,6 +217,19 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/MediaTek/mtk-rt5650/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mtk-rt5650/init.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/MediaTek/mtk-rt5650/mtk-rt5650.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX6/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/apalis-imx6/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/apalis-imx6/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/apalis-imx6/apalis-imx6.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/colibri-imx6/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/colibri-imx6/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX6/Toradex/colibri-imx6/colibri-imx6.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX7/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX7/Toradex/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX7/Toradex/colibri-imx7/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX7/Toradex/colibri-imx7/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX7/Toradex/colibri-imx7/colibri-imx7.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5/HiFi.conf
@@ -198,6 +237,15 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5_Devkit/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5_Devkit/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8/Librem_5_Devkit/Librem 5 Devkit.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/Toradex/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8/Toradex/apalis-imx8/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8/Toradex/apalis-imx8/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8/Toradex/apalis-imx8/apalis-imx8.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8X/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8X/Toradex/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/NXP/iMX8X/Toradex/colibri-imx8x/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8X/Toradex/colibri-imx8x/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/NXP/iMX8X/Toradex/colibri-imx8x/colibri-imx8x.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/OMAP/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/OMAP/abe-twl6040/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/OMAP/abe-twl6040/Pandaboard/
@@ -226,6 +274,14 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/apq8096/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/apq8096/HDMI.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/apq8096/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/apq8096/apq8096.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/qcm6490/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/qcm6490/QCM6490-IDP/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/qcm6490/QCM6490-IDP/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/qcm6490/QCM6490-IDP/QCM6490-IDP.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/qcs6490/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/qcs6490/QCS6490-RB3Gen2/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/qcs6490/QCS6490-RB3Gen2/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/qcs6490/QCS6490-RB3Gen2/QCS6490-RB3Gen2.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sc7180/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sc7180/adau7002-max98357a/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sc7180/adau7002-max98357a/HiFi.conf
@@ -259,9 +315,18 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sm8650/MTP/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sm8650/QRD/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8650/QRD/HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8650/QRD/SM8650-QRD.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sm8750/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/sm8750/MTP/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8750/MTP/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/sm8750/MTP/SM8750-MTP.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/LENOVO-Slim-7x.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/LENOVO-T14s.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/Slim7x-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/T14s-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/X1E80100-CRD.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/Qualcomm/x1e80100/x1e80100.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Rockchip/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/Rockchip/es8316/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/Rockchip/es8316/HiFi.conf
@@ -350,7 +415,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Digidesign/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Digidesign/Digidesign-Mbox-3-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Digidesign/Digidesign-Mbox-3.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/Scarlett-18i20-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/Scarlett-18i20.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/Scarlett-2i-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/Scarlett-2i-gen4-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Focusrite/Scarlett-2i.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Gigabyte/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Gigabyte/Aorus-Master-Main-Audio-HiFi.conf
@@ -358,6 +426,9 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Gigabyte/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/GoXLR/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/GoXLR/GoXLR-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/GoXLR/GoXLR.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/HyperX/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/HyperX/SoloCast-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/HyperX/SoloCast.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Lenovo/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Lenovo/ThinkStation-P620-Main-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Lenovo/ThinkStation-P620-Main.conf
@@ -377,6 +448,12 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/MOTU/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/NativeInstruments/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/NativeInstruments/Traktor-Kontrol-Z1-Mixer.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/NativeInstruments/Traktor-Kontrol-Z1.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Presonus/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Presonus/Revelator-IO-44-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Presonus/Revelator-IO-44.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/RME/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/RME/Fireface-UCX-II-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/RME/Fireface-UCX-II.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Rane/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Rane/SL-1-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Rane/SL-1.conf
@@ -390,6 +467,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/BridgeCast.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/BridgeCastV2-Hifi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/BridgeCastV2.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/BridgeCastXV2-Hifi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/BridgeCastXV2.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/Quad-Capture-HiFi.conf
+-rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Roland/Quad-Capture.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/SolidStateLabs/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/SolidStateLabs/SSL2-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/SolidStateLabs/SSL2.conf
@@ -405,6 +486,9 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/Steinberg/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Steinberg/UR24C.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Steinberg/UR44-HiFi.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/Steinberg/UR44.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/TASCAM/
+-rwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/TASCAM/Model12-HiFi.conf
+-rwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/TASCAM/Model12.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/USB-Audio.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/USB-Audio/UniversalAudio/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/USB-Audio/UniversalAudio/Volt2-HiFi.conf
@@ -413,27 +497,40 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_fir/
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_fir/pass.blob
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_fir/pass.bin
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_100hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_20hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_50hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/pass.blob
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_100hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_20hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/highpass_50hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc3/eq_iir/pass.bin
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/drc/
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/drc/passthrough.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/drc/speaker_default.blob
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/drc/passthrough.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/drc/speaker_default.bin
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_fir/
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_fir/pass.blob
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_fir/pass.bin
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_100hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_20hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_50hz_0db_48khz.blob
--rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/pass.blob
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_100hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_20hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/highpass_50hz_0db_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/eq_iir/pass.bin
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line2_50mm_pm5_15_30_90deg_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line2_68mm_pm5_15_30_90deg_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line2_74mm_pm5_15_30_90deg_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line2_generic_pm10deg_48khz.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line2_pass.bin
+-rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/ipc4/tdfb/line4_pass.bin
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/product_configs/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/blobs/sof/product_configs/AAEON/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/blobs/sof/product_configs/AAEON/UPX-TGL01.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/cs35l56-bridge/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/cs35l56-bridge/init.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/cs35l56/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/cs35l56/init.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/cs42l43-dmic/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/cs42l43-dmic/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/cs42l43/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/cs42l43/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/cx2072x/
@@ -498,6 +595,8 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/qcom-lpass/wsa-macro/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/qcom-lpass/wsa-macro/four-speakers/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/qcom-lpass/wsa-macro/four-speakers/init.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/qcom-lpass/wsa-macro/init.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt1318/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt1318/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt5640/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt5640/DigitalMics.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt5640/EnableSeq.conf
@@ -631,6 +730,7 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/wsa884x/two-speakers/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/wsa884x/two-speakers/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/common/
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/common/ctl/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/common/ctl/led.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/common/ctl/remap.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/common/direct-verb.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/common/direct.conf
@@ -661,8 +761,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp/acp.conf -> ../../common/linked-card.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp3x-es83xx/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp3x-es83xx/acp3x-es83xx.conf -> ../../AMD/acp3x-es83xx/acp3x-es83xx.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp3xalc5682101/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp3xalc5682101/acp3xalc5682101.conf -> ../../AMD/acp3x-alc5682-alc1015/acp3x-alc5682-alc1015.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp3xalc5682m98/
-lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp3xalc5682m98/acp3xalc5682m98.conf -> ../../AMD/acp3xalc5682m98/acp3xalc5682m98.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp3xalc5682m98/acp3xalc5682m98.conf -> ../../AMD/acp3x-alc5682-max98357/acp3x-alc5682-max98357.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp5x/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp5x/Valve-Jupiter-1.conf -> ../../AMD/acp5x/acp5x.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp62/
@@ -672,7 +774,9 @@ lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp63/acp63.conf -> ../../common
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acp6x/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acp6x/acp6x.conf -> ../../common/linked-card.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/acpd7219m98357/
-lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acpd7219m98357/acpd7219m98357.conf -> ../../AMD/acpd7219m98357/acpd7219m98357.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/acpd7219m98357/acpd7219m98357.conf -> ../../AMD/acp-da7219-rt5682-max98357/acp-da7219-rt5682-max98357.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/amd-soundwire/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/amd-soundwire/amd-soundwire.conf -> ../../sof-soundwire/sof-soundwire.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/apq8096/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/apq8096/DB820c.conf -> ../../Qualcomm/apq8096/apq8096.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/avs_da7219/
@@ -731,6 +835,9 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/chtrt5645/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/chtrt5645/chtrt5645.conf -> ../../Intel/chtrt5645/chtrt5645.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/chtrt5650/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/chtrt5650/chtrt5650.conf -> ../../Intel/chtrt5650/chtrt5650.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/fsl-asoc-card/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/fsl-asoc-card/apalis-imx6.conf -> ../../NXP/iMX6/Toradex/apalis-imx6/apalis-imx6.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/fsl-asoc-card/colibri-imx6.conf -> ../../NXP/iMX6/Toradex/colibri-imx6/colibri-imx6.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/gx-sound-card/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/gx-sound-card/GXL-P241.conf -> ../../Amlogic/p241/p241.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/gx-sound-card/LIBRETECH-CC.conf -> ../../Amlogic/p241/p241.conf
@@ -740,6 +847,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/hdaudioB0D2/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/hdaudioB0D2/hdaudioB0D2.conf -> ../../Intel/avs/hdaudioB0D2/hdaudioB0D2.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/kblrt5660/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/kblrt5660/kblrt5660.conf -> ../../Intel/kblrt5660/kblrt5660.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mt8183_da7219_r/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/mt8183_da7219_r/mt8183_da7219_r.conf -> ../../MediaTek/mt8183/mt8183_da7219_rt1015p/mt8183_da7219_rt1015p.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mt8183_mt6358_t/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/mt8183_mt6358_t/mt8183_mt6358_t.conf -> ../../MediaTek/mt8183/mt8183_mt6358_ts3a227_max98357/mt8183_mt6358_ts3a227_max98357.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mt8192_mt6359/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/mt8192_mt6359/mt8192_mt6359_rt1015p_rt5682.conf -> ../../MediaTek/mt8192/mt6359-rt1015p-rt5682/mt8192_mt6359_rt1015p_rt5682.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mt8195_demo/
@@ -754,6 +865,10 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mt8395-evk/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/mt8395-evk/mt8395-evk.conf -> ../../MediaTek/mt8395-evk/mt8395-evk.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/mtk-rt5650/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/mtk-rt5650/mtk-rt5650.conf -> ../../MediaTek/mtk-rt5650/mtk-rt5650.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/qcm6490/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/conf.d/qcm6490/QCM6490-IDP.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/qcs6490/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/conf.d/qcs6490/QCS6490-RB3Gen2.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/rk3399-gru-soun/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/rk3399-gru-soun/rk3399-gru-soun.conf -> ../../Rockchip/rk3399-gru-sound/rk3399-gru-sound.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/rk3588-es8316/
@@ -769,9 +884,15 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/simple-card/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/Librem 5 Devkit.conf -> ../../NXP/iMX8/Librem_5_Devkit/Librem 5 Devkit.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/Librem 5.conf -> ../../NXP/iMX8/Librem_5/Librem 5.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/PinePhone.conf -> ../../Allwinner/A64/PinePhone/PinePhone.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/apalis-imx8.conf -> ../../NXP/iMX8/Toradex/apalis-imx8/apalis-imx8.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/apalis-nau8822.conf -> ../../IO-Boards/Toradex/apalis/eval.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/colibri-imx7.conf -> ../../NXP/iMX7/Toradex/colibri-imx7/colibri-imx7.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/colibri-imx8x.conf -> ../../NXP/iMX8X/Toradex/colibri-imx8x/colibri-imx8x.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/rk817_ext.conf -> ../../Rockchip/rk817-sound/rk817-sound.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/rk817_int.conf -> ../../Rockchip/rk817-sound/rk817-sound.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/rockchip,es8316-codec.conf -> ../../Rockchip/es8316/es8316.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/verdin-nau8822.conf -> ../../IO-Boards/Toradex/verdin/dev.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/simple-card/verdin-wm8904.conf -> ../../IO-Boards/Toradex/verdin/dahlia.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/skylake-rt286/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/skylake-rt286/skylake-rt286.conf -> ../../Intel/skylake-rt286/skylake-rt286.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sm8250/
@@ -781,6 +902,8 @@ lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sm8550/SM8550-HDK.conf -> ../../
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sm8650/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sm8650/SM8650-MTP.conf -> ../../Qualcomm/sm8650/MTP/SM8650-MTP.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sm8650/SM8650-QRD.conf -> ../../Qualcomm/sm8650/QRD/SM8650-QRD.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sm8750/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sm8750/SM8750-MTP.conf -> ../../Qualcomm/sm8750/MTP/SM8750-MTP.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-ehl-rt5660/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-ehl-rt5660/sof-ehl-rt5660.conf -> ../../Intel/sof-ehl-rt5660/sof-ehl-rt5660.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-essx8336/
@@ -794,9 +917,13 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-m8195_r1019/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-m8195_r1019/sof-m8195_r1019_5682s.conf -> ../../MediaTek/mt8195-sof/mt6359-rt1019-rt5682/sof-mt8195-mt6359-rt1019-rt5682.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-mt8195_r101/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-mt8195_r101/sof-mt8195_r1019_5682.conf -> ../../MediaTek/mt8195-sof/mt6359-rt1019-rt5682/sof-mt8195-mt6359-rt1019-rt5682.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-mt8390-evk/
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-mt8390-evk/sof-mt8390-evk.conf -> ../../MediaTek/mt8390-evk/sof/sof-mt8390-evk.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-skl_hda_card -> sof-hda-dsp
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sof-soundwire/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/sof-soundwire/sof-soundwire.conf -> ../../sof-soundwire/sof-soundwire.conf
+drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/sun4i-codec/
+-rw-r--r--	root/root	usr/share/alsa/ucm2/conf.d/sun4i-codec/h616-audio-codec.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/tegra-hda/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/tegra-hda/tegra-hda.conf -> ../../Tegra/tegra-hda/tegra-hda.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/tegra/
@@ -816,6 +943,7 @@ lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/tegra/LG Optimus 4X HD MAX98089.
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/tegra/LG Optimus Vu MAX98089.conf -> ../../Tegra/max98089/lge-x3.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/X1E80100-CRD.conf -> ../../Qualcomm/x1e80100/X1E80100-CRD.conf
+lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/x1e80100.conf -> ../../Qualcomm/x1e80100/x1e80100.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.virt.d/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/conf.virt.d/.gitignore (EMPTY)
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/lib/
