@@ -8,7 +8,6 @@ release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
 	f77a269370af917585df59d8c21c89bca07b5b73.patch
-	alsa_restore_std.patch
 	rc.alsa"
 
 build() {
