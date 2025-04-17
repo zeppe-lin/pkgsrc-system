@@ -3,8 +3,8 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.13
-release=3
+version=1.2.14
+release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
 	f77a269370af917585df59d8c21c89bca07b5b73.patch
@@ -14,7 +14,6 @@ source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 build() {
 	patch -d $name-$version -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
 	patch -d $name-$version -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
-	patch -d $name-$version -Np1 -i $SRC/alsa_restore_std.patch
 
 	mkdir build; cd build
 
@@ -32,6 +31,7 @@ build() {
 		--disable-xmlto      \
 		--enable-static      \
 
+	# fix overlinking
 	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
