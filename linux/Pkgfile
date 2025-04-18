@@ -11,9 +11,10 @@
 # ============================================================================
 
 name=linux
-version=5.4.291
+version=5.4.292
 release=1
-source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version%.*}.tar.xz
+	https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$version.xz
 	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
 	x86_64-dotconfig"
 
@@ -49,9 +50,10 @@ build() {
 		;;
 	esac
 
-	cd $name-$version
+	cd $name-${version%.*}
 
-	# apply Wi-Fi pentest patches
+	# apply patches
+	xzcat $SRC/patch-$version.xz | patch -sNp1 -F0
 	for f in $SRC/lwpp-*/${version%.*}/*.patch; do
 		patch -p1 -i $f
 	done
