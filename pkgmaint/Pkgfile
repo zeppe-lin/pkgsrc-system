@@ -1,9 +1,9 @@
 # Description: Additional package maintaining tools
 # URL:         https://github.com/zeppe-lin/pkgmaint
-# Depends on:  p5-yaml-libyaml
+# Depends on:  p5-yaml-libyaml scdoc
 
 name=pkgmaint
-version=1.0-ea85e2b
+version=1.0-091b4d7
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	finddisowned.conf"
