@@ -1,9 +1,9 @@
 # Description: Build customized root filesystem for chroot installation
 # URL:         https://github.com/zeppe-lin/mkrootfs
-# Depends on:  gnupg pkgman pkgmk revdep tar
+# Depends on:  gnupg pkgman pkgmk revdep scdoc tar
 
 name=mkrootfs
-version=1.4-3c4136d
+version=1.4-9ede227
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
