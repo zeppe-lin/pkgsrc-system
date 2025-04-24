@@ -1,8 +1,9 @@
 # Description: Initramfs generator
 # URL:         https://github.com/zeppe-lin/mkinitramfs
+# Depends on:  scdoc
 
 name=mkinitramfs
-version=0.5-ad6bffa
+version=0.5-0244edb
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"

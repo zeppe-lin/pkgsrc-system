@@ -17,7 +17,7 @@ drwxr-xr-x	root/root	usr/share/man/man7/
 drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/mkinitramfs.8.gz
 drwxr-xr-x	root/root	usr/share/mkinitramfs/
--rwxr-xr-x	root/root	usr/share/mkinitramfs/device-helper
+-rw-r--r--	root/root	usr/share/mkinitramfs/device-helper
 drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/
 drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/eudev/
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/eudev/eudev
@@ -57,4 +57,4 @@ drwxr-xr-x	root/root	usr/share/mkinitramfs/hooks/systemd-udevd/
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/systemd-udevd/systemd-udevd
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/systemd-udevd/systemd-udevd.init
 -rw-r--r--	root/root	usr/share/mkinitramfs/hooks/systemd-udevd/systemd-udevd.init.late
--rwxr-xr-x	root/root	usr/share/mkinitramfs/init
+-rw-r--r--	root/root	usr/share/mkinitramfs/init
