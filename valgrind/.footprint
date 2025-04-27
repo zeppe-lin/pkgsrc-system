@@ -29,6 +29,7 @@ drwxr-xr-x	root/root	usr/include/valgrind/
 -rw-r--r--	root/root	usr/include/valgrind/libvex_guest_offsets.h
 -rw-r--r--	root/root	usr/include/valgrind/libvex_guest_ppc32.h
 -rw-r--r--	root/root	usr/include/valgrind/libvex_guest_ppc64.h
+-rw-r--r--	root/root	usr/include/valgrind/libvex_guest_riscv64.h
 -rw-r--r--	root/root	usr/include/valgrind/libvex_guest_s390x.h
 -rw-r--r--	root/root	usr/include/valgrind/libvex_guest_x86.h
 -rw-r--r--	root/root	usr/include/valgrind/libvex_inner.h
@@ -90,6 +91,7 @@ drwxr-xr-x	root/root	usr/include/valgrind/vki/
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux-drm.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux-io_uring.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux-landlock.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-machine-types-amd64-freebsd.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-machine-types-arm64-freebsd.h
@@ -105,10 +107,12 @@ drwxr-xr-x	root/root	usr/include/valgrind/vki/
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-nanomips-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-ppc32-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-ppc64-linux.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-riscv64-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-s390x-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-posixtypes-x86-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-ppc32-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-ppc64-linux.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-riscv64-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-s390x-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-32bit-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-amd64-linux.h
@@ -121,6 +125,7 @@ drwxr-xr-x	root/root	usr/include/valgrind/vki/
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-nanomips-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-ppc32-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-ppc64-linux.h
+-rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-riscv64-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-s390x-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-shared-linux.h
 -rw-r--r--	root/root	usr/include/valgrind/vki/vki-scnums-solaris.h
@@ -269,6 +274,14 @@ drwxr-xr-x	root/root	usr/lib/valgrind/
 -rw-r--r--	root/root	usr/lib/valgrind/powerpc-altivec32l.xml
 -rw-r--r--	root/root	usr/lib/valgrind/powerpc-altivec64l-valgrind.xml
 -rw-r--r--	root/root	usr/lib/valgrind/powerpc-altivec64l.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-cpu-valgrind-s1.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-cpu-valgrind-s2.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-cpu.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-fpu-valgrind-s1.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-fpu-valgrind-s2.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-fpu.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-linux-valgrind.xml
+-rw-r--r--	root/root	usr/lib/valgrind/riscv64-linux.xml
 -rw-r--r--	root/root	usr/lib/valgrind/s390-acr-valgrind-s1.xml
 -rw-r--r--	root/root	usr/lib/valgrind/s390-acr-valgrind-s2.xml
 -rw-r--r--	root/root	usr/lib/valgrind/s390-acr.xml
