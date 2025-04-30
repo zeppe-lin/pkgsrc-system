@@ -3,7 +3,7 @@
 # Depends on:  libcap-ng
 
 name=smartmontools
-version=7.4
+version=7.5
 release=1
 source="https://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
 	rc.smartd"
