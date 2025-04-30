@@ -3,7 +3,7 @@
 # Depends on:  py3-flit-core py3-gpep517
 
 name=py3-packaging
-version=24.2
+version=25.0
 release=1
 source=https://pypi.org/packages/source/p/packaging/packaging-$version.tar.gz
 
