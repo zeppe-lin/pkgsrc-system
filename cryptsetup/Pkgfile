@@ -4,12 +4,12 @@
 
 name=cryptsetup
 version=2.7.5
-release=2
+release=3
 source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
 
 build() {
 	# fix "undefined reference to `arc4random'"
-	export LDFLAGS="$LDFLAGS `pkg-config --libs libbsd`"
+	export LDFLAGS="$LDFLAGS $(pkg-config --libs libbsd)"
 
 	mkdir build; cd build
 
@@ -18,11 +18,29 @@ build() {
 		--disable-nls               \
 		--disable-ssh-token         \
 		--enable-asciidoc           \
-		--enable-static-cryptsetup  \
+
+	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	mkdir -p $PKG/sbin
-	mv $PKG/usr/sbin/cryptsetup.static $PKG/sbin/cryptsetup.static
+	#######################################################################
+	# Build statically without libblkid; linking it causes build failures #
+	#######################################################################
+
+	cd $SRC
+	mkdir build-static; cd build-static
+
+	../$name-$version/configure         \
+		--prefix=/usr               \
+		--disable-nls               \
+		--disable-ssh-token         \
+		--disable-asciidoc          \
+		--disable-blkid             \
+		--enable-static-cryptsetup  \
+
+	make V=1
+
+	install -m 0755 -Dt $PKG/sbin cryptsetup.static
+	install -m 0755 -Dt $PKG/usr/sbin integritysetup.static veritysetup.static
 }
