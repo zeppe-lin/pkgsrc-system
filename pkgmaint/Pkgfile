@@ -3,7 +3,7 @@
 # Depends on:  p5-yaml-libyaml scdoc
 
 name=pkgmaint
-version=1.0-091b4d7
+version=1.0-ea82823
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	finddisowned.conf"
