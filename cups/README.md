@@ -6,37 +6,38 @@ README for cups 2.x.x
 REQUIREMENTS
 ============
 
-1. As of version 1.5 cups needs `libusb` to print to usb printers, the kernel
-   modules usblp is no longer supported.
+1. Since version 1.5, CUPS requires `libusb` for USB printing.  The `usblp`
+   kernel module is no longer supported.
 
-   The package installs `/etc/modprobe.de/cups.conf` to blacklist the module.
+   * The package installs `/etc/modprobe.d/cups.conf` to blacklist `usblp`.
 
-2. In order to have more printer drivers available, the installation of the
-   `gutenprint` port (formerly gimp-print) is recommended.  HP DeskJet/LaserJet
-   users should install the `hpcups` package.
+2. For additional printer drivers, install:
+
+   * `gutenprint` (formerly `gimp-print`)
+   * `hpcups` (for HP DeskJet/LaserJet)
 
 3. Build and install in the following order:
-   - `cups`
-   - `ghostscript`
-   - `cups-filters`
-   - `gutenprint` *optionally*
-   - `hpcups` *optionally*
+   * `cups`
+   * `ghostscript`
+   * `cups-filters`
+   * `gutenprint` (*optional*)
+   * `hpcups` (*optional*)
 
-Most common printers should be supported by the above configuration, if *NOT*
-you must generate a PPD file (Postscript Printer Description) for your printer:
+Most printers should work with this setup.  If a printer isn't supported,
+generate a PPD (Postscript Printer Description) file:
 
 1. Select your printer from [Open Printing](https://openprinting.org/printers).
-2. Select a driver, be shure the driver is available within `ghostscript`.
-   You can see all drivers included in ghostscript with a `gs -h` command.
+2. Ensure the driver is included in `ghostscript`
+   (`gs -h` lists available drivers).
 3. Download the PPD file for your printer.
 4. Save the PPD file to `/usr/share/cups/model/<name>`.
-5. Restart cups with `/etc/rc.d/cups restart`.
+5. Restart CUPS with `/etc/rc.d/cups restart`.
 
 
 POST-INSTALL
 ============
 
-1. Remove the `usblp` kernel module before starting cups.
+1. Remove the `usblp` kernel module before starting CUPS.
 2. Configure your printer with the [web-interface](http://localhost:631).
 
 
