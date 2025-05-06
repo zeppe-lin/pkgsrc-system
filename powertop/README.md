@@ -6,35 +6,31 @@ README powertop
 KERNEL CONFIGURATION
 ====================
 
-You'll need to enable the following kernel options:
+Enable the following options:
 
-```
-CONFIG_NO_HZ
-CONFIG_HIGH_RES_TIMERS
-CONFIG_HPET_TIMER
-CONFIG_CPU_FREQ_GOV_ONDEMAND
-CONFIG_USB_SUSPEND
-CONFIG_SND_AC97_POWER_SAVE
-CONFIG_TIMER_STATS
-CONFIG_PERF_EVENTS
-CONFIG_PERF_COUNTERS
-CONFIG_TRACEPOINTS
-CONFIG_TRACING
-CONFIG_EVENT_POWER_TRACING_DEPRECATED
-CONFIG_X86_MSR
-ACPI_PROCFS_POWER
-CONFIG_DEBUG_FS
-```
+    CONFIG_NO_HZ
+    CONFIG_HIGH_RES_TIMERS
+    CONFIG_HPET_TIMER
+    CONFIG_CPU_FREQ_GOV_ONDEMAND
+    CONFIG_USB_SUSPEND
+    CONFIG_SND_AC97_POWER_SAVE
+    CONFIG_TIMER_STATS
+    CONFIG_PERF_EVENTS
+    CONFIG_PERF_COUNTERS
+    CONFIG_TRACEPOINTS
+    CONFIG_TRACING
+    CONFIG_EVENT_POWER_TRACING_DEPRECATED
+    CONFIG_X86_MSR
+    ACPI_PROCFS_POWER
+    CONFIG_DEBUG_FS
 
-And be sure to disable these:
+Disable these:
 
-```
-CONFIG_IRQBALANCE
-CONFIG_ACPI_DEBUG
-```
+    CONFIG_IRQBALANCE
+    CONFIG_ACPI_DEBUG
 
-Not all of these are available on very recent kernels, so `powertop` might fail
-to display some stats.
+Not all options may be available on newer kernels, so `powertop` might not
+display some stats.
 
 
 ---
