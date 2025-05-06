@@ -6,24 +6,19 @@ README fuse
 KERNEL CONFIGURATION
 ====================
 
-Enable the following options in the kernel configuration and recompile the
-kernel if necessary:
+Enable these options and recompile the kernel if needed:
 
-```
-File Systems --->
-  <*/M> FUSE (Filesystem in Userspace) support
-        [CONFIG_FUSE_FS]
-```
+    File Systems --->
+      <*/M> FUSE (Filesystem in Userspace) support
+            [CONFIG_FUSE_FS]
 
-Character devices in user space should be enabled too if running the tests:
+To run tests, also enable:
 
-```
-File Systems --->
-  <*/M> FUSE (Filesystem in Userspace) support
-        [CONFIG_FUSE_FS]
-  <*/M> Character device in Userspace support
-        [CONFIG_CUSE]
-```
+    File Systems --->
+      <*/M> FUSE (Filesystem in Userspace) support
+            [CONFIG_FUSE_FS]
+      <*/M> Character device in Userspace support
+            [CONFIG_CUSE]
 
 
 ---
