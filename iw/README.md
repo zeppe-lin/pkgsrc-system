@@ -6,24 +6,28 @@ README iw
 KERNEL CONFIGURATION
 ====================
 
-To use iw, the kernel must have the appropriate drivers and other support
-available.  The appropriate bus must also be available.  For older laptops,
-the PCMCIA bus (`CONFIG_PCCARD`) needs to be built.  In some cases, this bus
-support will also need to be built for embedded iw cards.  The appropriate
-bridge support also needs to be built.  For many modern laptops, the CardBus
-host bridge (`CONFIG_YENTA`) will be needed.
+Ensure the kernel has the necessary drivers and bus support.  For older
+laptops, enable:
 
-In addition to the bus, the actual driver for the specific wireless card must
-also be available.  There are many wireless cards and they don't all work with
-Linux.  The first place to look for card support is the kernel.  The drivers
-are located at the following:
+    Device Drivers --->
+      <*/M> PCMCIA (CONFIG_PCCARD)
+      <*/M> CardBus host bridge (CONFIG_YENTA)
 
-```
-Device Drivers -> Network Device Support -> Wireless LAN (non-hamradio)
-```
+For embedded cards, PCMCIA may also be required.
 
-There are also external drivers available for some very common cards.  For more
-information, look at the user notes.
+Wireless drivers are located under:
+
+    Device Drivers --->
+      Network Device Support --->
+        Wireless LAN (non-hamradio)
+
+Some wireless cards need external drivers.  Check [user notes][1] for details.
+
+
+REFERENCES
+==========
+
+[1]: https://wireless.docs.kernel.org/en/latest/
 
 
 ---
