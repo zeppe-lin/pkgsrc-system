@@ -12,30 +12,26 @@ Carrier Lost
 In case you get on the system start the `dhcpcd[ERROR]` and `/var/log/messages`
 contains something like:
 
-```
-dhcpcd[2464]: enp0s31f6: carrier lost
-```
+    dhcpcd[2464]: enp0s31f6: carrier lost
 
 or even:
 
-```
-dhcpcd[849]: dhcpcd-10.0.8 starting
-dhcpcd[852]: enp0s31f6: waiting for carrier
-dhcpcd[852]: enp0s31f6: carrier acquired
-dhcpcd[852]: enp0s31f6: soliciting an IPv6 router
-dhcpcd[852]: enp0s31f6: Router Advertisement from fe80::1
-dhcpcd[852]: enp0s31f6: no global addresses for default route
-dhcpcd[852]: timed out
-dhcpcd[852]: dhcpcd exited
-dhcpcd: timed out
-```
+    dhcpcd[849]: dhcpcd-10.0.8 starting
+    dhcpcd[852]: enp0s31f6: waiting for carrier
+    dhcpcd[852]: enp0s31f6: carrier acquired
+    dhcpcd[852]: enp0s31f6: soliciting an IPv6 router
+    dhcpcd[852]: enp0s31f6: Router Advertisement from fe80::1
+    dhcpcd[852]: enp0s31f6: no global addresses for default route
+    dhcpcd[852]: timed out
+    dhcpcd[852]: dhcpcd exited
+    dhcpcd: timed out
 
 Try adding to `/etc/dhcpcd/dhcpcd.conf` the following options:
 
-- `nolink`  Don’t receive link messages about carrier status.  You should only
+- `nolink`  Don't receive link messages about carrier status.  You should only
             set this for buggy interface  drivers.
 
-- `noipv6`  Don’t solicit or accept IPv6 Router Advertisements and DHCPv6.
+- `noipv6`  Don't solicit or accept IPv6 Router Advertisements and DHCPv6.
 
 
 Client ID
@@ -45,18 +41,14 @@ If you are on a network with DHCPv4 that filters Client IDs based on MAC
 addresses, you may need to edit `/etc/dhcpcd/dhcpcd.conf` and change the
 following line:
 
-```sh
-# Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per
-# RFC4361.
-duid
-```
+    # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per
+    # RFC4361.
+    duid
 
 To:
 
-```sh
-# Use the hardware address of the interface for the Client ID (DHCPv4).
-clientid
-```
+    # Use the hardware address of the interface for the Client ID (DHCPv4).
+    clientid
 
 Otherwise, you may not obtain a lease since the DHCP server may not read your
 [DHCPv6-style][1] Client ID correctly.  See [RFC 4361][2] for more information.
