@@ -3,16 +3,14 @@ README transmission
 ---
 
 
-PRECAUTION
-==========
+CAUTION
+=======
 
-After modifying some defaults in `/etc/rc.d/transmission` (like running from
-specified user), you need to prevent the loss of your data upon update.  Make
-sure you edited `/etc/pkgadd.conf` and added the following line:
+If you've modified defaults in `/etc/rc.d/transmission` (e.g., running under a
+specific user), prevent data loss during updates by adding this line to
+`/etc/pkgadd.conf`:
 
-```
-UPGRADE    ^/etc/rc.d/transmission$    NO
-```
+    UPGRADE    ^/etc/rc.d/transmission$    NO
 
 
 ---
