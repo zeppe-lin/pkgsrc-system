@@ -3,12 +3,10 @@ README monit
 ---
 
 
-ONLINE DOCUMENTATION
-====================
+REFERENCES
+==========
 
-* [Wiki][1]
-
-[1]: https://mmonit.com/wiki/
+* https://mmonit.com/wiki/
 
 
 ---
