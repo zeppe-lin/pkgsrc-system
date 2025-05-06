@@ -6,18 +6,15 @@ README alsa-lib
 KERNEL CONFIGURATION
 ====================
 
-If needed, enable the following options in the kernel configuration and
-recompile the kernel:
+Enable these options if needed and recompile the kernel:
 
-```
-Device Drivers --->
-  <*/M> Sound card support --->
-        [CONFIG_SOUND]
-    <*/M> Advanced Linux Sound Architecture --->
-          [CONFIG_SND]
-```
+    Device Drivers --->
+      <*/M> Sound card support --->
+            [CONFIG_SOUND]
+        <*/M> Advanced Linux Sound Architecture --->
+              [CONFIG_SND]
 
-Select settings and drivers appropriate for your hardware.
+Select settings and drivers based on your hardware.
 
 
 ---
