@@ -3,13 +3,14 @@
 # Depends on:  perl
 
 name=p5-yaml-libyaml
-version=0.903.0
+version=0.904.0
 release=1
 source=https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v$version.tar.gz
 
 build() {
 	cd YAML-LibYAML-v$version
 
+	command -v finddepsdistmeta && finddepsdistmeta
 	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
 
 	make OPTIMIZE="$CFLAGS"
