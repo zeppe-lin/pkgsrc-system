@@ -3,15 +3,17 @@
 # Depends on:  libxcrypt linux-pam ncurses
 
 name=screen
-version=5.0.0
+version=5.0.1
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
+#source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
+source="https://git.savannah.gnu.org/cgit/screen.git/snapshot/$name-v.$version.tar.gz
 	pam.$name"
 
 build() {
 	# build in separate dir is broken
-	cd $name-$version
+	cd $name-v.$version/src
 
+	autoreconf -fi
 	./configure                  \
 		--prefix=/usr        \
 		--enable-colors256   \
