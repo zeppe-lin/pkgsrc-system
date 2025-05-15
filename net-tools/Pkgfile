@@ -3,11 +3,15 @@
 
 name=net-tools
 version=2.10-618db31
-release=1
-source=https://github.com/ecki/$name/archive/${version#*-}/$name-$version.tar.gz
+release=2
+source="https://github.com/ecki/$name/archive/${version#*-}/$name-$version.tar.gz
+	https://github.com/ecki/net-tools/commit/7a8f42fb20013a1493d8cae1c43436f85e656f2d.patch"
 
 build() {
 	cd $name-${version#*-}*
+
+	# CVE-2025-46836
+	patch -Np1 -i $SRC/*.patch
 
 	# parallel build is broken
 	yes "" | make -j1
