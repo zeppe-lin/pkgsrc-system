@@ -4,9 +4,9 @@
 # Optional:    parallel
 
 name=linux-firmware
-version=20250311
+version=20250509
 release=1
-source="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/$name.git/snapshot/$name-$version.tar.gz
+source="https://www.kernel.org/pub/linux/kernel/firmware/$name-$version.tar.xz
 	fsr.patch"
 
 build() {
