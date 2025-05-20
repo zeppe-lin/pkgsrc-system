@@ -17,12 +17,12 @@ drwxr-xr-x	root/root	usr/include/nvme/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libnvme-mi.a
 lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so -> libnvme-mi.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.13.0
--rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.13.0
+lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.14.0
+-rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.14.0
 -rw-r--r--	root/root	usr/lib/libnvme.a
 lrwxrwxrwx	root/root	usr/lib/libnvme.so -> libnvme.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.13.0
--rwxr-xr-x	root/root	usr/lib/libnvme.so.1.13.0
+lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.14.0
+-rwxr-xr-x	root/root	usr/lib/libnvme.so.1.14.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme-mi.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme.pc
@@ -241,9 +241,12 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_fdp_supported_event_desc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_auto_pst.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_feat_bpwp_state.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_fdp_events_cdw11.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_host_behavior.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_nswpcfg_state.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_feat_perfc_attri.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_feat_perfc_r4karl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_plm_window_select.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_resv_notify_flags.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_feat_tmpthresh_thsel.2.gz
@@ -321,6 +324,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_simple.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_sw_progress.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_temp_thresh.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_temp_thresh2.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_timestamp.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_volatile_wc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_get_features_write_atomic.2.gz
@@ -629,6 +633,35 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_admin_security_recv.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_admin_security_send.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_admin_xfer.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeei_get_aee.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeei_get_aeeid.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeei_set_aee.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeei_set_aeeid.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aemti_get_aemgn.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeolli_get_aeoltl.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aeolli_set_aeoltl.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aesi_get_aese.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aesi_get_aesid.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aesi_set_aee.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_aesi_set_aesid.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_config.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_disable.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_enable.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_enable_item.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_enable_list.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_enable_list_header.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_get_enabled.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_get_fd.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_get_next_event.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_handler_next_action.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_msg.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_occ_data.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_occ_list_hdr.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_open.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_process.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_supported_item.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_supported_list.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_aem_supported_list_header.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_ccs.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_close.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_close_ctrl.2.gz
@@ -646,6 +679,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_cwarn.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_dtyp.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_elem.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_mi_event.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_free_root.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_init_ctrl.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_mi_message_type.2.gz
@@ -860,6 +894,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_simple.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_sw_progress.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_temp_thresh.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_temp_thresh2.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_timestamp.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_volatile_wc.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_set_features_write_atomic.2.gz
@@ -907,6 +942,7 @@ drwxr-xr-x	root/root	usr/share/man/man2/
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_model.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_name.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_nqn.2.gz
+-rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_serial.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_sysfs_dir.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_get_type.2.gz
 -rw-r--r--	root/root	usr/share/man/man2/nvme_subsystem_lookup_namespace.2.gz
