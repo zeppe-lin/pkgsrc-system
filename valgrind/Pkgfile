@@ -4,7 +4,7 @@
 # Optional:    gdb
 
 name=valgrind
-version=3.25.0
+version=3.25.1
 release=1
 source=https://sourceware.org/pub/$name/$name-$version.tar.bz2
 
@@ -24,5 +24,5 @@ build() {
 	install -m 0644 -Dt $PKG/usr/share/man/man1 ../$name-$version/docs/*.1
 
 	# remove junk
-	rm -rf $PKG/usr/share/doc
+	rm -fr $PKG/usr/share/doc
 }
