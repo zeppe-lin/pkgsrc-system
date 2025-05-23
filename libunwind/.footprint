@@ -27,14 +27,14 @@ lrwxrwxrwx	root/root	usr/lib/libunwind-setjmp.so.0 -> libunwind-setjmp.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libunwind-setjmp.so.0.0.0
 -rw-r--r--	root/root	usr/lib/libunwind-x86_64.a
 -rwxr-xr-x	root/root	usr/lib/libunwind-x86_64.la
-lrwxrwxrwx	root/root	usr/lib/libunwind-x86_64.so -> libunwind-x86_64.so.8.1.0
-lrwxrwxrwx	root/root	usr/lib/libunwind-x86_64.so.8 -> libunwind-x86_64.so.8.1.0
--rwxr-xr-x	root/root	usr/lib/libunwind-x86_64.so.8.1.0
+lrwxrwxrwx	root/root	usr/lib/libunwind-x86_64.so -> libunwind-x86_64.so.8.2.0
+lrwxrwxrwx	root/root	usr/lib/libunwind-x86_64.so.8 -> libunwind-x86_64.so.8.2.0
+-rwxr-xr-x	root/root	usr/lib/libunwind-x86_64.so.8.2.0
 -rw-r--r--	root/root	usr/lib/libunwind.a
 -rwxr-xr-x	root/root	usr/lib/libunwind.la
-lrwxrwxrwx	root/root	usr/lib/libunwind.so -> libunwind.so.8.1.0
-lrwxrwxrwx	root/root	usr/lib/libunwind.so.8 -> libunwind.so.8.1.0
--rwxr-xr-x	root/root	usr/lib/libunwind.so.8.1.0
+lrwxrwxrwx	root/root	usr/lib/libunwind.so -> libunwind.so.8.2.0
+lrwxrwxrwx	root/root	usr/lib/libunwind.so.8 -> libunwind.so.8.2.0
+-rwxr-xr-x	root/root	usr/lib/libunwind.so.8.2.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libunwind-coredump.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libunwind-generic.pc
