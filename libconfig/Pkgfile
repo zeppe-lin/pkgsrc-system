@@ -3,7 +3,7 @@
 # Depends on:  libtool
 
 name=libconfig
-version=1.8
+version=1.8.1
 release=1
 source=https://github.com/hyperrealm/$name/archive/v$version/$name-v$version.tar.gz
 
