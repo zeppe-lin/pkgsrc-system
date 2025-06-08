@@ -3,7 +3,7 @@
 # Depends on:  libcap libidn2
 
 name=iputils
-version=20250602
+version=20250605
 release=1
 source="https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 	https://archive.archlinux.org/packages/i/$name/$name-$version-1-x86_64.pkg.tar.zst"
