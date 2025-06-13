@@ -4,13 +4,14 @@
 # Optional:    gnutls nettle nss
 
 name=chrony
-version=4.6.1
+version=4.7
 release=1
 source="https://chrony-project.org/releases/$name-$version.tar.gz
 	rc.chronyd"
 
 build() {
-	# build in separate dir is broken
+	# build in separate dir is broken, chrony's configure is not actually
+	# an autotools script
 	cd $name-$version
 
 	./configure                                     \
