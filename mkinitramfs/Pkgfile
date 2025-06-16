@@ -3,7 +3,7 @@
 # Depends on:  scdoc
 
 name=mkinitramfs
-version=0.5-1b24099
+version=0.5-844cfdc
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
