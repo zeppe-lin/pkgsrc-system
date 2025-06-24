@@ -3,8 +3,8 @@
 # Depends on:  json-c libbsd libdevmapper openssl popt
 
 name=cryptsetup
-version=2.7.5
-release=3
+version=2.8.0
+release=1
 source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
 
 build() {
