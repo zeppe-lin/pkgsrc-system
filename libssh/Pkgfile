@@ -1,4 +1,4 @@
-# Description: SSH library
+# Description: C library SSHv1/SSHv2 client and server protocols
 # URL:         https://www.libssh.org/
 # Depends on:  openssl zlib
 
