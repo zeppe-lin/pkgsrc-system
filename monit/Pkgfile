@@ -3,7 +3,7 @@
 # Depends on:  libnsl linux-pam openssl zlib
 
 name=monit
-version=5.34.3
+version=5.34.4
 release=1
 source="https://mmonit.com/$name/dist/$name-$version.tar.gz
 	manpage.patch
@@ -15,11 +15,11 @@ build() {
 	# building a package in a separate dir is broken
 	cd $name-$version
 
-	./configure                  \
-		--prefix=/usr        \
-		--sysconfdir=/etc    \
-		--runstatedir=/run   \
-		--enable-static      \
+	CONFIG_SHELL=/bin/bash ./configure  \
+		--prefix=/usr               \
+		--sysconfdir=/etc           \
+		--runstatedir=/run          \
+		--enable-static             \
 
 	make V=1
 	make DESTDIR=$PKG install
