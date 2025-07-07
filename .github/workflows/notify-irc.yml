@@ -1,0 +1,10 @@
+name: IRC Notify
+on: push
+jobs:
+  irc:
+    uses: zeppe-lin/.github-shared-workflows/.github/workflows/notify-irc.yml@master
+    with:
+      nickname: 'zeppe-lin'
+      channel: '#zeppe-lin'
+    secrets:
+      password: ${{ secrets.LIBERACHAT_PASSWORD }}
