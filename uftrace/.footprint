@@ -14,3 +14,16 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/bash-completion/
 drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/uftrace
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-dump.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-graph.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-info.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-live.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-record.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-recv.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-replay.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-report.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-script.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace-tui.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uftrace.1.gz
