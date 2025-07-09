@@ -3,7 +3,7 @@
 # Depends on:  libidn2 nettle p11-kit zstd
 
 name=gnutls
-version=3.8.9
+version=3.8.10
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/v${version%.*}/$name-$version.tar.xz
 
