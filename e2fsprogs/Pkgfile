@@ -2,6 +2,14 @@
 # URL:         https://e2fsprogs.sourceforge.net/
 # Depends on:  util-linux
 
+# IMPORTANT NOTE:
+# e2fsprogs versions 1.47.3 and newer require Linux kernel headers 5.12+
+# for the fs-verity API (FS_IOC_READ_VERITY_METADATA).
+# This typically means you'll need to update your kernel to 5.12+
+# and ensure your glibc is built against compatible linux-headers.
+# Compiling on older kernels (e.g., 5.4.x) will result in compilation errors
+# related to undeclared FS_VERITY_METADATA_TYPE_DESCRIPTOR.
+
 name=e2fsprogs
 version=1.47.2
 release=1
