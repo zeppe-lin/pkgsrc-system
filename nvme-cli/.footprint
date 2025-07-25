@@ -4,6 +4,7 @@ drwxr-xr-x	root/root	lib/udev/rules.d/
 -rw-r--r--	root/root	lib/udev/rules.d/65-persistent-net-nbft.rules
 -rw-r--r--	root/root	lib/udev/rules.d/70-nvmf-autoconnect.rules
 -rw-r--r--	root/root	lib/udev/rules.d/70-nvmf-keys.rules
+-rw-r--r--	root/root	lib/udev/rules.d/71-nvme-hpe.rules
 -rw-r--r--	root/root	lib/udev/rules.d/71-nvmf-netapp.rules
 -rw-r--r--	root/root	lib/udev/rules.d/71-nvmf-vastdata.rules
 drwxr-xr-x	root/root	usr/
@@ -91,6 +92,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-list-subsys.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-list.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-lockdown.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-mangoboost-id-ctrl.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-mi-cmd-support-effects-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-micron-clear-pcie-errors.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-micron-internal-log.1.gz
@@ -172,6 +174,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-clear-pcie-correctable-errors.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-cloud-SSD-plugin-version.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-cloud-boot-SSD-version.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-cu-smart-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-drive-resize.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-get-dev-capabilities-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-sndk-get-drive-status.1.gz
@@ -228,6 +231,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-clear-pcie-correctable-errors.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-cloud-SSD-plugin-version.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-cloud-boot-SSD-version.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-cu-smart-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-essentials.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-log.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nvme-wdc-drive-resize.1.gz
