@@ -3,7 +3,7 @@
 # Depends on:  openssl zlib
 
 name=iperf3
-version=3.19
+version=3.19.1
 release=1
 source=$name-$version.tar.gz::https://github.com/esnet/iperf/archive/$version.tar.gz
 
