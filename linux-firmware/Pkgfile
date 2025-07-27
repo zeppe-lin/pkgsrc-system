@@ -4,7 +4,7 @@
 # Optional:    parallel
 
 name=linux-firmware
-version=20250627
+version=20250708
 release=1
 source="https://www.kernel.org/pub/linux/kernel/firmware/$name-$version.tar.xz
 	fsr.patch"

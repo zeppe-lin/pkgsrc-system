@@ -190,6 +190,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/cyan_skillfish2_mec2.bin -> cyan_skillf
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_2_1_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_5_1_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_5_dmcub.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/dcn_3_6_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dcn_4_0_1_dmcub.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/dimgrey_cavefish_ce.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/dimgrey_cavefish_dmcub.bin -> beige_goby_dmcub.bin
@@ -290,6 +291,13 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/gc_11_0_4_mes.bin -> gc_11_0_1_mes.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_2_mes_2.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_2_pfp.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_2_rlc.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_imu.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_me.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_mec.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_mes1.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_mes_2.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_pfp.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/gc_11_5_3_rlc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_12_0_0_imu.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_12_0_0_me.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/gc_12_0_0_mec.bin
@@ -561,6 +569,8 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/psp_14_0_1_ta.bin -> psp_14_0_0_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_3_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_4_ta.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_4_toc.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_5_ta.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/psp_14_0_5_toc.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_asd.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_ce.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/raven2_gpu_info.bin
@@ -611,6 +621,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/renoir_vcn.bin -> green_sardine_vcn.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_2.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/sdma_6_1_3.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_7_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/sdma_7_0_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/si58_mc.bin
@@ -2890,15 +2901,15 @@ lrwxrwxrwx	root/root	lib/firmware/intel/ibt-17-1.sfi -> ibt-17-0-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-17-16-1.ddc -> ibt-0040-0041.ddc
 -rw-r--r--	root/root	lib/firmware/intel/ibt-17-16-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-17-2.ddc -> ibt-0040-0041.ddc
--rw-r--r--	root/root	lib/firmware/intel/ibt-17-2.sfi
+lrwxrwxrwx	root/root	lib/firmware/intel/ibt-17-2.sfi -> ibt-17-16-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-0-1.ddc -> ibt-17-0-1.ddc
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-0-1.sfi -> ibt-17-0-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-1.ddc -> ibt-17-0-1.ddc
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-1.sfi -> ibt-17-0-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-16-1.ddc -> ibt-0040-0041.ddc
-lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-16-1.sfi -> ibt-17-2.sfi
+lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-16-1.sfi -> ibt-17-16-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-2.ddc -> ibt-0040-0041.ddc
-lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-2.sfi -> ibt-17-2.sfi
+lrwxrwxrwx	root/root	lib/firmware/intel/ibt-18-2.sfi -> ibt-17-16-1.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-19-0-0.ddc -> ibt-0040-0041.ddc
 -rw-r--r--	root/root	lib/firmware/intel/ibt-19-0-0.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-19-0-1.ddc -> ibt-0040-0041.ddc
@@ -4511,6 +4522,9 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/sdm845/modem.mbn -> modem_nm.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/sdm845/modem_nm.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/sdm845/modemuw.jsn -> ../qcm2290/modemuw.jsn
 lrwxrwxrwx	root/root	lib/firmware/qcom/sdm845/wlanmdsp.mbn -> ../../ath10k/WCN3990/hw1.0/wlanmdsp.mbn
+drwxr-xr-x	root/root	lib/firmware/qcom/sdx61/
+drwxr-xr-x	root/root	lib/firmware/qcom/sdx61/foxconn/
+-rw-r--r--	root/root	lib/firmware/qcom/sdx61/foxconn/prog_firehose_lite.elf
 drwxr-xr-x	root/root	lib/firmware/qcom/sm8250/
 drwxr-xr-x	root/root	lib/firmware/qcom/sm8250/Thundercomm/
 drwxr-xr-x	root/root	lib/firmware/qcom/sm8250/Thundercomm/RB5/
@@ -5057,6 +5071,7 @@ drwxr-xr-x	root/root	lib/firmware/rtw89/
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw-1.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw-2.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw-3.bin
+-rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw-4.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8922a_fw.bin
 lrwxrwxrwx	root/root	lib/firmware/s2250.fw -> go7007/s2250-2.fw
 lrwxrwxrwx	root/root	lib/firmware/s2250_loader.fw -> go7007/s2250-1.fw
@@ -5269,9 +5284,12 @@ lrwxrwxrwx	root/root	lib/firmware/wfx/brd8023a.pds -> brd4001a.pds
 drwxr-xr-x	root/root	lib/firmware/xe/
 -rw-r--r--	root/root	lib/firmware/xe/bmg_guc_70.bin
 -rw-r--r--	root/root	lib/firmware/xe/bmg_huc.bin
+-rw-r--r--	root/root	lib/firmware/xe/fan_control_8086_e20b_8086_1100.bin
 -rw-r--r--	root/root	lib/firmware/xe/lnl_gsc_1.bin
 -rw-r--r--	root/root	lib/firmware/xe/lnl_guc_70.bin
 -rw-r--r--	root/root	lib/firmware/xe/lnl_huc.bin
+-rw-r--r--	root/root	lib/firmware/xe/ptl_guc_70.bin
+-rw-r--r--	root/root	lib/firmware/xe/ptl_huc.bin
 drwxr-xr-x	root/root	lib/firmware/yam/
 -rw-r--r--	root/root	lib/firmware/yam/1200.bin
 -rw-r--r--	root/root	lib/firmware/yam/9600.bin
