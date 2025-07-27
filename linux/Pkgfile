@@ -1,21 +1,11 @@
-# Description: Linux kernel + Wi-Fi pentest patches
+# Description: Linux kernel and modules (6.15 series)
 # URL:         https://www.kernel.org/
 
-# 5.4 LTS (Dec, 2025)
-# https://www.kernel.org/category/releases.html
-
-# ========================== !!! Important !!! ===============================
-# Don't forget to update glibc{-32} packages after bumping this
-# package version.  That's need because glibc{-32} packages are
-# relying on linux for kernel headers.
-# ============================================================================
-
 name=linux
-version=5.4.295
+version=6.15.8
 release=1
-source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version%.*}.tar.xz
-	https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$version.xz
-	https://github.com/sighook/lwpp/archive/1ad040b/lwpp-1ad040b.tar.gz
+source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
+	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
 	x86_64-dotconfig"
 
 build() {
@@ -52,11 +42,7 @@ build() {
 
 	cd $name-${version%.*}
 
-	# apply patches
 	xzcat $SRC/patch-$version.xz | patch -sNp1 -F0
-	for f in $SRC/lwpp-*/${version%.*}/*.patch; do
-		patch -p1 -i $f
-	done
 
 	# clean up
 	make V=1 mrproper
@@ -95,5 +81,4 @@ build() {
 
 	# remove junk
 	unlink $PKG/lib/modules/$_kver/build
-	unlink $PKG/lib/modules/$_kver/source
 }
