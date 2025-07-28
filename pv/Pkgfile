@@ -3,7 +3,7 @@
 # Depends on:  ncurses
 
 name=pv
-version=1.9.31
+version=1.9.34
 release=1
 source=http://www.ivarch.com/programs/sources/pv-$version.tar.gz
 
