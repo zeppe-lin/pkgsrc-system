@@ -3,7 +3,7 @@
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
 name=glib
-version=2.84.3
+version=2.84.4
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -17,8 +17,7 @@ build() {
 	    -i glib-$version/meson.build
 
 	# replace default rundir location
-	sed 's|/var/run/dbus|/run/dbus|' \
-		-i glib-$version/gio/gdbusaddress.c
+	sed 's|/var/run/dbus|/run/dbus|' -i glib-$version/gio/gdbusaddress.c
 
 	# -D man-pages=enabled: requires docutils
 	meson setup build glib-$version     \
