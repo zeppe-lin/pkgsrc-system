@@ -104,12 +104,15 @@ drwxr-xr-x	root/root	lib/firmware/aeonsemi/
 drwxr-xr-x	root/root	lib/firmware/airoha/
 -rw-r--r--	root/root	lib/firmware/airoha/EthMD32.DSP.bin
 -rw-r--r--	root/root	lib/firmware/airoha/EthMD32.dm.bin
+-rw-r--r--	root/root	lib/firmware/airoha/en7581_npu_data.bin
+-rw-r--r--	root/root	lib/firmware/airoha/en7581_npu_rv32.bin
 drwxr-xr-x	root/root	lib/firmware/amd-ucode/
 -rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd.bin
 -rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd_fam15h.bin
 -rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd_fam16h.bin
 -rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd_fam17h.bin
 -rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd_fam19h.bin
+-rw-r--r--	root/root	lib/firmware/amd-ucode/microcode_amd_fam1ah.bin
 drwxr-xr-x	root/root	lib/firmware/amd/
 -rw-r--r--	root/root	lib/firmware/amd/amd_sev_fam17h_model0xh.sbin
 -rw-r--r--	root/root	lib/firmware/amd/amd_sev_fam17h_model3xh.sbin
@@ -703,7 +706,7 @@ lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_2.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_3.bin
 lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_4.bin -> vcn_4_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_5.bin
-lrwxrwxrwx	root/root	lib/firmware/amdgpu/vcn_4_0_6.bin -> vcn_4_0_5.bin
+-rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_4_0_6_1.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_5_0_0.bin
 -rw-r--r--	root/root	lib/firmware/amdgpu/vcn_5_0_1.bin
@@ -1295,27 +1298,69 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280c4d-spkid0-r
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280c4d-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10280c4d-spkid1-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280c4d-spkid1-r1.bin -> cs35l41-dsp1-spk-prot-10280c4d-spkid1-l1.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280c4d.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid1.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbd.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10280cbd-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbe.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cbf.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc1.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10280cc1-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10280cc1-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10280cc1-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10280cc1-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc2.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc3.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-16_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10280cc4.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c896e-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c896e-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c896e.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
@@ -1730,6 +1775,11 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431433-spkid1-l
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431433-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10431433-spkid0-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431433-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431433.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431454-spkid0-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431454-spkid0-r0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431454-spkid1-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431454-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431454.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431463-spkid0-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431463-spkid0-r0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431463-spkid1-l0.bin
@@ -1974,6 +2024,11 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104331f1-spkid0-r
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104331f1-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-104330c1-spkid0-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104331f1-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-104330c1-spkid0-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104331f1.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433391-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10431454-spkid0-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433391-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10431454-spkid0-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433391-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10431454-spkid1-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433391-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10431454-spkid1-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433391.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a20-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10431b93-spkid0-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a20-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10431b93-spkid0-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a20-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10431b93-spkid1-l0.bin
@@ -2297,6 +2352,36 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce4-spkid2.wm
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce4-spkid3-ampl.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce4-spkid3-ampr.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce4-spkid3.wmfw -> cs35l56/CS35L56_Rev3.11.25.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid0-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid0-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid0-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid0-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid1-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid1-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid1-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid1-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce5-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid0-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid0-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid0-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid0-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid1-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid1-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid1-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid1-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce6-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid0-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid0-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid0-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid0-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid1-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid1-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid1-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid1-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280ce7-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28B.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d12-spkid0-amp1.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d12-spkid0-amp2.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d12-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
@@ -2309,6 +2394,26 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d13-spkid0.wm
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d13-spkid1-amp1.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d13-spkid1-amp2.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d13-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid0-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid0-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid0-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid0-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid1-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid1-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid1-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid1-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d32-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid0-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid0-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid0-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid0-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid1-amp1.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid1-amp2.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid1-amp3.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid1-amp4.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-10280d33-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-103c8c52-amp1.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-103c8c52-amp2.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56-b0-dsp1-misc-103c8c52-amp3.bin
@@ -2485,6 +2590,7 @@ drwxr-xr-x	root/root	lib/firmware/cirrus/cs35l56/
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56/CS35L56_Rev3.11.25.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56/CS35L56_Rev3.11.26.wmfw
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l56/CS35L56_Rev3.11.28.wmfw
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l56/CS35L56_Rev3.11.28B.wmfw
 drwxr-xr-x	root/root	lib/firmware/cis/
 -rw-r--r--	root/root	lib/firmware/cis/3CCFEM556.cis
 -rw-r--r--	root/root	lib/firmware/cis/3CXEM556.cis
@@ -2855,7 +2961,7 @@ lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0041-0041.ddc -> ibt-0040-0041.ddc
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0093-0291.ddc -> ibt-0093-0041.ddc
 -rw-r--r--	root/root	lib/firmware/intel/ibt-0093-0291.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0093-1050.ddc -> ibt-0093-0041.ddc
--rw-r--r--	root/root	lib/firmware/intel/ibt-0093-1050.sfi
+lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0093-1050.sfi -> ibt-0093-0041.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0093-4150.ddc -> ibt-0093-0041.ddc
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0093-4150.sfi -> ibt-0093-0041.sfi
 lrwxrwxrwx	root/root	lib/firmware/intel/ibt-0180-0041.ddc -> ibt-0040-0041.ddc
@@ -4386,6 +4492,7 @@ drwxr-xr-x	root/root	lib/firmware/qcom/
 -rw-r--r--	root/root	lib/firmware/qcom/a530_pm4.fw
 lrwxrwxrwx	root/root	lib/firmware/qcom/a530_zap.mdt -> apq8096/a530_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/a530v3_gpmu.fw2
+-rw-r--r--	root/root	lib/firmware/qcom/a612_rgmu.bin
 -rw-r--r--	root/root	lib/firmware/qcom/a623_gmu.bin
 -rw-r--r--	root/root	lib/firmware/qcom/a630_gmu.bin
 -rw-r--r--	root/root	lib/firmware/qcom/a630_sqe.fw
@@ -4446,6 +4553,7 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/qcm6490/wpss.mbn -> ../../ath11k/WCN6750/
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs615/
 -rw-r--r--	root/root	lib/firmware/qcom/qcs615/a612_zap.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs6490/
+-rw-r--r--	root/root	lib/firmware/qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/a660_zap.mbn -> ../qcm6490/a660_zap.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/adsp.mbn -> ../qcm6490/adsp.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/adspr.jsn -> ../qcm6490/adspr.jsn
@@ -4454,6 +4562,7 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/adspua.jsn -> ../qcm6490/adspua.j
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/battmgr.jsn -> ../qcm6490/battmgr.jsn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/cdsp.mbn -> ../qcm6490/cdsp.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/cdspr.jsn -> ../qcm6490/cdspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw.elf
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/wpss.mbn -> ../../ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs8300/
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/a623_zap.mbn
@@ -4465,7 +4574,29 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/cdspr.jsn -> ../qcm6490/cdspr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/gpdsp0.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/qupv3fw.elf
 drwxr-xr-x	root/root	lib/firmware/qcom/qdu100/
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/abl_userdebug.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/aop.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/aop_devcfg.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/cpucp.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/efs1.bin
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/efs2.bin
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/efs3.bin
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/fw_csm_gsi_3.0.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/hypvm.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/kernel_boot.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/mdmddr.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/multi_image.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/multi_image_qti.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/qdsp6sw.mbn.xz
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/qdsp6sw_dtbs.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/qupv3fw.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/shrm.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/tz.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/uefi.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/xbl_config.elf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/xbl_ramdump.elf
 -rw-r--r--	root/root	lib/firmware/qcom/qdu100/xbl_s.melf
+-rw-r--r--	root/root	lib/firmware/qcom/qdu100/zeros_1sector.bin
 drwxr-xr-x	root/root	lib/firmware/qcom/qrb4210/
 -rw-r--r--	root/root	lib/firmware/qcom/qrb4210/a610_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/qrb4210/adsp.mbn
@@ -4572,6 +4703,7 @@ drwxr-xr-x	root/root	lib/firmware/qcom/vpu/
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4_s6.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4_s6_16mb.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu35_p4.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/
 drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/LENOVO/
 drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/LENOVO/21N1/

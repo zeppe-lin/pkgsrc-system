@@ -4,7 +4,7 @@
 # Optional:    parallel
 
 name=linux-firmware
-version=20250708
+version=20250808
 release=1
 source="https://www.kernel.org/pub/linux/kernel/firmware/$name-$version.tar.xz
 	fsr.patch"
@@ -14,8 +14,8 @@ build() {
 
 	pkgman isinst parallel || MAKEFLAGS="-j 1"
 
-	make  -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
-	make  -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
+	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
+	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
 
 	# remove junk
 	find $PKG -type f \( -name ChangeLog -o -name README \) -delete
