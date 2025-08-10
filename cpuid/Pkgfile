@@ -2,7 +2,7 @@
 # URL:         https://www.etallen.com/cpuid.html
 
 name=cpuid
-version=20250316
+version=20250513
 release=1
 source="https://www.etallen.com/cpuid/cpuid-$version.src.tar.gz
 	fix-manpage.patch"
