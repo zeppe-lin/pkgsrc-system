@@ -3,17 +3,16 @@
 # Depends on:  libpcre2 openssl zlib
 
 name=lighttpd
-version=1.4.79
+version=1.4.80
 release=1
 source="https://github.com/$name/$name${version%.*}/archive/refs/tags/$name-$version.tar.gz
-	$name.conf rc.$name"
+	$name.conf
+	rc.$name"
 
 build() {
-	local dir
-
 	mkdir build; cd build
 
-	autoreconf -fi ../$name${version%.*}-$name-$version
+	autoreconf -fiv ../$name${version%.*}-$name-$version
 	../$name${version%.*}-$name-$version/configure  \
 		--prefix=/usr                           \
 		--libdir=/usr/lib/$name                 \
