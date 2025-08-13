@@ -1,0 +1,281 @@
+--- sshfs.rst.orig	2025-08-14 01:48:24.853757256 +0300
++++ sshfs.rst	2025-08-14 02:29:17.243904172 +0300
+@@ -1,5 +1,5 @@
+ =======
+- SSHFS
++ sshfs
+ =======
+ 
+ ---------------------------------------------
+@@ -9,7 +9,7 @@
+ :Manual section: 1
+ :Manual group: User Commands
+ 
+-Synopsis
++SYNOPSIS
+ ========
+ 
+ To mount a filesystem::
+@@ -21,10 +21,9 @@ brackets.
+ 
+ To unmount it::
+ 
+-  fusermount3 -u mountpoint   # Linux
+-  umount mountpoint           # OS X, FreeBSD
++  fusermount3 -u mountpoint
+ 
+-Description
++DESCRIPTION
+ ===========
+ 
+ SSHFS allows you to mount a remote filesystem using SSH (more precisely, the SFTP
+@@ -47,44 +46,44 @@ you need to enter a password sshfs will
+ for the password if needed).
+ 
+ 
+-Options
++OPTIONS
+ =======
+ 
+ 
+ -o opt,[opt...]
+-   mount options, see below for details. A a variety of SSH options can
++   Mount options, see below for details. A variety of SSH options can
+    be given here as well, see the manual pages for *sftp(1)* and
+    *ssh_config(5)*.
+ 
+ -h, --help
+-   print help and exit.
++   Print help and exit.
+ 
+ -V, --version
+-   print version information and exit.
++   Print version information and exit.
+ 
+ -d, --debug
+-   print debugging information.
++   Print debugging information.
+ 
+ -p PORT
+-   equivalent to '-o port=PORT'
++   Equivalent to '-o port=PORT'.
+ 
+ -f
+-   do not daemonize, stay in foreground.
++   Do not daemonize, stay in foreground.
+ 
+ -s
+    Single threaded operation.
+ 
+ -C
+-   equivalent to '-o compression=yes'
++   Equivalent to '-o compression=yes'.
+ 
+ -F ssh_configfile
+-   specifies alternative ssh configuration file
++   Specifies alternative ssh configuration file.
+ 
+ -1
+-   equivalent to '-o ssh_protocol=1'
++   Equivalent to '-o ssh_protocol=1'.
+ 
+ -o reconnect
+-   automatically reconnect to server if connection is
++   Automatically reconnect to server if connection is
+    interrupted. Attempts to access files that were opened before the
+    reconnection will give errors and need to be re-opened.
+ 
+@@ -93,7 +92,7 @@ Options
+    accessed.
+ 
+ -o sshfs_sync
+-   synchronous writes. This will slow things down, but may be useful
++   Synchronous writes. This will slow things down, but may be useful
+    in some situations.
+ 
+ -o no_readahead
+@@ -101,11 +100,11 @@ Options
+    speculatively reading more to anticipate the next read request.
+ 
+ -o sync_readdir
+-   synchronous readdir. This will slow things down, but may be useful
++   Synchronous readdir. This will slow things down, but may be useful
+    in some situations.
+ 
+ -o workaround=LIST
+-   Enable the specified workaround. See the `Caveats` section below
++   Enable the specified workaround. See the `CAVEATS` section below
+    for some additional information. Possible values are:
+ 
+    :rename: Emulate overwriting an existing file by deleting and
+@@ -124,69 +123,69 @@ Options
+ -o idmap=TYPE
+    How to map remote UID/GIDs to local values. Possible values are:
+ 
+-   :none: no translation of the ID space (default).
++   :none: No translation of the ID space (default).
+ 
+-   :user: map the UID/GID of the remote user to UID/GID of the
++   :user: Map the UID/GID of the remote user to UID/GID of the
+             mounting user.
+ 
+-   :file: translate UIDs/GIDs based upon the contents of `--uidfile`
++   :file: Translate UIDs/GIDs based upon the contents of `--uidfile`
+             and `--gidfile`.
+ 
+ -o uidfile=FILE
+-   file containing ``username:uid`` mappings for `-o idmap=file`
++   File containing ``username:uid`` mappings for `-o idmap=file`.
+ 
+ -o gidfile=FILE
+-   file containing ``groupname:gid`` mappings for `-o idmap=file`
++   File containing ``groupname:gid`` mappings for `-o idmap=file`.
+ 
+ -o nomap=TYPE
+-   with idmap=file, how to handle missing mappings:
++   With idmap=file, how to handle missing mappings:
+ 
+-   :ignore: don't do any re-mapping
+-   :error:  return an error (default)
++   :ignore: Don't do any re-mapping.
++   :error:  Return an error (default).
+ 
+ -o ssh_command=CMD
+-   execute CMD instead of 'ssh'
++   Execute CMD instead of 'ssh'.
+ 
+ -o ssh_protocol=N
+-   ssh protocol to use (default: 2)
++   SSH protocol to use (default: 2).
+ 
+ -o sftp_server=SERV
+-   path to sftp server or subsystem (default: sftp)
++   Path to sftp server or subsystem (default: sftp).
+ 
+ -o directport=PORT
+-   directly connect to PORT bypassing ssh
++   Directly connect to PORT bypassing ssh.
+ 
+ -o vsock=CID:PORT
+-   directly connect using a vsock to CID:PORT bypassing ssh
++   Directly connect using a vsock to CID:PORT bypassing ssh.
+ 
+ -o passive
+-   communicate over stdin and stdout bypassing network. Useful for
++   Communicate over stdin and stdout bypassing network. Useful for
+    mounting local filesystem on the remote side.  An example using
+    dpipe command would be ``dpipe /usr/lib/openssh/sftp-server = ssh
+-   RemoteHostname sshfs :/directory/to/be/shared ~/mnt/src -o passive``
++   RemoteHostname sshfs :/directory/to/be/shared ~/mnt/src -o passive``.
+ 
+ -o disable_hardlink
+    With this option set, attempts to call `link(2)` will fail with
+    error code ENOSYS.
+ 
+ -o transform_symlinks
+-   transform absolute symlinks on remote side to relative
++   Transform absolute symlinks on remote side to relative
+    symlinks. This means that if e.g. on the server side
+    ``/foo/bar/com`` is a symlink to ``/foo/blub``, SSHFS will
+    transform the link target to ``../blub`` on the client side.
+ 
+ -o follow_symlinks
+-   follow symlinks on the server, i.e. present them as regular
++   Follow symlinks on the server, i.e. present them as regular
+    files on the client. If a symlink is dangling (i.e, the target does
+    not exist) the behavior depends on the remote server - the entry
+    may appear as a symlink on the client, or it may appear as a
+    regular file that cannot be accessed.
+ 
+ -o no_check_root
+-   don't check for existence of 'dir' on server
++   Don't check for existence of 'dir' on server.
+ 
+ -o password_stdin
+-   read password from stdin (only for pam_mount!)
++   Read password from stdin (``only for pam_mount``!).
+ 
+ -o dir_cache=BOOL
+    Enables (*yes*) or disables (*no*) the SSHFS directory cache.  The
+@@ -195,20 +194,20 @@ Options
+    access.
+ 
+ -o dcache_max_size=N
+-   sets the maximum size of the directory cache.
++   Sets the maximum size of the directory cache.
+ 
+ -o dcache_timeout=N
+-   sets timeout for directory cache in seconds.
++   Sets timeout for directory cache in seconds.
+ 
+ -o dcache_{stat,link,dir}_timeout=N
+-   sets separate timeout for {attributes, symlinks, names} in  the
++   Sets separate timeout for {attributes, symlinks, names} in  the
+    directory cache.
+ 
+ -o dcache_clean_interval=N
+-   sets the interval for automatic cleaning of the directory cache.
++   Sets the interval for automatic cleaning of the directory cache.
+ 
+ -o dcache_min_clean_interval=N
+-   sets the interval for forced cleaning of the directory cache
++   Sets the interval for forced cleaning of the directory cache
+    when full.
+ 
+ -o direct_io
+@@ -225,7 +224,7 @@ Options
+       e.g. /proc filesystem
+ 
+ -o max_conns=N
+-   sets the maximum number of simultaneous SSH connections
++   Sets the maximum number of simultaneous SSH connections
+    to use. Each connection is established with a separate SSH process.
+    The primary purpose of this feature is to improve the responsiveness of the
+    file system during large file transfers. When using more than once
+@@ -236,8 +235,8 @@ In addition, SSHFS accepts several optio
+ systems. These are described in the `mount.fuse` manpage (look
+ for "general", "libfuse specific", and "high-level API" options).
+ 
+-Caveats / Workarounds
+-=====================
++CAVEATS
++=======
+ 
+ Hardlinks
+ ~~~~~~~~~
+@@ -312,20 +311,21 @@ interrupted.
+ 
+ 
+ Mounting from /etc/fstab
+-========================
++~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ To mount an SSHFS filesystem from ``/etc/fstab``, simply use ``sshfs``
+ as the file system type. (For backwards compatibility, you may also
+ use ``fuse.sshfs``).
+ 
+ 
+-See also
++SEE ALSO
+ ========
+ 
+-The `mount.fuse(8)` manpage.
++`mount.fuse(8)`
++
+ 
+-Getting Help
+-============
++REPORTING BUGS
++==============
+ 
+ If you need help, please ask on the <fuse-sshfs@lists.sourceforge.net>
+ mailing list (subscribe at
+@@ -335,7 +335,7 @@ Please report any bugs on the GitHub iss
+ https://github.com/libfuse/libfuse/issues.
+ 
+ 
+-Authors
++AUTHORS
+ =======
+ 
+ SSHFS is currently maintained by Nikolaus Rath <Nikolaus@rath.org>,

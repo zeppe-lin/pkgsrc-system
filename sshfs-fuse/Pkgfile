@@ -5,10 +5,17 @@
 
 name=sshfs-fuse
 version=3.7.4a
-release=1
-source=https://github.com/deadbeefsociety/sshfs/releases/download/sshfs-$version/sshfs-$version.tar.xz
+release=2
+source="https://github.com/deadbeefsociety/sshfs/releases/download/sshfs-$version/sshfs-$version.tar.xz
+	manpage.patch"
 
 build() {
+	# disable hardcoded tests
+	sed -i "/^subdir('test')/d" sshfs-$version/meson.build
+
+	# man page cleanup (1)
+	patch -d sshfs-$version -Np0 -i $SRC/manpage.patch
+
 	meson setup build sshfs-$version  \
 		--prefix=/usr             \
 		--buildtype=release       \
@@ -18,4 +25,7 @@ build() {
 	
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
+
+	# man page cleanup (2)
+	sed -i 's/^\.SH Name$/\.SH NAME/' $PKG/usr/share/man/man1/sshfs.1
 }
