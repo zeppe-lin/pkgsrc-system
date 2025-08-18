@@ -464,8 +464,10 @@ drwxr-xr-x	root/root	usr/include/postgresql/server/foreign/
 -rw-r--r--	root/root	usr/include/postgresql/server/getaddrinfo.h
 -rw-r--r--	root/root	usr/include/postgresql/server/getopt_long.h
 drwxr-xr-x	root/root	usr/include/postgresql/server/jit/
+-rw-r--r--	root/root	usr/include/postgresql/server/jit/SectionMemoryManager.h
 -rw-r--r--	root/root	usr/include/postgresql/server/jit/jit.h
 -rw-r--r--	root/root	usr/include/postgresql/server/jit/llvmjit.h
+-rw-r--r--	root/root	usr/include/postgresql/server/jit/llvmjit_backport.h
 -rw-r--r--	root/root	usr/include/postgresql/server/jit/llvmjit_emit.h
 drwxr-xr-x	root/root	usr/include/postgresql/server/lib/
 -rw-r--r--	root/root	usr/include/postgresql/server/lib/binaryheap.h
@@ -489,6 +491,7 @@ drwxr-xr-x	root/root	usr/include/postgresql/server/libpq/
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/crypt.h
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/hba.h
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/ifaddr.h
+-rw-r--r--	root/root	usr/include/postgresql/server/libpq/libpq-be-fe-helpers.h
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/libpq-be.h
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/libpq-fs.h
 -rw-r--r--	root/root	usr/include/postgresql/server/libpq/libpq.h
@@ -641,6 +644,7 @@ drwxr-xr-x	root/root	usr/include/postgresql/server/port/win32_msvc/sys/
 -rw-r--r--	root/root	usr/include/postgresql/server/port/win32_msvc/unistd.h
 -rw-r--r--	root/root	usr/include/postgresql/server/port/win32_msvc/utime.h
 -rw-r--r--	root/root	usr/include/postgresql/server/port/win32_port.h
+-rw-r--r--	root/root	usr/include/postgresql/server/port/win32ntdll.h
 drwxr-xr-x	root/root	usr/include/postgresql/server/portability/
 -rw-r--r--	root/root	usr/include/postgresql/server/portability/instr_time.h
 -rw-r--r--	root/root	usr/include/postgresql/server/portability/mem.h
@@ -1420,6 +1424,7 @@ drwxr-xr-x	root/root	usr/share/postgresql/timezone/America/Argentina/
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Coral_Harbour
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Cordoba
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Costa_Rica
+-rw-r--r--	root/root	usr/share/postgresql/timezone/America/Coyhaique
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Creston
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Cuiaba
 -rw-r--r--	root/root	usr/share/postgresql/timezone/America/Curacao

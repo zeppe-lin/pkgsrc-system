@@ -6,7 +6,7 @@
 # https://www.postgresql.org/support/versioning/
 
 name=postgresql
-version=14.13
+version=14.19
 release=1
 source="https://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2
 	rc.$name pam.$name
@@ -14,8 +14,8 @@ source="https://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2
 	postgresql-run-socket.patch"
 
 build() {
-	patch -d $name-$version -p1 -i $SRC/postgresql-run-socket.patch
-	patch -d $name-$version -p1 -i $SRC/postgresql-perl-rpath.patch
+	patch -d $name-$version -Np1 -i $SRC/postgresql-run-socket.patch
+	patch -d $name-$version -Np1 -i $SRC/postgresql-perl-rpath.patch
 
 	mkdir build; cd build
 
