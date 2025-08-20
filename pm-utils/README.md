@@ -21,9 +21,9 @@ will take precedence over those in `/usr/lib/pm-utils/sleep.d`.  For example:
 
     #!/bin/sh
     case $1 in
-    suspend)  /etc/rc.d/wifi stop         ;;
-     resume)  /etc/rc.d/wifi start        ;;
-          *)  echo "Something is broken"  ;;
+    suspend) /etc/rc.d/wifi stop  ;;
+     resume) /etc/rc.d/wifi start ;;
+          *) echo "Something is broken" >&2 ;;
     esac
 
 Place these commands as "66dummy" (or similar).  To allow this file to run
