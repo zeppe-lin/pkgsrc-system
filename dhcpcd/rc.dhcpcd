@@ -8,11 +8,10 @@ DEV=eth0
 SSD=/sbin/start-stop-daemon
 PROG=/sbin/dhcpcd
 PID=/run/dhcpcd/$DEV.pid
-OPTS="-q -z $DEV"
+OPTS="--quiet --allowinterfaces $DEV"
 
 case $1 in
 start)
-	# shellcheck disable=2086
 	$SSD --start --pidfile $PID --exec $PROG -- $OPTS $DEV
 	;;
 stop)
