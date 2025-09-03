@@ -3,10 +3,14 @@
 
 name=autoconf-archive
 version=2024.10.16
-release=1
-source=https://ftpmirror.gnu.org/$name/$name-$version.tar.xz
+release=2
+source="https://ftpmirror.gnu.org/$name/$name-$version.tar.xz
+	312.patch"
 
 build() {
+	# https://bugs.gentoo.org/941845
+	patch -d $name-$version -Np1 -i $SRC/312.patch
+
 	mkdir build; cd build
 
 	../$name-$version/configure  \
