@@ -3,9 +3,9 @@
 # Depends on:  bzip2 glib libpng
 
 name=freetype
-version=2.13.3
+version=2.14.0
 release=1
-source="http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
+source="https://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
 	0001-Enable-table-validation-modules.patch
 	0002-Enable-subpixel-rendering.patch
 	0004-Enable-long-PCF-family-names.patch"
@@ -22,6 +22,7 @@ build() {
 		-D b_lto=true              \
 		-D b_pie=true              \
 		-D default_library=shared  \
+		-D harfbuzz=dynamic        \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
