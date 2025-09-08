@@ -5,14 +5,14 @@
 name=freetype
 version=2.14.0
 release=1
-source="https://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
+source="https://sourceforge.net/projects/$name/files/${name}2/$version/$name-$version.tar.xz
 	0001-Enable-table-validation-modules.patch
 	0002-Enable-subpixel-rendering.patch
 	0004-Enable-long-PCF-family-names.patch"
 
 build() {
 	for f in $SRC/*.patch; do
-		patch -Np1 -d $name-$version -i $f
+		patch -d $name-$version -Np1 -i $f
 	done
 
 	meson setup build $name-$version   \
