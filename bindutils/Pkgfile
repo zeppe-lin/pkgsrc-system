@@ -3,7 +3,7 @@
 # Depends on:  json-c libedit liburcu libuv openssl zlib
 
 name=bindutils
-version=9.20.12
+version=9.20.13
 release=1
 source="https://ftp.isc.org/isc/bind9/$version/bind-$version.tar.xz
 	utils.patch"
