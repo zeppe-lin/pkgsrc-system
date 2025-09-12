@@ -3,7 +3,7 @@
 # Depends on:  libpcre2 libxcrypt openssl zlib
 
 name=lighttpd
-version=1.4.81
+version=1.4.82
 release=1
 source="https://github.com/$name/$name${version%.*}/archive/refs/tags/$name-$version.tar.gz
 	$name.conf
@@ -29,8 +29,8 @@ build() {
 	install -m 0755 -D $SRC/rc.$name   $PKG/etc/rc.d/$name
 
 	mkdir -p $PKG/var/www/lighttpd
-	for dir in dev htdocs logs tmp; do
-		install -o www -g www -d $PKG/var/www/lighttpd/$dir
+	for d in dev htdocs logs tmp; do
+		install -o www -g www -d $PKG/var/www/lighttpd/${d}
 	done
 
 	mkdir -p   $PKG/etc/ssl/certs
