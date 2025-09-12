@@ -34,6 +34,22 @@ generate a PPD (Postscript Printer Description) file:
 5. Restart CUPS with `/etc/rc.d/cups restart`.
 
 
+KERNEL MODULE
+=============
+
+Notes on USB printers
+---------------------
+
+CUPS uses the `usb` backend and does not require the kernel `usblp` module.  To
+avoid conflicts, this package installs a `modprobe.d` configuration that
+blacklists `usblp`:
+
+    /lib/modprobe.d/cups-blacklist-usblp.conf
+
+Administrators who prefer using the kernel `usblp` driver can override this by
+creating a file in `/etc/modprobe.d/` that removes the blacklist.
+
+
 POST-INSTALL
 ============
 
