@@ -1,19 +1,14 @@
 # Description: Library and tools which provides an interface to inotify(7)
-# URL:         https://inotify-tools.sourceforge.net/
+# URL:         https://github.com/inotify-tools/inotify-tools
 
 name=inotify-tools
-version=4.23.9.0
+version=4.25.9.0
 release=1
-source=https://github.com/rvoicilas/$name/archive/$version/$name-$version.tar.gz
+source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	# build in separate dir is broken
-	#cd $name-$version
-
-	#./autogen.sh
-	#./configure \
 	autoreconf -if ../$name-$version
 	../$name-$version/configure  \
 		--prefix=/usr        \
