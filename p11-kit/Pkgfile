@@ -3,35 +3,35 @@
 # Depends on:  libffi libtasn1 make-ca
 
 name=p11-kit
-version=0.25.8
+version=0.25.9
 release=1
 source="https://github.com/p11-glue/$name/releases/download/$version/$name-$version.tar.xz
 	update-ca-trust.1
 	update-ca-trust.sh"
 
 build() {
-	mkdir build; cd build
+	meson setup build $name-$version         \
+		--prefix=/usr                    \
+		--libexecdir=/usr/lib            \
+		--buildtype=plain                \
+		--wrap-mode=nodownload           \
+		-D b_lto=true                    \
+		-D b_pie=true                    \
+		-D trust_paths=/etc/pki/anchors  \
+		-D module_path=/usr/lib/pkcs11   \
+		-D nls=false                     \
+		-D test=false                    \
+		-D bash_completion=enabled       \
+		-D zsh_completion=disabled       \
 
-	../$name-$version/configure                  \
-		--prefix=/usr                        \
-		--libexecdir=/usr/lib                \
-		--sysconfdir=/etc                    \
-		--localstatedir=/var                 \
-		--with-module-path=/usr/lib/pkcs11   \
-		--with-trust-paths=/etc/pki/anchors  \
-		--disable-static                     \
-		--disable-doc-html                   \
-		--without-systemd                    \
-		--disable-nls                        \
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
 
-	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-	make V=1
-	make DESTDIR=$PKG install
-
-	# replace p11-kit's trust-extract-compat script
-	cp -f $SRC/update-ca-trust.sh $PKG/usr/lib/p11-kit/trust-extract-compat
-	chmod 0755 $PKG/usr/lib/p11-kit/trust-extract-compat
-	ln -s ../lib/p11-kit/trust-extract-compat $PKG/usr/bin/update-ca-trust
-	install -m 0644 -Dt $PKG/usr/share/man/man1 $SRC/update-ca-trust.1
+	# replace trust-extract-compat with update-ca-trust wrapper
+	install -m 0755 -D $SRC/update-ca-trust.sh \
+		$PKG/usr/lib/p11-kit/trust-extract-compat
+	ln -fs ../lib/p11-kit/trust-extract-compat \
+		$PKG/usr/bin/update-ca-trust
+	install -m 0644 -D $SRC/update-ca-trust.1  \
+		$PKG/usr/share/man/man1/update-ca-trust.1
 }
