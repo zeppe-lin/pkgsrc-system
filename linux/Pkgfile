@@ -1,22 +1,28 @@
-# Description: Linux kernel and modules (6.15 series)
+# Description: Linux kernel and modules (6.16 series)
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.15.9
+version=6.16.8
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
+	fixdep-largefile.patch
+	x13s-camera.patch
 	x86_64-dotconfig"
 
 build() {
 	local _kver _karch _imageloc f
+
+	# Unset conflicting variables inherited from the build environment.
 	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
 
+	# Determine kernel version string.
 	case $version in
 	*.*.*) _kver=$version   ;;
 	  *.*) _kver=$version.0 ;;
 	esac
 
+	# Detect architecture and set image location.
 	case "$(uname -m)" in
 	x86_64)
 		_karch=x86_64
@@ -42,12 +48,15 @@ build() {
 
 	cd $name-${version%.*}
 
+	# Apply patches.
 	xzcat $SRC/patch-$version.xz | patch -sNp1 -F0
+	patch -Np1 -i $SRC/fixdep-largefile.patch
+	patch -Np1 -i $SRC/x13s-camera.patch
 
-	# clean up
+	# Clean up any leftover artifacts from previous builds.
 	make V=1 mrproper
 
-	# prepare configs
+	# Prepare kernel config.
 	if [ -f $SRC/$_karch-dotconfig ]; then
 		cp $SRC/$_karch-dotconfig .config
 		make -j ${JOBS:-1} ARCH=$_karch olddefconfig
@@ -55,19 +64,25 @@ build() {
 		make -j ${JOBS:-1} ARCH=$_karch ${_karch}_defconfig
 	fi
 
-	# XXX hotfix for:
+	# Explicitly disable custom suffixes to ensure a clean version string.
+	./scripts/config --set-str CONFIG_LOCALVERSION ""
+	./scripts/config --disable CONFIG_LOCALVERSION_AUTO
+
+	# XXX Disable CONFIG_IKHEADERS to work around a potential build error.
 	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
 	./scripts/config --disable CONFIG_IKHEADERS
 
-	# build and install modules
+	# Build kernel and modules.
 	make -j ${JOBS:-1} V=1 all
+
+	# Install modules (non-parallel for safety)
 	make -j 1 V=1 ARCH=$_karch INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1 \
 		modules_install
 
-	# create module dependency list
+	# Create the module dependency list.
 	depmod -a -b $PKG $_kver
 
-	# copy all of the dtbs (device tree blobs) if needed
+	# Install Device Tree Blobs (DTBs) for ARM
 	case "$_karch" in
 	arm64 | arm)
 		make -j 1 ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/dtbs \
@@ -75,10 +90,10 @@ build() {
 		;;
 	esac
 
-	# copy the kernel and its config
+	# Install kernel image and config.
 	install -m 0644 -D $_imageloc $PKG/boot/vmlinuz-$version
 	install -m 0644 -D .config    $PKG/boot/config-$version
 
-	# remove junk
+	# Clean up build artefacts.
 	unlink $PKG/lib/modules/$_kver/build
 }
