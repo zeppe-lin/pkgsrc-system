@@ -3,7 +3,7 @@
 # Depends on:  docutils libcap-ng libnsl libtirpc lz4 lzo openssl
 
 name=openvpn
-version=2.6.14
+version=2.6.15
 release=1
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	rc.$name"
