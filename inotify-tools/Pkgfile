@@ -9,11 +9,10 @@ source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 build() {
 	mkdir build; cd build
 
-	autoreconf -if ../$name-$version
+	autoreconf -fiv ../$name-$version
 	../$name-$version/configure  \
 		--prefix=/usr        \
 		--disable-doxygen    \
-		--enable-fanotify    \
 
 	make V=1
 	make DESTDIR=$PKG install
