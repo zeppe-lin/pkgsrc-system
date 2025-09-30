@@ -4,7 +4,7 @@
 
 name=libgcrypt
 version=1.11.2
-release=1
+release=2
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
 build() {
@@ -14,8 +14,11 @@ build() {
 		--prefix=/usr              \
 		--disable-doc              \
 		--disable-padlock-support  \
-		--enable-static=yes        \
+		--enable-static=no         \
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	# remove junk
+	rm $PKG/usr/lib/*.la
 }
