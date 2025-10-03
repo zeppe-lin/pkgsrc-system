@@ -2,7 +2,7 @@
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.16.8
+version=6.16.10
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
