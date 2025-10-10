@@ -1,2 +1,2 @@
-9f428a0c52c43af5b0ca45d298da1869  fsr.patch
-1e9a11b391bc1eccd1572d14f9f20356  linux-firmware-20250917.tar.xz
+9f428a0c52c43af5b0ca45d298da1869  dedup-ln-fsr.patch
+010fee62682b92414ce6e31281597a80  linux-firmware-20251011.tar.bz2

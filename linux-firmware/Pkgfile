@@ -1,22 +1,24 @@
-# Description: Firmware blobs for use with the Linux kernel
-# URL:         https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+# Description: Firmware blobs for Linux kernel
+# URL:         https://gitlab.com/kernel-firmware/linux-firmware
 # Depends on:  rdfind
 # Optional:    parallel
 
 name=linux-firmware
-version=20250917
+version=20251011
 release=1
-source="https://www.kernel.org/pub/linux/kernel/firmware/$name-$version.tar.xz
-	fsr.patch"
+source="https://gitlab.com/kernel-firmware/$name/-/archive/$version/$name-$version.tar.bz2
+	dedup-ln-fsr.patch"
 
 build() {
-	patch -d $name-$version -Np1 -i $SRC/fsr.patch
+	# use GNU ln -fsr shorthands
+	patch -d $name-$version -Np1 -i $SRC/dedup-ln-fsr.patch
 
-	pkgman isinst parallel >/dev/null 2>&1 || MAKEFLAGS="-j 1"
+	# fallback to single job if parallel not present
+	pkgman isinst parallel >/dev/null 2>&1 || MAKEFLAGS="-j1"
 
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
 
 	# remove junk
-	find $PKG -type f \( -name ChangeLog -o -name README \) -delete
+	find $PKG -type f \( -name README -o -name ChangeLog \) -delete
 }
