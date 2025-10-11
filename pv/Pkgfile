@@ -3,16 +3,16 @@
 # Depends on:  ncurses
 
 name=pv
-version=1.9.34
+version=1.9.42
 release=1
 source=http://www.ivarch.com/programs/sources/pv-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../pv-$version/configure  \
-		--prefix=/usr     \
-		--disable-nls     \
+	../pv-$version/configure \
+		--prefix=/usr \
+		--disable-nls \
 
 	make V=1
 	make DESTDIR=$PKG install
