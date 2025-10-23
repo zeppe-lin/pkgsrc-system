@@ -2924,6 +2924,7 @@ lrwxrwxrwx	root/root	lib/firmware/i915/skl_guc_ver6.bin -> skl_guc_ver6_1.bin
 -rw-r--r--	root/root	lib/firmware/i915/tgl_huc_7.5.0.bin
 lrwxrwxrwx	root/root	lib/firmware/i915/tgl_huc_7.9.3.bin -> tgl_huc.bin
 -rw-r--r--	root/root	lib/firmware/i915/xe2lpd_dmc.bin
+-rw-r--r--	root/root	lib/firmware/i915/xe3lpd_3002_dmc.bin
 -rw-r--r--	root/root	lib/firmware/i915/xe3lpd_dmc.bin
 drwxr-xr-x	root/root	lib/firmware/imx/
 drwxr-xr-x	root/root	lib/firmware/imx/sdma/
@@ -3124,6 +3125,7 @@ drwxr-xr-x	root/root	lib/firmware/intel/ish/
 lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_39ceeaf8.bin -> ../../dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_53c4ffad_2a17559f.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_dba6b120_152c3222.bin -> ../../HP/ish/ish_lnlm_dba6b120_152c3222.bin
+-rw-r--r--	root/root	lib/firmware/intel/ish/ish_ptl.bin
 drwxr-xr-x	root/root	lib/firmware/intel/iwlwifi/
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-100-5.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-1000-5.ucode
@@ -3197,6 +3199,7 @@ drwxr-xr-x	root/root	lib/firmware/intel/iwlwifi/
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-QuZ-a0-jf-b0-74.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-QuZ-a0-jf-b0-77.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-bz-b0-fm-c0-100.ucode
+-rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-bz-b0-fm-c0-101.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-bz-b0-fm-c0-92.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-bz-b0-fm-c0-93.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-bz-b0-fm-c0-94.ucode
@@ -3224,6 +3227,7 @@ drwxr-xr-x	root/root	lib/firmware/intel/iwlwifi/
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-cc-a0-74.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-cc-a0-77.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-gl-c0-fm-c0-100.ucode
+-rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-gl-c0-fm-c0-101.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-gl-c0-fm-c0-83.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-gl-c0-fm-c0-86.ucode
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-gl-c0-fm-c0-90.ucode
@@ -3309,6 +3313,7 @@ drwxr-xr-x	root/root	lib/firmware/intel/qat/
 -rw-r--r--	root/root	lib/firmware/intel/qat/qat_c3xxx_mmp.bin
 -rw-r--r--	root/root	lib/firmware/intel/qat/qat_c62x.bin
 -rw-r--r--	root/root	lib/firmware/intel/qat/qat_c62x_mmp.bin
+lrwxrwxrwx	root/root	lib/firmware/intel/qat/qat_mmp.bin -> qat_895xcc_mmp.bin
 drwxr-xr-x	root/root	lib/firmware/intel/vpu/
 lrwxrwxrwx	root/root	lib/firmware/intel/vpu/vpu_37xx_v0.0.bin -> vpu_37xx_v1.bin
 -rw-r--r--	root/root	lib/firmware/intel/vpu/vpu_37xx_v1.bin
@@ -3421,6 +3426,7 @@ lrwxrwxrwx	root/root	lib/firmware/iwlwifi-QuZ-a0-jf-b0-73.ucode -> intel/iwlwifi
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-QuZ-a0-jf-b0-74.ucode -> intel/iwlwifi/iwlwifi-QuZ-a0-jf-b0-74.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-QuZ-a0-jf-b0-77.ucode -> intel/iwlwifi/iwlwifi-QuZ-a0-jf-b0-77.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-bz-b0-fm-c0-100.ucode -> intel/iwlwifi/iwlwifi-bz-b0-fm-c0-100.ucode
+lrwxrwxrwx	root/root	lib/firmware/iwlwifi-bz-b0-fm-c0-101.ucode -> intel/iwlwifi/iwlwifi-bz-b0-fm-c0-101.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-bz-b0-fm-c0-92.ucode -> intel/iwlwifi/iwlwifi-bz-b0-fm-c0-92.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-bz-b0-fm-c0-93.ucode -> intel/iwlwifi/iwlwifi-bz-b0-fm-c0-93.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-bz-b0-fm-c0-94.ucode -> intel/iwlwifi/iwlwifi-bz-b0-fm-c0-94.ucode
@@ -3448,6 +3454,7 @@ lrwxrwxrwx	root/root	lib/firmware/iwlwifi-cc-a0-73.ucode -> intel/iwlwifi/iwlwif
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-cc-a0-74.ucode -> intel/iwlwifi/iwlwifi-cc-a0-74.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-cc-a0-77.ucode -> intel/iwlwifi/iwlwifi-cc-a0-77.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-100.ucode -> intel/iwlwifi/iwlwifi-gl-c0-fm-c0-100.ucode
+lrwxrwxrwx	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-101.ucode -> intel/iwlwifi/iwlwifi-gl-c0-fm-c0-101.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-83.ucode -> intel/iwlwifi/iwlwifi-gl-c0-fm-c0-83.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-86.ucode -> intel/iwlwifi/iwlwifi-gl-c0-fm-c0-86.ucode
 lrwxrwxrwx	root/root	lib/firmware/iwlwifi-gl-c0-fm-c0-90.ucode -> intel/iwlwifi/iwlwifi-gl-c0-fm-c0-90.ucode
@@ -3989,6 +3996,7 @@ drwxr-xr-x	root/root	lib/firmware/nvidia/ga100/gsp/
 -rw-r--r--	root/root	lib/firmware/nvidia/ga100/gsp/booter_unload-570.144.bin
 -rw-r--r--	root/root	lib/firmware/nvidia/ga100/gsp/bootloader-535.113.01.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/ga100/gsp/bootloader-570.144.bin -> bootloader-535.113.01.bin
+lrwxrwxrwx	root/root	lib/firmware/nvidia/ga100/gsp/gen_bootloader-570.144.bin -> ../../tu102/gsp/gen_bootloader-570.144.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/ga100/gsp/gsp-535.113.01.bin -> ../../tu102/gsp/gsp-535.113.01.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/ga100/gsp/gsp-570.144.bin -> ../../tu102/gsp/gsp-570.144.bin
 drwxr-xr-x	root/root	lib/firmware/nvidia/ga102/
@@ -4440,6 +4448,7 @@ drwxr-xr-x	root/root	lib/firmware/nvidia/tu102/gsp/
 -rw-r--r--	root/root	lib/firmware/nvidia/tu102/gsp/booter_unload-570.144.bin
 -rw-r--r--	root/root	lib/firmware/nvidia/tu102/gsp/bootloader-535.113.01.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/tu102/gsp/bootloader-570.144.bin -> bootloader-535.113.01.bin
+-rw-r--r--	root/root	lib/firmware/nvidia/tu102/gsp/gen_bootloader-570.144.bin
 -rw-r--r--	root/root	lib/firmware/nvidia/tu102/gsp/gsp-535.113.01.bin
 -rw-r--r--	root/root	lib/firmware/nvidia/tu102/gsp/gsp-570.144.bin
 drwxr-xr-x	root/root	lib/firmware/nvidia/tu102/nvdec/
@@ -4537,6 +4546,7 @@ drwxr-xr-x	root/root	lib/firmware/nvidia/tu116/gsp/
 -rw-r--r--	root/root	lib/firmware/nvidia/tu116/gsp/booter_unload-570.144.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/tu116/gsp/bootloader-535.113.01.bin -> ../../tu102/gsp/bootloader-535.113.01.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/tu116/gsp/bootloader-570.144.bin -> ../../tu102/gsp/bootloader-570.144.bin
+lrwxrwxrwx	root/root	lib/firmware/nvidia/tu116/gsp/gen_bootloader-570.144.bin -> ../../tu102/gsp/gen_bootloader-570.144.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/tu116/gsp/gsp-535.113.01.bin -> ../../tu102/gsp/gsp-535.113.01.bin
 lrwxrwxrwx	root/root	lib/firmware/nvidia/tu116/gsp/gsp-570.144.bin -> ../../tu102/gsp/gsp-570.144.bin
 drwxr-xr-x	root/root	lib/firmware/nvidia/tu116/nvdec/
@@ -4963,11 +4973,14 @@ drwxr-xr-x	root/root	lib/firmware/qcom/vpu/
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu20_p1.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu20_p1_gen2.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu20_p4.mbn
--rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4.mbn
+lrwxrwxrwx	root/root	lib/firmware/qcom/vpu/vpu30_p4.mbn -> vpu30_p4_s7.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4_s6.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4_s6_16mb.mbn
--rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu33_p4.mbn
--rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu35_p4.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu30_p4_s7.mbn
+lrwxrwxrwx	root/root	lib/firmware/qcom/vpu/vpu33_p4.mbn -> vpu33_p4_s7.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu33_p4_s7.mbn
+lrwxrwxrwx	root/root	lib/firmware/qcom/vpu/vpu35_p4.mbn -> vpu35_p4_s7.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu35_p4_s7.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/vpu/vpu40_p2_s7.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/
 drwxr-xr-x	root/root	lib/firmware/qcom/x1e80100/LENOVO/
