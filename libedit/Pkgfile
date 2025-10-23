@@ -3,15 +3,14 @@
 # Depends on:  ncurses
 
 name=libedit
-version=20250104-3.1
+version=20251016-3.1
 release=1
 source=https://thrysoee.dk/editline/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
+	../$name-$version/configure --prefix=/usr
 
 	make V=1
 	make DESTDIR=$PKG install
