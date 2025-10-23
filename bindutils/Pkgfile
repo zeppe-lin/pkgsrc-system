@@ -3,7 +3,7 @@
 # Depends on:  json-c libedit liburcu libuv openssl zlib
 
 name=bindutils
-version=9.20.13
+version=9.20.15
 release=1
 source="https://ftp.isc.org/isc/bind9/$version/bind-$version.tar.xz
 	utils.patch"
@@ -11,16 +11,16 @@ source="https://ftp.isc.org/isc/bind9/$version/bind-$version.tar.xz
 build() {
 	cd bind-$version
 
-	./configure                              \
-		--prefix=/usr                    \
-		--libdir=/usr/lib/$name          \
-		--includedir=/usr/include/$name  \
-		--disable-doh                    \
-		--with-libxml2=no                \
-		--with-gssapi=no                 \
-		--with-readline=yes              \
+	./configure \
+		--prefix=/usr \
+		--libdir=/usr/lib/$name \
+		--includedir=/usr/include/$name \
+		--disable-doh \
+		--with-libxml2=no \
+		--with-gssapi=no \
+		--with-readline=yes \
 
-	make -C lib      V=1
+	make -C lib V=1
 	make bind.keys.h
 	make -C bin/dig  V=1
 	make -C bin/delv V=1
