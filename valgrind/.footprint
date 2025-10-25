@@ -10,6 +10,7 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/valgrind-di-server
 -rwxr-xr-x	root/root	usr/bin/valgrind-listener
 -rwxr-xr-x	root/root	usr/bin/vgdb
+-rwxr-xr-x	root/root	usr/bin/vgstack
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/valgrind/
 -rw-r--r--	root/root	usr/include/valgrind/cachegrind.h
