@@ -2,10 +2,10 @@
 # URL:         https://sourceware.org/lvm2/
 # Depends on:  libaio libdevmapper
 
-# XXX: update libdevmapper first!
+# Update libdevmapper first - versions must stay in sync!
 
 name=lvm2
-version=2.03.35
+version=2.03.36
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
@@ -18,30 +18,32 @@ build() {
 	# build in separate dir is broken
 	cd LVM2.$version
 
-	CONFIG_SHELL=/bin/bash ./configure                 \
-		--prefix=/usr                              \
-		--exec-prefix=                             \
-		--with-libexecdir=/usr/lib/lvm2            \
-		--datarootdir=/usr                         \
-		--mandir=/usr/share/man                    \
-		--disable-selinux                          \
-		--enable-cmdlib                            \
-		--enable-fsadm                             \
-		--enable-pkgconfig                         \
-		--enable-readline                          \
-		--enable-udev_rules                        \
-		--enable-udev_sync                         \
-		--with-default-dm-run-dir=/run             \
-		--with-default-locking-dir=/run/lock/lvm   \
-		--with-default-pid-dir=/run                \
-		--with-default-run-dir=/run/lvm            \
-		--with-group=root                          \
-		--with-udev-prefix=                        \
-		--with-user=root                           \
+	CONFIG_SHELL=/bin/bash \
+	./configure \
+		--prefix=/usr \
+		--exec-prefix= \
+		--with-libexecdir=/usr/lib/lvm2 \
+		--datarootdir=/usr \
+		--mandir=/usr/share/man \
+		--disable-selinux \
+		--enable-cmdlib \
+		--enable-fsadm \
+		--enable-pkgconfig \
+		--enable-readline \
+		--enable-udev_rules \
+		--enable-udev_sync \
+		--with-default-dm-run-dir=/run \
+		--with-default-locking-dir=/run/lock/lvm \
+		--with-default-pid-dir=/run \
+		--with-default-run-dir=/run/lvm \
+		--with-group=root \
+		--with-user=root \
+		--with-udev-prefix= \
 
 	make V=1
 	make V=1 DESTDIR=$PKG install_lvm2
 
+	# Create required runtime directories
 	install -m 0700 -d $PKG/etc/lvm/archive $PKG/etc/lvm/backup \
 		$PKG/etc/lvm/cache
 	install -m 1777 -d $PKG/var/lock
