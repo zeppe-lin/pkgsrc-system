@@ -1,0 +1,18 @@
+Description: Fix ftbfs with GCC-15
+Author: Til Kaiser <mail@tk154.de>
+Origin: https://code.blinkace.com/pdw/iftop/-/commit/67b685c8442528bb30485f6efa212f599ef19baf
+Bug-Debian: http://bugs.debian.org/1096832
+
+Index: iftop-1.0~pre4/cfgfile.h
+===================================================================
+--- iftop-1.0~pre4.orig/cfgfile.h
++++ iftop-1.0~pre4/cfgfile.h
+@@ -13,7 +13,7 @@ typedef struct {
+     int value;
+ } config_enumeration_type;
+ 
+-int read_config();
++int read_config(char *file, int whinge_on_error);
+ 
+ char *config_get_string(const char *directive);
+ int config_get_bool(const char *directive);

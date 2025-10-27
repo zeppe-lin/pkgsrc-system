@@ -1,0 +1,26 @@
+From 949ed0f7e2c54c598868c270b82c2d702131a339 Mon Sep 17 00:00:00 2001
+From: Paul Warren <pdw@ex-parrot.com>
+Date: Wed, 22 Mar 2017 09:11:22 +0000
+Subject: [PATCH] Choose first running interface, rather than first "up"
+ interface (Redhat #1403025) Jason Tibbitts
+
+---
+ options.c | 2 +-
+ 1 files changed, 1 insertions(+), 1 deletion(-)
+
+diff --git a/options.c b/options.c
+index 10b08e7..a075357 100644
+--- a/options.c
++++ b/options.c
+@@ -110,7 +110,7 @@ static char *get_first_interface(void) {
+     while(nameindex[j].if_index != 0) {
+         if (strcmp(nameindex[j].if_name, "lo") != 0 && !is_bad_interface_name(nameindex[j].if_name)) {
+             strncpy(ifr.ifr_name, nameindex[j].if_name, sizeof(ifr.ifr_name));
+-            if ((s == -1) || (ioctl(s, SIOCGIFFLAGS, &ifr) == -1) || (ifr.ifr_flags & IFF_UP)) {
++            if ((s == -1) || (ioctl(s, SIOCGIFFLAGS, &ifr) == -1) || (ifr.ifr_flags & IFF_RUNNING)) {
+                 i = xstrdup(nameindex[j].if_name);
+                 break;
+             }
+-- 
+GitLab
+

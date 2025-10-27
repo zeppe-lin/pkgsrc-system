@@ -4,19 +4,26 @@
 
 name=iftop
 version=1.0pre4
-release=2
+release=3
 source="https://pdw.ex-parrot.com/iftop/download/iftop-$version.tar.gz
+	bug-debian-1096832-ftbfs-with-GCC-15.patch
+	bug-debian-644998-IFF-RUNNING.patch
 	bug-debian-962695-ipv6-dns-resolution.patch
 	iftop-cleanup.patch
 	mac-address-format.patch
 	support-multi-gigabit-interfaces.patch"
 
 build() {
-	patch -d iftop-$version -p1 -i $SRC/mac-address-format.patch
-	patch -d iftop-$version -p1 -i $SRC/iftop-cleanup.patch
-	patch -d iftop-$version -p1 -i $SRC/support-multi-gigabit-interfaces.patch
-	patch -d iftop-$version -p1 -i $SRC/bug-debian-962695-ipv6-dns-resolution.patch
-
+	while read -r _patch; do
+		patch -d iftop-$version -Np1 -i $SRC/$_patch
+	done <<'EOF';
+mac-address-format.patch
+iftop-cleanup.patch
+support-multi-gigabit-interfaces.patch
+bug-debian-962695-ipv6-dns-resolution.patch
+bug-debian-1096832-ftbfs-with-GCC-15.patch
+bug-debian-644998-IFF-RUNNING.patch
+EOF
 	# build in separate dir is broken
 	cd iftop-$version
 

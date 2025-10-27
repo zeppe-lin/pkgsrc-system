@@ -1,3 +1,5 @@
+0ccb16f8f4e29e47e09e71c804ee1b81  bug-debian-1096832-ftbfs-with-GCC-15.patch
+760ba4443860fb4da43e607810d9bcaa  bug-debian-644998-IFF-RUNNING.patch
 b26801ba2ced75d19cfbb1c5d9885aff  bug-debian-962695-ipv6-dns-resolution.patch
 7e6decb4958e8a4890cccac335239f24  iftop-1.0pre4.tar.gz
 37136701f5b3d41186fd6c75c1f3ca6f  iftop-cleanup.patch
