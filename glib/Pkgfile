@@ -3,55 +3,55 @@
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
 name=glib
-version=2.84.4
+version=2.86.1
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
 
 build() {
-	# skip building the following stuff
-	sed -e "/subdir('po')/d"              \
-	    -e "/subdir('tests')/d"           \
-	    -e "/subdir('fuzzing')/d"         \
-	    -e "/subdir('docs/reference')/d"  \
+	# Skip building translations, tests, fuzzing, and reference docs
+	sed -e "/subdir('po')/d" \
+	    -e "/subdir('tests')/d" \
+	    -e "/subdir('fuzzing')/d" \
+	    -e "/subdir('docs/reference')/d" \
 	    -i glib-$version/meson.build
 
-	# replace default rundir location
+	# Replace legacy rundir path
 	sed 's|/var/run/dbus|/run/dbus|' -i glib-$version/gio/gdbusaddress.c
 
-	# -D man-pages=enabled: requires docutils
-	meson setup build glib-$version     \
-		--prefix=/usr               \
-		--libexecdir=/usr/lib/glib  \
-		--buildtype=plain           \
-		--wrap-mode=nodownload      \
-		-D b_lto=true               \
-		-D b_pie=true               \
-		-D documentation=false      \
-		-D glib_debug=disabled      \
-		-D installed_tests=false    \
-		-D introspection=disabled   \
-		-D libmount=enabled         \
-		-D man-pages=enabled        \
-		-D nls=disabled             \
-		-D oss_fuzz=disabled        \
-		-D selinux=disabled         \
-		-D tests=false              \
+	# Build flags:
+	# man-pages=enabled - requires docutils
+	meson setup build glib-$version \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/glib \
+		--buildtype=plain \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D documentation=false \
+		-D glib_debug=disabled \
+		-D installed_tests=false \
+		-D introspection=disabled \
+		-D libmount=enabled \
+		-D man-pages=enabled \
+		-D nls=disabled \
+		-D oss_fuzz=disabled \
+		-D selinux=disabled \
+		-D tests=false \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
-	# disable hash randomization
+	# Disable hash randomization for reproducible bytecode
 	export PYTHONHASHSEED=0
-
-	p=/usr/share/glib-2.0/codegen
-	/usr/bin/python3     -m compileall -d $p $PKG/$p
-	/usr/bin/python3 -O  -m compileall -d $p $PKG/$p
-	/usr/bin/python3 -OO -m compileall -d $p $PKG/$p
+	_codegen_dir=/usr/share/glib-2.0/codegen
+	/usr/bin/python3     -m compileall -d $_codegen_dir $PKG/$_codegen_dir
+	/usr/bin/python3 -O  -m compileall -d $_codegen_dir $PKG/$_codegen_dir
+	/usr/bin/python3 -OO -m compileall -d $_codegen_dir $PKG/$_codegen_dir
 
 	install -m 0644 $SRC/gschemas.compiled \
 		$PKG/usr/share/glib-2.0/schemas/gschemas.compiled
 
-	# remove junk
+	# Remove junk
 	rm -rf $PKG/usr/share/doc
 }
