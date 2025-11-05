@@ -3,23 +3,23 @@
 # Depends on:  libnvme
 
 name=nvme-cli
-version=2.15
+version=2.16
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-$version.tar.gz
 
 build() {
-	meson setup build $name-$version           \
-		--prefix=/usr                      \
-		--libexecdir=lib                   \
-		--sbindir=sbin                     \
-		--wrap-mode=nodownload             \
-		--buildtype=plain                  \
-		--auto-features=enabled            \
-		-D b_lto=true                      \
-		-D b_pie=true                      \
-		-D docs=man                        \
-		-D docs-build=false                \
-		-D udevrulesdir=/lib/udev/rules.d  \
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--libexecdir=lib \
+		--sbindir=sbin \
+		--wrap-mode=nodownload \
+		--buildtype=plain \
+		--auto-features=enabled \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D docs=man \
+		-D docs-build=false \
+		-D udevrulesdir=/lib/udev/rules.d \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
