@@ -3,7 +3,7 @@
 # Depends on:  json-c keyutils openssl
 
 name=libnvme
-version=1.15
+version=1.16
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-v$version.tar.gz
 
@@ -11,17 +11,17 @@ build() {
 	# don't build examples
 	sed -i "/^subdir('examples')/d" $name-$version/meson.build
 
-	meson setup build $name-$version  \
-		--prefix=/usr             \
-		--buildtype=plain         \
-		--default-library=both    \
-		--wrap-mode=nodownload    \
-		-D b_lto=true             \
-		-D b_pie=true             \
-		-D docs=man               \
-		-D libdbus=disabled       \
-		-D python=disabled        \
-		-D tests=false            \
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		--default-library=both \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D docs=man \
+		-D libdbus=disabled \
+		-D python=disabled \
+		-D tests=false \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
