@@ -17,12 +17,12 @@ drwxr-xr-x	root/root	usr/include/nvme/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libnvme-mi.a
 lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so -> libnvme-mi.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.16.0
--rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.16.0
+lrwxrwxrwx	root/root	usr/lib/libnvme-mi.so.1 -> libnvme-mi.so.1.16.1
+-rwxr-xr-x	root/root	usr/lib/libnvme-mi.so.1.16.1
 -rw-r--r--	root/root	usr/lib/libnvme.a
 lrwxrwxrwx	root/root	usr/lib/libnvme.so -> libnvme.so.1
-lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.16.0
--rwxr-xr-x	root/root	usr/lib/libnvme.so.1.16.0
+lrwxrwxrwx	root/root	usr/lib/libnvme.so.1 -> libnvme.so.1.16.1
+-rwxr-xr-x	root/root	usr/lib/libnvme.so.1.16.1
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme-mi.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnvme.pc
