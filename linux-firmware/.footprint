@@ -4,92 +4,117 @@ drwxr-xr-x	root/root	lib/firmware/3com/
 -rw-r--r--	root/root	lib/firmware/3com/typhoon.bin
 drwxr-xr-x	root/root	lib/firmware/HP/
 drwxr-xr-x	root/root	lib/firmware/HP/ish/
--rw-r--r--	root/root	lib/firmware/HP/ish/ish_lnlm_dba6b120_152c3222.bin
-lrwxrwxrwx	root/root	lib/firmware/INT8866RCA2.bin -> ti/tas2563/INT8866RCA2.bin
+-rw-r--r--	root/root	lib/firmware/HP/ish/ish_lnlm_12128606.bin
+lrwxrwxrwx	root/root	lib/firmware/INT8866RCA2.bin -> ti/audio/tas2563/INT8866RCA2.bin
 drwxr-xr-x	root/root	lib/firmware/LENOVO/
 drwxr-xr-x	root/root	lib/firmware/LENOVO/ish/
 -rw-r--r--	root/root	lib/firmware/LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C94.bin -> ti/tas2781/TAS2XXX0C94.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C95.bin -> ti/tas2781/TAS2XXX0C95.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C96.bin -> ti/tas2781/TAS2XXX0C96.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C97.bin -> ti/tas2781/TAS2XXX0C97.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE8-0.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE8-1.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE80.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE81.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE9-0.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE9-1.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE90.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE91.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX10A40.bin -> ti/tas2781/TAS2XXX10A40.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX10A41.bin -> ti/tas2781/TAS2XXX10A41.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX11540.bin -> ti/tas2781/TAS2XXX11540.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX11541.bin -> ti/tas2781/TAS2XXX11541.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12040.bin -> ti/tas2781/TAS2XXX12040.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12041.bin -> ti/tas2781/TAS2XXX12041.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12140.bin -> ti/tas2781/TAS2XXX12140.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12141.bin -> ti/tas2781/TAS2XXX12141.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB3.bin -> ti/tas2781/TAS2XXX1EB30.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB30.bin -> ti/tas2781/TAS2XXX1EB30.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB31.bin -> ti/tas2781/TAS2XXX1EB31.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX2234.bin -> ti/tas2781/TAS2XXX2234.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX2326.bin -> ti/tas2781/TAS2XXX2326.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3870.bin -> ti/tas2563/TAS2XXX3870.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387D.bin -> ti/tas2781/TAS2XXX387D.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387E.bin -> ti/tas2781/TAS2XXX387E.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387F.bin -> ti/tas2781/TAS2XXX387F.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3880.bin -> ti/tas2781/TAS2XXX3880.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3881.bin -> ti/tas2781/TAS2XXX3881.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3882.bin -> ti/tas2781/TAS2XXX3882.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3884.bin -> ti/tas2781/TAS2XXX3884.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3886.bin -> ti/tas2781/TAS2XXX3886.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A5.bin -> ti/tas2781/TAS2XXX38A5.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A7.bin -> ti/tas2781/TAS2XXX38A7.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A8.bin -> ti/tas2781/TAS2XXX38A8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38B8.bin -> ti/tas2781/TAS2XXX38B8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38B9.bin -> ti/tas2781/TAS2XXX38B9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BA.bin -> ti/tas2781/TAS2XXX38BA.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BB.bin -> ti/tas2781/TAS2XXX38BB.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BE.bin -> ti/tas2781/TAS2XXX38BE.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BF.bin -> ti/tas2781/TAS2XXX38BF.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38C3.bin -> ti/tas2781/TAS2XXX38C3.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38CB.bin -> ti/tas2781/TAS2XXX38CB.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38CD.bin -> ti/tas2781/TAS2XXX38CD.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D3.bin -> ti/tas2781/TAS2XXX38D3.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D4.bin -> ti/tas2781/TAS2XXX38D4.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D5.bin -> ti/tas2781/TAS2XXX38D5.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D6.bin -> ti/tas2781/TAS2XXX38D6.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38DF.bin -> ti/tas2781/TAS2XXX38DF.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38E0.bin -> ti/tas2781/TAS2XXX38E0.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38FD.bin -> ti/tas2781/TAS2XXX38FD.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX391F.bin -> ti/tas2781/TAS2XXX391F.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3920.bin -> ti/tas2781/TAS2XXX3920.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3E300.bin -> ti/tas2781/TAS2XXX3E300.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3E301.bin -> ti/tas2781/TAS2XXX3E301.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EE00.bin -> ti/tas2781/TAS2XXX3EE00.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EE01.bin -> ti/tas2781/TAS2XXX3EE01.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EF00.bin -> ti/tas2781/TAS2XXX3EF00.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EF01.bin -> ti/tas2781/TAS2XXX3EF01.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F000.bin -> ti/tas2781/TAS2XXX3F000.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F001.bin -> ti/tas2781/TAS2XXX3F001.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F100.bin -> ti/tas2781/TAS2XXX3F100.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F101.bin -> ti/tas2781/TAS2XXX3F101.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F200.bin -> ti/tas2781/TAS2XXX3F200.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F201.bin -> ti/tas2781/TAS2XXX3F201.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F300.bin -> ti/tas2781/TAS2XXX3F300.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F301.bin -> ti/tas2781/TAS2XXX3F301.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE8.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE80.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE81.bin -> ti/tas2781/TAS2XXX8DE8.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE9.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE90.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE91.bin -> ti/tas2781/TAS2XXX8DE9.bin
-lrwxrwxrwx	root/root	lib/firmware/TIAS2781RCA2.bin -> ti/tas2781/TIAS2781RCA2.bin
-lrwxrwxrwx	root/root	lib/firmware/TIAS2781RCA4.bin -> ti/tas2781/TIAS2781RCA4.bin
-lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA0.bin -> ti/tas2781/TXNW2781RCA1.bin
-lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA1.bin -> ti/tas2781/TXNW2781RCA0.bin
-lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA2.bin -> ti/tas2781/TIAS2781RCA2.bin
-lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA4.bin -> ti/tas2781/TIAS2781RCA4.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C94.bin -> ti/audio/tas2781/TAS2XXX0C94.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C95.bin -> ti/audio/tas2781/TAS2XXX0C95.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C96.bin -> ti/audio/tas2781/TAS2XXX0C96.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX0C97.bin -> ti/audio/tas2781/TAS2XXX0C97.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE8-0.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE8-1.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE80.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE81.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE9-0.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE9-1.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE90.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX103C8DE91.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX10A40.bin -> ti/audio/tas2781/TAS2XXX10A40.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX10A41.bin -> ti/audio/tas2781/TAS2XXX10A41.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX11540.bin -> ti/audio/tas2781/TAS2XXX11540.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX11541.bin -> ti/audio/tas2781/TAS2XXX11541.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12040.bin -> ti/audio/tas2781/TAS2XXX12040.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12041.bin -> ti/audio/tas2781/TAS2XXX12041.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12140.bin -> ti/audio/tas2781/TAS2XXX12140.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX12141.bin -> ti/audio/tas2781/TAS2XXX12141.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13840.bin -> ti/audio/tas2781/TAS2XXX13840.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13841.bin -> ti/audio/tas2781/TAS2XXX13841.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13940.bin -> ti/audio/tas2781/TAS2XXX13940.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13941.bin -> ti/audio/tas2781/TAS2XXX13941.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13A40.bin -> ti/audio/tas2781/TAS2XXX13A40.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX13A41.bin -> ti/audio/tas2781/TAS2XXX13A41.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB3.bin -> ti/audio/tas2781/TAS2XXX1EB30.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB30.bin -> ti/audio/tas2781/TAS2XXX1EB30.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX1EB31.bin -> ti/audio/tas2781/TAS2XXX1EB31.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX2234.bin -> ti/audio/tas2781/TAS2XXX2234.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX2326.bin -> ti/audio/tas2781/TAS2XXX2326.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3870.bin -> ti/audio/tas2563/TAS2XXX3870.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387D.bin -> ti/audio/tas2781/TAS2XXX387D.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387E.bin -> ti/audio/tas2781/TAS2XXX387E.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX387F.bin -> ti/audio/tas2781/TAS2XXX387F.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3880.bin -> ti/audio/tas2781/TAS2XXX3880.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3881.bin -> ti/audio/tas2781/TAS2XXX3881.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3882.bin -> ti/audio/tas2781/TAS2XXX3882.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3884.bin -> ti/audio/tas2781/TAS2XXX3884.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3886.bin -> ti/audio/tas2781/TAS2XXX3886.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A5.bin -> ti/audio/tas2781/TAS2XXX38A5.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A7.bin -> ti/audio/tas2781/TAS2XXX38A7.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38A8.bin -> ti/audio/tas2781/TAS2XXX38A8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38B8.bin -> ti/audio/tas2781/TAS2XXX38B8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38B9.bin -> ti/audio/tas2781/TAS2XXX38B9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BA.bin -> ti/audio/tas2781/TAS2XXX38BA.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BB.bin -> ti/audio/tas2781/TAS2XXX38BB.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BE.bin -> ti/audio/tas2781/TAS2XXX38BE.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38BF.bin -> ti/audio/tas2781/TAS2XXX38BF.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38C3.bin -> ti/audio/tas2781/TAS2XXX38C3.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38CB.bin -> ti/audio/tas2781/TAS2XXX38CB.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38CD.bin -> ti/audio/tas2781/TAS2XXX38CD.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D3.bin -> ti/audio/tas2781/TAS2XXX38D3.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D4.bin -> ti/audio/tas2781/TAS2XXX38D4.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D5.bin -> ti/audio/tas2781/TAS2XXX38D5.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38D6.bin -> ti/audio/tas2781/TAS2XXX38D6.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38DF.bin -> ti/audio/tas2781/TAS2XXX38DF.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38E0.bin -> ti/audio/tas2781/TAS2XXX38E0.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX38FD.bin -> ti/audio/tas2781/TAS2XXX38FD.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX391F.bin -> ti/audio/tas2781/TAS2XXX391F.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3920.bin -> ti/audio/tas2781/TAS2XXX3920.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3E300.bin -> ti/audio/tas2781/TAS2XXX3E300.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3E301.bin -> ti/audio/tas2781/TAS2XXX3E301.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EE00.bin -> ti/audio/tas2781/TAS2XXX3EE00.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EE01.bin -> ti/audio/tas2781/TAS2XXX3EE01.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EF00.bin -> ti/audio/tas2781/TAS2XXX3EF00.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3EF01.bin -> ti/audio/tas2781/TAS2XXX3EF01.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F000.bin -> ti/audio/tas2781/TAS2XXX3F000.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F001.bin -> ti/audio/tas2781/TAS2XXX3F001.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F100.bin -> ti/audio/tas2781/TAS2XXX3F100.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F101.bin -> ti/audio/tas2781/TAS2XXX3F101.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F200.bin -> ti/audio/tas2781/TAS2XXX3F200.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F201.bin -> ti/audio/tas2781/TAS2XXX3F201.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F300.bin -> ti/audio/tas2781/TAS2XXX3F300.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX3F301.bin -> ti/audio/tas2781/TAS2XXX3F301.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8C70.bin -> ti/audio/tas2781/TAS2XXX8C70.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8C71.bin -> ti/audio/tas2781/TAS2XXX8C71.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8C72.bin -> ti/audio/tas2781/TAS2XXX8C72.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8D8E.bin -> ti/audio/tas2781/TAS2XXX8D8E.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DAA.bin -> ti/audio/tas2781/TAS2XXX8DAA.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE8.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE80.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE81.bin -> ti/audio/tas2781/TAS2XXX8DE8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE9.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE90.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8DE91.bin -> ti/audio/tas2781/TAS2XXX8DE9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8E17.bin -> ti/audio/tas2781/TAS2XXX8E17.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8E19.bin -> ti/audio/tas2781/TAS2XXX8E19.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8E1C.bin -> ti/audio/tas2781/TAS2XXX8E1C.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8E8A.bin -> ti/audio/tas2781/TAS2XXX8E8A.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8ED5.bin -> ti/audio/tas2781/TAS2XXX8ED5.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8ED6.bin -> ti/audio/tas2781/TAS2XXX8ED6.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8ED7.bin -> ti/audio/tas2781/TAS2XXX8ED7.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8ED8.bin -> ti/audio/tas2781/TAS2XXX8ED8.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8ED9.bin -> ti/audio/tas2781/TAS2XXX8ED9.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8EDA.bin -> ti/audio/tas2781/TAS2XXX8EDA.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8F40.bin -> ti/audio/tas2781/TAS2XXX8F40.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8F41.bin -> ti/audio/tas2781/TAS2XXX8F41.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8F42.bin -> ti/audio/tas2781/TAS2XXX8F42.bin
+lrwxrwxrwx	root/root	lib/firmware/TAS2XXX8F62.bin -> ti/audio/tas2781/TAS2XXX8F62.bin
+lrwxrwxrwx	root/root	lib/firmware/TIAS2781RCA2.bin -> ti/audio/tas2781/TIAS2781RCA2.bin
+lrwxrwxrwx	root/root	lib/firmware/TIAS2781RCA4.bin -> ti/audio/tas2781/TIAS2781RCA4.bin
+lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA0.bin -> ti/audio/tas2781/TXNW2781RCA1.bin
+lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA1.bin -> ti/audio/tas2781/TXNW2781RCA0.bin
+lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA2.bin -> ti/audio/tas2781/TIAS2781RCA2.bin
+lrwxrwxrwx	root/root	lib/firmware/TXNW2781RCA4.bin -> ti/audio/tas2781/TIAS2781RCA4.bin
 lrwxrwxrwx	root/root	lib/firmware/a300_pfp.fw -> qcom/a300_pfp.fw
 lrwxrwxrwx	root/root	lib/firmware/a300_pm4.fw -> qcom/a300_pm4.fw
 drwxr-xr-x	root/root	lib/firmware/acenic/
@@ -2011,10 +2036,8 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431f62.wmfw -> 
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431f63-l0.bin
 -rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431f63-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431f63.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-spkid0-l0.bin
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-spkid0-r0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10431fb3-spkid0-l0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10431fb3-spkid0-r0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-l0.bin
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10431fb3.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433011-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-104330c1-spkid0-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433011-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-104330c1-spkid0-r0.bin
@@ -2086,23 +2109,15 @@ lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a60-spkid0-r
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a60-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10431caf-spkid0-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a60-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10431caf-spkid0-r0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433a60.wmfw -> cs35l41/v6.61.1/halo_cspl_RAM_revB2_29.63.1.wmfw
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid0-l0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid0-r0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid1-l0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
--rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid1-r0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
+-rw-r--r--	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d78.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10433d78-spkid0-l0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid0-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10433d78-spkid0-r0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid0-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid1-l0.bin -> cs35l41-dsp1-spk-prot-10433d78-spkid1-l0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid1-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid1-r0.bin -> cs35l41-dsp1-spk-prot-10433d78-spkid1-r0.bin
-lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-spkid1-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-l0.bin -> cs35l41-dsp1-spk-prot-10433d78-l0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-l0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-r0.bin -> cs35l41-dsp1-spk-prot-10433d78-r0.bin
+lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88-r0.bincfg -> cs35l41/bincfgs/cs35l41-dsp1-14_5dB.bincfg
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433d88.wmfw -> cs35l41/v6.83.0/halo_cspl_RAM_revB2_29.85.0.wmfw
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433e00-spkid0-l0.bin -> cs35l41-dsp1-spk-prot-10433e20-spkid0-l0.bin
 lrwxrwxrwx	root/root	lib/firmware/cirrus/cs35l41-dsp1-spk-prot-10433e00-spkid0-r0.bin -> cs35l41-dsp1-spk-prot-10433e20-spkid0-r0.bin
@@ -3122,9 +3137,9 @@ lrwxrwxrwx	root/root	lib/firmware/intel/ipu3-fw.bin -> ipu/irci_irci_ecr-master_
 lrwxrwxrwx	root/root	lib/firmware/intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
 drwxr-xr-x	root/root	lib/firmware/intel/ish/
 -rw-r--r--	root/root	lib/firmware/intel/ish/ish_lnlm.bin
+lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_12128606.bin -> ../../HP/ish/ish_lnlm_12128606.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_39ceeaf8.bin -> ../../dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
 lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_53c4ffad_2a17559f.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
-lrwxrwxrwx	root/root	lib/firmware/intel/ish/ish_lnlm_dba6b120_152c3222.bin -> ../../HP/ish/ish_lnlm_dba6b120_152c3222.bin
 -rw-r--r--	root/root	lib/firmware/intel/ish/ish_ptl.bin
 drwxr-xr-x	root/root	lib/firmware/intel/iwlwifi/
 -rw-r--r--	root/root	lib/firmware/intel/iwlwifi/iwlwifi-100-5.ucode
@@ -3650,6 +3665,9 @@ drwxr-xr-x	root/root	lib/firmware/mediatek/mt7925/
 -rw-r--r--	root/root	lib/firmware/mediatek/mt7986_wm_mt7975.bin
 -rw-r--r--	root/root	lib/firmware/mediatek/mt7986_wo_0.bin
 -rw-r--r--	root/root	lib/firmware/mediatek/mt7986_wo_1.bin
+drwxr-xr-x	root/root	lib/firmware/mediatek/mt7987/
+-rw-r--r--	root/root	lib/firmware/mediatek/mt7987/i2p5ge-phy-DSPBitTb.bin
+-rw-r--r--	root/root	lib/firmware/mediatek/mt7987/i2p5ge-phy-pmb.bin
 drwxr-xr-x	root/root	lib/firmware/mediatek/mt7988/
 -rw-r--r--	root/root	lib/firmware/mediatek/mt7988/i2p5ge-phy-pmb.bin
 -rw-r--r--	root/root	lib/firmware/mediatek/mt7988/mt7988_wo_0.bin
@@ -4778,10 +4796,19 @@ drwxr-xr-x	root/root	lib/firmware/qcom/apq8096/
 -rw-r--r--	root/root	lib/firmware/qcom/gen80200_gmu.bin
 -rw-r--r--	root/root	lib/firmware/qcom/gen80200_sqe.fw
 drwxr-xr-x	root/root	lib/firmware/qcom/kaanapali/
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adsp.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adsp_dtb.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adspr.jsn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adsps.jsn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adspua.jsn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/adspuo.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/kaanapali/cdsp.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/kaanapali/cdsp_dtb.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/kaanapali/cdspr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/kaanapali/gen80200_zap.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/soccp.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/soccp_dtb.mbn
+-rw-r--r--	root/root	lib/firmware/qcom/kaanapali/soccpr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/leia_pfp_470.fw
 -rw-r--r--	root/root	lib/firmware/qcom/leia_pm4_470.fw
 drwxr-xr-x	root/root	lib/firmware/qcom/qcm2290/
@@ -4797,9 +4824,9 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/qcm2290/wlanmdsp.mbn -> ../../ath10k/WCN3
 drwxr-xr-x	root/root	lib/firmware/qcom/qcm6490/
 -rw-r--r--	root/root	lib/firmware/qcom/qcm6490/a660_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/qcm6490/adsp.mbn
--rw-r--r--	root/root	lib/firmware/qcom/qcm6490/adspr.jsn
--rw-r--r--	root/root	lib/firmware/qcom/qcm6490/adsps.jsn
--rw-r--r--	root/root	lib/firmware/qcom/qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcm6490/adspr.jsn -> ../kaanapali/adspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcm6490/adsps.jsn -> ../kaanapali/adsps.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcm6490/adspua.jsn -> ../kaanapali/adspua.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/qcm6490/battmgr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/qcm6490/cdsp.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/qcm6490/cdspr.jsn
@@ -4829,16 +4856,16 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs6490/radxa/
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/
 -rw-r--r--	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adsp.mbn
-lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adspr.jsn -> ../../../qcm6490/adspr.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adsps.jsn -> ../../../qcm6490/adsps.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adspua.jsn -> ../../../qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adspr.jsn -> ../../../kaanapali/adspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adsps.jsn -> ../../../kaanapali/adsps.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/radxa/dragon-q6a/adspua.jsn -> ../../../kaanapali/adspua.jsn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs6490/wpss.mbn -> ../../ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
 drwxr-xr-x	root/root	lib/firmware/qcom/qcs8300/
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/MONACO-EVK-tplg.bin
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/a623_zap.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/adsp.mbn
-lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/adspr.jsn -> ../qcm6490/adspr.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/adspua.jsn -> ../qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/adspr.jsn -> ../kaanapali/adspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/adspua.jsn -> ../kaanapali/adspua.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/cdsp0.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/qcs8300/cdspr.jsn -> ../qcm6490/cdspr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/qcs8300/gpdsp0.mbn
@@ -4885,8 +4912,8 @@ drwxr-xr-x	root/root	lib/firmware/qcom/sa8775p/
 -rw-r--r--	root/root	lib/firmware/qcom/sa8775p/LEMANS-EVK-tplg.bin
 -rw-r--r--	root/root	lib/firmware/qcom/sa8775p/a663_zap.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/adsp.mbn -> ../qcs8300/adsp.mbn
-lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/adspr.jsn -> ../qcm6490/adspr.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/adspua.jsn -> ../qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/adspr.jsn -> ../kaanapali/adspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/adspua.jsn -> ../kaanapali/adspua.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/sa8775p/cdsp0.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/sa8775p/cdsp1.mbn
 lrwxrwxrwx	root/root	lib/firmware/qcom/sa8775p/cdspr.jsn -> ../qcm6490/cdspr.jsn
@@ -4899,7 +4926,7 @@ drwxr-xr-x	root/root	lib/firmware/qcom/sc8280xp/
 drwxr-xr-x	root/root	lib/firmware/qcom/sc8280xp/LENOVO/
 drwxr-xr-x	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/
 -rw-r--r--	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/adspr.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/adspua.jsn -> ../../../qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/adspua.jsn -> ../../../kaanapali/adspua.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin
 lrwxrwxrwx	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/battmgr.jsn -> ../../../qcm6490/battmgr.jsn
 lrwxrwxrwx	root/root	lib/firmware/qcom/sc8280xp/LENOVO/21BX/cdspr.jsn -> ../../../qcm6490/cdspr.jsn
@@ -5015,9 +5042,9 @@ lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/X1E80100-LENOVO-Thinkpad-T14s-tp
 lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin -> LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
 -rw-r--r--	root/root	lib/firmware/qcom/x1e80100/adsp.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/x1e80100/adsp_dtb.mbn
-lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adspr.jsn -> ../qcm6490/adspr.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adsps.jsn -> ../qcm6490/adsps.jsn
-lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adspua.jsn -> ../qcm6490/adspua.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adspr.jsn -> ../kaanapali/adspr.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adsps.jsn -> ../kaanapali/adsps.jsn
+lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/adspua.jsn -> ../kaanapali/adspua.jsn
 lrwxrwxrwx	root/root	lib/firmware/qcom/x1e80100/battmgr.jsn -> ../qcm6490/battmgr.jsn
 -rw-r--r--	root/root	lib/firmware/qcom/x1e80100/cdsp.mbn
 -rw-r--r--	root/root	lib/firmware/qcom/x1e80100/cdsp_dtb.mbn
@@ -5357,6 +5384,8 @@ lrwxrwxrwx	root/root	lib/firmware/rtl_bt/rtl8723d_config.bin -> rtl8821c_config.
 -rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8761b_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8761bu_config.bin
 -rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8761bu_fw.bin
+-rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8761cu_config.bin
+-rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8761cu_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8812ae_fw.bin
 lrwxrwxrwx	root/root	lib/firmware/rtl_bt/rtl8821a_config.bin -> rtl8821c_config.bin
 -rw-r--r--	root/root	lib/firmware/rtl_bt/rtl8821a_fw.bin
@@ -5395,6 +5424,7 @@ drwxr-xr-x	root/root	lib/firmware/rtl_nic/
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8125bp-2.fw
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8125d-1.fw
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8125d-2.fw
+-rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8125k-1.fw
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8126a-2.fw
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8126a-3.fw
 -rw-r--r--	root/root	lib/firmware/rtl_nic/rtl8127a-1.fw
@@ -5479,7 +5509,9 @@ drwxr-xr-x	root/root	lib/firmware/rtw89/
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8851b_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852a_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852b_fw-1.bin
+-rw-r--r--	root/root	lib/firmware/rtw89/rtw8852b_fw-2.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852b_fw.bin
+-rw-r--r--	root/root	lib/firmware/rtw89/rtw8852bt_fw-1.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852bt_fw.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852c_fw-1.bin
 -rw-r--r--	root/root	lib/firmware/rtw89/rtw8852c_fw-2.bin
@@ -5564,75 +5596,101 @@ lrwxrwxrwx	root/root	lib/firmware/ti-connectivity/wl12xx-nvs.bin -> wl127x-nvs.b
 drwxr-xr-x	root/root	lib/firmware/ti-keystone/
 -rw-r--r--	root/root	lib/firmware/ti-keystone/ks2_qmss_pdsp_acc48_k2_le_1_0_0_9.bin
 drwxr-xr-x	root/root	lib/firmware/ti/
-drwxr-xr-x	root/root	lib/firmware/ti/tas2563/
--rw-r--r--	root/root	lib/firmware/ti/tas2563/INT8866RCA2.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2563/TAS2XXX3870.bin
-drwxr-xr-x	root/root	lib/firmware/ti/tas2781/
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX0C94.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX0C95.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX0C96.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX0C97.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX10A40.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX10A41.bin -> TAS2XXX10A40.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX11540.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX11541.bin -> TAS2XXX11540.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX12040.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX12041.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX12140.bin -> TAS2XXX12040.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX12141.bin -> TAS2XXX12041.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX1EB30.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX1EB31.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX2234.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX2326.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX387D.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX387E.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX387F.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3880.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3881.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3882.bin -> TAS2XXX3881.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3884.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3886.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38A5.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38A7.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38A8.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38B8.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38B9.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38BA.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38BB.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38BE.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38BF.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38C3.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38CB.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38CD.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX38D3.bin -> TAS2XXX38C3.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX38D4.bin -> TAS2XXX38C3.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38D5.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38D6.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX38DF.bin -> TAS2XXX38C3.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX38E0.bin -> TAS2XXX38C3.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX38FD.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX391F.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3920.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3E300.bin -> TAS2XXX11540.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3E301.bin -> TAS2XXX11540.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3EE00.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3EE01.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3EF00.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3EF01.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F000.bin -> TAS2XXX3EE00.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F001.bin -> TAS2XXX3EE01.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3F100.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX3F101.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F200.bin -> TAS2XXX12040.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F201.bin -> TAS2XXX12041.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F300.bin -> TAS2XXX3EE00.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TAS2XXX3F301.bin -> TAS2XXX3EE01.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX8DE8.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TAS2XXX8DE9.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TIAS2781RCA2.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TIAS2781RCA4.bin
--rw-r--r--	root/root	lib/firmware/ti/tas2781/TXNW2781RCA0.bin
-lrwxrwxrwx	root/root	lib/firmware/ti/tas2781/TXNW2781RCA1.bin -> TXNW2781RCA0.bin
+drwxr-xr-x	root/root	lib/firmware/ti/audio/
+drwxr-xr-x	root/root	lib/firmware/ti/audio/tas2563/
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2563/INT8866RCA2.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2563/TAS2XXX3870.bin
+drwxr-xr-x	root/root	lib/firmware/ti/audio/tas2781/
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX0C94.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX0C95.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX0C96.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX0C97.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX10A40.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX10A41.bin -> TAS2XXX10A40.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX11540.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX11541.bin -> TAS2XXX11540.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX12040.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX12041.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX12140.bin -> TAS2XXX12040.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX12141.bin -> TAS2XXX12041.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13840.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13841.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13940.bin -> TAS2XXX13840.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13941.bin -> TAS2XXX13841.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13A40.bin -> TAS2XXX13840.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX13A41.bin -> TAS2XXX13841.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX1EB30.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX1EB31.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX2234.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX2326.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX387D.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX387E.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX387F.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3880.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3881.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3882.bin -> TAS2XXX3881.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3884.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3886.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38A5.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38A7.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38A8.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38B8.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38B9.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38BA.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38BB.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38BE.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38BF.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38C3.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38CB.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38CD.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38D3.bin -> TAS2XXX38C3.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38D4.bin -> TAS2XXX38C3.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38D5.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38D6.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38DF.bin -> TAS2XXX38C3.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38E0.bin -> TAS2XXX38C3.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX38FD.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX391F.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3920.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3E300.bin -> TAS2XXX11540.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3E301.bin -> TAS2XXX11540.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3EE00.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3EE01.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3EF00.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3EF01.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F000.bin -> TAS2XXX3EE00.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F001.bin -> TAS2XXX3EE01.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F100.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F101.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F200.bin -> TAS2XXX12040.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F201.bin -> TAS2XXX12041.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F300.bin -> TAS2XXX3EE00.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX3F301.bin -> TAS2XXX3EE01.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8C70.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8C71.bin -> TAS2XXX8C70.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8C72.bin -> TAS2XXX8C70.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8D8E.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8DAA.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8DE8.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8DE9.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8E17.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8E19.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8E1C.bin -> TAS2XXX8E17.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8E8A.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8ED5.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8ED6.bin -> TAS2XXX8ED5.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8ED7.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8ED8.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8ED9.bin -> TAS2XXX8ED7.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8EDA.bin -> TAS2XXX8ED8.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8F40.bin -> TAS2XXX8ED7.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8F41.bin -> TAS2XXX8ED8.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8F42.bin -> TAS2XXX8ED7.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TAS2XXX8F62.bin -> TAS2XXX8ED7.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TIAS2781RCA2.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TIAS2781RCA4.bin
+-rw-r--r--	root/root	lib/firmware/ti/audio/tas2781/TXNW2781RCA0.bin
+lrwxrwxrwx	root/root	lib/firmware/ti/audio/tas2781/TXNW2781RCA1.bin -> TXNW2781RCA0.bin
 -rw-r--r--	root/root	lib/firmware/ti/vpdma-1b8.bin
 -rw-r--r--	root/root	lib/firmware/ti_3410.fw
 -rw-r--r--	root/root	lib/firmware/ti_5052.fw

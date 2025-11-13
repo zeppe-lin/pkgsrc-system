@@ -4,21 +4,21 @@
 # Optional:    parallel
 
 name=linux-firmware
-version=20251021
+version=20251111
 release=1
 source="https://gitlab.com/kernel-firmware/$name/-/archive/$version/$name-$version.tar.bz2
 	dedup-ln-fsr.patch"
 
 build() {
-	# use GNU ln -fsr shorthands
+	# Use GNU ln -fsr shorthands
 	patch -d $name-$version -Np1 -i $SRC/dedup-ln-fsr.patch
 
-	# fallback to single job if parallel not present
+	# Fallback to single job if parallel not present
 	pkgman isinst parallel >/dev/null 2>&1 || MAKEFLAGS="-j1"
 
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
 	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
 
-	# remove junk
+	# Remove junk
 	find $PKG -type f -name README -o -name ChangeLog | xargs -r rm -f
 }
