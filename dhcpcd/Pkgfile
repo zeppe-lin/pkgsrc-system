@@ -3,8 +3,8 @@
 # Depends on:  eudev
 
 name=dhcpcd
-version=10.2.4
-release=2
+version=10.3.0
+release=1
 source="https://github.com/NetworkConfiguration/$name/releases/download/v$version/$name-$version.tar.xz
 	dhcpcd-conf.patch
 	rc.$name"
@@ -16,15 +16,15 @@ build() {
 	# build in separate dir is broken
 	cd $name-$version
 
-	./configure                       \
-		--prefix=                 \
-		--sysconfdir=/etc/dhcpcd  \
-		--libexecdir=/lib/dhcpcd  \
-		--dbdir=/var/lib/dhcpcd   \
-		--rundir=/run/dhcpcd      \
-		--enable-privsep          \
-		--privsepuser=dhcpcd      \
-		--with-hook=ntp.conf      \
+	./configure \
+		--prefix= \
+		--sysconfdir=/etc/dhcpcd \
+		--libexecdir=/lib/dhcpcd \
+		--dbdir=/var/lib/dhcpcd \
+		--rundir=/run/dhcpcd \
+		--enable-privsep \
+		--privsepuser=dhcpcd \
+		--with-hook=ntp.conf \
 
 	make V=1
 	make DESTDIR=$PKG install
