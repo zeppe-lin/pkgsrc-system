@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/dhcpcd: start/stop dhclient(8) daemon
+# /etc/rc.d/dhclient: start/stop dhclient(8) daemon
 #
 
 SSD=/sbin/start-stop-daemon
@@ -10,7 +10,6 @@ OPTS="-q -pf $PID"
 
 case $1 in
 start)
-	# shellcheck disable=2086
 	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
@@ -30,7 +29,7 @@ status)
 	esac
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 [start|stop|restart|status]"
 	;;
 esac
 

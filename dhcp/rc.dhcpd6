@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/dhcpd: start/stop dhcpd(8) IPv6 daemon
+# /etc/rc.d/dhcpd6: start/stop dhcpd(8) IPv6 daemon
 #
 
 SSD=/sbin/start-stop-daemon
@@ -32,7 +32,7 @@ status)
 	esac
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|reload|status]"
+	echo "Usage: $0 [start|stop|restart|reload|status]"
 	;;
 esac
 

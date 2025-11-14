@@ -3,24 +3,24 @@
 
 name=dhcp
 version=4.4.3-P1
-release=1
+release=2
 source="https://ftp.isc.org/isc/dhcp/$version/dhcp-$version.tar.gz
 	default-config.patch replace-hostname-with-uname-n.patch
 	rc.dhclient rc.dhcpd4 rc.dhcpd6"
 
 build() {
-	patch -d dhcp-$version -p1 -i $SRC/default-config.patch
-	patch -d dhcp-$version -p1 -i $SRC/replace-hostname-with-uname-n.patch
+	patch -d dhcp-$version -Np1 -i $SRC/default-config.patch
+	patch -d dhcp-$version -Np1 -i $SRC/replace-hostname-with-uname-n.patch
 
 	export CFLAGS="$CFLAGS -fcommon"
 
 	mkdir build; cd build
 
-	../dhcp-$version/configure    \
-		--prefix=/usr         \
-		--sysconfdir=/etc     \
-		--runstatedir=/run    \
-		--localstatedir=/var  \
+	../dhcp-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--runstatedir=/run \
+		--localstatedir=/var \
 
 	# parallel build is broken
 	make -j1 V=1
