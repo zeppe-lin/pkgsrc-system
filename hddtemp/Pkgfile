@@ -3,7 +3,7 @@
 
 name=hddtemp
 version=0.4.3-6740688
-release=2
+release=3
 source="https://github.com/vitlav/$name/archive/${version#*-}/$name-$version.tar.gz
 	rc.$name"
 
@@ -13,10 +13,10 @@ build() {
 	CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
 
 	autoreconf -fi ../$name-*
-	../$name-*/configure                       \
-		--prefix=/usr                      \
-		--disable-nls                      \
-		--with-db-path=/var/db/hddtemp.db  \
+	../$name-*/configure \
+		--prefix=/usr \
+		--disable-nls \
+		--with-db-path=/var/db/hddtemp.db \
 
 	make V=1
 	make DESTDIR=$PKG install
