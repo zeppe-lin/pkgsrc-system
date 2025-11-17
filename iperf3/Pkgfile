@@ -3,7 +3,7 @@
 # Depends on:  openssl zlib
 
 name=iperf3
-version=3.19.1
+version=3.20
 release=1
 source=$name-$version.tar.gz::https://github.com/esnet/iperf/archive/$version.tar.gz
 
@@ -12,10 +12,10 @@ build() {
 
 	export CFLAGS="$CFLAGS -flto=auto"
 
-	../iperf-$version/configure  \
-		--prefix=/usr        \
-		--sysconfdir=/etc    \
-		--disable-static     \
+	../iperf-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--disable-static \
 
 	make V=1
 	make DESTDIR=$PKG install
