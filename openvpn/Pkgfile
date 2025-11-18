@@ -3,7 +3,7 @@
 # Depends on:  docutils libcap-ng libnsl libtirpc lz4 lzo openssl
 
 name=openvpn
-version=2.6.15
+version=2.6.16
 release=1
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	rc.$name"
@@ -11,13 +11,13 @@ source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 build() {
 	mkdir build; cd build
 
-	autoreconf -fi ../$name-$version
-	../$name-$version/configure        \
-		--prefix=/usr              \
-		--mandir=/usr/share/man    \
-		--disable-plugin-auth-pam  \
-		--disable-unit-tests       \
-		--enable-iproute2          \
+	autoreconf -fiv ../$name-$version
+	../$name-$version/configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--disable-plugin-auth-pam \
+		--disable-unit-tests \
+		--enable-iproute2 \
 
 	make V=1
 	make DESTDIR=$PKG install
