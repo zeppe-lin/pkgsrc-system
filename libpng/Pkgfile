@@ -3,21 +3,20 @@
 # Depends on:  zlib
 
 name=libpng
-version=1.6.50
+version=1.6.51
 release=1
 source="$name-$version.tar.gz::https://github.com/pnggroup/$name/archive/refs/tags/v$version.tar.gz
-	$name-$version-apng.patch"
+	$name-1.6.50-apng.patch"
 
 build() {
-	# thanks for the patch to openmamba project:
 	# https://src.openmamba.org/rpms/libpng/raw/branch/main/libpng-1.6.50-apng.patch
-	patch -d $name-$version -Np1 -i $SRC/$name-$version-apng.patch
+	patch -d $name-$version -Np1 -i $SRC/$name-1.6.50-apng.patch
 
 	mkdir build; cd build
 
-	../$name-$version/configure              \
-		--prefix=/usr                    \
-		--enable-hardware-optimizations  \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--enable-hardware-optimizations \
 
 	make V=1
 	make DESTDIR=$PKG install
