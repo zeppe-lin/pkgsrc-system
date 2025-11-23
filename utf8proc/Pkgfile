@@ -2,7 +2,7 @@
 # URL:         https://juliastrings.github.io/utf8proc/
 
 name=utf8proc
-version=2.11.1
+version=2.11.2
 release=1
 source=https://github.com/JuliaStrings/$name/archive/v$version/$name-$version.tar.gz
 
