@@ -2,10 +2,8 @@
 # URL:         https://sourceware.org/lvm2/
 # Depends on:  libaio libdevmapper
 
-# Update libdevmapper first - versions must stay in sync!
-
 name=lvm2
-version=2.03.36
+version=2.03.37 # keep in sync with libdevmapper
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
