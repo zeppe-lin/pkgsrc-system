@@ -4,7 +4,7 @@
 # Optional:    parallel
 
 name=linux-firmware
-version=20251111
+version=20251125
 release=1
 source="https://gitlab.com/kernel-firmware/$name/-/archive/$version/$name-$version.tar.bz2
 	dedup-ln-fsr.patch"
