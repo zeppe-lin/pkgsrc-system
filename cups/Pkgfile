@@ -4,7 +4,7 @@
 # Optional:    dbus gnutls openssl
 
 name=cups
-version=2.4.14
+version=2.4.15
 release=1
 source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
 	rc.cups
@@ -20,22 +20,21 @@ build() {
 	# build in separate dir is broken
 	cd cups-$version
 
-	CC=cc CXX=c++                              \
-	./configure                                \
-		--prefix=/usr                      \
-		--sysconfdir=/etc                  \
-		--libdir=/usr/lib                  \
-		--localstatedir=/var               \
-		--enable-acl                       \
-		--with-cups-group=lp               \
-		--with-cups-user=daemon            \
-		--with-docdir=/usr/share/cups/doc  \
-		--with-languages=""                \
-		--with-logdir=/var/log/cups        \
-		--with-optim="$CFLAGS"             \
-		--with-rundir=/run/cups            \
-		--without-rcdir                    \
-		--without-systemd                  \
+	CC=cc CXX=c++ ./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--libdir=/usr/lib \
+		--localstatedir=/var \
+		--enable-acl \
+		--with-cups-group=lp \
+		--with-cups-user=daemon \
+		--with-docdir=/usr/share/cups/doc \
+		--with-languages="" \
+		--with-logdir=/var/log/cups \
+		--with-optim="$CFLAGS" \
+		--with-rundir=/run/cups \
+		--without-rcdir \
+		--without-systemd \
 		$PKGMK_CUPS
 
 	make
