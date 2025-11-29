@@ -5,7 +5,7 @@
 
 # Require a config name to be specified.
 if [ -z "$2" ]; then
-	echo "usage: $0 [start|stop|restart] <config-name>"
+	echo "Usage: $0 [start|stop|restart] <config-name>"
 	exit 1
 fi
 
@@ -45,7 +45,7 @@ restart)
 	$0 start "$2"
 	;;
 *)
-	echo "usage: $0 [start|stop|restart] <config-name>"
+	echo "Usage: $0 [start|stop|restart] <config-name>"
 	;;
 esac
 
