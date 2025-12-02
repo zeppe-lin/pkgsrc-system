@@ -1,7 +1,9 @@
 # Description: Debugging and profiling system
 # URL:         https://valgrind.org/
 # Depends on:  glibc-32
-# Optional:    gdb
+
+# Maintainer notes on dependencies:
+#   gdb: Integration with GDB (enabled if installed)
 
 name=valgrind
 version=3.26.0

@@ -1,7 +1,9 @@
 # Description: LLVM compiler backend
 # URL:         https://llvm.org/
 # Depends on:  libxml2 py3-setuptools zstd
-# Optional:    lld
+
+# Maintainer notes on dependencies:
+#   lld: (enabled if installed)
 
 name=llvm
 version=19.1.7

@@ -1,7 +1,9 @@
 # Description: Common UNIX Printing System
 # URL:         https://openprinting.github.io/cups/
 # Depends on:  acl libusb zlib linux-pam
-# Optional:    dbus gnutls openssl
+
+# Maintainer notes on dependencies:
+#   dbus gnutls openssl: (enabled if installed)
 
 name=cups
 version=2.4.15
@@ -17,7 +19,7 @@ build() {
 		PKGMK_CUPS=" --with-tls=openssl"
 	fi
 
-	# build in separate dir is broken
+	# Build in separate dir is broken
 	cd cups-$version
 
 	CC=cc CXX=c++ ./configure \
@@ -40,22 +42,22 @@ build() {
 	make
 	make BUILDROOT=$PKG install
 
-	# conflict with cups-filter
+	# Conflict with cups-filter
 	rm -r $PKG/usr/share/cups/banners $PKG/usr/share/cups/data
 
-	# cleanup
+	# Cleanup
 	rm -r $PKG/usr/share/applications $PKG/usr/share/icons $PKG/run \
 		$PKG/usr/share/locale
 
-	# fix perms
+	# Fix perms
 	chmod 0755 $PKG/var/cache $PKG/var/spool
 	chmod -R +w $PKG
 
-	# rc script and pam module
+	# Service script and PAM module
 	install -m 0755 -D $SRC/rc.cups   $PKG/etc/rc.d/cups
 	install -m 0644 -D $SRC/pam.cups  $PKG/etc/pam.d/cups
 
-	# blacklist usblp kernel module
+	# Blacklist usblp kernel module
 	mkdir -p $PKG/lib/modprobe.d
 	echo 'blacklist usblp' > $PKG/lib/modprobe.d/cups-blacklist-usblp.conf
 }

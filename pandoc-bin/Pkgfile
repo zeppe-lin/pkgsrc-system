@@ -1,7 +1,9 @@
 # Description: Conversion between markup formats
 # URL:         https://pandoc.org/
 # Depends on:  cmark
-# Optional:    texlive
+
+# Maintainer notes on dependencies:
+#   texlive: Support creating PDF using LaTeX (enabled if installed)
 
 name=pandoc-bin
 version=3.8.3

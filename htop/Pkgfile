@@ -1,7 +1,9 @@
 # Description: Interactive process viewer
 # URL:         https://github.com/htop-dev/htop
 # Depends on:  libcap libnl libunwind
-# Optional:    lm-sensors lsof strace
+
+# Maintainer notes on dependencies:
+#   lm-sensors: Support reading temperature data (enabled if installed)
 
 name=htop
 version=3.4.1
@@ -11,13 +13,13 @@ source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
 build() {
 	mkdir build; cd build
 
-	autoreconf -fi ../htop-$version
-	../htop-$version/configure  \
-		--prefix=/usr       \
+	autoreconf -fiv ../htop-$version
+	../htop-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
 
 	# remove i18n entries
-        sed -ri '/\[.+\]=/d' $PKG/usr/share/applications/htop.desktop
+	sed -ri '/\[.+\]=/d' $PKG/usr/share/applications/htop.desktop
 }

@@ -1,7 +1,9 @@
 # Description: CLI automation framework for Tcl
 # URL:         https://core.tcl-lang.org/expect/index
 # Depends on:  tcl
-# Optional:    tk
+
+# Maintainer notes on dependencies:
+#   tk: Expect with Tk support (enabled if installed)
 
 name=expect
 version=5.45.4
@@ -9,21 +11,22 @@ release=3
 source=https://downloads.sourceforge.net/project/$name/Expect/$version/$name$version.tar.gz
 
 build() {
+	if pkgman isinst tk >/dev/null 2>&1; then
+		_build_args="--with-tk=/usr/lib --with-tkinclude=/usr/include"
+	fi
+
 	mkdir build; cd build
 
-	# https://core.tcl-lang.org/expect/tktview/ab6c7a502777ba361f21b87d33cb4892c584f96b
+	# gcc14 fix
 	CFLAGS="$CFLAGS -fpermissive"
 
-	../$name$version/configure                              \
-		--prefix=/usr                                   \
-		--enable-shared                                 \
-		--mandir=/usr/share/man                         \
-		--with-tcl=/usr/lib                             \
-		--with-tclinclude=/usr/include                  \
-		$(if pkgman isinst tk >/dev/null 2>&1; then
-			echo --with-tk=/usr/lib                 \
-			     --with-tkinclude=/usr/include
-		  fi)                                           \
+	../$name$version/configure \
+		--prefix=/usr \
+		--enable-shared \
+		--mandir=/usr/share/man \
+		--with-tcl=/usr/lib \
+		--with-tclinclude=/usr/include \
+		$_build_args
 
 	make V=1
 	make DESTDIR=$PKG install

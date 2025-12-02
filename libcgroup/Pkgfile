@@ -1,7 +1,9 @@
 # Description: Abstracts the control group file system
 # URL:         https://github.com/libcgroup/libcgroup
 # Depends on:  linux-pam
-# Optional:    linux-pam
+
+# Maintainer notes on dependencies:
+#   linux-pam: compile libcgroup PAM module (enabled by default)
 
 name=libcgroup
 version=3.0.0
@@ -11,13 +13,13 @@ source=https://github.com/$name/$name/releases/download/v${version%.*}/$name-$ve
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure                      \
-		--prefix=/usr                            \
-		--sysconfdir=/etc                        \
-		--enable-pam-module-dir=/lib/security    \
-		--disable-python                         \
-		--disable-tests                          \
-		--enable-cgred-socket=/run/cgred.socket  \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--enable-pam-module-dir=/lib/security \
+		--disable-python \
+		--disable-tests \
+		--enable-cgred-socket=/run/cgred.socket \
 
 	make V=1
 	make DESTDIR=$PKG install

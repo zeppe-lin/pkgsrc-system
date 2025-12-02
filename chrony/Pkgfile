@@ -1,7 +1,9 @@
 # Description: Network time protocol client/server
 # URL:         https://chrony-project.org/
 # Depends on:  libcap libedit ncurses
-# Optional:    gnutls nettle nss
+
+# Maintainer notes on dependencies:
+#   gnutls nettle nss: (enabled if installed)
 
 name=chrony
 version=4.8
@@ -10,15 +12,14 @@ source="https://chrony-project.org/releases/$name-$version.tar.gz
 	rc.chronyd"
 
 build() {
-	# build in separate dir is broken, chrony's configure is not actually
-	# an autotools script
+	# Out-of-tree build fails: chrony uses a custom configure script
 	cd $name-$version
 
-	./configure                                     \
-		--prefix=/usr                           \
-		--chronyrundir=/run/chrony              \
-		--with-pidfile=/run/chrony/chronyd.pid  \
-		--with-user=chrony                      \
+	./configure \
+		--prefix=/usr \
+		--chronyrundir=/run/chrony \
+		--with-pidfile=/run/chrony/chronyd.pid \
+		--with-user=chrony \
 
 	make V=1
 	make DESTDIR=$PKG install

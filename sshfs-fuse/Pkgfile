@@ -1,7 +1,9 @@
 # Description: Remote filesystem in userspace using SSH
 # URL:         https://github.com/libfuse/sshfs
 # Depends on:  docutils fuse glib
-# Optional:    docutils
+
+# Maintainer notes on dependencies:
+#   docutils: Build man pages (enabled)
 
 name=sshfs-fuse
 version=3.7.5
