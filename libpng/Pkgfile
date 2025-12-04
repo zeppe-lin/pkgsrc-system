@@ -3,7 +3,7 @@
 # Depends on:  zlib
 
 name=libpng
-version=1.6.51
+version=1.6.52
 release=1
 source="$name-$version.tar.gz::https://github.com/pnggroup/$name/archive/refs/tags/v$version.tar.gz
 	$name-1.6.50-apng.patch"
