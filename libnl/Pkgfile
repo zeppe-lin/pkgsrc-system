@@ -2,7 +2,7 @@
 # URL:         http://www.infradead.org/~tgr/libnl/
 
 name=libnl
-version=3.11.0
+version=3.12.0
 release=1
 source=https://github.com/thom311/libnl/releases/download/libnl$(
 	echo $version | tr . _)/libnl-$version.tar.gz
@@ -10,12 +10,12 @@ source=https://github.com/thom311/libnl/releases/download/libnl$(
 build() {
 	mkdir build; cd build
 
-	YACC='bison -y -Wnone'         \
-	../$name-$version/configure    \
-		--prefix=/usr          \
-		--sysconfdir=/usr/etc  \
-		--disable-cli          \
-		--disable-debug        \
+	YACC='bison -y -Wnone' \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/usr/etc \
+		--disable-cli \
+		--disable-debug \
 
 	make V=1
 	make DESTDIR=$PKG install
