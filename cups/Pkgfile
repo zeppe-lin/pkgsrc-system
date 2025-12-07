@@ -3,11 +3,12 @@
 # Depends on:  acl libusb zlib linux-pam
 
 # Maintainer notes on dependencies:
+#   libusb: for usb printer backend (enabled)
 #   dbus gnutls openssl: (enabled if installed)
 
 name=cups
 version=2.4.16
-release=1
+release=2
 source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
 	rc.cups
 	pam.cups"
@@ -21,6 +22,13 @@ build() {
 
 	# Build in separate dir is broken
 	cd cups-$version
+
+	# Note: In some minimal or socket-activated environments, CUPS may exit
+	# on idle and the web UI at http://localhost:631 becomes unavailable.
+	# We comment out IdleExitTimeout to keep cupsd running reliably.
+	# If you prefer socket activation, re-enable IdleExitTimeout and ensure
+	# cups.socket/Listen directives are configured to provide the web UI.
+	sed '/^IdleExitTimeout/s/^/#/' -i conf/cupsd.conf.in
 
 	CC=cc CXX=c++ ./configure \
 		--prefix=/usr \
