@@ -1057,7 +1057,6 @@ lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/X1E80100-CRD.conf -> ..
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/X1E80100-EVK.conf -> ../../Qualcomm/x1e80100/X1E80100-EVK.conf
 lrwxrwxrwx	root/root	usr/share/alsa/ucm2/conf.d/x1e80100/x1e80100.conf -> ../../Qualcomm/x1e80100/x1e80100.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/conf.virt.d/
--rw-r--r--	root/root	usr/share/alsa/ucm2/conf.virt.d/.gitignore (EMPTY)
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/lib/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/lib/card-init.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/lib/ctl-remap.conf

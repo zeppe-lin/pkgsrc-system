@@ -11,5 +11,5 @@ build() {
 	cp -r $name-$version/ucm2 $PKG/usr/share/alsa
 
 	# Remove junk
-	find $PKG -type f \( -name README.md -o -name DEBUG.md \) -delete
+	find $PKG -type f \( -name '*.md' -o -name '.gitignore' \) -delete
 }
