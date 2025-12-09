@@ -2,8 +2,11 @@
 # URL:         https://gitlab.gnome.org/GNOME/glib
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
+# Maintainer notes on dependencies:
+#   man-pages=enabled: Build man pages, needs docutils (enabled)
+
 name=glib
-version=2.86.2
+version=2.86.3
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -19,8 +22,6 @@ build() {
 	# Replace legacy rundir path
 	sed 's|/var/run/dbus|/run/dbus|' -i glib-$version/gio/gdbusaddress.c
 
-	# Build flags:
-	# man-pages=enabled - requires docutils
 	meson setup build glib-$version \
 		--prefix=/usr \
 		--libexecdir=/usr/lib/glib \
@@ -44,10 +45,11 @@ build() {
 
 	# Disable hash randomization for reproducible bytecode
 	export PYTHONHASHSEED=0
-	_codegen_dir=/usr/share/glib-2.0/codegen
-	/usr/bin/python3     -m compileall -d $_codegen_dir $PKG/$_codegen_dir
-	/usr/bin/python3 -O  -m compileall -d $_codegen_dir $PKG/$_codegen_dir
-	/usr/bin/python3 -OO -m compileall -d $_codegen_dir $PKG/$_codegen_dir
+
+	d=/usr/share/glib-2.0/codegen
+	/usr/bin/python3     -m compileall -d $d $PKG/$d
+	/usr/bin/python3 -O  -m compileall -d $d $PKG/$d
+	/usr/bin/python3 -OO -m compileall -d $d $PKG/$d
 
 	install -m 0644 $SRC/gschemas.compiled \
 		$PKG/usr/share/glib-2.0/schemas/gschemas.compiled
