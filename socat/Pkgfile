@@ -3,17 +3,17 @@
 # Depends on:  libbsd openssl readline zlib
 
 name=socat
-version=1.8.0.3
+version=1.8.1.0
 release=1
 source=http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
 build() {
-	# build in separate dir is broken
+	# Build in separate dir is broken
 	cd socat-$version
 
-	./configure                \
-		--prefix=/usr      \
-		--disable-libwrap  \
+	./configure \
+		--prefix=/usr \
+		--disable-libwrap \
 
 	make V=1
 	make DESTDIR=$PKG install
