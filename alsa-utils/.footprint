@@ -29,8 +29,6 @@ lrwxrwxrwx	root/root	usr/bin/arecord -> aplay
 -rwxr-xr-x	root/root	usr/bin/speaker-test
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/alsa-topology/
--rw-r--r--	root/root	usr/lib/alsa-topology/libalsatplg_module_nhlt.a
--rwxr-xr-x	root/root	usr/lib/alsa-topology/libalsatplg_module_nhlt.la
 -rwxr-xr-x	root/root	usr/lib/alsa-topology/libalsatplg_module_nhlt.so
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/alsactl

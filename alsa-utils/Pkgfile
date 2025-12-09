@@ -3,7 +3,7 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.14
+version=1.2.15
 release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
@@ -11,26 +11,27 @@ source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	rc.alsa"
 
 build() {
-	patch -d $name-$version -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
-	patch -d $name-$version -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
+	# Build in separate dir is broken
+	cd $name-$version
 
-	mkdir build; cd build
+	patch -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
+	patch -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
 
-	# fix error when compiling alsatplg
+	# Fix error when compiling alsatplg
 	CFLAGS="$CFLAGS -latopology"
 
-	autoreconf -fi ../$name-$version
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--disable-alsaconf   \
-		--disable-alsatest   \
-		--disable-bat        \
-		--disable-nls        \
-		--disable-rst2man    \
-		--disable-xmlto      \
-		--enable-static      \
+	autoreconf -fiv
+	./configure \
+		--prefix=/usr \
+		--disable-alsaconf \
+		--disable-alsatest \
+		--disable-bat \
+		--disable-nls \
+		--disable-rst2man \
+		--disable-xmlto \
+		--disable-static \
 
-	# fix overlinking
+	# Fix overlinking
 	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
@@ -38,7 +39,8 @@ build() {
 
 	install -m 0755 -D $SRC/rc.alsa $PKG/etc/rc.d/alsa
 
-	# remove junk
+	# Remove junk
 	rm $PKG/usr/sbin/alsa-info.sh
+	rm $PKG/usr/lib/alsa-topology/libalsatplg_module_nhlt.la
 	rmdir $PKG/usr/share/man/man7
 }
