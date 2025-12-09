@@ -2,7 +2,7 @@
 # URL:         https://alsa-project.org/
 
 name=alsa-ucm-conf
-version=1.2.14
+version=1.2.15
 release=1
 source=https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
 
@@ -10,6 +10,6 @@ build() {
 	mkdir -p $PKG/usr/share/alsa
 	cp -r $name-$version/ucm2 $PKG/usr/share/alsa
 
-	# remove junk
-	find $PKG -type f \( -name README.md -or -name DEBUG.md \) -delete
+	# Remove junk
+	find $PKG -type f \( -name README.md -o -name DEBUG.md \) -delete
 }
