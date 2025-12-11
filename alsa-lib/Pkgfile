@@ -3,12 +3,16 @@
 
 name=alsa-lib
 version=1.2.15
-release=1
-source=https://www.alsa-project.org/files/pub/lib/$name-$version.tar.bz2
+release=2
+source="https://www.alsa-project.org/files/pub/lib/$name-$version.tar.bz2
+	up-to-f30c355.patch"
 
 build() {
+	patch -d $name-$version -Np1 -i $SRC/up-to-f30c355.patch
+
 	mkdir build; cd build
 
+	autoreconf -fiv ../$name-$version
 	../$name-$version/configure \
 		--prefix=/usr \
 		--disable-python \
