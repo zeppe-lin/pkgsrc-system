@@ -2,7 +2,7 @@
 # URL:         https://gnupg.org/software/libgpg-error/index.html
 
 name=libgpg-error
-version=1.56
+version=1.57
 release=1
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
@@ -16,8 +16,11 @@ build() {
 		--disable-nls \
 		--disable-tests \
 		--enable-install-gpg-error-config \
-		--enable-static
+		--disable-static \
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	# Remove junk
+	rm $PKG/usr/lib/*.la
 }
