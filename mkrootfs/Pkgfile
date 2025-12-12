@@ -3,7 +3,7 @@
 # Depends on:  pkgman pkgmk revdep scdoc tar
 
 name=mkrootfs
-version=1.4-759b400
+version=1.5-2cca94d
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
