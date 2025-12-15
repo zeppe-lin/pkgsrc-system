@@ -3,26 +3,30 @@
 # Depends on:  libtool
 
 name=libconfig
-version=1.8.1
+version=1.8.2
 release=1
 source=https://github.com/hyperrealm/$name/archive/v$version/$name-v$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	autoreconf -i ../$name-$version
+	autoreconf -fiv ../$name-$version
 
-	# don't fail without makeinfo (must be after autoreconf)
-	sed -e 's|all: all-am|all:|1'              \
-	    -e 's|install: install-am|install:|1'  \
+	# Don't fail without makeinfo (must be after autoreconf)
+	sed -e 's|all: all-am|all:|1' \
+	    -e 's|install: install-am|install:|1' \
 	    -i ../$name-$version/doc/Makefile.in
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--disable-examples   \
-		--disable-doc        \
-		--disable-tests      \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-doc \
+		--disable-examples \
+		--disable-static \
+		--disable-tests \
 
 	make V=1
 	make DESTDIR=$PKG install
+
+	# Remove junk
+	rm $PKG/usr/lib/*.la
 }
