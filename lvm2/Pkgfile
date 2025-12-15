@@ -3,7 +3,7 @@
 # Depends on:  libaio libdevmapper
 
 name=lvm2
-version=2.03.37 # keep in sync with libdevmapper
+version=2.03.38 # keep in sync with libdevmapper
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
