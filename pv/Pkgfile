@@ -3,7 +3,7 @@
 # Depends on:  ncurses
 
 name=pv
-version=1.10.2
+version=1.10.3
 release=1
 source=http://www.ivarch.com/programs/sources/pv-$version.tar.gz
 
@@ -17,6 +17,6 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/doc
 }
