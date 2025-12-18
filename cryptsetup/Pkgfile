@@ -2,45 +2,47 @@
 # URL:         https://gitlab.com/cryptsetup/cryptsetup
 # Depends on:  json-c libbsd libdevmapper openssl popt
 
+# Maintainer notes on dependencies:
+#   --enable-asciidoc: Generate man pages, needs asciidoctor (enabled)
+
 name=cryptsetup
-version=2.8.1
+version=2.8.2
 release=1
 source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
 
 build() {
-	# fix "undefined reference to `arc4random'"
+	# Fix "undefined reference to `arc4random'"
 	export LDFLAGS="$LDFLAGS $(pkg-config --libs libbsd)"
 
 	mkdir build; cd build
 
-	../$name-$version/configure         \
-		--prefix=/usr               \
-		--disable-nls               \
-		--disable-ssh-token         \
-		--enable-asciidoc           \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-ssh-token \
+		--enable-asciidoc \
 
 	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	#######################################################################
-	# Build statically without libblkid; linking it causes build failures #
-	#######################################################################
+	# Build statically without libblkid; linking it causes build failures
+	cd $SRC; mkdir build-static; cd build-static
 
-	cd $SRC
-	mkdir build-static; cd build-static
-
-	../$name-$version/configure         \
-		--prefix=/usr               \
-		--disable-nls               \
-		--disable-ssh-token         \
-		--disable-asciidoc          \
-		--disable-blkid             \
-		--enable-static-cryptsetup  \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-ssh-token \
+		--disable-asciidoc \
+		--disable-blkid \
+		--enable-static-cryptsetup \
 
 	make V=1
 
 	install -m 0755 -Dt $PKG/sbin cryptsetup.static
 	install -m 0755 -Dt $PKG/usr/sbin integritysetup.static veritysetup.static
+
+	# Remove junk
+	rm $PKG/usr/lib/*.la
 }
