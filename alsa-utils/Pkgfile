@@ -3,7 +3,7 @@
 # Depends on:  alsa-lib dialog
 
 name=alsa-utils
-version=1.2.15
+version=1.2.15.1
 release=1
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
@@ -31,8 +31,8 @@ build() {
 		--disable-xmlto \
 		--disable-static \
 
-	# Fix overlinking
-	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	# Ensure --as-needed is applied to shared linker invocations
+	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
 	make DESTDIR=$PKG install
