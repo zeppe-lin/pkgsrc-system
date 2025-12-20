@@ -2,14 +2,11 @@
 # URL:         https://www.alsa-project.org/
 
 name=alsa-lib
-version=1.2.15
-release=2
-source="https://www.alsa-project.org/files/pub/lib/$name-$version.tar.bz2
-	up-to-f30c355.patch"
+version=1.2.15.1
+release=1
+source=https://www.alsa-project.org/files/pub/lib/$name-$version.tar.bz2
 
 build() {
-	patch -d $name-$version -Np1 -i $SRC/up-to-f30c355.patch
-
 	mkdir build; cd build
 
 	autoreconf -fiv ../$name-$version
@@ -22,4 +19,5 @@ build() {
 
 	# Remove junk
 	rm -f $PKG/usr/share/alsa/alsa.conf.d/README
+	rm $PKG/usr/lib/*.la
 }

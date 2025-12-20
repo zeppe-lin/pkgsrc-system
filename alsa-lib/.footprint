@@ -57,11 +57,9 @@ drwxr-xr-x	root/root	usr/include/alsa/sound/uapi/
 drwxr-xr-x	root/root	usr/include/sys/
 -rw-r--r--	root/root	usr/include/sys/asoundlib.h
 drwxr-xr-x	root/root	usr/lib/
--rwxr-xr-x	root/root	usr/lib/libasound.la
 lrwxrwxrwx	root/root	usr/lib/libasound.so -> libasound.so.2.0.0
 lrwxrwxrwx	root/root	usr/lib/libasound.so.2 -> libasound.so.2.0.0
 -rwxr-xr-x	root/root	usr/lib/libasound.so.2.0.0
--rwxr-xr-x	root/root	usr/lib/libatopology.la
 lrwxrwxrwx	root/root	usr/lib/libatopology.so -> libatopology.so.2.0.0
 lrwxrwxrwx	root/root	usr/lib/libatopology.so.2 -> libatopology.so.2.0.0
 -rwxr-xr-x	root/root	usr/lib/libatopology.so.2.0.0
