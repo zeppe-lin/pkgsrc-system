@@ -3,10 +3,10 @@
 # Depends on:  libxml2 py3-setuptools zstd
 
 # Maintainer notes on dependencies:
-#   lld: (enabled if installed)
+#   lld: Drop-in replacement for the GNU linkers (enabled if installed)
 
 name=llvm
-version=19.1.7
+version=21.1.8
 release=1
 source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
 	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/cmake-$version.src.tar.xz
@@ -15,71 +15,95 @@ source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/
 	llvm-config.h"
 
 build() {
-	if pkgman isinst ccache; then
+	# ---- Optional features ----
+
+	if pkgman isinst ccache >/dev/null 2>&1; then
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_CCACHE_BUILD=ON"
-		export PATH="$(echo $PATH | awk -v RS=: -v ORS=: \
-			'/ccache/{next}{print}' | sed 's/:*$//')"
+
+		# Prevent CMake from auto-injecting ccache wrappers
+		export PATH="$(printf '%s\n' "$PATH" |
+			awk -v RS=: -v ORS=: '/ccache/{next}{print}' |
+			sed 's/:*$//')"
 	fi
 
-	if pkgman isinst lld; then
+	if pkgman isinst lld >/dev/null 2>&1; then
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_ENABLE_LLD=ON"
 	else
 		PKGMK_LLVM="$PKGMK_LLVM -D LLVM_ENABLE_LLD=OFF"
 	fi
 
-	cp -r $SRC/cmake-$version.src/Modules/* llvm-$version.src/cmake/modules/.
+	# ---- Source tree preparation ----
+
+	cp -r $SRC/cmake-$version.src/Modules/* \
+		llvm-$version.src/cmake/modules/.
 	mv $SRC/cmake-$version.src/ $SRC/cmake
 	mv $SRC/third-party-$version.src/ $SRC/third-party
 
+	# Normalize Python shebangs
 	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
 
+	# Apply install prefix fix
 	patch -Np2 -d llvm-$version.src -i $SRC/install-prefix.patch
 
-	cmake -S llvm-$version.src -B build -G Ninja        \
-		-D CMAKE_INSTALL_PREFIX=/usr                \
-		-D CMAKE_BUILD_TYPE=Release                 \
-		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"          \
-		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"      \
-		-D FFI_INCLUDE_DIR=/usr/include             \
-		-D LLVM_APPEND_VC_REV=OFF                   \
-		-D LLVM_BINUTILS_INCDIR=/usr/include        \
-		-D LLVM_BUILD_EXTERNAL_COMPILER_RT=ON       \
-		-D LLVM_BUILD_LLVM_DYLIB=ON                 \
-		-D LLVM_BUILD_RUNTIME=ON                    \
-		-D LLVM_BUILD_TOOLS=ON                      \
-		-D LLVM_ENABLE_FFI=ON                       \
-		-D LLVM_ENABLE_LIBCXX=OFF                   \
-		-D LLVM_ENABLE_OCAMLDOC=OFF                 \
-		-D LLVM_ENABLE_PIC=ON                       \
-		-D LLVM_ENABLE_RTTI=ON                      \
-		-D LLVM_ENABLE_ZLIB=ON                      \
-		-D LLVM_ENABLE_ZSTD=ON                      \
-		-D LLVM_INCLUDE_BENCHMARKS=OFF              \
-		-D LLVM_INCLUDE_EXAMPLES=OFF                \
-		-D LLVM_INCLUDE_TESTS=OFF                   \
-		-D LLVM_INSTALL_UTILS=ON                    \
-		-D LLVM_LINK_LLVM_DYLIB=ON                  \
-		-D LLVM_OPTIMIZED_TABLEGEN=ON               \
-		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}"  \
-		-D LLVM_UTILS_INSTALL_DIR=/usr/bin          \
-		-Wno-dev                                    \
+	# ---- Configure ----
+
+	cmake -S llvm-$version.src -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D FFI_INCLUDE_DIR=/usr/include \
+		-D LLVM_APPEND_VC_REV=OFF \
+		-D LLVM_BINUTILS_INCDIR=/usr/include \
+		-D LLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+		-D LLVM_BUILD_LLVM_DYLIB=ON \
+		-D LLVM_BUILD_RUNTIME=ON \
+		-D LLVM_BUILD_TOOLS=ON \
+		-D LLVM_ENABLE_FFI=ON \
+		-D LLVM_ENABLE_LIBCXX=OFF \
+		-D LLVM_ENABLE_OCAMLDOC=OFF \
+		-D LLVM_ENABLE_PIC=ON \
+		-D LLVM_ENABLE_RTTI=ON \
+		-D LLVM_ENABLE_ZLIB=ON \
+		-D LLVM_ENABLE_ZSTD=ON \
+		-D LLVM_INCLUDE_BENCHMARKS=OFF \
+		-D LLVM_INCLUDE_EXAMPLES=OFF \
+		-D LLVM_INCLUDE_TESTS=OFF \
+		-D LLVM_INSTALL_UTILS=ON \
+		-D LLVM_LINK_LLVM_DYLIB=ON \
+		-D LLVM_OPTIMIZED_TABLEGEN=ON \
+		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
+		-D LLVM_UTILS_INSTALL_DIR=/usr/bin \
+		-Wno-dev \
 		$PKGMK_LLVM
+
+	# ---- Build & install ----
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
-	# multilib stub
-	mv  $PKG/usr/include/llvm/Config/llvm-config.h \
-	    $PKG/usr/include/llvm/Config/llvm-config-64.h
+	# ---- Multilib header stub ----
+
+	mv $PKG/usr/include/llvm/Config/llvm-config.h \
+	   $PKG/usr/include/llvm/Config/llvm-config-64.h
+
 	install -m 0644 $SRC/llvm-config.h $PKG/usr/include/llvm/Config/
+
+	# ---- binutils gold plugin compatibility ----
 
 	mkdir -p $PKG/usr/lib/bfd-plugins
 	ln -s ../LLVMgold.so $PKG/usr/lib/bfd-plugins/
 	ln -s ../libLTO.so   $PKG/usr/lib/bfd-plugins/
 
+	# ---- lit (LLVM Integrated Tester) ----
+	# XXX: Packaging choice unresolved.
+	# lit is not needed to build LLVM (-D LLVM_INCLUDE_TESTS=OFF),
+	# but test correctness depends on version-matched LLVM tools.
+	# Splitting may cause test breakage.
 	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py build
 	/usr/bin/python3 llvm-$version.src/utils/lit/setup.py install \
 		--prefix=/usr --skip-build --root=$PKG
+
 	/usr/bin/python3     -m compileall -d llvm-$version.src/utils/lit $PKG
 	/usr/bin/python3 -O  -m compileall -d llvm-$version.src/utils/lit $PKG
 	/usr/bin/python3 -OO -m compileall -d llvm-$version.src/utils/lit $PKG
