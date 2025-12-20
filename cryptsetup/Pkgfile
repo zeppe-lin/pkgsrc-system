@@ -6,7 +6,7 @@
 #   --enable-asciidoc: Generate man pages, needs asciidoctor (enabled)
 
 name=cryptsetup
-version=2.8.2
+version=2.8.3
 release=1
 source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
 
@@ -22,6 +22,7 @@ build() {
 		--disable-ssh-token \
 		--enable-asciidoc \
 
+	# Ensure --as-needed is applied to shared linker invocations
 	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 	make V=1
