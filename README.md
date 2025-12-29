@@ -3,7 +3,7 @@ OVERVIEW
 
 This repository contains **system** pkgsrc collection: build scripts
 and files for the packages required for minimal installation on real
-hardware (e.g. boot loader, filesystem utilities, hw-monitors, etc)
+hardware (e.g., boot loader, filesystem utilities, hw-monitors, etc)
 and/or packages needed for servers.
 
 Packages in this collection must depend **only** on **core** pkgsrc
@@ -22,7 +22,7 @@ By default the `master` branch is empty.
 LICENSE
 =======
 
-pkgsrc-system is licensed through the GNU General Public License v3 or
-later <http://gnu.org/licenses/gpl.html>.
-Read the COPYING file for copying conditions.
-Read the COPYRIGHT file for copyright notices.
+`pkgsrc-system` is licensed through the
+[GNU General Public License v3 or later](http://gnu.org/licenses/gpl.html).
+
+See `COPYING` for license terms and `COPYRIGHT` for notices.
