@@ -2,18 +2,18 @@
 # URL:         https://www.tcpdump.org
 
 name=libpcap
-version=1.10.5
+version=1.10.6
 release=1
 source=https://www.tcpdump.org/release/$name-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--disable-dbus       \
-		--without-libnl      \
-		--enable-shared      \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-dbus \
+		--without-libnl \
+		--enable-shared \
 
 	make V=1
 	make DESTDIR=$PKG install install-shared
