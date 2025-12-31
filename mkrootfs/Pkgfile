@@ -6,7 +6,7 @@
 #   pkgman pkgmk revdep tar: runtime dependencies (already in pkgsrc-core)
 
 name=mkrootfs
-version=1.6-f88a398
+version=1.6-7ba643a
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	config"
