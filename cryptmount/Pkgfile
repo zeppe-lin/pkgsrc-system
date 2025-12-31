@@ -3,7 +3,7 @@
 # Depends on:  cryptsetup scdoc util-linux
 
 name=cryptmount
-version=0.4-c72415a
+version=0.4-e42c8b4
 release=1
 source="https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 	crypttab"
