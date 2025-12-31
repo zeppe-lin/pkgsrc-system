@@ -1,28 +1,36 @@
 # Description: GNU privacy guard
 # URL:         https://www.gnupg.org/
-# Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3
+# Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3 libgpg-error
+
+# Maintainer notes on dependencies:
+#   --disable-ldap: otherwise requires openldap (disabled)
+#   libgpg-error: ships yat2m, which is required to build man pages
 
 name=gnupg
-version=2.5.0
+version=2.5.16
 release=1
 source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
 build() {
 	mkdir build; cd build
 
-	# --disable-tests is omitted for gpgscm utility
-	../gnupg-$version/configure    \
-		--prefix=/usr          \
-		--libexecdir=/usr/lib  \
-		--localstatedir=/var   \
-		--sysconfdir=/etc      \
-		--disable-ldap         \
-		--disable-nls          \
-		#--disable-tests       \
+	# --disable-tests also disables gpgscm utility (f*ck it)
+	# Keep documentation support enabled; remove info/doc manually
+	# so man pages are built correctly.
+	../gnupg-$version/configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--localstatedir=/var \
+		--sysconfdir=/etc \
+		--disable-ldap \
+		--disable-nls \
+		--disable-tests \
+		--disable-rpath \
+		#--disable-doc \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	cd $PKG/usr/share; rm -r doc info gnupg/help*
 }

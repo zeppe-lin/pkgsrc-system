@@ -12,7 +12,6 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/gpg-wks-server
 -rwxr-xr-x	root/root	usr/bin/gpgconf
 -rwxr-xr-x	root/root	usr/bin/gpgparsemail
--rwxr-xr-x	root/root	usr/bin/gpgscm
 -rwxr-xr-x	root/root	usr/bin/gpgsm
 -rwxr-xr-x	root/root	usr/bin/gpgsplit
 -rwxr-xr-x	root/root	usr/bin/gpgtar
@@ -34,7 +33,10 @@ drwxr-xr-x	root/root	usr/sbin/
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/gnupg/
 -rw-r--r--	root/root	usr/share/gnupg/distsigkey.gpg
--rw-r--r--	root/root	usr/share/gnupg/sks-keyservers.netCA.pem
+-rw-r--r--	root/root	usr/share/gnupg/mail-tube.de.txt
+-rw-r--r--	root/root	usr/share/gnupg/mail-tube.txt
+-rw-r--r--	root/root	usr/share/gnupg/wks-utils.de.txt
+-rw-r--r--	root/root	usr/share/gnupg/wks-utils.txt
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/dirmngr-client.1.gz
