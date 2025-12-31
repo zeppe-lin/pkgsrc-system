@@ -2,7 +2,7 @@
 # URL:         https://juliastrings.github.io/utf8proc/
 
 name=utf8proc
-version=2.11.2
+version=2.11.3
 release=1
 source=https://github.com/JuliaStrings/$name/archive/v$version/$name-$version.tar.gz
 
@@ -20,5 +20,6 @@ build() {
 	sed -i 's,^\(Name: \)lib\(utf8proc\),\1\2,' \
 		$PKG/usr/lib/pkgconfig/utf8proc.pc
 
+	# Keep static (dunno why)
 	#rm $PKG/usr/lib/libutf8proc.a
 }
