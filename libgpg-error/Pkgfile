@@ -3,24 +3,28 @@
 
 name=libgpg-error
 version=1.58
-release=1
+release=2
 source=https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
 
 build() {
 	mkdir build; cd build
 
+	# Keep documentation support enabled to yat2m is built.
+	# yat2m converts Texinfo sources into man pages, which are
+	# required also for proper 'gnupg' man pages.
 	../$name-$version/configure \
 		--prefix=/usr \
-		--disable-doc \
 		--disable-languages \
 		--disable-nls \
 		--disable-tests \
 		--enable-install-gpg-error-config \
 		--disable-static \
+		#--disable-doc
 
 	make V=1
 	make DESTDIR=$PKG install
 
 	# Remove junk
+	rm -r $PKG/usr/share/info
 	rm $PKG/usr/lib/*.la
 }
