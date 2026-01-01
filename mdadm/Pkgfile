@@ -1,21 +1,25 @@
-# Description: Multiple device (RAID) admin tool
+# Description: Multiple device (RAID) administration tool
 # URL:         http://neil.brown.name/blog/mdadm
 # Depends on:  eudev
 
 name=mdadm
-version=4.4
+version=4.5
 release=1
 source="https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git/snapshot/mdadm-$version.tar.gz
-	mdadm-4.3-in_initrd-collision.patch"
+	mdadm-4.5-in_initrd-collision.patch"
 
 build() {
 	cd mdadm-$version
 
-	patch -Np1 -i $SRC/mdadm-4.3-in_initrd-collision.patch
+	# Avoid symbol collision with libudev when statically linking mdadm
+	# (rename internal in_initrd() helper)
+	patch -Np1 -i $SRC/mdadm-4.5-in_initrd-collision.patch
 
+	# Build shared binary
 	make CXFLAGS="$CFLAGS" STRIP=
 	make DESTDIR=$PKG install
 
+	# Build and install static binary
 	make CXFLAGS="$CFLAGS" STRIP= mdadm.static
-	install -m 0755 mdadm.static $PKG/sbin/
+	install -m 0755 -Dt $PKG/sbin mdadm.static
 }

@@ -1,0 +1,70 @@
+Fix collision with libudev symbols when statically linking.
+
+https://bugs.gentoo.org/830485
+
+diff '--color=auto' -pruN mdadm-4.5.orig/Grow.c mdadm-4.5/Grow.c
+--- mdadm-4.5.orig/Grow.c	2026-01-01 16:12:48.336300616 +0200
++++ mdadm-4.5/Grow.c	2026-01-01 16:14:49.072114238 +0200
+@@ -3509,7 +3509,7 @@ started:
+ 		sysfs_set_str(sra, NULL, "array_state", "active");
+ 
+ 	/* Do not run in initrd */
+-	if (in_initrd()) {
++	if (mdadm_in_initrd()) {
+ 		free(fdlist);
+ 		free(offsets);
+ 		sysfs_free(sra);
+@@ -3814,7 +3814,7 @@ int reshape_container(char *container, c
+ 		close(fd);
+ 
+ 		/* Do not run reshape in initrd but let it initialize.*/
+-		if (in_initrd()) {
++		if (mdadm_in_initrd()) {
+ 			sysfs_free(cc);
+ 			exit(0);
+ 		}
+diff '--color=auto' -pruN mdadm-4.5.orig/mdadm.h mdadm-4.5/mdadm.h
+--- mdadm-4.5.orig/mdadm.h	2026-01-01 16:12:48.339528498 +0200
++++ mdadm-4.5/mdadm.h	2026-01-01 16:13:27.507002299 +0200
+@@ -1752,7 +1752,7 @@ extern char *stat2devnm(struct stat *st)
+ bool stat_is_md_dev(struct stat *st);
+ extern char *fd2devnm(int fd);
+ 
+-extern int in_initrd(void);
++extern int mdadm_in_initrd(void);
+ 
+ struct cmap_hooks {
+ 	void *cmap_handle;      /* corosync lib related */
+diff '--color=auto' -pruN mdadm-4.5.orig/mdmon.c mdadm-4.5/mdmon.c
+--- mdadm-4.5.orig/mdmon.c	2026-01-01 16:12:48.339706051 +0200
++++ mdadm-4.5/mdmon.c	2026-01-01 16:13:52.068638265 +0200
+@@ -366,7 +366,7 @@ int main(int argc, char *argv[])
+ 		}
+ 	}
+ 
+-	if (in_initrd()) {
++	if (mdadm_in_initrd()) {
+ 		/*
+ 		 * set first char of argv[0] to @. This is used by
+ 		 * systemd to signal that the task was launched from
+diff '--color=auto' -pruN mdadm-4.5.orig/util.c mdadm-4.5/util.c
+--- mdadm-4.5.orig/util.c	2026-01-01 16:12:48.349423585 +0200
++++ mdadm-4.5/util.c	2026-01-01 16:14:25.055492383 +0200
+@@ -1974,7 +1974,7 @@ int start_mdmon(char *devnm)
+ 	int len;
+ 	pid_t pid;
+ 	int status;
+-	char *prefix = in_initrd() ? "initrd-" : "";
++	char *prefix = mdadm_in_initrd() ? "initrd-" : "";
+ 	char pathbuf[1024];
+ 	char *paths[4] = {
+ 		pathbuf,
+@@ -2339,7 +2339,7 @@ mdadm_status_t continue_via_systemd(char
+ 	return MDADM_STATUS_ERROR;
+ }
+ 
+-int in_initrd(void)
++int mdadm_in_initrd(void)
+ {
+ 	return access("/etc/initrd-release", F_OK) >= 0;
+ }
