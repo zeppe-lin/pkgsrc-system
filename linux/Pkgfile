@@ -1,8 +1,8 @@
-# Description: Linux kernel and modules (6.16 series)
+# Description: Linux kernel and modules (6.18 series)
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.16.12
+version=6.18.3
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
