@@ -3,9 +3,9 @@
 # Depends on:  gnutls libgcrypt util-linux
 
 name=ntfs-3g
-version=2022.10.3
-release=4
-source="https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz
+version=2022.10.3-d3ace19
+release=1
+source="https://github.com/tuxera/$name/archive/${version#*-}/$name-$version.tar.gz
 	fsck.ntfs
 	fsck.ntfs.8"
 
@@ -14,19 +14,21 @@ build() {
 
 	# $DESTDIR/lib must exist during install; the Makefile honors
 	# EPREFIX by moving to the desired location afterward.
-	install -d $PKG/lib
+	mkdir -p $PKG/lib
+
+	autoreconf -fiv ../$name-*
 
 	# --with-fuse=internal:
 	# see 124b7fca4745b3dd7d977e73ccf8cc46c1260927
-	../ntfs-3g_ntfsprogs-$version/configure  \
-		--prefix=/usr                    \
-		--disable-ldconfig               \
-		--enable-crypto                  \
-		--enable-extras                  \
-		--enable-ldscript                \
-		--enable-posix-acls              \
-		--enable-xattr-mappings          \
-		--with-fuse=internal             \
+	../$name-*/configure \
+		--prefix=/usr \
+		--disable-ldconfig \
+		--enable-crypto \
+		--enable-extras \
+		--enable-ldscript \
+		--enable-posix-acls \
+		--enable-xattr-mappings \
+		--with-fuse=internal \
 
 	make V=1
 	make DESTDIR=$PKG install
@@ -37,18 +39,18 @@ build() {
 	# ntfsfix is needed for our fsck.ntfs wrapper
 	mv $PKG/usr/bin/ntfsfix $PKG/sbin/
 
-	# there is no man1 utilities
+	# There is no man1 utilities
 	mv $PKG/usr/bin/* $PKG/usr/sbin/
 
-	install -m 0755 -D $SRC/fsck.ntfs   $PKG/sbin/fsck.ntfs
-	install -m 0644 -D $SRC/fsck.ntfs.8 $PKG/usr/share/man/man8/fsck.ntfs.8
+	install -m 0755 -Dt $PKG/sbin $SRC/fsck.ntfs
+	install -m 0644 -Dt $PKG/usr/share/man/man8 $SRC/fsck.ntfs.8
 
 	ln -sf ../../lib/$(readlink $PKG/lib/libntfs-3g.so) \
                 $PKG/usr/lib/libntfs-3g.so
 
-	# remove obsolete (uninstalled binary)
+	# Remove obsolete (uninstalled binary)
 	rm $PKG/usr/share/man/man8/ntfsfallocate.8
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/doc
 }
