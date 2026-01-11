@@ -1,12 +1,20 @@
-diff -Nur dhcpcd-7.0.0.orig/src/dhcpcd.conf dhcpcd-7.0.0/src/dhcpcd.conf
---- dhcpcd-7.0.0.orig/src/dhcpcd.conf	2018-01-01 05:17:56.000000000 -0600
-+++ dhcpcd-7.0.0/src/dhcpcd.conf	2018-01-02 04:15:43.026058268 -0600
-@@ -39,3 +39,8 @@
+diff '--color=auto' -pruN dhcpcd-10.3.0.orig/src/dhcpcd.conf dhcpcd-10.3.0/src/dhcpcd.conf
+--- dhcpcd-10.3.0.orig/src/dhcpcd.conf	2026-01-11 16:13:24.994339103 +0200
++++ dhcpcd-10.3.0/src/dhcpcd.conf	2026-01-11 16:31:44.806461285 +0200
+@@ -1,4 +1,6 @@
+-# A sample configuration for dhcpcd.
++#
++# /etc/dhcpcd/dhcpcd.conf: configuration for dhcpcd(8)
++#
+ # See dhcpcd.conf(5) for details.
+ 
+ # Allow users of this group to interact with dhcpcd via the control socket.
+@@ -41,3 +43,8 @@ require dhcp_server_identifier
  #slaac hwaddr
  # OR generate Stable Private IPv6 Addresses based from the DUID
  slaac private
 +
-+# We run wpa_supplicant from /etc/rc.d/wpa_supplicant and/or
-+# NetworkManager handles it on its own.
++# Prefer /etc/rc.d/wpa_supplicant service over dhcpcd hook
 +nohook wpa_supplicant
 +
++# End of file.
