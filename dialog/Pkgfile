@@ -3,7 +3,7 @@
 # Depends on:  ncurses
 
 name=dialog
-version=1.3-20251001
+version=1.3-20260107
 release=1
 source=https://invisible-mirror.net/archives/$name/$name-$version.tgz
 
@@ -19,6 +19,6 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm $PKG/usr/lib/libdialog.la
 }
