@@ -7,15 +7,11 @@
 # will be called when the PKCS#11 trust module is used to modify trust
 # anchors and related data.
 
-if [ $# -ne 0 ]; then
-	echo "usage: $0" >&2
-	exit 2
-fi
+set -e
 
-uid=$(id -u)
-if [ "$uid" != 0 ]; then
-        echo "trust: running as non-root user: skip extracting compat bundles" >&2
-        exit 0
+if [ "$(id -u)" -ne 0 ]; then
+	echo "$0: must be run as root" >&2
+	exit 1
 fi
 
 # Copy existing anchor modifications to /etc/ssl/local.

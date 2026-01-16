@@ -1,0 +1,28 @@
+UPDATE-CA-TRUST(8)
+
+# NAME
+
+update‐ca‐trust - update anchors and certificate stores on the system
+
+# SYNOPSIS
+
+*update‐ca‐trust*
+
+# DESCRIPTION
+
+*update-ca-trust* utility extracts local certificates from the anchor
+store and regenerates all certificate bundles on the system.
+
+This script acts as a wrapper for *make-ca*(8).
+It performs the following steps:
+
+. Execute _/usr/lib/make-ca/copy-trust-modifications_ to persist
+  local changes.
+. Execute _/usr/sbin/make-ca_ with the *-f* and *-g* flags to
+  unconditionally rebuild the trust stores.
+
+# SEE ALSO
+
+*make‐ca*(8)
+
+; vim: ft=scdoc cc=72 tw=70

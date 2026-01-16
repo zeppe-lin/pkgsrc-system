@@ -1,6 +1,8 @@
 #!/bin/sh -ex
 
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
 # Update trust stores.
-/usr/bin/update-ca-trust
+update-ca-trust
 
 # End of file.

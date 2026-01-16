@@ -5,7 +5,6 @@ drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/p11-kit
 -rwxr-xr-x	root/root	usr/bin/trust
-lrwxrwxrwx	root/root	usr/bin/update-ca-trust -> ../lib/p11-kit/trust-extract-compat
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/p11-kit-1/
 drwxr-xr-x	root/root	usr/include/p11-kit-1/p11-kit/
@@ -20,8 +19,8 @@ drwxr-xr-x	root/root	usr/include/p11-kit-1/p11-kit/
 -rw-r--r--	root/root	usr/include/p11-kit-1/p11-kit/version.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/libp11-kit.so -> libp11-kit.so.0
-lrwxrwxrwx	root/root	usr/lib/libp11-kit.so.0 -> libp11-kit.so.0.4.5
--rwxr-xr-x	root/root	usr/lib/libp11-kit.so.0.4.5
+lrwxrwxrwx	root/root	usr/lib/libp11-kit.so.0 -> libp11-kit.so.0.4.6
+-rwxr-xr-x	root/root	usr/lib/libp11-kit.so.0.4.6
 lrwxrwxrwx	root/root	usr/lib/p11-kit-proxy.so -> libp11-kit.so.0
 drwxr-xr-x	root/root	usr/lib/p11-kit/
 -rwxr-xr-x	root/root	usr/lib/p11-kit/p11-kit-remote
@@ -32,14 +31,16 @@ drwxr-xr-x	root/root	usr/lib/pkcs11/
 -rwxr-xr-x	root/root	usr/lib/pkcs11/p11-kit-trust.so
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/p11-kit-1.pc
+drwxr-xr-x	root/root	usr/sbin/
+lrwxrwxrwx	root/root	usr/sbin/update-ca-trust -> ../lib/p11-kit/trust-extract-compat
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/bash-completion/
 drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/p11-kit
 -rw-r--r--	root/root	usr/share/bash-completion/completions/trust
 drwxr-xr-x	root/root	usr/share/man/
-drwxr-xr-x	root/root	usr/share/man/man1/
--rw-r--r--	root/root	usr/share/man/man1/update-ca-trust.1.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/update-ca-trust.8.gz
 drwxr-xr-x	root/root	usr/share/p11-kit/
 drwxr-xr-x	root/root	usr/share/p11-kit/modules/
 -rw-r--r--	root/root	usr/share/p11-kit/modules/p11-kit-trust.module
