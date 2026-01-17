@@ -9,7 +9,8 @@ NOTES
 Subpixel Hinting Mode
 ---------------------
 
-You can set the TrueType interpreter version to control subpixel hinting:
+You can set the TrueType interpreter version to control subpixel
+hinting:
 
 * `truetype:interpreter-version=35`: Classic mode (default in 2.6).
 * `truetype:interpreter-version=38`: Infinality mode.

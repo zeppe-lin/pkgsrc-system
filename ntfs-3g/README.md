@@ -9,7 +9,7 @@ KERNEL CONFIGURATION
 Enable these options and recompile the kernel if needed:
 
     File systems  --->
-      <*/M> FUSE (Filesystem in Userspace) support    [CONFIG_FUSE_FS]
+      <*/M> FUSE (Filesystem in Userspace) support   [CONFIG_FUSE_FS]
 
 NTFS3
 =====
@@ -18,7 +18,7 @@ Linux kernel 5.15 introduced NTFS3, a faster NTFS read-write driver.
 To enable it, configure the kernel as follows:
 
     File systems  --->
-      <*/M> NTFS Read-Write file system support      [CONFIG_NTFS3_FS]
+      <*/M> NTFS Read-Write file system support     [CONFIG_NTFS3_FS]
 
 To ensure NTFS3 is used when mounting NTFS partitions, create a
 wrapper script, named `/usr/sbin/mount.ntfs`:

@@ -6,12 +6,12 @@ README iw
 KERNEL CONFIGURATION
 ====================
 
-Ensure the kernel has the necessary drivers and bus support.  For older
-laptops, enable:
+Ensure the kernel has the necessary drivers and bus support.
+For older laptops, enable:
 
     Device Drivers --->
-      <*/M> PCMCIA (CONFIG_PCCARD)
-      <*/M> CardBus host bridge (CONFIG_YENTA)
+      <*/M> PCMCIA                                    [CONFIG_PCCARD]
+      <*/M> CardBus host bridge                        [CONFIG_YENTA]
 
 For embedded cards, PCMCIA may also be required.
 
@@ -21,7 +21,8 @@ Wireless drivers are located under:
       Network Device Support --->
         Wireless LAN (non-hamradio)
 
-Some wireless cards need external drivers.  Check [user notes][1] for details.
+Some wireless cards need external drivers.
+Check [user notes][1] for details.
 
 
 REFERENCES

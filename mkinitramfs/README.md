@@ -6,17 +6,17 @@ README mkinitramfs
 KERNEL CONFIGURATION
 ====================
 
-For manual kernel setup, ensure these features are enabled (either statically
-or as modules):
+For manual kernel setup, ensure these features are enabled (either
+statically or as modules):
 
     General setup --->
-      [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
-          [CONFIG_BLK_DEV_INITRD=y]
+      [*] Initial RAM filesystem and RAM disk (initramfs/initrd)
+          support                             [CONFIG_BLK_DEV_INITRD]
 
     Device Drivers --->
       Generic Driver Options --->
         [*] Maintain a devtmpfs filesystem to mount at /dev
-            [CONFIG_DEVTMPFS=y]
+                                                    [CONFIG_DEVTMPFS]
 
 To use `mkinitramfs` with an encrypted root, also enable:
 
@@ -38,11 +38,13 @@ USAGE
 =====
 
 Edit `/etc/mkinitramfs/config` to match your needs.  See
-`mkinitramfs.config(5)` for details.  Then, generate the initramfs image:
+`mkinitramfs.config(5)` for details.  Then, generate the initramfs
+image:
 
     mkinitramfs -o "/boot/initramfs-$(uname -r).img"
 
-Update the bootloader configuration and specify the new initramfs image:
+Update the bootloader configuration and specify the new initramfs
+image:
 
     initrd /initramfs-${version}.img
 

@@ -6,10 +6,11 @@ README for cups 2.x.x
 REQUIREMENTS
 ============
 
-1. Since version 1.5, CUPS requires `libusb` for USB printing.  The `usblp`
-   kernel module is no longer supported.
+1. Since version 1.5, CUPS requires `libusb` for USB printing.
+   The `usblp` kernel module is no longer supported.
 
-   * The package installs `/etc/modprobe.d/cups.conf` to blacklist `usblp`.
+   * The package installs `/etc/modprobe.d/cups.conf` to blacklist
+     `usblp`.
 
 2. For additional printer drivers, install:
 
@@ -23,8 +24,8 @@ REQUIREMENTS
    * `gutenprint` (*optional*)
    * `hpcups` (*optional*)
 
-Most printers should work with this setup.  If a printer isn't supported,
-generate a PPD (Postscript Printer Description) file:
+Most printers should work with this setup.  If a printer isn't
+supported, generate a PPD (Postscript Printer Description) file:
 
 1. Select your printer from [Open Printing](https://openprinting.org/printers).
 2. Ensure the driver is included in `ghostscript`
@@ -40,14 +41,15 @@ KERNEL MODULE
 Notes on USB printers
 ---------------------
 
-CUPS uses the `usb` backend and does not require the kernel `usblp` module.  To
-avoid conflicts, this package installs a `modprobe.d` configuration that
-blacklists `usblp`:
+CUPS uses the `usb` backend and does not require the kernel `usblp`
+module.  To avoid conflicts, this package installs a `modprobe.d`
+configuration that blacklists `usblp`:
 
     /lib/modprobe.d/cups-blacklist-usblp.conf
 
-Administrators who prefer using the kernel `usblp` driver can override this by
-creating a file in `/etc/modprobe.d/` that removes the blacklist.
+Administrators who prefer using the kernel `usblp` driver can override
+this by creating a file in `/etc/modprobe.d/` that removes the
+blacklist.
 
 
 POST-INSTALL

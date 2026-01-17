@@ -6,8 +6,8 @@ README lighttpd
 POST-INSTALL
 ============
 
-`lighttpd` runs as a different user (`lighttpd`) by default for security
-reasons.  Do the following after installing the package:
+`lighttpd` runs as a different user (`lighttpd`) by default for
+security reasons.  Do the following after installing the package:
 
     sudo useradd -s /bin/false lighttpd
     sudo groupadd lighttpd
@@ -27,9 +27,8 @@ If you wish to enable SSL support, uncomment the relevant lines in
 CAUTION
 =======
 
-As of `lighttpd` 1.4.23 `spawn-fcgi` was removed and is now provided as a
-[separate project][1].
-
+As of `lighttpd` 1.4.23 `spawn-fcgi` was removed and is now provided
+as a [separate project][1].
 [1]: http://redmine.lighttpd.net/projects/spawn-fcgi
 
 

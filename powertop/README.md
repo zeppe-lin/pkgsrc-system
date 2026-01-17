@@ -29,8 +29,8 @@ Disable these:
     CONFIG_IRQBALANCE
     CONFIG_ACPI_DEBUG
 
-Not all options may be available on newer kernels, so `powertop` might not
-display some stats.
+Not all options may be available on newer kernels, so `powertop` might
+not display some stats.
 
 
 ---

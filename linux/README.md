@@ -9,9 +9,7 @@ PRE-INSTALL
 The current `pre-install` script removes old initramfs if mkinitramfs
 and linux packages are already installed.  The path is:
 
-```
-/boot/initramfs-$KERNEL_VERSION.img
-```
+    /boot/initramfs-$KERNEL_VERSION.img
 
 This is a preliminary step for `post-install` script, which will
 generate the new one.
