@@ -25,6 +25,7 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/grub-mkrelpath
 -rwxr-xr-x	root/root	usr/bin/grub-mkrescue
 -rwxr-xr-x	root/root	usr/bin/grub-mkstandalone
+-rwxr-xr-x	root/root	usr/bin/grub-protect
 -rwxr-xr-x	root/root	usr/bin/grub-render-label
 -rwxr-xr-x	root/root	usr/bin/grub-script-check
 -rwxr-xr-x	root/root	usr/bin/grub-syslinux2cfg
@@ -51,6 +52,14 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/aout.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/archelp.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/archelp.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/argon2.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/argon2.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/argon2_test.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/argon2_test.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/asn1.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/asn1.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/asn1_test.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/asn1_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/at_keyboard.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/at_keyboard.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/ata.mod
@@ -67,6 +76,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/bitmap_scale.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/blocklist.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/blocklist.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/blsuki.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/blsuki.module
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/boot.image
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/boot.img
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/boot.mod
@@ -97,8 +108,6 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/cdboot.img
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/chain.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/chain.module
--rw-r--r--	root/root	usr/lib/grub/i386-pc/cmdline_cat_test.mod
--rwxr-xr-x	root/root	usr/lib/grub/i386-pc/cmdline_cat_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/cmosdump.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/cmosdump.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/cmostest.mod
@@ -122,6 +131,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/crypto.lst
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/crypto.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/crypto.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/crypto_cipher_mode_test.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/crypto_cipher_mode_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/cryptodisk.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/cryptodisk.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/cs5536.mod
@@ -148,6 +159,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/dm_nv.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/drivemap.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/drivemap.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/dsa_sexp_test.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/dsa_sexp_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/echo.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/echo.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/efiemu.mod
@@ -156,6 +169,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/ehci.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/elf.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/elf.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/erofs.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/erofs.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/eval.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/eval.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/exfat.mod
@@ -184,6 +199,10 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/functional_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_arcfour.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_arcfour.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_aria.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_aria.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_blake2.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_blake2.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_blowfish.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_blowfish.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_camellia.mod
@@ -196,8 +215,18 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_des.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_dsa.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_dsa.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_gost28147.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_gost28147.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_gostr3411_94.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_gostr3411_94.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_hwfeatures.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_hwfeatures.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_idea.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_idea.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_kdf.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_kdf.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_keccak.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_keccak.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_md4.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_md4.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_md5.mod
@@ -210,6 +239,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_rmd160.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_rsa.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_rsa.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_salsa20.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_salsa20.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_seed.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_seed.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_serpent.mod
@@ -220,6 +251,12 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_sha256.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_sha512.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_sha512.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_sm3.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_sm3.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_sm4.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_sm4.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_stribog.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_stribog.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_tiger.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gcry_tiger.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gcry_twofish.mod
@@ -240,8 +277,6 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gfxterm.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gfxterm_background.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gfxterm_background.module
--rw-r--r--	root/root	usr/lib/grub/i386-pc/gfxterm_menu.mod
--rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gfxterm_menu.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gptsync.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/gptsync.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/gzio.mod
@@ -278,6 +313,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/json.module
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/kernel.exec
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/kernel.img
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/key_protector.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/key_protector.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/keylayouts.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/keylayouts.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/keystatus.mod
@@ -444,6 +481,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/procfs.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/progress.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/progress.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/pubkey.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/pubkey.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/pxe.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/pxe.module
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/pxeboot.image
@@ -470,6 +509,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/relocator.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/romfs.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/romfs.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/rsa_sexp_test.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/rsa_sexp_test.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/scsi.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/scsi.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/search.mod
@@ -608,6 +649,8 @@ drwxr-xr-x	root/root	usr/lib/grub/i386-pc/
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/zfsinfo.module
 -rw-r--r--	root/root	usr/lib/grub/i386-pc/zstd.mod
 -rwxr-xr-x	root/root	usr/lib/grub/i386-pc/zstd.module
+-rw-r--r--	root/root	usr/lib/grub/i386-pc/zstdio.mod
+-rwxr-xr-x	root/root	usr/lib/grub/i386-pc/zstdio.module
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/grub-bios-setup
 -rwxr-xr-x	root/root	usr/sbin/grub-install
@@ -622,6 +665,19 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/bash-completion/
 drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/grub
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-bios-setup
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-editenv
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-install
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-mkconfig
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-mkfont
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-mkimage
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-mkpasswd-pbkdf2
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-mkrescue
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-probe
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-reboot
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-script-check
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-set-default
+-rw-r--r--	root/root	usr/share/bash-completion/completions/grub-sparc64-setup
 drwxr-xr-x	root/root	usr/share/grub/
 -rw-r--r--	root/root	usr/share/grub/grub-mkconfig_lib
 lrwxrwxrwx	root/root	usr/share/grub/unicode.pf2 -> /usr/lib/grub/fonts/unifont.pf2

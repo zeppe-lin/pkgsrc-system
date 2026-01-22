@@ -3,38 +3,36 @@
 # Depends on:  freetype libdevmapper python3
 
 name=grub2
-version=2.12
+version=2.14
 release=1
 source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
 	http://jaeger.morpheus.net/linux/crux/files/unifont-9.0.06.pcf.gz
 	grub2-tweaks.patch
-	csum_seed.patch
 	extra_deps.lst"
 
 build() {
 	patch -p1 -d grub-$version -i $SRC/grub2-tweaks.patch
-	#patch -p1 -d grub-$version -i $SRC/csum_seed.patch
 
 	export CFLAGS="$CFLAGS -Wno-error"
 	export PYTHON=python3
 
-	cp $SRC/extra_deps.lst grub-$version/grub-core/
-
 	mkdir build; cd build
 
-	../grub-$version/configure      \
-		--prefix=/usr           \
-		--sysconfdir=/etc       \
-		--enable-device-mapper  \
-		--disable-efiemu        \
-		--disable-grub-mount    \
-		--disable-nls           \
+	cp $SRC/extra_deps.lst .
+
+	../grub-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--enable-device-mapper \
+		--disable-efiemu \
+		--disable-grub-mount \
+		--disable-nls \
 
 	_BASHCOMPDIR=/usr/share/bash-completion/completions
 	make V=1
 	make DESTDIR=$PKG bashcompletiondir=$_BASHCOMPDIR install
 
-	# install unifont
+	# Install unifont
 	install -d $PKG/usr/lib/grub/fonts
 	gzip -d $SRC/unifont-9.0.06.pcf.gz
 	./grub-mkfont -o $PKG/usr/lib/grub/fonts/unifont.pf2 \
@@ -42,6 +40,6 @@ build() {
 	ln -s /usr/lib/grub/fonts/unifont.pf2 \
 		$PKG/usr/share/grub/unicode.pf2
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/info
 }
