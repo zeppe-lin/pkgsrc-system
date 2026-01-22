@@ -3,19 +3,14 @@
 # Depends on:  grub2 efibootmgr
 
 name=grub2-efi
-version=2.12
+version=2.14
 release=1
 source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
-	../grub2/extra_deps.lst
-	../grub2/csum_seed.patch"
+	../grub2/extra_deps.lst"
 
 build() {
-	#patch -Np1 -d grub-$version -i $SRC/csum_seed.patch
-
 	export CFLAGS="$CFLAGS -Wno-error"
 	export PYTHON=python3
-
-	cp $SRC/extra_deps.lst grub-$version/grub-core/
 
 	MODLIST="
 	boot chain configfile fat ext2 linux normal ntfs part_gpt
@@ -26,12 +21,14 @@ build() {
 		mkdir build-$ARCH
 		cd build-$ARCH
 
-		../grub-$version/configure   \
-			--prefix=/usr        \
-			--with-platform=efi  \
-			--target=$ARCH       \
-			--program-prefix=""  \
-			--disable-nls        \
+		cp $SRC/extra_deps.lst .
+
+		../grub-$version/configure \
+			--prefix=/usr \
+			--with-platform=efi \
+			--target=$ARCH \
+			--program-prefix="" \
+			--disable-nls \
 
 		make V=1
 		make DESTDIR=$PKG install
@@ -43,6 +40,6 @@ build() {
 		cd ../..
 	done
 
-	# conflicts with grub2 package
+	# Conflicts with grub2 package
 	cd $PKG/usr; rm -r bin etc sbin share
 }
