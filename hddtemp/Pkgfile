@@ -2,8 +2,8 @@
 # URL:         https://github.com/vitlav/hddtemp
 
 name=hddtemp
-version=0.4.3-6740688
-release=3
+version=0.4.3-2ad34a1
+release=1
 source="https://github.com/vitlav/$name/archive/${version#*-}/$name-$version.tar.gz
 	rc.$name"
 
@@ -12,7 +12,7 @@ build() {
 
 	CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
 
-	autoreconf -fi ../$name-*
+	autoreconf -fiv ../$name-*
 	../$name-*/configure \
 		--prefix=/usr \
 		--disable-nls \
