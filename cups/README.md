@@ -7,13 +7,8 @@ REQUIREMENTS
 ============
 
 1. Since version 1.5, CUPS requires `libusb` for USB printing.
-   The `usblp` kernel module is no longer supported.
-
-   * The package installs `/etc/modprobe.d/cups.conf` to blacklist
-     `usblp`.
 
 2. For additional printer drivers, install:
-
    * `gutenprint` (formerly `gimp-print`)
    * `hpcups` (for HP DeskJet/LaserJet)
 
@@ -41,8 +36,11 @@ KERNEL MODULE
 Notes on USB printers
 ---------------------
 
-CUPS uses the `usb` backend and does not require the kernel `usblp`
-module.  To avoid conflicts, this package installs a `modprobe.d`
+Since version 1.5, CUPS uses the `usb` backend (`libusb`) and does not
+require the kernel `usblp` module.  If `usblp` is loaded, it may claim
+the USB printer device and prevent CUPS from accessing it.
+
+To avoid this conflict, this package installs a `modprobe.d`
 configuration that blacklists `usblp`:
 
     /lib/modprobe.d/cups-blacklist-usblp.conf
