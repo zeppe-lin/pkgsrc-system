@@ -1,0 +1,24 @@
+# Description: Parallel implementation of gzip
+# URL:         https://zlib.net/pigz/
+# Depends on:  which zlib
+
+name=pigz
+version=2.8
+release=1
+source="https://zlib.net/pigz/pigz-$version.tar.gz
+	allow-flags.patch
+	manpage.patch"
+
+build() {
+	patch -d pigz-$version -p1 -i $SRC/allow-flags.patch
+	patch -d pigz-$version -p1 -i $SRC/manpage.patch
+
+	make -C pigz-$version CC=${CC:-cc} pigz
+
+	for i in pigz unpigz; do
+		install -m 0755 -Dt $PKG/usr/bin pigz-$version/$i
+	done
+
+	install -m 0644 -Dt $PKG/usr/share/man/man1 pigz-$version/pigz.1
+	echo ".so man1/pigz.1" > $PKG/usr/share/man/man1/unpigz.1
+}
