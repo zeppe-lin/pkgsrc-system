@@ -14,7 +14,7 @@ OPTS="--foreground --port 9091 --logfile $LOG"
 
 case $1 in
 start)
-	[ ! -f $LOG ] && touch $LOG
+	[ -f $LOG ] || touch $LOG
 	$SSD --start --make-pidfile --pidfile $PID --chuid $USER \
 		--background --exec $PROG -O $LOG -- $OPTS
 	;;
@@ -26,16 +26,10 @@ restart)
 	$0 start
 	;;
 status)
-	$SSD --status --pidfile $PID
-	case $? in
-	0) echo "$PROG is running with pid $(cat $PID)" ;;
-	1) echo "$PROG is not running but the pid file $PID exists" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine the program status" ;;
-	esac
+	$SSD --status --verbose --pidfile $PID --exec $PROG
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 [start|stop|restart|status]"
 	;;
 esac	
 
