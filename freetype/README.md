@@ -1,7 +1,6 @@
-README freetype
+README for freetype
 
 ---
-
 
 NOTES
 =====
@@ -21,16 +20,18 @@ See the [FreeType documentation][1] for details.
 
 To apply your settings, edit `/etc/profile`:
 
-    export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+```sh
+export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+```
 
 Log out and back in to see the changes.
 
+---
 
 REFERENCES
 ==========
 
 [1]: https://freetype.org/freetype2/docs/documentation.html
-
 
 ---
 

@@ -1,7 +1,6 @@
-README grub2
+README for grub2
 
 ---
-
 
 POST-INSTALL
 ============
@@ -82,6 +81,7 @@ The configuration file can also be created manually.  A sample
 pkgman cat grub2 grub.cfg.sample
 ```
 
+---
 
 REFERENCES
 ==========
@@ -90,7 +90,6 @@ REFERENCES
   https://www.gnu.org/software/grub/manual/grub/grub.html
 
 [1]: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
-
 
 ---
 

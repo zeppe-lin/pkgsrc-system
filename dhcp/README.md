@@ -1,18 +1,21 @@
-README dhcp
+README for dhcp
 
 ---
 
+REQUIREMENTS
+============
 
-KERNEL CONFIGURATION
-====================
+Kernel Configuration
+--------------------
 
 You must have Packet Socket support.  IPv6 support is optional.
 
-    [*] Networking Support --->                          [CONFIG_NET]
-          Networking options --->
-            <*> Packet socket                         [CONFIG_PACKET]
-            <*> The IPv6 Protocol --->                  [CONFIG_IPV6]
-
+```
+[*] Networking Support --->                              [CONFIG_NET]
+      Networking options --->
+        <*> Packet socket                             [CONFIG_PACKET]
+        <*> The IPv6 Protocol --->                      [CONFIG_IPV6]
+```
 
 ---
 

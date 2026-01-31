@@ -1,19 +1,22 @@
-README alsa-lib
+README for alsa-lib
 
 ---
 
+REQUIREMENTS
+============
 
-KERNEL CONFIGURATION
-====================
+Kernel Configuration
+--------------------
 
-Enable these options if needed and recompile the kernel:
+Enable these options and recompile the kernel if needed:
 
-    Device Drivers --->
-      <*/M> Sound card support --->                    [CONFIG_SOUND]
-        <*/M> Advanced Linux Sound Architecture --->     [CONFIG_SND]
+```
+Device Drivers --->
+  <*/M> Sound card support --->                        [CONFIG_SOUND]
+    <*/M> Advanced Linux Sound Architecture --->         [CONFIG_SND]
+```
 
 Select settings and drivers based on your hardware.
-
 
 ---
 

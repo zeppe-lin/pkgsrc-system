@@ -1,7 +1,6 @@
-README for cups 2.x.x
+README for cups
 
 ---
-
 
 REQUIREMENTS
 ============
@@ -41,22 +40,26 @@ the USB printer device and prevent CUPS from accessing it.
 To avoid this conflict, this package installs a `modprobe.d`
 configuration that blacklists `usblp`:
 
-    /lib/modprobe.d/cups-blacklist-usblp.conf
+```
+/lib/modprobe.d/cups-blacklist-usblp.conf
+```
 
 Administrators who prefer using the kernel `usblp` driver can shadow
 the package's setting by creating:
 
-    /etc/modprobe.d/cups-blacklist-usblp.conf
+```
+/etc/modprobe.d/cups-blacklist-usblp.conf
+```
 
 Files in `/etc/modprobe.d/` override those in `/lib/modprobe.d/`.
 
+---
 
 POST-INSTALL
 ============
 
 1. Remove the `usblp` kernel module before starting CUPS.
 2. Configure your printer with the [web-interface](http://localhost:631).
-
 
 ---
 

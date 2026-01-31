@@ -1,7 +1,6 @@
-README openvpn
+README for openvpn
 
 ---
-
 
 REQUIREMENTS
 ============
@@ -31,7 +30,6 @@ The module will be loaded at boot.
   `/dev/null`.
 
 Legacy `/etc/rc.modules` still works if you prefer manual loading.
-
 
 ---
 

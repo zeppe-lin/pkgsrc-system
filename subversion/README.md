@@ -1,7 +1,6 @@
-README subversion
+README for subversion
 
 ---
-
 
 NOTES
 =====
@@ -19,6 +18,7 @@ this package (solutions to this are already planned).
 If you want Python Bindings, install SWIG and comment out the few
 lines in the `build()` function
 
+---
 
 PRE-INSTALL (SERVER)
 ====================
@@ -26,6 +26,7 @@ PRE-INSTALL (SERVER)
 Make sure you install `expat` before you install `apache`; also, note
 that you'll get a footprint mismatch.
 
+---
 
 POST-INSTALL (SERVER)
 =====================
@@ -52,7 +53,6 @@ LoadModule dav_svn_module     lib/apache/mod_dav_svn.so
     </LimitExcept>
 </Location>
 ```
-
 
 ---
 
