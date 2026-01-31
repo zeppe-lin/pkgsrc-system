@@ -3,25 +3,34 @@ README openvpn
 ---
 
 
-KERNEL CONFIGURATION
-====================
+REQUIREMENTS
+============
+
+Kernel Configuration
+--------------------
 
 Enable **Universal TUN/TAP device driver support** in your kernel:
 
-    Device Drivers  --->
-      [*] Network device support  --->
-        [*] Network core driver support
-        <*> Universal TUN/TAP device driver support      [CONFIG_TUN]
+```
+Device Drivers  --->
+  [*] Network device support  --->
+    [*] Network core driver support
+    <*> Universal TUN/TAP device driver support      [CONFIG_TUN]
+```
 
+Kernel Module
+-------------
 
-KERNEL MODULE
-=============
+This package needs the **tun** kernel module.
 
-If the device driver is compiled as a loadable module, autoload it by
-adding this to `/etc/rc.modules`:
+It provides `/lib/modules-load.d/openvpn.conf` for `modules-load(8)`.
+The module will be loaded at boot.
 
-    # Universal TUN/TAP device driver.
-    /sbin/modprobe tun
+- To override: copy to `/etc/modules-load.d/` and edit.
+- To disable: symlink `/etc/modules-load.d/openvpn.conf` to
+  `/dev/null`.
+
+Legacy `/etc/rc.modules` still works if you prefer manual loading.
 
 
 ---
