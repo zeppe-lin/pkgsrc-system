@@ -1,18 +1,41 @@
-README cpufrequtils
+README for cpufrequtils
 
 ---
 
+REQUIREMENTS
+============
 
-KERNEL MODULE
-=============
+Kernel Module
+-------------
 
-To autoload modules needed by `cpufrequtils`, add the following to
-`/etc/rc.modules`:
+`cpufrequtils` interacts with CPU scaling drivers and governors.
+Which modules are needed depends on your hardware and policy.
 
-    # CPUfreq policy governors.
-    /sbin/modprobe cpufreq_powersave
-    /sbin/modprobe cpufreq_userspace
+Examples:
+- Driver: `acpi-cpufreq` (AMD/Intel), `intel_pstate` (modern Intel)
+- Governors: `cpufreq_ondemand`, `cpufreq_powersave`, `schedutil`
 
+To auto‑load a governor, create a file such as:
+
+```
+/etc/modules-load.d/cpufreq.conf
+```
+
+with:
+
+```
+cpufreq_ondemand
+```
+
+The package does not install a default config, since requirements vary
+by machine.
+
+---
+
+REFERENCES
+==========
+
+- [CPU Performance Scaling - The Linux Kernel documentation](https://www.kernel.org/doc/html/v5.1/admin-guide/pm/cpufreq.html#cpu-performance-scaling)
 
 ---
 
