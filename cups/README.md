@@ -6,35 +6,33 @@ README for cups 2.x.x
 REQUIREMENTS
 ============
 
-1. Since version 1.5, CUPS requires `libusb` for USB printing.
+1. **USB support**
+   Since version 1.5, CUPS requires `libusb` for USB printing.
 
-2. For additional printer drivers, install:
-   * `gutenprint` (formerly `gimp-print`)
-   * `hpcups` (for HP DeskJet/LaserJet)
+2. **Additional printer drivers**
+   - `gutenprint` (formerly *gimp-print*)
+   - `hpcups` (for HP DeskJet / LaserJet)
 
-3. Build and install in the following order:
-   * `cups`
-   * `ghostscript`
-   * `cups-filters`
-   * `gutenprint` (*optional*)
-   * `hpcups` (*optional*)
+3. **Build and install order**
+   - `cups`
+   - `ghostscript`
+   - `cups-filters`
+   - `gutenprint` (optional)
+   - `hpcups` (optional)
 
-Most printers should work with this setup.  If a printer isn't
-supported, generate a PPD (Postscript Printer Description) file:
+Most printers should work with this setup.
+If a printer is not supported, generate a
+**PPD (Postscript Printer Description)** file:
 
-1. Select your printer from [Open Printing](https://openprinting.org/printers).
-2. Ensure the driver is included in `ghostscript`
-   (`gs -h` lists available drivers).
-3. Download the PPD file for your printer.
-4. Save the PPD file to `/usr/share/cups/model/<name>`.
-5. Restart CUPS with `/etc/rc.d/cups restart`.
+- Select your printer from [Open Printing](https://openprinting.org/printers).
+- Ensure the driver is included in `ghostscript`
+  (`gs -h` lists available drivers).
+- Download the PPD file for your printer.
+- Save the PPD file to `/usr/share/cups/model/<name>`.
+- Restart CUPS with `/etc/rc.d/cups restart`.
 
-
-KERNEL MODULE
-=============
-
-Notes on USB printers
----------------------
+USB Kernel Module
+-----------------
 
 Since version 1.5, CUPS uses the `usb` backend (`libusb`) and does not
 require the kernel `usblp` module.  If `usblp` is loaded, it may claim
@@ -45,9 +43,12 @@ configuration that blacklists `usblp`:
 
     /lib/modprobe.d/cups-blacklist-usblp.conf
 
-Administrators who prefer using the kernel `usblp` driver can override
-this by creating a file in `/etc/modprobe.d/` that removes the
-blacklist.
+Administrators who prefer using the kernel `usblp` driver can shadow
+the package's setting by creating:
+
+    /etc/modprobe.d/cups-blacklist-usblp.conf
+
+Files in `/etc/modprobe.d/` override those in `/lib/modprobe.d/`.
 
 
 POST-INSTALL
