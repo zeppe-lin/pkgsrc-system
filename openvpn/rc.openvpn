@@ -3,49 +3,42 @@
 # /etc/rc.d/openvpn: start/stop openvpn(8) daemon
 #
 
-# Require a config name to be specified.
+# Require a config name
 if [ -z "$2" ]; then
-	echo "Usage: $0 [start|stop|restart] <config-name>"
+	echo "Usage: $0 {start|stop|restart|status} <config-name>" >&2
 	exit 1
 fi
 
-PID=/run/openvpn.$2.pid
-CONF=/etc/openvpn/$2.conf
-OPTS="--fast-io"
-
-# Check for the existence of the specified config.
-if [ ! -f "$CONF" ]; then
-	echo "Can't find config file $CONF! Exiting."
+# Config must exist
+if [ ! -f "/etc/openvpn/$2.conf" ]; then
+	echo "Config file not found: /etc/openvpn/$2.conf" >&2
 	exit 2
 fi
 
+# Paths and options
+SSD=/sbin/start-stop-daemon
+PROG=/usr/sbin/openvpn
+PID=/run/openvpn.$2.pid
+CONF=/etc/openvpn/$2.conf
+OPTS="--fast-io --config $CONF --writepid $PID --daemon ovpn-$2"
+
 case $1 in
 start)
-	if [ -f "$PID" ]; then
-		echo "VPN '$2' appears to be running already."
-		echo "If not, remove the stale pid file '$PID'. Exiting."
-		exit 3
-	fi
-	echo "Starting VPN '$2'..."
-	/usr/sbin/openvpn --config "$CONF" --writepid "$PID" \
-		--daemon "ovpn-$2" $OPTS
+	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
-	if [ ! -f "$PID" ]; then
-		echo "VPN '$2' doesn't appear to be running. Exiting."
-		exit 4
-	fi
-	echo "Stopping VPN '$2'..."
-	kill "$(cat "$PID")"
-	rm -f "$PID"
+	$SSD --stop --pidfile $PID --remove-pidfile \
+		--retry=TERM/30/KILL/5
 	;;
 restart)
 	$0 stop "$2"
-	sleep 2
 	$0 start "$2"
 	;;
+status)
+	$SSD --status --verbose --pidfile $PID --exec $PROG
+	;;
 *)
-	echo "Usage: $0 [start|stop|restart] <config-name>"
+	echo "Usage: $0 {start|stop|restart|status} <config-name>"
 	;;
 esac
 

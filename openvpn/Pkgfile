@@ -4,7 +4,7 @@
 
 name=openvpn
 version=2.6.17
-release=2
+release=3
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	manpage.patch
 	modules-load.openvpn
