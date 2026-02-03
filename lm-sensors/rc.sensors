@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# /etc/rc.d/sensors: apply hardware sensors limits
+#
+# See sensors(1) for more information.
+#
+
+PROG=/usr/bin/sensors
+OPTS="-s"
+
+case $1 in
+start)
+	$PROG $OPTS && echo initialized
+	;;
+stop)
+	# one-shot, nothing to stop
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	echo "$PROG is one-shot; check system log for last run"
+	;;
+*)
+	echo "Usage: $0 {start|stop|restart|status}"
+	;;
+esac
+
+# End of file.

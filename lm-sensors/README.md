@@ -30,4 +30,20 @@ Device Drivers  --->
 
 ---
 
+CONFIGURATION
+=============
+
+Run `sensors-detect` to probe hardware and generate configuration.
+It will suggest kernel modules and write
+`/etc/modprobe.d/sensors.conf` (if required) and
+`/etc/modules-load.d/sensors.conf`.
+
+To apply sensor limits at boot, add `sensors` to the `SERVICES` line
+in `/etc/rc.conf`.
+If you prefer not to use `modules-load.d` or `/etc/rc.d/sensors`,
+add the suggested `modprobe` lines and `sensors -s` call to
+`/etc/rc.local`.
+
+---
+
 End of file.

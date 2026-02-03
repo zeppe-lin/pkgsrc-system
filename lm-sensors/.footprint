@@ -1,4 +1,6 @@
 drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/sensors
 drwxr-xr-x	root/root	etc/sensors.d/
 -rw-r--r--	root/root	etc/sensors3.conf
 drwxr-xr-x	root/root	usr/
