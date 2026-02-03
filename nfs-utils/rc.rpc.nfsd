@@ -5,6 +5,9 @@
 # See rpc.nfsd(8) for more information.
 #
 
+# Number of NFS server threads
+NPROC=8
+
 SSD=/sbin/start-stop-daemon
 PROG=/usr/sbin/rpc.nfsd
 NAME="nfsd"
@@ -12,7 +15,7 @@ OPTS="--syslog"
 
 case $1 in
 start)
-	$SSD --start --exec $PROG -- $OPTS 8
+	$SSD --start --exec $PROG -- $OPTS $NPROC
 	;;
 stop)
 	$SSD --start --exec $PROG -- $OPTS 0
@@ -22,15 +25,10 @@ restart)
 	$0 start
 	;;
 status)
-	$SSD --status --name $NAME
-	case $? in
-	0) echo "$PROG is running with pid $(pgrep -o -x nfsd[4]?)" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine the program status" ;;
-	esac
+	$SSD --status --verbose --name $NAME
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 

@@ -10,10 +10,10 @@ start)
 	/bin/mount -t rpc_pipefs rpc_pipefs $PIPEFS
 	/usr/sbin/sm-notify
 	/etc/rc.d/rpc.idmapd start
-	/etc/rc.d/rpc.statd start
+	/etc/rc.d/rpc.statd  start
 	;;
 stop)
-	/etc/rc.d/rpc.statd stop
+	/etc/rc.d/rpc.statd  stop
 	/etc/rc.d/rpc.idmapd stop
 	/bin/umount $PIPEFS
 	;;
@@ -23,10 +23,10 @@ restart)
 	;;
 status)
 	/etc/rc.d/rpc.idmapd status
-	/etc/rc.d/rpc.statd status
+	/etc/rc.d/rpc.statd  status
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/nfsserver: start/stop nfs server
+# /etc/rc.d/nfsserver: start/stop NFS server daemons
 #
 
 NFSD=/proc/fs/nfsd
@@ -9,6 +9,7 @@ case $1 in
 start)
 	/bin/mount -t nfsd nfsd $NFSD
 	/usr/sbin/exportfs -a
+	/etc/rc.d/fsidd      start
 	/etc/rc.d/rpc.mountd start
 	/etc/rc.d/rpc.nfsd   start
 	/usr/sbin/sm-notify
@@ -19,6 +20,7 @@ stop)
 	/etc/rc.d/rpc.mountd stop
 	/usr/sbin/exportfs -au
 	/etc/rc.d/nfsdcld    stop
+	/etc/rc.d/fsidd      stop
 	/bin/umount $NFSD
 	;;
 restart)
@@ -26,12 +28,13 @@ restart)
 	$0 start
 	;;
 status)
+	/etc/rc.d/fsidd      status
 	/etc/rc.d/rpc.mountd status
 	/etc/rc.d/rpc.nfsd   status
 	/etc/rc.d/nfsdcld    status
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 

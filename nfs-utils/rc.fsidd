@@ -1,13 +1,12 @@
 #!/bin/sh
 #
-# /etc/rc.d/rpc.mountd: start/stop NFS mount daemon
-#
-# See rpc.mountd(8) for more information.
+# /etc/rc.d/fsidd: start/stop File System ID daemon
 #
 
 SSD=/sbin/start-stop-daemon
-PROG=/usr/sbin/rpc.mountd
-PID=/run/rpc.mountd.pid
+PROG=/usr/sbin/fsidd
+NAME=fsidd
+PID=/run/fsidd.pid
 OPTS="--foreground"
 
 case $1 in
@@ -16,14 +15,14 @@ start)
 		--exec $PROG -- $OPTS
 	;;
 stop)
-	$SSD --stop --remove-pidfile --pidfile $PID --retry 10
+	$SSD --stop --remove-pidfile --pidfile $PID --retry=10
 	;;
 restart)
 	$0 stop
 	$0 start
 	;;
 status)
-	$SSD --status --verbose --pidfile $PID --exec $PROG
+	$SSD --status --verbose --pidfile $PID --name $NAME
 	;;
 *)
 	echo "Usage: $0 {start|stop|restart|status}"

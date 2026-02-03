@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/nfs: start/stop nfs client
+# /etc/rc.d/nfs: start/stop NFS client mounts
 #
 
 case $1 in
@@ -16,13 +16,13 @@ restart)
 	;;
 status)
 	if [ -n "$(/bin/findmnt -t nfs,nfs4)" ]; then
-		echo "nfs(4) is mounted"
+		echo 'NFS mounts are active'
 	else
-		echo "nfs(4) is not mounted"
+		echo 'no NFS mounts active'
 	fi
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 
