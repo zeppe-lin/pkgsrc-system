@@ -169,6 +169,7 @@ drwxr-xr-x	root/root	usr/share/pandoc/data/templates/
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/default.vimdoc
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/default.xwiki
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/default.zimwiki
+-rw-r--r--	root/root	usr/share/pandoc/data/templates/document-metadata.latex
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/font-settings.latex
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/fonts.latex
 -rw-r--r--	root/root	usr/share/pandoc/data/templates/hypersetup.latex
