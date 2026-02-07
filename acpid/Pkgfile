@@ -3,7 +3,7 @@
 
 name=acpid
 version=2.0.34
-release=1
+release=2
 source="https://sourceforge.net/projects/acpid2/files/acpid-$version.tar.xz
 	acpi_handler.sh
 	default
@@ -12,9 +12,9 @@ source="https://sourceforge.net/projects/acpid2/files/acpid-$version.tar.xz
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--sysconfdir=/etc    \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
 
 	make V=1
 	make DESTDIR=$PKG install
@@ -23,6 +23,6 @@ build() {
 	install -m 0644 -D $SRC/default         $PKG/etc/acpi/events/default
 	install -m 0755 -D $SRC/rc.acpid        $PKG/etc/rc.d/acpid
 
-	# remove junk
+	# Remove junk
 	rm -rf $PKG/usr/share/doc
 }
