@@ -3,12 +3,22 @@
 # /etc/rc.d/alsa: store/restore ALSA mixer levels
 #
 
+PROG=/usr/sbin/alsactl
+STATE=/var/lib/alsa/asound.state
+
 case $1 in
 start)
-	/usr/sbin/alsactl restore
+	# Restore mixer levels; if no state exists, initialize one
+	if [ -f "$STATE" ]; then
+		$PROG restore
+	else
+		$PROG store
+		$PROG restore
+	fi
 	;;
 stop)
-	/usr/sbin/alsactl store
+	# Save current mixer levels to state file
+	$PROG store
 	;;
 restart)
 	$0 stop
@@ -16,10 +26,15 @@ restart)
 	$0 start
 	;;
 status)
-	echo "Status unavailable"
+	# Report whether a state file exists and its timestamp
+	if [ -f "$STATE" ]; then
+		echo "ALSA state file present ($STATE), updated $(date -r "$STATE" '+%F %T')"
+	else
+		echo "No ALSA state file found"
+	fi
 	;;
 *)
-	echo "Usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 
