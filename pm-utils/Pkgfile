@@ -9,22 +9,22 @@ source="https://pm-utils.freedesktop.org/releases/$name-$version.tar.gz
 	*.patch"
 
 build() {
-	# apply debian patches
+	# Apply debian patches
 	for f in $SRC/*.patch; do
 		patch -d $name-$version -p1 -i "$f"
 	done
 
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--sysconfdir=/etc    \
-		--disable-doc        \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--disable-doc \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# man pages and symlinks
+	# Install manual pages and symlinks
 	install -m 0644 ../$name-$version/man/*.1 \
 		$PKG/usr/share/man/man1
 	install -m 0644 ../$name-$version/man/*.8 \
@@ -33,9 +33,9 @@ build() {
 		ln -s pm-action.8.gz $PKG/usr/share/man/man8/$f.8.gz
 	done
 
-	# install video quirks
+	# Install video quirks
 	mv $SRC/video-quirks $PKG/usr/lib/pm-utils/
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/doc
 }
