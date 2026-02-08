@@ -25,7 +25,7 @@ Load manually:
 Load automatically at boot:
 
 - Add module names to `/etc/modules-load.d/*.conf` (one per line), or
-- Add `/sbin/modprobe <module>` lines to `/etc/rc.modules`
+- Add `/sbin/modprobe <module>` lines to `/etc/rc.modules`.
 
 This package does not install a default config; administrators should
 add modules as needed by their hardware or usage.
