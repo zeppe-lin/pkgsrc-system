@@ -30,15 +30,10 @@ offline)
 EOF
 	;;
 status)
-	$SSD --status --exec $PROG
-	case $? in
-	0)   echo "$PROG is running with pid $(pidof $PROG)" ;;
-	1|3) echo "$PROG is not running" ;;
-	4)   echo "Unable to determine the program status" ;;
-	esac
+	$SSD --status --verbose --exec $PROG
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|online|offline|status]"
+	echo "Usage: $0 {start|stop|restart|online|offline|status}"
 	;;
 esac
 
