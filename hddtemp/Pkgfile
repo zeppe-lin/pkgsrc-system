@@ -3,7 +3,7 @@
 
 name=hddtemp
 version=0.4.4-34af079
-release=1
+release=2
 source="https://github.com/vitlav/$name/archive/${version#*-}/$name-$version.tar.gz
 	rc.$name"
 
