@@ -1,40 +1,42 @@
-# Description: Simple Authentication and Security Layer
+# Description: Cyrus SASL - Simple Authentication and Security Layer
 # URL:         https://www.cyrusimap.org/sasl/
 # Depends on:  db linux-pam openssl
 
+# Maintainer notes on dependencies:
+#   --enable-gssapi=no: ... , otherwise requires krb5
+
 name=cyrus-sasl
 version=2.1.28
-release=3
+release=4
 source="https://github.com/cyrusimap/$name/releases/download/$name-$version/$name-$version.tar.gz
 	rc.saslauthd"
 
 build() {
-	# fix build with gcc 14
+	# Fix build with GCC 14
 	export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
 
-	# fix compilation issues with software that use cyrus-sasl
+	# Fix compilation issues with software that use cyrus-sasl
 	sed -i -r -e 's|^(#include.*)|#include <sys/types.h>\n\1|' \
 		$name-$version/include/sasl.h
 
 	mkdir build; cd build
 
-	# --enable-gssapi=no: otherwise requires krb5
-	../$name-$version/configure              \
-		--prefix=/usr                    \
-		--sysconfdir=/etc/sasl           \
-		--mandir=/usr/share/man          \
-		--with-plugindir=/usr/lib/sasl2  \
-		--with-saslauthd=/run/saslauthd  \
-		--with-dbpath=/etc/sasl/sasldb2  \
-		--with-dblib=berkeley            \
-		--with-bdb-incdir=/usr/include   \
-		--with-bdb-libdir=/usr/lib       \
-		--with-openssl=/usr              \
-		--enable-login                   \
-		--enable-cram                    \
-		--enable-digest                  \
-		--enable-shared                  \
-		--enable-gssapi=no               \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc/sasl \
+		--mandir=/usr/share/man \
+		--with-plugindir=/usr/lib/sasl2 \
+		--with-saslauthd=/run/saslauthd \
+		--with-dbpath=/etc/sasl/sasldb2 \
+		--with-dblib=berkeley \
+		--with-bdb-incdir=/usr/include \
+		--with-bdb-libdir=/usr/lib \
+		--with-openssl=/usr \
+		--enable-login \
+		--enable-cram \
+		--enable-digest \
+		--enable-shared \
+		--enable-gssapi=no \
 
 	make V=1 CFLAGS="$CFLAGS -fPIC"
 	make DESTDIR=$PKG install

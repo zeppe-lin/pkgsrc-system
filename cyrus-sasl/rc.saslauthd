@@ -16,23 +16,17 @@ start)
 	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
-	$SSD --stop --retry 30 --pidfile $PID
+	$SSD --stop --pidfile $PID --retry 30
 	;;
 restart)
 	$0 stop
 	$0 start
 	;;
 status)
-	$SSD --status --pidfile $PID
-	case $? in
-	0) echo "$PROG is running with pid $(cat $PID)" ;;
-	1) echo "$PROG is not running but the pid file $PID exists" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine program status" ;;
-	esac
+	$SSD --status --verbose --pidfile $PID --exec $PROG
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 
