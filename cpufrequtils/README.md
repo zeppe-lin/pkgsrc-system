@@ -15,20 +15,13 @@ Examples:
 - Driver: `acpi-cpufreq` (AMD/Intel), `intel_pstate` (modern Intel)
 - Governors: `cpufreq_ondemand`, `cpufreq_powersave`, `schedutil`
 
-To auto‑load a governor, create a file such as:
+To auto‑load a driver/governor on boot:
 
-```
-/etc/modules-load.d/cpufreq.conf
-```
+- Declarative: add `cpufreq_ondemand` to
+  `/etc/modules-load.d/cpufreq.conf`
 
-with:
-
-```
-cpufreq_ondemand
-```
-
-The package does not install a default config, since requirements vary
-by machine.
+- Imperative: add `/sbin/modprobe cpufreq_ondemand` to
+  `/etc/rc.modules`
 
 ---
 
