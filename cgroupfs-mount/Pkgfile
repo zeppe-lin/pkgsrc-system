@@ -3,20 +3,18 @@
 
 name=cgroupfs-mount
 version=1.4
-release=3
+release=4
 source="https://github.com/tianon/$name/archive/$version/$name-$version.tar.gz
 	rc.$name"
 
 build() {
 	cd $name-$version
 
-	install -m 0755 -Dt $PKG/usr/sbin/ cgroupfs-mount cgroupfs-umount
+	install -m 0755 -Dt $PKG/usr/sbin cgroupfs-mount cgroupfs-umount
+	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
 
-	# prepare man page
+	# Prepare man page
 	sed -i '/^.BR fstab (5),/s/,//' cgroupfs-mount.8
 	sed -i '/^.BR systemd (1)/d'    cgroupfs-mount.8
-	install -m 0644 -Dt $PKG/usr/share/man/man8/ cgroupfs-mount.8
-
-	# service
-	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
+	install -m 0644 -Dt $PKG/usr/share/man/man8 cgroupfs-mount.8
 }
