@@ -31,8 +31,11 @@ Load manually:
 
 Load automatically at boot:
 
-- Declarative: add `tun` to `/etc/modules-load.d/tun.conf`
-- Imperative: add `/sbin/modprobe tun` to `/etc/rc.modules`
+- Add `tun` to `/etc/modules-load.d/*.conf`, or
+- Add `/sbin/modprobe tun` to `/etc/rc.modules`.
+
+This package does not install a default config; administrators should
+add modules as needed by their hardware or usage.
 
 ---
 
