@@ -4,7 +4,7 @@
 
 name=rsync
 version=3.4.1
-release=1
+release=2
 source="https://download.samba.org/pub/rsync/rsync-$version.tar.gz
 	rsyncd.conf
 	rc.rsyncd"
@@ -12,13 +12,13 @@ source="https://download.samba.org/pub/rsync/rsync-$version.tar.gz
 build() {
 	mkdir build; cd build
 
-	../rsync-$version/configure      \
-		--prefix=/usr            \
-		--with-rsh=ssh           \
-		--with-included-zlib=no  \
-		--with-included-popt=no  \
-		--disable-xxhash         \
-		--disable-lz4            \
+	../rsync-$version/configure \
+		--prefix=/usr \
+		--with-rsh=ssh \
+		--with-included-zlib=no \
+		--with-included-popt=no \
+		--disable-xxhash \
+		--disable-lz4 \
 
 	make V=1
 	make DESTDIR=$PKG install
