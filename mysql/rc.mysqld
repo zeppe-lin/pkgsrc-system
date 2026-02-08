@@ -17,23 +17,18 @@ start)
 		--exec $PROG -- $OPTS >> $LOG 2>&1
 	;;
 stop)
-	$SSD --stop --remove-pidfile --retry 10 --name=$NAME --pidfile $PID
+	$SSD --stop --name $NAME --pidfile $PID --remove-pidfile \
+		--retry 10
 	;;
 restart)
 	$0 stop
 	$0 start
 	;;
 status)
-	$SSD --status --name=$NAME --pidfile $PID
-	case $? in
-	0) echo "$PROG is running with pid $(cat $PID)" ;;
-	1) echo "$PROG is not running but the pid file $PID exists" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine the program status" ;;
-	esac
+	$SSD --status --verbose --name=$NAME --pidfile $PID
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 
