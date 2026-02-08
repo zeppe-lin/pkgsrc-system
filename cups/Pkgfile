@@ -8,7 +8,7 @@
 
 name=cups
 version=2.4.16
-release=2
+release=3
 source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
 	rc.cups
 	pam.cups"
@@ -57,7 +57,7 @@ build() {
 	rm -r $PKG/usr/share/applications $PKG/usr/share/icons $PKG/run \
 		$PKG/usr/share/locale
 
-	# Fix perms
+	# Fix permissions
 	chmod 0755 $PKG/var/cache $PKG/var/spool
 	chmod -R +w $PKG
 
