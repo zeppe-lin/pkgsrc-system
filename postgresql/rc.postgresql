@@ -13,7 +13,7 @@ start|stop|status|restart|reload)
 	sudo -u postgres pg_ctl -D "$PG_DATA" -l /var/log/postgresql "$1"
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|reload|status]"
+	echo "Usage: $0 {start|stop|restart|reload|status}"
 	;;
 esac
 

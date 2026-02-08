@@ -1,7 +1,17 @@
 #
-# /etc/pam.d/postgresql
+# /etc/pam.d/postgresql - PAM configuration for PostgreSQL
+#
+# This file defines authentication, account, and session handling
+# for PostgreSQL connections via PAM.
+#
+# Modules used:
+#   - pam_unix.so : standard UNIX authentication and account cheks
+#
+# See pam(8) and pam_unix(8) for details.
 #
 
 auth          required    pam_unix.so
 account       required    pam_unix.so
 session       required    pam_unix.so
+
+# End of file.

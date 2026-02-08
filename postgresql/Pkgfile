@@ -7,15 +7,16 @@
 
 name=postgresql
 version=14.20
-release=1
+release=2
 source="https://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2
-	rc.$name pam.$name
+	rc.$name
+	pam.$name
 	postgresql-perl-rpath.patch
 	postgresql-run-socket.patch"
 
 build() {
-	patch -d $name-$version -Np1 -i $SRC/postgresql-run-socket.patch
-	patch -d $name-$version -Np1 -i $SRC/postgresql-perl-rpath.patch
+	patch -d $name-$version -p1 -i $SRC/postgresql-run-socket.patch
+	patch -d $name-$version -p1 -i $SRC/postgresql-perl-rpath.patch
 
 	mkdir build; cd build
 
@@ -35,6 +36,6 @@ build() {
 	install -m 0755 -D $SRC/rc.$name   $PKG/etc/rc.d/$name
 	install -m 0755 -D $SRC/pam.$name  $PKG/etc/pam.d/$name
 
-	# remove junk
+	# Remove junk
 	rm -rf $PKG/usr/share/doc
 }
