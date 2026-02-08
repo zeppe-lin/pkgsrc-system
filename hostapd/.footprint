@@ -1,5 +1,5 @@
 drwxr-xr-x	root/root	etc/
--rw-r--r--	root/root	etc/hostapd.conf
+-rw-------	root/root	etc/hostapd.conf
 drwxr-xr-x	root/root	etc/rc.d/
 -rwxr-xr-x	root/root	etc/rc.d/hostapd
 drwxr-xr-x	root/root	usr/
