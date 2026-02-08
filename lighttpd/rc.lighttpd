@@ -12,31 +12,23 @@ OPTS="-f /etc/lighttpd.conf"
 
 case $1 in
 start)
-	# prepare chroot environment
-	cp -Pf /dev/null $CHROOT/dev/null || exit 1
-	chmod 777 $CHROOT/dev/null || exit 2
+	# Ensure chroot environment has /dev/null
+	[ -e "$CHROOT/dev/null" ] || mknod -m 0666 "$CHROOT/dev/null" c 1 3
 
 	$SSD --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
 	$SSD --stop --remove-pidfile --pidfile $PID --retry 10
-	rm -f /var/www/lighttpd/dev/null
 	;;
 restart)
 	$0 stop
 	$0 start
 	;;
 status)
-	$SSD --status --pidfile $PID
-	case $? in
-	0) echo "$PROG is running with pid $(cat $PID)" ;;
-	1) echo "$PROG is not running but the pid file $PID exists" ;;
-	3) echo "$PROG is not running" ;;
-	4) echo "Unable to determine the program status" ;;
-	esac
+	$SSD --status --verbose --pidfile $PID --exec $PROG
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 
