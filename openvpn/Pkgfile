@@ -4,10 +4,9 @@
 
 name=openvpn
 version=2.6.19
-release=1
+release=2
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	manpage.patch
-	modules-load.openvpn
 	rc.$name"
 
 build() {
@@ -27,8 +26,6 @@ build() {
 	make DESTDIR=$PKG install
 
 	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
-	install -m 0644 -D $SRC/modules-load.$name \
-		$PKG/lib/modules-load/$name.conf
 
 	# Fixup docutils' inability to produce correct .SH NAME
 	sed -i -E 's/.SH Name/\U&/' $PKG/usr/share/man/man*/*.[0-9]

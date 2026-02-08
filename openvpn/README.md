@@ -20,16 +20,19 @@ Device Drivers  --->
 Kernel Module
 -------------
 
-This package needs the **tun** kernel module.
+`openvpn` requires the **tun** module to create virtual interfaces.
 
-It provides `/lib/modules-load.d/openvpn.conf` for `modules-load(8)`.
-The module will be loaded at boot.
+Load manually:
 
-- To override: copy to `/etc/modules-load.d/` and edit.
-- To disable: symlink `/etc/modules-load.d/openvpn.conf` to
-  `/dev/null`.
+```
+# as root
+/sbin/modprobe tun
+```
 
-Legacy `/etc/rc.modules` still works if you prefer manual loading.
+Load automatically at boot:
+
+- Declarative: add `tun` to `/etc/modules-load.d/tun.conf`
+- Imperative: add `/sbin/modprobe tun` to `/etc/rc.modules`
 
 ---
 
