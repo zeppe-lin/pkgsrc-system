@@ -4,7 +4,7 @@
 
 name=wpa-supplicant
 version=2.11
-release=3
+release=4
 source="https://w1.fi/releases/wpa_supplicant-$version.tar.gz
 
 	manpages-fixes.patch
@@ -23,12 +23,12 @@ source="https://w1.fi/releases/wpa_supplicant-$version.tar.gz
 
 build() {
 	for f in $SRC/*.patch; do
-		patch -d wpa_supplicant-$version -Np1 -i $f
+		patch -d wpa_supplicant-$version -p1 -i $f
 	done
 
 	cd wpa_supplicant-$version/wpa_supplicant
 
-	# disable dbus
+	# Disable dbus
 	sed -i '/^CONFIG_CTRL_IFACE_DBUS=/d'       defconfig
 	sed -i '/^CONFIG_CTRL_IFACE_DBUS_INTRO=/d' defconfig
 	sed -i '/^CONFIG_CTRL_IFACE_DBUS_NEW=/d'   defconfig
@@ -42,21 +42,21 @@ EOF
 
 	make V=1 BINDIR=/usr/sbin LIBDIR=/usr/lib
 
-	install -m 0755 -Dt $PKG/usr/sbin/ \
+	install -m 0755 -Dt $PKG/usr/sbin \
 		wpa_cli wpa_passphrase wpa_supplicant
 
-	install -m 0644 -Dt $PKG/usr/share/man/man5/ \
+	install -m 0644 -Dt $PKG/usr/share/man/man5 \
 		doc/docbook/wpa_supplicant.conf.5
 
-	install -m 0644 -Dt $PKG/usr/share/man/man8/ \
-		doc/docbook/wpa_background.8  \
-		doc/docbook/wpa_cli.8         \
-		doc/docbook/wpa_passphrase.8  \
-		doc/docbook/wpa_supplicant.8  \
+	install -m 0644 -Dt $PKG/usr/share/man/man8 \
+		doc/docbook/wpa_background.8 \
+		doc/docbook/wpa_cli.8 \
+		doc/docbook/wpa_passphrase.8 \
+		doc/docbook/wpa_supplicant.8 \
 
-	# config
+	# Install config file
 	install -m 0600 -Dt $PKG/etc/ $SRC/wpa_supplicant.conf
 
-	# rc script
+	# Install service control script
 	install -m 0755 -D $SRC/rc.wpa_supplicant $PKG/etc/rc.d/wpa_supplicant
 }

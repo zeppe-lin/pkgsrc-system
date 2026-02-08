@@ -8,6 +8,6 @@ cb9e74382b311deb54816e7e5b48093b  0006-Add-reload-support-to-the-systemd-unit-fi
 64e8e3e653ddd3b7e77f26ac41e3ea80  015f6a5a0cd1c8b0d40441b9fd9e4c8658bc9493.patch
 d5a41855fbaac0b9e50c17c0d9b95e0e  809d9d8172db8e2a08ff639875f838b5b86d2641.patch
 c5397a0b6338096dcf170b20168f9ebc  manpages-fixes.patch
-d48ec3f39534bac17c7841897fe04880  rc.wpa_supplicant
+a9670f2edb106887fab2db197ee84117  rc.wpa_supplicant
 72a4a00eddb7a499a58113c3361ab094  wpa_supplicant-2.11.tar.gz
-62b47c09029dc56071deca7cbd558d59  wpa_supplicant.conf
+234fc2d979f6fa8bdd8dffa3010fc2bf  wpa_supplicant.conf
