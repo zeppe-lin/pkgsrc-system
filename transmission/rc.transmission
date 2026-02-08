@@ -16,7 +16,7 @@ case $1 in
 start)
 	[ -f $LOG ] || touch $LOG
 	$SSD --start --make-pidfile --pidfile $PID --chuid $USER \
-		--background --exec $PROG -O $LOG -- $OPTS
+		--background --exec $PROG -- $OPTS
 	;;
 stop)
 	$SSD --stop --remove-pidfile --pidfile $PID --retry 60
@@ -29,7 +29,7 @@ status)
 	$SSD --status --verbose --pidfile $PID --exec $PROG
 	;;
 *)
-	echo "Usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac	
 
