@@ -5,19 +5,32 @@
 # See ``apropos cpufreq'' to obtain more information.
 #
 
-affect_change() {
-	logger "Running cpufreq-set $*"
-	for c in $(cpufreq-info -o | awk '$1 == "CPU" { print $2 }'); do
-		cpufreq-set -c $c $*
+START_GOVERNOR=ondemand
+STOP_GOVERNOR=performance
+
+set_governor() {
+	gov=$1
+	logger "cpufreq: setting governor=$gov"
+	for cpu in $(/usr/bin/cpufreq-info -o | awk '/^CPU /{ print $2 }'); do
+		if ! /usr/bin/cpufreq-set -c "$cpu" --governor "$gov"; then
+			echo "Failed to set governor on CPU $cpu" >&2
+			exit 1
+		fi
+	done
+}
+
+show_status() {
+	for cpu in $(/usr/bin/cpufreq-info -o | awk '/^CPU /{ print $2 }'); do
+		echo "CPU$cpu: $(/usr/bin/cpufreq-info -c "$cpu" -p)"
 	done
 }
 
 case $1 in
 start)
-	affect_change --governor ondemand
+	set_governor "$START_GOVERNOR"
 	;;
 stop)
-	affect_change --governor performance
+	set_governor "$STOP_GOVERNOR"
 	;;
 restart)
 	$0 stop
@@ -25,10 +38,10 @@ restart)
 	$0 start
 	;;
 status)
-	echo "status unavailable"
+	show_status
 	;;
 *)
-	echo "usage: $0 [start|stop|restart|status]"
+	echo "Usage: $0 {start|stop|restart|status}"
 	;;
 esac
 

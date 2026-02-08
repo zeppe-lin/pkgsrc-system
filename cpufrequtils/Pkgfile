@@ -4,7 +4,7 @@
 
 name=cpufrequtils
 version=008
-release=3
+release=4
 source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar.xz
 	0001-only-x86-has-cpuid-instruction.patch
 	0002-remove-proc-compile-option-and-interfaces.patch
@@ -22,13 +22,12 @@ source="https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar
 build() {
 	cd $name-$version
 
-	# Huge thanks to debian project!
-	for p in $SRC/*.patch; do patch -Np1 -i $p; done
+	# Apply Debian patches
+	for p in $SRC/*.patch; do patch -p1 -i $p; done
 
 	make NLS=false PROC=false V=true OPTIMIZATION=
 	make NLS=false V=true CP="cp -fR" INSTALL=install \
 		mandir=/usr/share/man DESTDIR=$PKG install
 
-	# service
 	install -m 0755 -D $SRC/rc.cpufreq $PKG/etc/rc.d/cpufreq
 }

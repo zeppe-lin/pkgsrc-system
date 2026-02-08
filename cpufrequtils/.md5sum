@@ -10,4 +10,4 @@ a99653aab0d334569496a402389f062f  0008-make-NLS-optional.patch
 a837db201e0bb724ccf617757a575e26  0011-dont-touch-po-files.patch
 a124a1342525ce02d0ce3d37ac3ff2cf  0012-fix-typo-in-man.patch
 e0c9f333a9546f71d17fd5a0546db79e  cpufrequtils-008.tar.xz
-b94e003fc603b0af0a10892290f6ab83  rc.cpufreq
+f55e7ea9578a97fb141ce01283031589  rc.cpufreq
