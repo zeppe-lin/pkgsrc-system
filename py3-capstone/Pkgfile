@@ -3,14 +3,14 @@
 # Depends on:  py3-setuptools
 
 name=py3-capstone
-version=5.0.6 # keep sync with capstone
+version=5.0.7 # keep in sync with capstone
 release=1
 source=https://github.com/aquynh/capstone/archive/$version/capstone-$version.tar.gz
 
 build() {
 	export TMPDIR="$PKGMK_WORK_DIR"
 
-	# skip building libcapstone (see capstone package)
+	# Skip building libcapstone (see capstone package)
 	export LIBCAPSTONE_PATH=
 
 	cd capstone-$version/bindings/python
