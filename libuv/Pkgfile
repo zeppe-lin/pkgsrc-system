@@ -2,7 +2,7 @@
 # URL:         https://libuv.org/
 
 name=libuv
-version=1.51.0
+version=1.52.0
 release=1
 source=https://dist.libuv.org/dist/v$version/libuv-v$version.tar.gz
 
@@ -10,8 +10,8 @@ build() {
 	mkdir build; cd build
 
 	../libuv-v$version/autogen.sh
-	../libuv-v$version/configure  \
-		--prefix=/usr         \
+	../libuv-v$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
