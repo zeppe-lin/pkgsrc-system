@@ -2,14 +2,14 @@ README for dhcpcd
 
 ---
 
-CONFIGURATION NOTES
-===================
+CONFIGURATION
+=============
 
-Wi-Fi Authentication
---------------------
+Wi-Fi Authentication Hook
+-------------------------
 
 `dhcpcd` can invoke `wpa_supplicant` via a hook.
-We disable this in `/etc/dhcpcd/dhcpcd.conf`:
+We disable this in `/etc/dhcpcd/dhcpcd.conf` explicitly:
 
 ```
 nohook wpa_supplicant

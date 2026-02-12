@@ -20,16 +20,22 @@ lines in the `build()` function
 
 ---
 
-PRE-INSTALL (SERVER)
-====================
+PRE-INSTALL
+===========
+
+Server
+------
 
 Make sure you install `expat` before you install `apache`; also, note
 that you'll get a footprint mismatch.
 
 ---
 
-POST-INSTALL (SERVER)
-=====================
+POST-INSTALL
+============
+
+Server
+------
 
 Add something like this to your `apache` configuration:
 

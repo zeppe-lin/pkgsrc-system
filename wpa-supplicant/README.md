@@ -30,13 +30,13 @@ configuration.
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
 The Zeppe-Lin Handbook has a brief documentation that describes a
 wireless network configuration:
 
-* https://zeppe-lin.github.io/handbook.html#wireless-network
+- <https://zeppe-lin.github.io/handbook.html#wireless-network>
 
 ---
 

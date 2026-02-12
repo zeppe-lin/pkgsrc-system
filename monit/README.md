@@ -2,10 +2,10 @@ README for monit
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
-* https://mmonit.com/wiki/
+- Monit Wiki: <https://mmonit.com/wiki/>
 
 ---
 

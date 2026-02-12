@@ -32,10 +32,11 @@ add modules as needed by their hardware or usage.
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
-- [CPU Performance Scaling - The Linux Kernel documentation](https://www.kernel.org/doc/html/v5.1/admin-guide/pm/cpufreq.html#cpu-performance-scaling)
+- CPU Performance Scaling - The Linux Kernel documentation:
+  <https://www.kernel.org/doc/html/v5.1/admin-guide/pm/cpufreq.html#cpu-performance-scaling>
 
 ---
 

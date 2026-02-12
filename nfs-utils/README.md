@@ -24,15 +24,17 @@ are selected.
 
 ---
 
-SETUP NFS
-=========
+CONFIGURATION
+=============
+
+Setup NFS
+---------
 
 This is a very brief description of how to setup the NFS client and
 server.  It is not intended to be a "Guide", but rather to show the
 things specific to Zeppe-Lin.
 
-On Server
----------
+### On Server
 
 Start the required services:
 
@@ -74,8 +76,7 @@ exportfs -ra
 /etc/rc.d/nfsserver restart
 ```
 
-On Client
----------
+### On Client
 
 Create the mount directory (if not existing one), i.e. `/mnt/data`:
 

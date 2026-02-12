@@ -2,8 +2,8 @@ README for mysql
 
 ---
 
-CAUTION
-=======
+CONFIGURATION
+=============
 
 With the default configuration networking support for mysql is
 disabled, meaning the mysql daemon is accessible from localhost only.

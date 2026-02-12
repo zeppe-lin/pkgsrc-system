@@ -2,7 +2,7 @@ README for llvm
 
 ---
 
-CAUTION
+UPGRADE
 =======
 
 Updating major versions of `llvm` (in x.y.z changing x or y) requires

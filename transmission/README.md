@@ -2,8 +2,8 @@ README for transmission
 
 ---
 
-CAUTION
-=======
+POST-INSTALL
+============
 
 If you've modified defaults in `/etc/rc.d/transmission` (e.g., running
 under a specific user), prevent data loss during updates by adding

@@ -57,6 +57,8 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=/dev/mapper/swap"
 
 See the [GRUB Manual][1] for more information.
 
+[1]: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
+
 For `grub-mkconfig` to work properly the following conditions should
 be met:
 
@@ -83,13 +85,11 @@ pkgman cat grub2 grub.cfg.sample
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
 - GNU GRUB Manual:
-  https://www.gnu.org/software/grub/manual/grub/grub.html
-
-[1]: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
+  <https://www.gnu.org/software/grub/manual/grub/grub.html>
 
 ---
 

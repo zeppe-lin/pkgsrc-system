@@ -2,8 +2,8 @@ README for lighttpd
 
 ---
 
-CAUTION
-=======
+NOTES
+=====
 
 As of `lighttpd` 1.4.23 `spawn-fcgi` was removed and is now provided
 as a [separate project](http://redmine.lighttpd.net/projects/spawn-fcgi).

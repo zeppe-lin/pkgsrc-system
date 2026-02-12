@@ -16,7 +16,7 @@ hinting:
 * `truetype:interpreter-version=40`: Minimal mode (default in 2.7).
 
 Additional properties can be set, separated by whitespace.
-See the [FreeType documentation][1] for details.
+See the FreeType documentation for details.
 
 To apply your settings, edit `/etc/profile`:
 
@@ -28,10 +28,11 @@ Log out and back in to see the changes.
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
-[1]: https://freetype.org/freetype2/docs/documentation.html
+- Documentation:
+  <https://freetype.org/freetype2/docs/documentation.html>
 
 ---
 

@@ -41,8 +41,8 @@ Cryptographic API --->
 
 ---
 
-USAGE
-=====
+CONFIGURATION
+=============
 
 Edit `/etc/mkinitramfs/config` to match your needs.  See
 `mkinitramfs.config(5)` for details.  Then, generate the initramfs

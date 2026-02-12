@@ -26,10 +26,11 @@ Device Drivers --->
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
-* [The Guide](https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm)
+- The Guide:
+  <https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm>
 
 ---
 
