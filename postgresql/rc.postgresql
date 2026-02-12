@@ -3,14 +3,15 @@
 # /etc/rc.d/postgresql: start/stop PostgreSQL server postmaster
 #
 
-PG_DATA=/var/pgsql/data
+RUN_AS=postgres
+LOG=/var/log/postgresql
+RUNDIR=/run/postgresql
+DATADIR=/var/pgsql/data
 
 case "$1" in
 start|stop|status|restart|reload)
-	if [ ! -e /run/postgresql ]; then
-		install -o postgres -g postgres -d /run/postgresql
-	fi
-	sudo -u postgres pg_ctl -D "$PG_DATA" -l /var/log/postgresql "$1"
+	[ -e $RUNDIR ] || install -o $RUN_AS -g $RUN_AS -d $RUNDIR
+	sudo -u postgres pg_ctl -D $DATADIR -l $LOG $1
 	;;
 *)
 	echo "Usage: $0 {start|stop|restart|reload|status}"
