@@ -3,11 +3,11 @@
 # Depends on:  docutils libcap-ng libnsl libtirpc lz4 lzo openssl
 
 name=openvpn
-version=2.6.19
-release=2
+version=2.7.0
+release=1
 source="https://github.com/OpenVPN/$name/archive/v$version/$name-$version.tar.gz
 	manpage.patch
-	rc.$name"
+	rc.openvpn"
 
 build() {
 	patch -d $name-$version -p1 -i $SRC/manpage.patch
@@ -17,6 +17,7 @@ build() {
 	autoreconf -fiv ../$name-$version
 	../$name-$version/configure \
 		--prefix=/usr \
+		--libexecdir=/usr/lib \
 		--mandir=/usr/share/man \
 		--disable-plugin-auth-pam \
 		--disable-unit-tests \
@@ -25,7 +26,7 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	install -m 0755 -D $SRC/rc.$name $PKG/etc/rc.d/$name
+	install -m 0755 -D $SRC/rc.openvpn $PKG/etc/rc.d/openvpn
 
 	# Fixup docutils' inability to produce correct .SH NAME
 	sed -i -E 's/.SH Name/\U&/' $PKG/usr/share/man/man*/*.[0-9]
