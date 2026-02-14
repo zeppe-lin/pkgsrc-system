@@ -2,7 +2,7 @@
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.18.9
+version=6.18.10
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
@@ -41,7 +41,7 @@ build() {
 		_imageloc=arch/arm/boot/zImage
 		;;
 	*)
-		echo "Unsupported architecture $(uname -m)"
+		echo "Unsupported architecture $(uname -m)" >&2
 		exit 1
 		;;
 	esac
