@@ -3,26 +3,35 @@
 # Depends on:  expat libidn2 openssl readline zlib
 
 name=lftp
-version=4.9.2
-release=3
-source=https://lftp.yar.ru/ftp/lftp-$version.tar.xz
+version=4.9.3
+release=1
+# Main download site inaccessible over ipv6 via wget, use an official mirror
+# source=https://lftp.yar.ru/ftp/lftp-$version.tar.xz
+source=ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/lftp-$version.tar.xz
 
 build() {
-	# fix build with gcc 14
+	# Fix build with GCC 14
 	export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
+	export LDFLAGS="$LDFLAGS -Wl,--allow-multiple-definition"
 
 	mkdir build; cd build
 
-	../lftp-$version/configure     \
-		--prefix=/usr          \
-		--sysconfdir=/usr/etc  \
-		--with-openssl=/usr    \
-		--with-modules         \
-		--disable-nls          \
+	../lftp-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/usr/etc \
+		--with-openssl=/usr \
+		--with-modules \
+		--disable-nls \
+		--disable-static \
+		--disable-rpath \
 
 	make V=1
 	make DESTDIR=$PKG install
 
+	# Add FileTransfer category to desktop entry
 	sed -i 's/^Categories=Network;/&FileTransfer;/' \
 		$PKG/usr/share/applications/lftp.desktop
+
+	# Remove zsh completion
+	rm -r $PKG/usr/share/zsh
 }
