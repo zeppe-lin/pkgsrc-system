@@ -3,21 +3,22 @@
 # Depends on:  libmnl
 
 name=ethtool
-version=6.15
+version=6.19
 release=1
-source=https://www.kernel.org/pub/software/network/$name/$name-$version.tar.xz
+source=https://git.kernel.org/pub/scm/network/ethtool/ethtool.git/snapshot/ethtool-$version.tar.gz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure   \
-		--prefix=/usr         \
-		--enable-pretty-dump  \
-		--enable-netlink      \
+	autoreconf -fiv ../ethtool-$version
+	../ethtool-$version/configure \
+		--prefix=/usr \
+		--enable-pretty-dump \
+		--enable-netlink \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/metainfo
 }
