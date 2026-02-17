@@ -3,7 +3,7 @@
 # Depends on:  libidn2
 
 name=whois
-version=5.6.5
+version=5.6.6
 release=1
 source="whois-$version.tar.gz::https://github.com/rfc1036/whois/archive/refs/tags/v$version.tar.gz
 	whois.conf"
@@ -11,13 +11,15 @@ source="whois-$version.tar.gz::https://github.com/rfc1036/whois/archive/refs/tag
 build() {
 	cd whois-$version
 
-	make CONFIG_FILE=/etc/whois.conf DESTDIR=$PKG whois install-whois
+	make CONFIG_FILE=/etc/whois.conf DESTDIR=$PKG \
+		whois install-whois
+
 	make BASHCOMPDIR=$PKG/usr/share/bash-completion/completions \
 		install-bashcomp
 
-	#install -m 0644 -Dt $PKG/etc whois.conf (dist config)
+	# Install default configuration file
 	install -m 0644 -Dt $PKG/etc $SRC/whois.conf
 
-	# conflicts with expect package
+	# Remove conflicting mkpasswd completion (provided by expect)
 	rm $PKG/usr/share/bash-completion/completions/mkpasswd
 }
