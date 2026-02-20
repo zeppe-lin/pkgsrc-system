@@ -4,7 +4,7 @@
 
 name=tcl
 version=8.6.17
-release=1
+release=2
 source=https://downloads.sourceforge.net/project/tcl/Tcl/$version/tcl$version-src.tar.gz
 
 build() {
@@ -19,18 +19,20 @@ build() {
 	mkdir build; cd build
 
 	autoreconf -fiv ../tcl$version/unix
-	../tcl$version/unix/configure    \
-		--prefix=/usr            \
-		--mandir=/usr/share/man  \
-		--enable-threads         \
-		--enable-64bit           \
+	../tcl$version/unix/configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--enable-threads \
+		--enable-64bit \
+		--enable-man-symlinks \
+		#--enable-man-compression=gzip \
 
 	make V=1
 	make INSTALL_ROOT=$PKG install install-private-headers
 
-	mkdir -p $PKG/usr/include/tcl/generic  \
-	         $PKG/usr/include/tcl/unix     \
-	         $PKG/usr/include/tcl/compat   \
+	mkdir -p $PKG/usr/include/tcl/generic \
+	         $PKG/usr/include/tcl/unix \
+	         $PKG/usr/include/tcl/compat \
 
 	cp ../tcl$version/generic/*.h    $PKG/usr/include/tcl/generic
 	cp ../tcl$version/unix/*.h       $PKG/usr/include/tcl/unix
@@ -40,7 +42,7 @@ build() {
 	ln -s libtcl${version%.*}.so     $PKG/usr/lib/libtcl.so
 	ln -s libtclstub${version%.*}.a  $PKG/usr/lib/libtclstub.a
 
-	# remove $SRC traces
+	# Remove $SRC traces
 	sed -e "s|$SRC/tcl$version/unix|/usr/lib|g" \
 	    -e "s|$SRC/tcl$version|/usr/include|g" \
 	    -i $PKG/usr/lib/tclConfig.sh
