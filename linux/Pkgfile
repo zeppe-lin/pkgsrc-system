@@ -2,7 +2,7 @@
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.18.11
+version=6.18.13
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
@@ -13,7 +13,8 @@ source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 build() {
 	local _kver _karch _imageloc f
 
-	# Unset conflicting variables inherited from the build environment
+	# Unset conflicting variables inherited from the build
+	# environment
 	unset LDFLAGS HOSTCFLAGS HOSTCXXFLAGS HOSTLDFLAGS
 
 	# Determine kernel version string
@@ -64,19 +65,29 @@ build() {
 		make -j ${JOBS:-1} ARCH=$_karch ${_karch}_defconfig
 	fi
 
-	# Explicitly disable custom suffixes to ensure a clean version string
+	# Explicitly disable custom suffixes to ensure a clean version
+	# string
 	./scripts/config --set-str CONFIG_LOCALVERSION ""
 	./scripts/config --disable CONFIG_LOCALVERSION_AUTO
 
-	# XXX Disable CONFIG_IKHEADERS to work around a potential build error:
+	# XXX Disable CONFIG_IKHEADERS to work around a potential
+	# build error:
 	# *** [kernel/Makefile:150: kernel/kheaders_data.tar.xz] Error 2
 	./scripts/config --disable CONFIG_IKHEADERS
+
+	# Enable native CPU optimizations if CFLAGS request them
+	case "$CFLAGS" in
+	*-march=native*|*-mtune=native*)
+		./scripts/config --enable CONFIG_X86_NATIVE_CPU
+		;;
+	esac
 
 	# Build kernel and modules
 	make -j ${JOBS:-1} V=1 all
 
 	# Install modules (non-parallel for safety)
-	make -j 1 V=1 ARCH=$_karch INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1 \
+	make -j 1 V=1 ARCH=$_karch \
+		INSTALL_MOD_PATH=$PKG INSTALL_MOD_STRIP=1 \
 		modules_install
 
 	# Create the module dependency list
@@ -85,7 +96,8 @@ build() {
 	# Install Device Tree Blobs (DTBs) for ARM
 	case "$_karch" in
 	arm | arm64)
-		make -j 1 ARCH=$_karch INSTALL_DTBS_PATH=$PKG/boot/dtbs \
+		make -j 1 ARCH=$_karch \
+			INSTALL_DTBS_PATH=$PKG/boot/dtbs \
 			dtbs_install
 		;;
 	esac
