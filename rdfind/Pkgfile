@@ -6,15 +6,16 @@
 #   xxhash: xxHash checksum support (enabled if installed)
 
 name=rdfind
-version=1.7.0
+version=1.8.0
 release=1
 source=https://rdfind.pauldreik.se/$name-$version.tar.gz
 
 build() {
-	cd $name-$version
+	mkdir build; cd build
 
-	./bootstrap.sh
-	./configure --prefix=/usr
+	autoreconf -fiv ../$name-$version
+	../$name-$version/configure \
+		--prefix=/usr
 
 	make V=1
 	make DESTDIR=$PKG install
