@@ -1,2 +1,3 @@
 .*\.nffw$
 lib/firmware/mediatek/mt.*/scp\.img$
+lib/firmware/mediatek/mt.*/scp_c0\.img$

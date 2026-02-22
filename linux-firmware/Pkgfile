@@ -6,21 +6,24 @@
 #   parallel: speeds up dedup step (auto-used if installed)
 
 name=linux-firmware
-version=20260110
+version=20260221
 release=1
 source="https://gitlab.com/kernel-firmware/$name/-/archive/$version/$name-$version.tar.bz2
 	dedup-ln-fsr.patch"
 
 build() {
+	cd $name-$version
+
 	# Use GNU ln -fsr shortcuts in dedup script
-	patch -d $name-$version -Np1 -i $SRC/dedup-ln-fsr.patch
+	patch -p1 -i $SRC/dedup-ln-fsr.patch
 
 	# Force single-threaded dedup if parallel is missing
 	pkgman isinst parallel >/dev/null 2>&1 || MAKEFLAGS="-j1"
 
-	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
-	make -C $name-$version FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
+	make FIRMWAREDIR=/lib/firmware DESTDIR=$PKG install
+	make FIRMWAREDIR=/lib/firmware DESTDIR=$PKG dedup
 
 	# Remove junk
-	find $PKG -type f -name README -o -name ChangeLog | xargs -r rm -f
+	find $PKG -type f -name README -o -name ChangeLog |
+		xargs -r rm -f
 }
