@@ -7,7 +7,7 @@
 #   libgpg-error: ships yat2m, which is required to build man pages
 
 name=gnupg
-version=2.5.17
+version=2.5.18
 release=1
 source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
