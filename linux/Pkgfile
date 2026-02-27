@@ -2,7 +2,7 @@
 # URL:         https://www.kernel.org/
 
 name=linux
-version=6.18.13
+version=6.18.14
 release=1
 source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
 	https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$version.xz
@@ -95,7 +95,7 @@ build() {
 
 	# Install Device Tree Blobs (DTBs) for ARM
 	case "$_karch" in
-	arm | arm64)
+	arm|arm64)
 		make -j 1 ARCH=$_karch \
 			INSTALL_DTBS_PATH=$PKG/boot/dtbs \
 			dtbs_install
