@@ -1,0 +1,17 @@
+# Description: Utility similar to hdparm for SCSI/SATA devices
+# URL:         https://sg.danny.cz/sg/sdparm.html
+
+name=sdparm
+version=1.12
+release=1
+source=https://sg.danny.cz/sg/p/$name-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../$name-$version/configure \
+		--prefix=/usr \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
