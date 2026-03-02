@@ -1,10 +1,11 @@
 #!/bin/sh -ex
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
 
-# Remove old initramfs if mkinitramfs and linux are already installed.
-# The ``post-install'' script will generate the new one.
+# If mkinitramfs and linux are installed, remove the old initramfs.
+# A new one will be generated in the post-install step.
 if pkgman isinst mkinitramfs linux; then
 	_KVER=$(pkgman current linux | cut -d- -f1)
-	rm -v /boot/initramfs-$_KVER.img
+	rm -v /boot/initramfs-"$_KVER".img
 fi
 
 # End of file.

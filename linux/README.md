@@ -22,8 +22,8 @@ POST-INSTALL
 
 Since the linux package is installed/upgraded, the `post-install`
 script prepares the new initramfs if `mkinitramfs` is installed.
-Also it updates the GRUB configuration file (`/boot/grub/grub.cfg`) if
-`grub2` package is installed.
+Also it updates the GRUB configuration file (`/boot/grub/grub.cfg`)
+if `grub2` package is installed.
 
 ---
 
