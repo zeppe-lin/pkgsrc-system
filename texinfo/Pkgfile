@@ -3,21 +3,21 @@
 # Depends on:  libunistring ncurses
 
 name=texinfo
-version=7.2
+version=7.3
 release=1
-source=ftp://ftp.gnu.org/gnu/texinfo/$name-$version.tar.xz
+source=https://ftp.gnu.org/pub/gnu/$name/$name-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--disable-tp-tests   \
-		--disable-nls        \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-tp-tests \
+		--disable-nls \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/info
 }
