@@ -3,7 +3,7 @@
 # Depends on:  keyutils libcap libdevmapper libevent libnl libxml2 rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
-version=2.8.5
+version=2.8.6
 release=1
 source="https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
 	exports
@@ -32,7 +32,6 @@ build() {
 		--sysconfdir=/etc \
 		--libexecdir=/usr/sbin \
 		--with-statedir=/var/lib/nfs \
-		--with-modprobedir=/etc/modprobe.d \
 		--without-tcp-wrappers \
 		--disable-gss \
 
@@ -53,7 +52,8 @@ build() {
 	done
 
 	install -m 0644 -t $PKG/etc  \
-	    $SRC/exports $SRC/idmapd.conf utils/mount/nfsmount.conf nfs.conf
+	    $SRC/exports $SRC/idmapd.conf \
+	    utils/mount/nfsmount.conf nfs.conf
 
 	# Force rpc.statd to run as user nobody
 	chown nobody $PKG/var/lib/nfs
