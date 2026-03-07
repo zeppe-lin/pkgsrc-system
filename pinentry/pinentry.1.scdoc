@@ -1,0 +1,73 @@
+PINENTRY(1)
+
+# NAME
+
+pinentry - wrapper for secure PIN entry dialogs
+
+# SYNOPSIS
+
+*pinentry* [options]
+
+# DESCRIPTION
+
+*pinentry* is a wrapper script that selects an available PIN entry
+frontend at runtime.
+It is invoked by *gpg-agent*(1) and other GnuPG components to securely
+prompt for passphrases.
+
+The wrapper checks for installed frontends in the following order:
+
+- *pinentry-qt5*
+- *pinentry-qt*
+- *pinentry-gtk-2*
+- *pinentry-gnome3*
+- *pinentry-curses*
+
+The first available binary is executed with all arguments passed
+through unchanged.
+If no frontend is found, *pinentry* exits with status 1 and prints an
+error message.
+
+# CONFIGURATION
+
+A specific frontend may be forced by adding a directive to
+_gpg-agent.conf_:
+
+```
+pinentry-program /usr/bin/pinentry-curses
+```
+
+# EXIT STATUS
+
+*0*
+	Command executed successfully.
+
+*>0*
+	An error occurred.
+
+# FILES
+
+_~/.gnupg/gpg-agent.conf_
+	Configuration file for *gpg-agent*(1), which may specify the
+	*pinentry-program* directive.
+
+# NOTES
+
+This wrapper script and its man page are not part of the upstream
+*pinentry* distribution.
+They are provided by the Zeppe-Lin package to ensure consistent
+behavior and documentation.
+
+Upstream *pinentry* does not ship man pages for individual frontends.
+All frontend stubs redirect to this page.
+Arguments for each frontend can be inspected with:
+
+```
+pinentry-frontend --help
+```
+
+# SEE ALSO
+
+*gpg-agent*(1)
+
+; vim: ft=scdoc cc=72 tw=70

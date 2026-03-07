@@ -1,29 +1,41 @@
 # Description: Secure PinEntry Dialog
 # URL:         https://gnupg.org/related_software/pinentry
-# Depends on:  libassuan libcap
+# Depends on:  libassuan libcap scdoc
+
+# Notes:
+#   - Upstream installs 'pinentry' as a symlink to pinentry-curses.
+#     This package replaces that symlink with a wrapper script that
+#     selects an available frontend at runtime.
+#   - scdoc is required to build the custom man page.
 
 name=pinentry
 version=1.3.2
-release=1
+release=2
 source="https://gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2
-	pinentry"
+	$name.sh
+	$name.1.scdoc"
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure       \
-		--prefix=/usr             \
-		--disable-doc             \
-		--disable-pinentry-gtk2   \
-		--disable-pinentry-qt     \
-		--disable-pinentry-qt5    \
-		--enable-pinentry-curses  \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-doc \
+		--disable-pinentry-gtk2 \
+		--disable-pinentry-qt \
+		--disable-pinentry-qt5 \
+		--enable-pinentry-curses \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# pinentry is a symlink to the default PIN-Entry program
-	# (pinentry-curses).  Use our wrapper instead of this symlink.
-	unlink $PKG/usr/bin/pinentry
-	install -m 0755 $SRC/pinentry $PKG/usr/bin/pinentry
+	# Replace upstream symlink with wrapper script
+	install -m 0755 $SRC/pinentry.sh $PKG/usr/bin/pinentry
+
+	# Install canonical man page and stub link
+	mkdir -p $PKG/usr/share/man/man1
+	scdoc < $SRC/pinentry.1.scdoc > \
+		$PKG/usr/share/man/man1/pinentry.1
+	echo '.so man1/pinentry.1' > \
+		$PKG/usr/share/man/man1/pinentry-curses.1
 }

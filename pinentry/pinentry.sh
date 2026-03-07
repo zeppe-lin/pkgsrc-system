@@ -1,12 +1,4 @@
 #!/bin/sh
-# pinentry wrapper
-#
-# alternatively, you can force a specific front-end by adding the line
-# to ~/.gnupg/gpg-agent.conf like the following:
-#
-#     pinentry-program /usr/bin/pinentry-curses
-#
-
 if   [ -x /usr/bin/pinentry-qt5    ]; then
 	exec /usr/bin/pinentry-qt5    "$@"
 elif [ -x /usr/bin/pinentry-qt     ]; then
@@ -18,8 +10,6 @@ elif [ -x /usr/bin/pinentry-gnome3 ]; then
 elif [ -x /usr/bin/pinentry-curses ]; then
 	exec /usr/bin/pinentry-curses "$@"
 else
-	echo "no pinentry binary available" 1>&2
+	echo "error: no pinentry binary available" 1>&2
 	exit 1
 fi
-
-# End of file.
