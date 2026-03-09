@@ -4,16 +4,23 @@
 
 name=mdadm
 version=4.5
-release=1
+release=2
 source="https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git/snapshot/mdadm-$version.tar.gz
+	b166a2042615aa81a5e60b6b9f553f101827609e.patch
 	mdadm-4.5-in_initrd-collision.patch"
 
 build() {
 	cd mdadm-$version
 
-	# Avoid symbol collision with libudev when statically linking mdadm
-	# (rename internal in_initrd() helper)
-	patch -Np1 -i $SRC/mdadm-4.5-in_initrd-collision.patch
+	# Upstream fix (commit b166a20):
+	# Load md_mod before setting legacy_async_del_gendisk parameter.
+	# Without this, array creation/assembly fails if md_mod is not
+	# built into the kernel, breaking RAID assembly at boot.
+	patch -p1 -i $SRC/b166a2042615aa81a5e60b6b9f553f101827609e.patch
+
+	# Avoid symbol collision with libudev when statically linking
+	# mdadm (rename internal in_initrd() helper)
+	patch -p1 -i $SRC/mdadm-4.5-in_initrd-collision.patch
 
 	# Build shared binary
 	make CXFLAGS="$CFLAGS" STRIP=
