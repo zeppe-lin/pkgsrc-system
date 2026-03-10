@@ -2,11 +2,11 @@
 # URL:         https://gitlab.com/kernel-firmware/linux-firmware
 # Depends on:  rdfind
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   parallel: speeds up dedup step (auto-used if installed)
 
 name=linux-firmware
-version=20260221
+version=20260309
 release=1
 source="https://gitlab.com/kernel-firmware/$name/-/archive/$version/$name-$version.tar.bz2
 	dedup-ln-fsr.patch"
