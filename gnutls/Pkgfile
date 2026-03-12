@@ -11,7 +11,8 @@ build() {
 	mkdir build; cd build
 
 	# --disable-doc and --enable-manpages are mutually broken,
-	# we configure default (enabled) and remove unwanted docs in cleanup
+	# we configure default (enabled) and remove unwanted docs in
+	# cleanup
 	../$name-$version/configure \
 		--prefix=/usr \
 		--disable-bash-tests \
@@ -22,6 +23,7 @@ build() {
 		--disable-valgrind-tests \
 		--with-default-trust-store-pkcs11="pkcs11:" \
 		--without-tpm \
+		MAKEINFO=:
 
 	# Ensure --as-needed is applied to shared linker invocations
 	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
