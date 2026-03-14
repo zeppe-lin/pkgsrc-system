@@ -3,7 +3,7 @@
 # Depends on:  libaio libdevmapper
 
 name=lvm2
-version=2.03.38 # keep in sync with libdevmapper
+version=2.03.39 # keep in sync with libdevmapper
 release=1
 source="https://mirrors.kernel.org/sourceware/lvm2/LVM2.$version.tgz
 	no-systemd.patch"
@@ -13,7 +13,7 @@ build() {
 
 	patch -d LVM2.$version -p1 -i $SRC/no-systemd.patch
 
-	# build in separate dir is broken
+	# Build in separate dir is broken
 	cd LVM2.$version
 
 	CONFIG_SHELL=/bin/bash \
@@ -42,7 +42,8 @@ build() {
 	make V=1 DESTDIR=$PKG install_lvm2
 
 	# Create required runtime directories
-	install -m 0700 -d $PKG/etc/lvm/archive $PKG/etc/lvm/backup \
+	install -m 0700 -d $PKG/etc/lvm/archive \
+		$PKG/etc/lvm/backup \
 		$PKG/etc/lvm/cache
 	install -m 1777 -d $PKG/var/lock
 	install -m 0700 -d $PKG/var/lock/lvm
