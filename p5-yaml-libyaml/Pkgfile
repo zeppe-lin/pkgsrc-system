@@ -4,23 +4,26 @@
 
 name=p5-yaml-libyaml
 version=0.904.0
-release=1
+release=2
 source=https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v$version.tar.gz
 
 build() {
 	cd YAML-LibYAML-v$version
 
-	command -v finddepsdistmeta && finddepsdistmeta
+	if command -v finddepsdistmeta >/dev/null 2>&1; then
+		finddepsdistmeta || :
+	fi
+
 	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
 
 	make OPTIMIZE="$CFLAGS"
 	make DESTDIR=$PKG install
 
-	# remove junk and empty dirs
+	# Remove junk and empty dirs
 	find $PKG -depth \
-		-type f \( -name perllocal.pod  \
-			-o -name \*.bs          \
-			-o -name .packlist      \
-			\) -delete ,            \
-		-type d -empty -delete
+		\( -type f -name perllocal.pod \
+			-o -name '*.bs' \
+			-o -name .packlist \
+		\) -delete \
+		-o -type d -empty -delete
 }
