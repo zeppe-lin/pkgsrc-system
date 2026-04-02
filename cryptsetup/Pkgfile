@@ -2,11 +2,11 @@
 # URL:         https://gitlab.com/cryptsetup/cryptsetup
 # Depends on:  json-c libbsd libdevmapper openssl popt
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   --enable-asciidoc: Generate man pages, needs asciidoctor (enabled)
 
 name=cryptsetup
-version=2.8.4
+version=2.8.5
 release=1
 source=https://www.kernel.org/pub/linux/utils/$name/v${version%.*}/$name-$version.tar.xz
 
@@ -28,7 +28,8 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# Build statically without libblkid; linking it causes build failures
+	# Build statically without libblkid;
+	# linking it causes build failures
 	cd $SRC; mkdir build-static; cd build-static
 
 	../$name-$version/configure \
@@ -41,8 +42,10 @@ build() {
 
 	make V=1
 
-	install -m 0755 -Dt $PKG/sbin cryptsetup.static
-	install -m 0755 -Dt $PKG/usr/sbin integritysetup.static veritysetup.static
+	install -m 0755 -Dt $PKG/sbin \
+		cryptsetup.static
+	install -m 0755 -Dt $PKG/usr/sbin \
+		integritysetup.static veritysetup.static
 
 	# Remove junk
 	rm $PKG/usr/lib/*.la
