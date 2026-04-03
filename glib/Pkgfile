@@ -2,11 +2,11 @@
 # URL:         https://gitlab.gnome.org/GNOME/glib
 # Depends on:  docutils elfutils libffi libpcre2 util-linux py3-packaging
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   man-pages=enabled: Build man pages, needs docutils (enabled)
 
 name=glib
-version=2.86.4
+version=2.86.5
 release=1
 source="https://download.gnome.org/sources/glib/${version%.*}/glib-$version.tar.xz
 	gschemas.compiled"
@@ -20,7 +20,8 @@ build() {
 	    -i glib-$version/meson.build
 
 	# Replace legacy rundir path
-	sed 's|/var/run/dbus|/run/dbus|' -i glib-$version/gio/gdbusaddress.c
+	sed -i 's|/var/run/dbus|/run/dbus|' \
+		glib-$version/gio/gdbusaddress.c
 
 	meson setup build glib-$version \
 		--prefix=/usr \
