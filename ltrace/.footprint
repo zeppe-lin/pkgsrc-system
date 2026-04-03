@@ -1,9 +1,15 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/ltrace
-drwxr-xr-x	root/root	usr/etc/
--rw-r--r--	root/root	usr/etc/ltrace.conf
 drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/ltrace/
+-rw-r--r--	root/root	usr/share/ltrace/libacl.so.conf
+-rw-r--r--	root/root	usr/share/ltrace/libc.so-types.conf
+-rw-r--r--	root/root	usr/share/ltrace/libc.so.conf
+-rw-r--r--	root/root	usr/share/ltrace/libm.so.conf
+-rw-r--r--	root/root	usr/share/ltrace/libpthread.so-types.conf
+-rw-r--r--	root/root	usr/share/ltrace/libpthread.so.conf
+-rw-r--r--	root/root	usr/share/ltrace/syscalls.conf
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/ltrace.1.gz
