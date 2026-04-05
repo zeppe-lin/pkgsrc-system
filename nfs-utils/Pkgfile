@@ -3,7 +3,7 @@
 # Depends on:  keyutils libcap libdevmapper libevent libnl libxml2 rpcbind rpcsvc-proto sqlite3
 
 name=nfs-utils
-version=2.8.7
+version=2.9.1
 release=1
 source="https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
 	exports
@@ -51,7 +51,7 @@ build() {
 		install -m 0755 $SRC/rc.$rc $PKG/etc/rc.d/$rc
 	done
 
-	install -m 0644 -t $PKG/etc  \
+	install -m 0644 -t $PKG/etc \
 	    $SRC/exports $SRC/idmapd.conf \
 	    utils/mount/nfsmount.conf nfs.conf
 
