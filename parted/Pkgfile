@@ -3,7 +3,7 @@
 # Depends on:  libdevmapper
 
 name=parted
-version=3.6
+version=3.7
 release=1
 source="http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 	$name-sysmacros.patch"
@@ -13,14 +13,14 @@ build() {
 
 	mkdir build; cd build
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-		--disable-nls        \
-		--with-readline      \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--disable-nls \
+		--with-readline \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/info
 }
