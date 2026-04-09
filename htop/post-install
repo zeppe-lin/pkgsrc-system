@@ -1,0 +1,15 @@
+#!/bin/sh -ex
+
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin"
+
+# gtk3
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+	gtk-update-icon-cache -f -t -q /usr/share/icons/hicolor
+fi
+
+# desktop-file-utils
+if command -v update-desktop-database >/dev/null 2>&1; then
+	update-desktop-database -q
+fi
+
+# End of file.

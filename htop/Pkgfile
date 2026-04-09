@@ -2,11 +2,11 @@
 # URL:         https://github.com/htop-dev/htop
 # Depends on:  libcap libnl libunwind
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   lm-sensors: Support reading temperature data (enabled if installed)
 
 name=htop
-version=3.4.1
+version=3.5.0
 release=1
 source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
 
@@ -20,6 +20,6 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove i18n entries
+	# Remove i18n entries
 	sed -ri '/\[.+\]=/d' $PKG/usr/share/applications/htop.desktop
 }
