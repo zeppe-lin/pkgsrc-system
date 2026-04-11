@@ -1,5 +1,3 @@
-fb75e927effbedba72de1f421154fd0c  cmake-21.1.8.src.tar.xz
 7fc6870fe0887ee43a2f0b720e4cdd4f  install-prefix.patch
-a45a3d91b0b178759b5ee86be81e1ca1  llvm-21.1.8.src.tar.xz
 fcd6954a7fbd05687990e59e87131c3e  llvm-config.h
-4cad220587e039a2ff9465766c018621  third-party-21.1.8.src.tar.xz
+1b8f0fdca6f49e323702ed7d4da0feae  llvm-project-22.1.3.src.tar.xz
