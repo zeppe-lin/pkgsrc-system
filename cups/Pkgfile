@@ -2,16 +2,17 @@
 # URL:         https://openprinting.github.io/cups/
 # Depends on:  acl libusb zlib linux-pam
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   libusb: for usb printer backend (enabled)
 #   dbus gnutls openssl: (enabled if installed)
 
 name=cups
-version=2.4.16
-release=3
+version=2.4.17
+release=1
 source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
 	rc.cups
-	pam.cups"
+	pam.cups
+	modprobe.cups.conf"
 
 build() {
 	if pkgman isinst gnutls >/dev/null 2>&1; then
@@ -23,11 +24,12 @@ build() {
 	# Build in separate dir is broken
 	cd cups-$version
 
-	# Note: In some minimal or socket-activated environments, CUPS may exit
-	# on idle and the web UI at http://localhost:631 becomes unavailable.
-	# We comment out IdleExitTimeout to keep cupsd running reliably.
-	# If you prefer socket activation, re-enable IdleExitTimeout and ensure
-	# cups.socket/Listen directives are configured to provide the web UI.
+	# Note: In some minimal or socket-activated environments, CUPS
+	# may exit on idle and the web UI at http://localhost:631
+	# becomes unavailable.  We comment out IdleExitTimeout to keep
+	# cupsd running reliably.  If you prefer socket activation,
+	# re-enable IdleExitTimeout and ensure cups.socket/Listen
+	# directives are configured to provide the web UI.
 	sed '/^IdleExitTimeout/s/^/#/' -i conf/cupsd.conf.in
 
 	CC=cc CXX=c++ ./configure \
@@ -54,8 +56,10 @@ build() {
 	rm -r $PKG/usr/share/cups/banners $PKG/usr/share/cups/data
 
 	# Cleanup
-	rm -r $PKG/usr/share/applications $PKG/usr/share/icons $PKG/run \
-		$PKG/usr/share/locale
+	rm -r $PKG/usr/share/applications \
+		$PKG/usr/share/icons \
+		$PKG/usr/share/locale \
+		$PKG/run \
 
 	# Fix permissions
 	chmod 0755 $PKG/var/cache $PKG/var/spool
@@ -66,6 +70,6 @@ build() {
 	install -m 0644 -D $SRC/pam.cups  $PKG/etc/pam.d/cups
 
 	# Blacklist usblp kernel module
-	mkdir -p $PKG/lib/modprobe.d
-	echo 'blacklist usblp' > $PKG/lib/modprobe.d/cups-blacklist-usblp.conf
+	install -m 0644 -D $SRC/modprobe.cups.conf \
+		$PKG/lib/modprobe.d/cups-blacklist-usblp.conf
 }
