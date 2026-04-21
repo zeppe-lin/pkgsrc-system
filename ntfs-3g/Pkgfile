@@ -3,7 +3,7 @@
 # Depends on:  gnutls libgcrypt util-linux
 
 name=ntfs-3g
-version=2022.10.3-d3ace19
+version=2026.2.25-d1cb9e8
 release=1
 source="https://github.com/tuxera/$name/archive/${version#*-}/$name-$version.tar.gz
 	fsck.ntfs
