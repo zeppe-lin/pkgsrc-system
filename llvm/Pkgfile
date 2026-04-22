@@ -6,7 +6,7 @@
 #   lld: Drop-in replacement for the GNU linkers (enabled if installed)
 
 name=llvm
-version=22.1.3
+version=22.1.4
 release=1
 source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz
 	install-prefix.patch
@@ -92,12 +92,12 @@ build() {
 	# lit is not needed to build LLVM (-D LLVM_INCLUDE_TESTS=OFF),
 	# but test correctness depends on version-matched LLVM tools.
 	# Splitting may cause test breakage.
-	litdir="llvm-project-$version.src/llvm/utils/lit"
-	/usr/bin/python3 $litdir/setup.py build
-	/usr/bin/python3 $litdir/setup.py install \
+	_litdir="llvm-project-$version.src/llvm/utils/lit"
+	/usr/bin/python3 $_litdir/setup.py build
+	/usr/bin/python3 $_litdir/setup.py install \
 		--prefix=/usr --skip-build --root=$PKG
 
-	/usr/bin/python3     -m compileall -d $litdir $PKG
-	/usr/bin/python3 -O  -m compileall -d $litdir $PKG
-	/usr/bin/python3 -OO -m compileall -d $litdir $PKG
+	/usr/bin/python3     -m compileall -d $_litdir $PKG
+	/usr/bin/python3 -O  -m compileall -d $_litdir $PKG
+	/usr/bin/python3 -OO -m compileall -d $_litdir $PKG
 }
