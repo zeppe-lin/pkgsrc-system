@@ -2,11 +2,11 @@
 # URL:         https://valgrind.org/
 # Depends on:  glibc-32
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   gdb: Integration with GDB (enabled if installed)
 
 name=valgrind
-version=3.26.0
+version=3.27.0
 release=1
 source=https://sourceware.org/pub/$name/$name-$version.tar.bz2
 
@@ -22,10 +22,10 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# man pages
+	# Install man pages
 	install -m 0644 -Dt $PKG/usr/share/man/man1 \
 		../$name-$version/docs/*.1
 
-	# remove junk
+	# Remove junk
 	rm -fr $PKG/usr/share/doc
 }
