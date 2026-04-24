@@ -2,9 +2,9 @@
 # URL:         https://github.com/groeck/lm-sensors
 
 name=lm-sensors
-version=3.6.0
+version=3.6.2
 _version=$(echo $version | sed 's/\./-/g')
-release=3
+release=1
 source="https://github.com/groeck/$name/archive/V$_version/lm_sensors-$_version.tar.gz
 	sensors-detect.patch
 	rc.sensors"
@@ -23,4 +23,7 @@ build() {
 		DESTDIR=$PKG install
 
 	install -m 0755 -D $SRC/rc.sensors $PKG/etc/rc.d/sensors
+
+	# Remove zsh completion
+	rm -r $PKG/usr/share/zsh
 }
