@@ -2,12 +2,12 @@
 # URL:         https://www.gnupg.org/
 # Depends on:  bzip2 gnutls libassuan libgcrypt libksba libusb npth sqlite3 libgpg-error
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   --disable-ldap: otherwise requires openldap (disabled)
 #   libgpg-error: ships yat2m, which is required to build man pages
 
 name=gnupg
-version=2.5.18
+version=2.5.19
 release=1
 source=https://gnupg.org/ftp/gcrypt/gnupg/gnupg-$version.tar.bz2
 
@@ -32,5 +32,6 @@ build() {
 	make DESTDIR=$PKG install
 
 	# Remove junk
-	cd $PKG/usr/share; rm -r doc info gnupg/help*
+	cd $PKG/usr/share
+	rm -r doc info gnupg/help*
 }
