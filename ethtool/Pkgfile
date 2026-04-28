@@ -3,7 +3,7 @@
 # Depends on:  libmnl
 
 name=ethtool
-version=6.19
+version=7.0
 release=1
 source=https://git.kernel.org/pub/scm/network/ethtool/ethtool.git/snapshot/ethtool-$version.tar.gz
 
