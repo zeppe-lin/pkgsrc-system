@@ -6,7 +6,7 @@
 #   lm-sensors: Support reading temperature data (enabled if installed)
 
 name=htop
-version=3.5.0
+version=3.5.1
 release=1
 source=https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz
 
