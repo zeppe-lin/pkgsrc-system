@@ -1,5 +1,5 @@
 b553815aef7506d37bdd14de5b2a15ab  pam.postgresql
-13b3d7b7f79e1964c6ceb456470304a6  postgresql-14.22.tar.bz2
+0bf4446d01fb935511a6b1287d6723f7  postgresql-14.23.tar.bz2
 b8d020f3267fac44c13ba81a79c49510  postgresql-perl-rpath.patch
 0f96c09cb07cb5bf7c0f74b399128f33  postgresql-run-socket.patch
 7ed279e9c525d71b4cf2521c6845a4dc  rc.postgresql

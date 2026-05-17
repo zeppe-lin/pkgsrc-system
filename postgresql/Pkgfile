@@ -6,7 +6,7 @@
 # https://www.postgresql.org/support/versioning/
 
 name=postgresql
-version=14.22
+version=14.23
 release=1
 source="https://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2
 	postgresql-perl-rpath.patch
