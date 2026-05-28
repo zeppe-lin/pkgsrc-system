@@ -2,7 +2,7 @@
 # URL:         https://www.capstone-engine.org/index.html
 
 name=capstone
-version=5.0.8 # sync with py3-capstone on update
+version=5.0.9 # sync with py3-capstone on update
 release=1
 source=https://github.com/aquynh/$name/archive/$version/$name-$version.tar.gz
 
