@@ -2,21 +2,17 @@
 # URL:         https://github.com/libfuse/sshfs
 # Depends on:  docutils fuse glib
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   docutils: Build man pages (enabled)
 
 name=sshfs-fuse
-version=3.7.5
+version=3.7.6
 release=1
-source="https://github.com/libfuse/sshfs/releases/download/sshfs-$version/sshfs-$version.tar.xz
-	manpage.patch"
+source="https://github.com/libfuse/sshfs/releases/download/sshfs-$version/sshfs-$version.tar.xz"
 
 build() {
-	# disable hardcoded tests
+	# Disable hardcoded tests
 	sed -i "/^subdir('test')/d" sshfs-$version/meson.build
-
-	# man page cleanup (1)
-	patch -d sshfs-$version -Np0 -i $SRC/manpage.patch
 
 	meson setup build sshfs-$version \
 		--prefix=/usr \
@@ -28,6 +24,7 @@ build() {
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
-	# man page cleanup (2)
-	sed -i 's/^\.SH Name$/\.SH NAME/' $PKG/usr/share/man/man1/sshfs.1
+	# Force uppercase for .SH in man page
+	sed -i 's/^\.SH \([A-z ]*\)/.SH \U\1/g' \
+		$PKG/usr/share/man/man1/sshfs.1
 }
