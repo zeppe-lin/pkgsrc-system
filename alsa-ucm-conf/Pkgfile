@@ -2,7 +2,7 @@
 # URL:         https://alsa-project.org/
 
 name=alsa-ucm-conf
-version=1.2.15.3
+version=1.2.16
 release=1
 source=https://alsa-project.org/files/pub/lib/$name-$version.tar.bz2
 
@@ -11,5 +11,7 @@ build() {
 	cp -r $name-$version/ucm2 $PKG/usr/share/alsa
 
 	# Remove junk
-	find $PKG -type f \( -name '*.md' -o -name '.gitignore' \) -delete
+	find $PKG/usr/share/alsa/ucm2 -type f \
+		-name ".gitignore" -delete -o \
+		-name "*.md" -delete
 }
