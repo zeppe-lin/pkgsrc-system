@@ -3,7 +3,7 @@
 # Depends on:  curl libevent
 
 name=transmission
-version=4.1.1
+version=4.1.2
 release=1
 source="https://github.com/$name/$name/releases/download/$version/$name-$version.tar.xz
 	rc.$name"
@@ -30,5 +30,6 @@ build() {
 
 	# Remove junk
 	rm -r $PKG/usr/share/doc
-	find $PKG -name '*LICENSE*' -o -name '*LEGAL*' -delete
+	find $PKG -name '*LICENSE*' -delete -o \
+		-name '*LEGAL*' -delete
 }
