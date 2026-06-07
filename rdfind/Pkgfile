@@ -2,7 +2,7 @@
 # URL:         https://rdfind.pauldreik.se/
 # Depends on:  nettle
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   xxhash: xxHash checksum support (enabled if installed)
 
 name=rdfind
