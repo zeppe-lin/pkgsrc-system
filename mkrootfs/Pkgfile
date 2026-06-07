@@ -2,8 +2,8 @@
 # URL:         https://github.com/zeppe-lin/mkrootfs
 # Depends on:  scdoc
 
-# Maintainer notes on dependencies:
-#   pkgman pkgmk revdep tar: runtime dependencies (already in pkgsrc-core)
+# Notes on dependencies:
+#   pkgman, pkgmk, revdep, tar: runtime deps (already in pkgsrc-core)
 
 name=mkrootfs
 version=1.6-7ba643a
