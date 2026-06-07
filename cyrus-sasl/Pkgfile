@@ -2,8 +2,8 @@
 # URL:         https://www.cyrusimap.org/sasl/
 # Depends on:  db linux-pam openssl
 
-# Maintainer notes on dependencies:
-#   --enable-gssapi=no: ... , otherwise requires krb5
+# Notes on dependencies:
+#   --enable-gssapi=no: Disable GSSAPI plugin, otherwise needs krb5
 
 name=cyrus-sasl
 version=2.1.28
