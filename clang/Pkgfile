@@ -3,7 +3,7 @@
 # Depends on:  libedit llvm
 
 name=clang
-version=22.1.5 # keep in sync with llvm
+version=22.1.7 # keep in sync with llvm
 release=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz
 
@@ -12,16 +12,17 @@ build() {
 		PKGMK_CLANG=' -D LLVM_CCACHE_BUILD=ON'
 	fi
 
-	mv llvm-project-$version.src/clang-tools-extra \
-		llvm-project-$version.src/clang/tools/extra
+	llvmdir="llvm-project-$version.src"
 
-	cmake -S llvm-project-$version.src/clang -B build -G Ninja \
+	mv $llvmdir/clang-tools-extra $llvmdir/clang/tools/extra
+
+	cmake -S $llvmdir/clang -B build -G Ninja \
 		-D CMAKE_INSTALL_PREFIX=/usr \
 		-D CMAKE_INSTALL_LIBEXECDIR=lib/clang \
 		-D CMAKE_BUILD_TYPE=Release \
 		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
 		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
-		-D LLVM_MAIN_SRC_DIR="$SRC/llvm-project-$version.src/llvm" \
+		-D LLVM_MAIN_SRC_DIR="$SRC/$llvmdir/llvm" \
 		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
 		-D LLVM_INCLUDE_TESTS=OFF \
 		-Wno-dev \
