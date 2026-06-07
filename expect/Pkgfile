@@ -2,7 +2,7 @@
 # URL:         https://core.tcl-lang.org/expect/index
 # Depends on:  tcl
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   tk: Expect with Tk support (enabled if installed)
 
 name=expect
@@ -12,12 +12,13 @@ source=https://downloads.sourceforge.net/project/$name/Expect/$version/$name$ver
 
 build() {
 	if pkgman isinst tk >/dev/null 2>&1; then
-		_build_args="--with-tk=/usr/lib --with-tkinclude=/usr/include"
+		_build_args="--with-tk=/usr/lib \
+			--with-tkinclude=/usr/include"
 	fi
 
 	mkdir build; cd build
 
-	# gcc14 fix
+	# Fix build with GCC 14
 	CFLAGS="$CFLAGS -fpermissive"
 
 	../$name$version/configure \
@@ -31,6 +32,6 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/bin/weather
 }
