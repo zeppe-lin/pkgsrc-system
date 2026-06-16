@@ -785,12 +785,8 @@ drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt711-sdca/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt711-sdca/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt711/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt711/init.conf
-drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt712-dmic/
--rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt712-dmic/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt712/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt712/init.conf
-drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt713-dmic/
--rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt713-dmic/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt713/
 -rw-r--r--	root/root	usr/share/alsa/ucm2/codecs/rt713/init.conf
 drwxr-xr-x	root/root	usr/share/alsa/ucm2/codecs/rt715-sdca/
@@ -1155,9 +1151,7 @@ lrwxrwxrwx	root/root	usr/share/alsa/ucm2/sof-soundwire/cs42l43-spk+cs35l56.conf 
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt711-sdca.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt711.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt712+rt1320.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt712-dmic.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt712.conf
--rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt713-dmic.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt713.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt715-sdca.conf
 -rw-r--r--	root/root	usr/share/alsa/ucm2/sof-soundwire/rt715.conf
