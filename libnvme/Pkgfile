@@ -3,12 +3,12 @@
 # Depends on:  json-c keyutils openssl
 
 name=libnvme
-version=1.16.1
+version=1.16.2
 release=1
 source=https://github.com/linux-nvme/$name/archive/v$version/$name-v$version.tar.gz
 
 build() {
-	# don't build examples
+	# Do not build examples
 	sed -i "/^subdir('examples')/d" $name-$version/meson.build
 
 	meson setup build $name-$version \
