@@ -4,15 +4,21 @@
 
 name=mdadm
 version=4.6
-release=1
+release=2
 source="https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git/snapshot/mdadm-$version.tar.gz
+	0c1a6ca85ff1562280a48420e11c247d1c3273cf.patch
+	2accfdfccd5170ccfda8385daebf0bcd60ebdb25.patch
 	mdadm-4.5-in_initrd-collision.patch"
 
 build() {
 	cd mdadm-$version
 
-	# Avoid symbol collision with libudev when statically linking
-	# mdadm (rename internal in_initrd() helper)
+	# Upstream fixes: lockless bitmap typo and udev LUKS label
+	# support
+	patch -p1 -i $SRC/0c1a6ca*.patch
+	patch -p1 -i $SRC/2accfdf*.patch
+
+	# Fix symbol collision with libudev during static build
 	patch -p1 -i $SRC/mdadm-4.5-in_initrd-collision.patch
 
 	# Build shared binary

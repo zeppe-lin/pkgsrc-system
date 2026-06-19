@@ -1,0 +1,29 @@
+From 2accfdfccd5170ccfda8385daebf0bcd60ebdb25 Mon Sep 17 00:00:00 2001
+From: Francois Lesueur <flesueur@alwaysdata.com>
+Date: Mon, 4 May 2026 17:08:56 +0200
+Subject: udev: Use LUKS label if present
+
+Current udev rules do not create udev "by-label" symlinks for crypto
+volumes. This patch adds these symlinks.
+
+Signed-off-by: Francois Lesueur <flesueur@alwaysdata.com>
+---
+ udev-md-raid-arrays.rules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/udev-md-raid-arrays.rules b/udev-md-raid-arrays.rules
+index a8098dc5..1157098f 100644
+--- a/udev-md-raid-arrays.rules
++++ b/udev-md-raid-arrays.rules
+@@ -32,7 +32,7 @@ OPTIONS+="watch"
+ OPTIONS+="db_persist"
+ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{ID_FS_UUID_ENC}=="?*", SYMLINK+="disk/by-uuid/$env{ID_FS_UUID_ENC}"
+ ENV{ID_FS_USAGE}=="filesystem|other", ENV{ID_PART_ENTRY_UUID}=="?*", SYMLINK+="disk/by-partuuid/$env{ID_PART_ENTRY_UUID}"
+-ENV{ID_FS_USAGE}=="filesystem|other", ENV{ID_FS_LABEL_ENC}=="?*", SYMLINK+="disk/by-label/$env{ID_FS_LABEL_ENC}"
++ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{ID_FS_LABEL_ENC}=="?*", SYMLINK+="disk/by-label/$env{ID_FS_LABEL_ENC}"
+ 
+ ENV{MD_LEVEL}=="raid[1-9]*", ENV{SYSTEMD_WANTS}+="mdmonitor.service"
+ 
+-- 
+cgit 1.3-korg
+

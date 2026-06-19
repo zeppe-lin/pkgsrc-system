@@ -1,0 +1,28 @@
+From 0c1a6ca85ff1562280a48420e11c247d1c3273cf Mon Sep 17 00:00:00 2001
+From: Martin Wilck <mwilck@suse.com>
+Date: Thu, 16 Apr 2026 18:30:37 +0200
+Subject: Fix typo in lockless bitmap warning
+
+Fix typo "disk" -> "risk".
+
+Signed-off-by: Martin Wilck <mwilck@suse.com>
+---
+ mdadm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mdadm.c b/mdadm.c
+index b92d6c9a..b3b66cdb 100644
+--- a/mdadm.c
++++ b/mdadm.c
+@@ -59,7 +59,7 @@ static mdadm_status_t set_bitmap_value(struct shape *s, struct context *c, char
+ 
+ 	if (strcmp(val, "lockless") == 0) {
+ 		s->btype = BitmapLockless;
+-		pr_info("Experimental lockless bitmap, use at your own disk!\n");
++		pr_info("Experimental lockless bitmap, use at your own risk!\n");
+ 		return MDADM_STATUS_SUCCESS;
+ 	}
+ 
+-- 
+cgit 1.3-korg
+
