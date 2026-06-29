@@ -2,17 +2,17 @@
 # URL:         https://github.com/json-c/json-c/wiki
 
 name=json-c
-version=0.18-20240915
+version=0.19-20260627
 release=1
 source=https://github.com/json-c/json-c/archive/refs/tags/json-c-$version.tar.gz
 
 build() {
-	cmake -S *$name-$version -B build -G Ninja  \
-		-D CMAKE_INSTALL_PREFIX=/usr        \
-		-D CMAKE_INSTALL_LIBDIR=/usr/lib    \
-		-D CMAKE_BUILD_TYPE=Release         \
-		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"  \
-		-D BUILD_TESTING=OFF                \
+	cmake -S *$name-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=/usr/lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D BUILD_TESTING=OFF \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
