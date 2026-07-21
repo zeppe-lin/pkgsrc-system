@@ -6,7 +6,7 @@ name=grub2-efi
 version=2.14
 release=1
 source="https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
-	../grub2/extra_deps.lst"
+	extra_deps.lst"
 
 build() {
 	export CFLAGS="$CFLAGS -Wno-error"
@@ -41,5 +41,6 @@ build() {
 	done
 
 	# Conflicts with grub2 package
-	cd $PKG/usr; rm -r bin etc sbin share
+	cd $PKG/usr
+	rm -r bin etc sbin share
 }
