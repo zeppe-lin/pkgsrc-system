@@ -1,10 +1,10 @@
 # Description: Utilities for the ALSA
 # URL:         https://www.alsa-project.org/
-# Depends on:  alsa-lib dialog
+# Depends on:  alsa-lib alsa-ucm-conf dialog
 
 name=alsa-utils
 version=1.2.15.2
-release=2
+release=3
 source="ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2
 	0001-simplify-nocolors-menu.patch
 	f77a269370af917585df59d8c21c89bca07b5b73.patch
@@ -14,8 +14,9 @@ build() {
 	# Build in separate dir is broken
 	cd $name-$version
 
-	patch -Np1 -i $SRC/0001-simplify-nocolors-menu.patch
-	patch -Np1 -i $SRC/f77a269370af917585df59d8c21c89bca07b5b73.patch
+	for x in $SRC/*.patch; do
+		patch -p1 -i $x
+	done
 
 	# Fix error when compiling alsatplg
 	CFLAGS="$CFLAGS -latopology"
